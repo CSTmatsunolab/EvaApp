@@ -350,8 +350,8 @@ Canvas:
   m_GameObject: {fileID: 626883864}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -360,7 +360,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!224 &626883868
 RectTransform:
@@ -665,7 +665,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1370463723}
   - component: {fileID: 1370463724}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: eventillust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -680,8 +680,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370463722}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -540.01, y: -959.38, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalPosition: {x: -2, y: 203, z: 0}
+  m_LocalScale: {x: 130, y: 130, z: 1}
   m_Children: []
   m_Father: {fileID: 626883868}
   m_RootOrder: 1
@@ -1018,7 +1018,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2075998736}
   - component: {fileID: 2075998737}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1033,8 +1033,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075998735}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -540.17, y: -960, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_LocalPosition: {x: 5, y: -10, z: 0}
+  m_LocalScale: {x: 230, y: 230, z: 1}
   m_Children: []
   m_Father: {fileID: 626883868}
   m_RootOrder: 0
