@@ -1051,10 +1051,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1893495952}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75fa56c24cbfe4647938f70eb0c619ea, type: 3}
+  m_Script: {fileID: 11500000, guid: ba0478d80f4754f16bba82331d88aec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score_object: {fileID: 7894723}
+  score_object: {fileID: 0}
 --- !u!4 &1893495954
 Transform:
   m_ObjectHideFlags: 0
