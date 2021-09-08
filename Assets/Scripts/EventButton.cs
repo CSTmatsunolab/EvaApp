@@ -9,6 +9,6 @@ public class EventButton : MonoBehaviour
     public void EventButtonDown()
     {
         Debug.Log("Test");
-        SceneManager.LoadScene("EventScene"); //ボタンが押されたら遷移
+        SceneManager.LoadScene("EventSelectScene"); //ボタンが押されたら遷移
     }
 }
