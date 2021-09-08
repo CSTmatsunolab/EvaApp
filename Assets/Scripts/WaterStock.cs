@@ -15,9 +15,4 @@ public class WaterStock: MonoBehaviour
         // テキストの表示を入れ替える
         stock_text.text = "×"+Pdata.GetComponent<Player_Data>().PlayerData[1][3];
     }
-
-    // 更新
-    void Update () {
-
-      }
 }
