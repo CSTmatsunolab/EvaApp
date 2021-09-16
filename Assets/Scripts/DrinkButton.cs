@@ -1,14 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.IO;
 
 public class DrinkButton : MonoBehaviour
 {
+    Button DButton;
+    void Start(){        
+        GameObject Pdata = GameObject.Find("Player_Data");
+        DButton = GameObject.Find ("Canvas/DrinkButton").GetComponent<Button>();
+
+        //水分x
+        int x = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][2]);
+        //水の所持数(ペットボトル)y
+        int y = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][3]);
+
+        //水の所持数が0のとき or 水分が満タンの時ボタン無効化
+        if(y==0 || x==3){
+            DButton.interactable=false;
+            Debug.Log("mukou");
+        }
+    }
+
     public void DrinkButtonDown()
     {
         GameObject Pdata = GameObject.Find("Player_Data");
+        DButton = GameObject.Find ("Canvas/DrinkButton").GetComponent<Button>();
+
         //水分x
         int x = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][2]);
         //水の所持数(ペットボトル)y
@@ -26,6 +46,7 @@ public class DrinkButton : MonoBehaviour
             Pdata.GetComponent<Player_Data>().PlayerData[1][3]=str;
         }
         CsvSave();
+        
         // 現在のScene名を取得する
         Scene loadScene = SceneManager.GetActiveScene();
         // Sceneの読み直し
