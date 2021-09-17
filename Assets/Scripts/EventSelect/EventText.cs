@@ -13,6 +13,7 @@ public class EventText : MonoBehaviour
     {
         GameObject EData = GameObject.Find("EventData");
         Text title_text = event_object.GetComponent<Text>();
+        //ランダムに選択されたイベントNo.の概要を読み込む
         title_text.text=EData.GetComponent<Event_Data>().EventData[ESManagement.index][2];
 
         

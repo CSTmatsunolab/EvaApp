@@ -16,14 +16,16 @@ public class TimeBase : MonoBehaviour
         Texture2D texture0 = Resources.Load("hiru") as Texture2D;
         Texture2D texture1 = Resources.Load("yoru") as Texture2D;
         
+        //int型に変更
         int i = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][6]);
+        //昼、夜の判定
         if (i == 0)
             {
-                image_component.sprite = Sprite.Create(texture0,new Rect(0, 0, texture0.width, texture0.height),Vector2.zero);
+                image_component.sprite = Sprite.Create(texture0,new Rect(0, 0, texture0.width, texture0.height),Vector2.zero);//スプライトを変更
             }
         else if(i == 1)
             {
-                image_component.sprite = Sprite.Create(texture1,new Rect(0, 0, texture1.width, texture1.height),Vector2.zero);
+                image_component.sprite = Sprite.Create(texture1,new Rect(0, 0, texture1.width, texture1.height),Vector2.zero);//スプライトを変更
             }
     }
 }

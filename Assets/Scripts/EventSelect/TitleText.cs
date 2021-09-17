@@ -13,6 +13,7 @@ public class TitleText : MonoBehaviour
     {
         GameObject EData = GameObject.Find("EventData");
         Text title_text = title_object.GetComponent<Text>();
+        //ランダムに選択されたイベントNo.のタイトルを読み込む
         title_text.text=EData.GetComponent<Event_Data>().EventData[ESManagement.index][1];
 
         

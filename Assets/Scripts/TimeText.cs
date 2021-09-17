@@ -12,6 +12,7 @@ public class TimeText : MonoBehaviour
         GameObject Pdata = GameObject.Find("Player_Data");
         int i = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][6]);
         string time = "昼";
+        //昼、夜の判定
         if (i == 0)
             {
                 time = "昼";

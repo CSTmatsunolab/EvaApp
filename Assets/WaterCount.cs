@@ -13,11 +13,11 @@ public class WaterCount : MonoBehaviour
 
          if(y<=x)
          {
-             this.gameObject.SetActive(true);
+             this.gameObject.SetActive(true);//水カウンターを表示
          }
          else
          {
-             this.gameObject.SetActive(false);
+             this.gameObject.SetActive(false);//水カウンターを非表示
          }
     }
 }

@@ -11,6 +11,7 @@ public class DayTextSelect: MonoBehaviour
     {
         GameObject Pdata = GameObject.Find("Player_Data");
         int i = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][6]);
+        //昼、夜の判定
         string time = "昼";
         if (i == 0)
             {
@@ -25,9 +26,4 @@ public class DayTextSelect: MonoBehaviour
         // テキストの表示を入れ替える
         sta_text.text = Pdata.GetComponent<Player_Data>().PlayerData[1][5] + "日目" + time;
     }
-
-    // 更新
-    void Update () {
-
-      }
 }

@@ -17,27 +17,27 @@ public class MenuPanel : MonoBehaviour
 
     public void BackToMenu()
     {
-        Menu.SetActive(false);
+        Menu.SetActive(false);//Menuパネルを非表示
     }
 
     public void GoToMenu()
     {
-        Menu.SetActive(true);
+        Menu.SetActive(true);//Menuパネルを表示
     }
 
     public void GoToTitle()
     {
-        SceneManager.LoadScene("StartScene");
+        SceneManager.LoadScene("StartScene");//スタートシーンに遷移
     }
 
     public void GoToDrink()
     {
-        Drink.SetActive(true);
+        Drink.SetActive(true);//Drinkパネルを表示
     }
 
     public void BackToDrink()
     {
-        Drink.SetActive(false);
+        Drink.SetActive(false);//Drinkパネルを非表示
     }
 
 

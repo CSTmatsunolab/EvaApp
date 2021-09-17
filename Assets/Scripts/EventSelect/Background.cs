@@ -14,6 +14,7 @@ public class Background : MonoBehaviour
         string str=i.ToString();
         image.sprite=Resources.Load<Sprite>(str);
         var c = image.color;
+        //透明度を上げる
         image.color = new Color(c.r, c.g, c.b, 100.0f/255.0f);
     }
 }

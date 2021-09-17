@@ -11,6 +11,7 @@ public class EventImage : MonoBehaviour
     {
         Image image;
         image=this.GetComponent<Image>();
+        //ランダムに選択されたイベントNo.のイラストを読み込む
         int i=ESManagement.index;
         string str=i.ToString();
         image.sprite=Resources.Load<Sprite>(str);
