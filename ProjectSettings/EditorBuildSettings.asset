@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EventSelectScene.unity
     guid: 3f9ba7cfc81ee426b8a1574c7d430f0b
+  - enabled: 1
+    path: Assets/Scenes/EatScene.unity
+    guid: 632de8d5e934d4e82805c05a8a7a2d44
+  - enabled: 1
+    path: Assets/Scenes/SleepScene.unity
+    guid: 2c786c2764b464f649cb11652d8d72fd
   m_configObjects: {}
