@@ -23,6 +23,7 @@ void Start()
             PlayerData.Add(line.Split(',')); // , 区切りでリストに追加
         }
         // データ確認用
+        
         for (int i = 0; i < PlayerData.Count; i++)
         {
             for (int j = 0; j < PlayerData[0].Length; j++)
@@ -31,10 +32,5 @@ void Start()
             }
         }
         DontDestroyOnLoad(this);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 }
