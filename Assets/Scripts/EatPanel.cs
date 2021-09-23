@@ -1,0 +1,61 @@
+﻿using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
+
+
+public class EatPanel : MonoBehaviour
+{
+    [SerializeField] GameObject Main;
+    [SerializeField] GameObject Result;
+    [SerializeField] GameObject Sleep;
+
+
+    void Start()
+    {
+        BackToMain();
+        BackToResult();
+        BackToSleep();
+    }
+    public void BackToMain()
+    {
+        Main.SetActive(true);//Mainパネルを表示
+    }
+    public void GoToMain()
+    {
+        Main.SetActive(false);//Mainパネルを非表示
+    }
+    public void GoToResult()
+    //public void EatButtonDown()
+    {
+        Result.SetActive(true);//Resultパネルを表示
+        Main.SetActive(false);//Mainパネルを非表示
+        Sleep.SetActive(false);//Sleepパネルを非表示
+    }
+    public void BackToResult()
+    {
+        Result.SetActive(false);//Resultパネルを非表示
+    }
+    public void BackToSleep()
+    {
+        Sleep.SetActive(false);//Mainパネルを非表示
+    }
+    public void GoToSleep()
+    {
+        GameObject Pdata = GameObject.Find("Player_Data");
+        int i = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][6]);
+
+        if (i == 0) //昼、夜の判定
+            {
+                SceneManager.LoadScene("SelectScene");//選択シーンに遷移
+            }
+        else if (i == 1)
+            {
+                Sleep.SetActive(true);//Sleepパネルを表示
+            }
+
+    }
+    
+
+}

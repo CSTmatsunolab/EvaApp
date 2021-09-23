@@ -6,7 +6,7 @@ using System.IO;
 
 public class EatButton : MonoBehaviour
 {
-    void CsvSave()
+    /*void CsvSave()
     {
         GameObject Pdata = GameObject.Find("Player_Data");
         StreamWriter file = new StreamWriter("Assets/Resources/PlayerData.csv", false);
@@ -51,6 +51,8 @@ public class EatButton : MonoBehaviour
         // Sceneの読み直し
         //SceneManager.LoadScene(loadScene.name);
         
+
     }
+    */
 
 }
