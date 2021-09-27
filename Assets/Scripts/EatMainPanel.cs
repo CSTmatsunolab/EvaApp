@@ -32,8 +32,8 @@ public class EatMainPanel : MonoBehaviour
     {
         if((i>0)&&(x<3))
         {
-            --i;
-            ++x;
+            --i;//貯蓄を減らす
+            ++x;//食べる量を増やす
             ktext.text=x.ToString();
             
         }
@@ -41,24 +41,24 @@ public class EatMainPanel : MonoBehaviour
 
     public void MinusButtondown()
     {
-        if(x>0)
+        if(x>0)　//食べる量が0以上の時のみ
         {
-            ++i;
-            --x;
+            ++i;//貯蓄を増やす
+            --x;//食べる量を減らす
             ktext.text=x.ToString();
         } 
     }
 
     public void EatButtondown()
     {
-        j = j + x;
+        j = j + x;　//まんぷくゲージに加算
         Debug.Log(x);
         Debug.Log(i);
         if(j > 10){
             j = 10;
         }
-        Pdata.GetComponent<Player_Data>().PlayerData[1][0]=j.ToString();
-        Pdata.GetComponent<Player_Data>().PlayerData[1][4]=i.ToString();
+        Pdata.GetComponent<Player_Data>().PlayerData[1][0]=j.ToString();//配列に格納
+        Pdata.GetComponent<Player_Data>().PlayerData[1][4]=i.ToString();//配列に格納
 
         TimeCheck();
         Result();
@@ -73,7 +73,7 @@ public class EatMainPanel : MonoBehaviour
         CsvSave();
     }
 
-    void CsvSave()
+    void CsvSave()//CSVに保存
     {
         StreamWriter file = new StreamWriter("Assets/Resources/PlayerData.csv", false);
         for (var y = 0; y < 2; y++)
@@ -87,11 +87,11 @@ public class EatMainPanel : MonoBehaviour
         }
     }
 
-    void Result()
+    void Result()//食事結果の表示
     {
         Text rtext = RText.GetComponent<Text>();
         //rtext.text = "まんぷくゲージが"+x.ToString()+"回復した！";
-        if(x==0)
+        if(x==0)//食べた量が0の時に分岐
         {
             rtext.text = "何も食べなかった...";
         }
@@ -102,7 +102,7 @@ public class EatMainPanel : MonoBehaviour
         }
     }
 
-    void TimeCheck()
+    void TimeCheck()//昼と夜の変更
     {
         if(Pdata.GetComponent<Player_Data>().PlayerData[1][6]=="0"){
             Pdata.GetComponent<Player_Data>().PlayerData[1][6]="1";
