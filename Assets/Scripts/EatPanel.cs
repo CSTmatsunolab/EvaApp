@@ -46,15 +46,19 @@ public class EatPanel : MonoBehaviour
         GameObject Pdata = GameObject.Find("Player_Data");
         int i = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][6]);
 
-        if (i == 0) //昼、夜の判定
+        if (i == 1) //昼、夜の判定
             {
-                SceneManager.LoadScene("SelectScene");//選択シーンに遷移
+                GoToSelect();
             }
-        else if (i == 1)
+        else if (i == 0)
             {
                 Sleep.SetActive(true);//Sleepパネルを表示
             }
 
+    }
+    public void GoToSelect()
+    {
+        SceneManager.LoadScene("SelectScene");//選択シーンに遷移
     }
     
 
