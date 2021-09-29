@@ -12,9 +12,10 @@ public class ESManagement : MonoBehaviour
     [SerializeField] GameObject TitleText;
     [SerializeField] GameObject EventText;
 
+    public static int index = 0;
+
     // Start is called before the first frame update
-    void Start(){
-        int index;
+    void Start(){        
         index = rand();//乱数生成
         Debug.Log(index);//コンソールにイベントNo.を表示
         EventLoad(index);
@@ -58,5 +59,10 @@ public class ESManagement : MonoBehaviour
     public void EventButtonDown()//イベント画面に遷移
     {
         SceneManager.LoadScene("EventScene"); //ボタンが押されたら遷移
+    }
+
+    public static int Send()
+    {
+        return index;
     }
 }

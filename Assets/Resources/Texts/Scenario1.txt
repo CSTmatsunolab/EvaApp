@@ -1,0 +1,16 @@
+!foreground_color="0,0,0"
+!foreground_anim="fadein,0,2,%0,0,0,0%%"
+!wait="2"
+!background_sprite="カイロ"
+
+!charaimg_sprite="polygon"="DIO"
+!charaimg_pos="polygon"="-10,0.06,0"
+!charaimg_anim="polygon"="anim,0,1,EaseInOut%%4.9,6.8,1%-2.19,0.06,0"
+!charaimg_sprite="polygon2"="承太郎"
+!charaimg_pos="polygon2"="10,-1.45,0"
+!charaimg_anim="polygon2"="anim,0,1,EaseInOut%%6.3,9.4,1%1.39,-1.45,0"
+
+&DIO「次は承太郎、貴様だ。」
+&承太郎「DIO!」
+&DIO「ほう向かってくるのか、逃げずにこのDIOに近づいてくるのか。」
+&承太郎「近づかねえと、てめぇをぶちのめせないんでな。」
