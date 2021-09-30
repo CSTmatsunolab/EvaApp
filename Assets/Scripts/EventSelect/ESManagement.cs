@@ -11,6 +11,7 @@ public class ESManagement : MonoBehaviour
     [SerializeField] GameObject EventImage;
     [SerializeField] GameObject TitleText;
     [SerializeField] GameObject EventText;
+    [SerializeField] private string spritesDirectory = "Sprites/Event";
 
     public static int index = 0;
 
@@ -41,7 +42,7 @@ public class ESManagement : MonoBehaviour
         eventtext = EventText.GetComponent<Text>();
 
         //イベントセレクトシーンの背景の色(半透明)
-        string str = a.ToString();
+        string str = spritesDirectory+a.ToString();
         eventbg.sprite = Resources.Load<Sprite>(str);
         var c = eventbg.color;
         eventbg.color = new Color(c.r, c.g, c.b, 100.0f/255.0f);//透明度を上げる

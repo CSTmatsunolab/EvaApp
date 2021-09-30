@@ -13,8 +13,8 @@ public class TimeBase : MonoBehaviour
         GameObject Pdata = GameObject.Find("Player_Data");
         // コンポーネントの取得
         Image image_component = image_object.GetComponent<Image>();
-        Texture2D texture0 = Resources.Load("hiru") as Texture2D;
-        Texture2D texture1 = Resources.Load("yoru") as Texture2D;
+        Texture2D texture0 = Resources.Load("Sprites/hiru") as Texture2D;
+        Texture2D texture1 = Resources.Load("Sprites/yoru") as Texture2D;
         
         //int型に変更
         int i = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][6]);
