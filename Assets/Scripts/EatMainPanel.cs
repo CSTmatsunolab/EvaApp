@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.IO;
 using System;
 
@@ -114,7 +115,7 @@ public class EatMainPanel : MonoBehaviour
 
     public void GoToHungry()
     {
-        //一日の終わり(sleepの閉じるボタンを押した時)に満腹や安心の操作を行う
+        //一日の終わり(=sleepの閉じるボタンを押した時)に満腹や安心の操作を行う
         //２日目以降の昼(一日の最初)に満腹-1       
         if(j>0){
             j = j -1 ;
@@ -126,7 +127,6 @@ public class EatMainPanel : MonoBehaviour
             Debug.Log("安心-1操作");
             Pdata.GetComponent<Player_Data>().PlayerData[1][1]=l.ToString();//配列に格納
         }
-        CsvSave();
         GoToSelect();//選択シーンに遷移
     }
 
