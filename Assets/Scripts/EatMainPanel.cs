@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.IO;
 using System;
 
@@ -11,6 +12,7 @@ public class EatMainPanel : MonoBehaviour
     int i = 0;//食料の貯蓄量
     int j = 0;//まんぷくゲージ
     int k = 0;//時間
+    int l = 0;//安心ゲージ
     private GameObject Pdata = null;
     public GameObject KText = null;
     public GameObject RText = null;
@@ -25,22 +27,19 @@ public class EatMainPanel : MonoBehaviour
         Debug.Log(i);
         j = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][0]);
         k = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][5]);
+        l = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][1]);
         ktext.text=x.ToString();
     }
 
-    public void PlusButtondown()
-    {
-        if((i>0)&&(x<3))
-        {
+    public void PlusButtondown()    {
+        if((i>0)&&(x<3))        {
             --i;//貯蓄を減らす
             ++x;//食べる量を増やす
             ktext.text=x.ToString();
-            
         }
     }
 
-    public void MinusButtondown()
-    {
+    public void MinusButtondown()   {
         if(x>0)　//食べる量が0以上の時のみ
         {
             ++i;//貯蓄を増やす
@@ -113,5 +112,28 @@ public class EatMainPanel : MonoBehaviour
             Pdata.GetComponent<Player_Data>().PlayerData[1][5]=k.ToString();
         }
     }
+
+    public void GoToHungry()
+    {
+        //一日の終わり(=sleepの閉じるボタンを押した時)に満腹や安心の操作を行う
+        //２日目以降の昼(一日の最初)に満腹-1       
+        if(j>0){
+            j = j -1 ;
+            Debug.Log("満腹-1操作");
+            Pdata.GetComponent<Player_Data>().PlayerData[1][0]=j.ToString();//配列に格納
+        }
+        else{    //0のまま寝て起きたら安心-1
+            l = l -1;
+            Debug.Log("安心-1操作");
+            Pdata.GetComponent<Player_Data>().PlayerData[1][1]=l.ToString();//配列に格納
+        }
+        GoToSelect();//選択シーンに遷移
+    }
+
+    public void GoToSelect()
+    {
+        SceneManager.LoadScene("SelectScene");//選択シーンに遷移
+    }
+    
 
 }

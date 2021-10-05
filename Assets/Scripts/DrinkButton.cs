@@ -20,7 +20,6 @@ public class DrinkButton : MonoBehaviour
         //水の所持数が0のとき or 水分が満タンの時ボタン無効化
         if(y==0 || x==3){
             DButton.interactable=false;
-            Debug.Log("mukou");
         }
     }
 
