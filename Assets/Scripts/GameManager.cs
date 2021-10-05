@@ -62,7 +62,9 @@ public class GameManager : MonoBehaviour
     private string overrideAnimationClipName = "Clip";
     [SerializeField]
     private Image foregroundImage;
-        
+    [SerializeField]
+    GameObject Result;
+
     private Queue<string> _pageQueue;
     private Queue<char> _charQueue;
 
@@ -145,6 +147,7 @@ public class GameManager : MonoBehaviour
 
     private void Init()
     {
+        Result.SetActive(false);
         TextIndex();
         _text = LoadTextFile(textFile);
         _pageQueue = SeparateString(_text, SEPARATE_PAGE);
@@ -166,8 +169,9 @@ public class GameManager : MonoBehaviour
         else
         {
             if (!ShowNextPage())
+            Result.SetActive(true);
            // UnityエディタのPlayモードを終了する
-           SceneManager.LoadScene("EatScene"); 
+           //SceneManager.LoadScene("EatScene"); 
         }
     }
 
