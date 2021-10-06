@@ -15,6 +15,8 @@ public class ResultPanel : MonoBehaviour
     int RE = 0; //安心ゲージ
     int HGC = 0; //イベントによる満腹ゲージの変動値
     int REC = 0; //イベントによる安心ゲージの変動値
+    int x = 0;//満腹ゲージ変化前の値
+    int y = 0;//安心ゲージ変化前の値
     public Text Result;
     
 
@@ -40,6 +42,8 @@ public class ResultPanel : MonoBehaviour
         index = ESManagement.Send();
         HG = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][0]);
         RE = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][1]);
+        x = HG;
+        y = RE;
         HGC = int.Parse(Edata.GetComponent<Event_Data>().EventData[index][3]);
         REC = int.Parse(Edata.GetComponent<Event_Data>().EventData[index][4]);
     }
@@ -48,12 +52,17 @@ public class ResultPanel : MonoBehaviour
     {
        ResultMake();
        HG = HG + HGC;
+       if(HG < 0)
+           HG = 0;
        RE = RE + REC;
+        if(RE < 0)
+           RE = 0;
+
        Pdata.GetComponent<Player_Data>().PlayerData[1][0] = HG.ToString();
        Pdata.GetComponent<Player_Data>().PlayerData[1][1] = RE.ToString();
        CsvSave();
-       Result.text = ("満腹ゲージ：" + (HG - HGC).ToString() + "→" + HG.ToString() + Environment.NewLine +
-                      "安心ゲージ：" + (RE - REC).ToString() + "→" + RE.ToString());
+       Result.text = ("満腹ゲージ：" + x.ToString() + "→" + HG.ToString() + Environment.NewLine +
+                      "安心ゲージ：" + y.ToString() + "→" + RE.ToString());
     
     }
 

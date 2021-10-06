@@ -123,9 +123,11 @@ public class EatMainPanel : MonoBehaviour
             Pdata.GetComponent<Player_Data>().PlayerData[1][0]=j.ToString();//配列に格納
         }
         else{    //0のまま寝て起きたら安心-1
-            l = l -1;
-            Debug.Log("安心-1操作");
-            Pdata.GetComponent<Player_Data>().PlayerData[1][1]=l.ToString();//配列に格納
+            if(l>0){
+                l = l -1;
+                Debug.Log("安心-1操作");
+                Pdata.GetComponent<Player_Data>().PlayerData[1][1]=l.ToString();//配列に格納
+            }
         }
         GoToSelect();//選択シーンに遷移
     }

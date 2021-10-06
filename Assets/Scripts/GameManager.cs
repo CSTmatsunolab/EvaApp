@@ -429,5 +429,11 @@ public class GameManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) OnClick();
     }
 
+    public void GoToResult()
+    {
+        Result.SetActive(true);//Resultパネルを表示
+        //Main.SetActive(false);//Mainパネルを非表示
+    }
+
 
 }
