@@ -28,14 +28,14 @@ public class EatMainPanel : MonoBehaviour
         j = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][0]);
         k = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][5]);
         l = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][1]);
-        ktext.text=x.ToString();
+        ktext.text= x.ToString() + "個";
     }
 
     public void PlusButtondown()    {
         if((i>0)&&(x<3))        {
             --i;//貯蓄を減らす
             ++x;//食べる量を増やす
-            ktext.text=x.ToString();
+            ktext.text= x.ToString() + "個";
         }
     }
 
@@ -44,7 +44,7 @@ public class EatMainPanel : MonoBehaviour
         {
             ++i;//貯蓄を増やす
             --x;//食べる量を減らす
-            ktext.text=x.ToString();
+            ktext.text=x.ToString() + "個";
         } 
     }
 
