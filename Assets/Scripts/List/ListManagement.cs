@@ -9,6 +9,7 @@ public class ListManagement : MonoBehaviour
     public Text Kanpan;
     public Text Mizu;
     public GameObject Content;
+    [SerializeField] GameObject Event;
     GameObject[] ListButton;
     GameObject btn;
     GameObject Edata;
@@ -16,10 +17,12 @@ public class ListManagement : MonoBehaviour
     GameObject Rdata;
     Image btnimg;
     Text btntext;
+
     // Start is called before the first frame update
     void Start(){
         TextLoad();
         ListButtonMake();
+        ListButtonClose();  //Eventパネルを非表示
     }
 
     private void PdataLoad(){
@@ -54,6 +57,7 @@ public class ListManagement : MonoBehaviour
             ListButton[i].transform.SetParent(Content.transform,false);
             btnimg = ListButton[i].transform.Find("Image").gameObject.GetComponent<Image>();
             btntext = ListButton[i].transform.Find("Text").gameObject.GetComponent<Text>();
+            ListButton[i].name = (i+1).ToString();  //各ボタンにイベントのNoに応じた名前がつく
             b = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[i+1][1]);
             if(b == 0){
                 ListButton[i].GetComponent<Button>().interactable = false;
@@ -65,6 +69,10 @@ public class ListManagement : MonoBehaviour
                 btntext.text = Edata.GetComponent<Event_Data>().EventData[i+1][1];
             }
         }
-
     }
+
+    public void ListButtonClose(){
+        Event.SetActive(false);//Eventパネルを非表示
+    }
+
 }
