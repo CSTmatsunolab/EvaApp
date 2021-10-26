@@ -31,7 +31,14 @@ public class ESManagement : MonoBehaviour
 
     //乱数(イベントのナンバー)を生成
     int rand(){
-        int a = Random.Range(1,3);//1or2
+        int flag = MenuPanel.Send();
+        int a = 0;
+        if(flag == 0){
+            a = Random.Range(1,3);//1or2
+        }
+        else if(flag == 1){
+            a = 2;
+        }
         return a;
     }
 

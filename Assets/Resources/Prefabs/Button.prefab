@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -269.1, y: -0.000022888}
-  m_SizeDelta: {x: 128.86002, y: 132.8031}
+  m_AnchoredPosition: {x: -250.1, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &855436898100176424
 CanvasRenderer:
@@ -85,6 +85,8 @@ GameObject:
   - component: {fileID: 7617463393411818255}
   - component: {fileID: 3414056849915071059}
   - component: {fileID: 762190689124945954}
+  - component: {fileID: 2641504310749623081}
+  - component: {fileID: 4425784997734939515}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -139,7 +141,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: afdce4ac04f31433e97c1c9ec57e9d1f, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
@@ -152,6 +154,32 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u30A4\u30D9\u30F3\u30C8\u540D"
+--- !u!114 &2641504310749623081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7247924084702859362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae069b9eb96744323aac5568885238d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spritesDirectory: Sprites/Event
+--- !u!114 &4425784997734939515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7247924084702859362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae069b9eb96744323aac5568885238d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spritesDirectory: Sprites/Event
 --- !u!1 &8045220773824946959
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +192,7 @@ GameObject:
   - component: {fileID: 2708555265415266959}
   - component: {fileID: 620384199427949809}
   - component: {fileID: 7451391731871783957}
+  - component: {fileID: 5437751577855357713}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -219,8 +248,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 4a9c8084db56b40dd811a2ce0792246a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -271,4 +300,28 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 620384199427949809}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5437751577855357713}
+        m_MethodName: ListButtonDatail
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5437751577855357713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8045220773824946959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae069b9eb96744323aac5568885238d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spritesDirectory: Sprites/Event

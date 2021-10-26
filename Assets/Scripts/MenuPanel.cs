@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -7,12 +8,18 @@ public class MenuPanel : MonoBehaviour
 {
     [SerializeField] GameObject Menu;
     [SerializeField] GameObject Drink;
+    [SerializeField] GameObject Event;
+    GameObject Pdata;
+    static public int flag = 0;
+
 
 
     void Start()
     {
         BackToMenu();
         BackToDrink();
+        EventClose();
+        RandomEvent();
     }
 
     public void BackToMenu()
@@ -38,6 +45,43 @@ public class MenuPanel : MonoBehaviour
     public void BackToDrink()
     {
         Drink.SetActive(false);//Drinkパネルを非表示
+    }
+
+    private void EventClose()
+    {
+        Event.SetActive(false);
+    }
+
+    private void PdataLoad(){
+        Pdata = GameObject.Find("Player_Data");
+    }
+
+    private void RandomEvent(){
+        PdataLoad();
+        int i = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][6]);
+        if(i == 1){
+            int a = Random.Range(1,100);
+            Debug.Log(a);
+            if(a >= 33){
+                Event.SetActive(true);
+            }
+        }
+    }
+
+    //行動するボタンからイベント選択画面に遷移する場合
+    public void GoButtonDown(){
+        flag = 0;
+        SceneManager.LoadScene("EventSelectScene");//イベント選択画面に遷移
+    }
+
+    //ランダムイベントんお進むボタンからイベント選択画面に遷移する場合
+    public void GoButtonDown2(){
+        flag = 1;
+        SceneManager.LoadScene("EventSelectScene");//イベント選択画面に遷移
+    }
+
+    static public int Send(){
+        return flag;
     }
 
 
