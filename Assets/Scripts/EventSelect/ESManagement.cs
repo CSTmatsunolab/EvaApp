@@ -34,10 +34,10 @@ public class ESManagement : MonoBehaviour
         int flag = MenuPanel.Send();
         int a = 0;
         if(flag == 0){
-            a = Random.Range(1,3);//1or2
+            a = Random.Range(1,5);//1~4
         }
         else if(flag == 1){
-            a = 2;
+            a = 4;
         }
         return a;
     }
