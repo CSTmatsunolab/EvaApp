@@ -37,7 +37,7 @@ public class ESManagement : MonoBehaviour
             a = Random.Range(1,5);//1~4
         }
         else if(flag == 1){
-            a = 4;
+            a = 6;
         }
         return a;
     }

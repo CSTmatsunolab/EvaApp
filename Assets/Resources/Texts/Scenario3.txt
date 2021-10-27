@@ -1,8 +1,7 @@
 !foreground_color="0,0,0"
 !foreground_anim="fadein,0,2,%0,0,0,0%%"
 !wait="2"
-!background_sprite="bg_school_taiikukan-1"
-
+!background_sprite="taiikukan"
 !charaimg_sprite="polygon"="komatta_man2"
 !charaimg_pos="polygon"="-0.9,0.2,0"
 !charaimg_size="polygon"="3.8,5.8,1"
