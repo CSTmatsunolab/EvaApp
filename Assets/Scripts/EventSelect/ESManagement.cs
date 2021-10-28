@@ -34,7 +34,14 @@ public class ESManagement : MonoBehaviour
         int flag = MenuPanel.Send();
         int a = 0;
         if(flag == 0){
-            a = Random.Range(1,5);//1~4
+
+            a = Random.Range(1,11);//1~10
+            //a = Random.Range(7,11);//指定範囲の動作確認用
+
+            if(a == 6)
+            {
+                a = 3; //イベント6の場合用の仮の設定
+            }
         }
         else if(flag == 1){
             a = 6;
