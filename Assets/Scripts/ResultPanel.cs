@@ -11,11 +11,13 @@ public class ResultPanel : MonoBehaviour
     private GameObject Pdata = null;
     private GameObject Edata = null;
     int index = 0;
+    int Answer = 0;
     int HG = 0; //満腹ゲージ
     int RE = 0; //安心ゲージ
     int HGC = 0; //イベントによる満腹ゲージの変動値
     int REC = 0; //イベントによる安心ゲージの変動値
     public Text Result;
+    
     
 
     void Start()
@@ -37,11 +39,22 @@ public class ResultPanel : MonoBehaviour
     {
         PdataLoad();
         EdataLoad();
+
         index = ESManagement.Send();
+        Answer = ESManagement.SendAnswer();
         HG = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][0]);
         RE = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][1]);
-        HGC = int.Parse(Edata.GetComponent<Event_Data>().EventData[index][3]);
-        REC = int.Parse(Edata.GetComponent<Event_Data>().EventData[index][4]);
+
+        if(Answer == 0)
+        {
+            HGC = int.Parse(Edata.GetComponent<Event_Data>().EventData[index][3]);
+            REC = int.Parse(Edata.GetComponent<Event_Data>().EventData[index][4]);
+        }
+        else if(Answer == 1)
+        {
+            HGC = int.Parse(Edata.GetComponent<Event_Data>().EventData[index][5]);
+            REC = int.Parse(Edata.GetComponent<Event_Data>().EventData[index][6]);
+        }
     }
 
     private void ResultCalculation()
