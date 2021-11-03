@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 23342620}
   - component: {fileID: 23342619}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ClearText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -190,7 +190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Clear
 --- !u!222 &23342620
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -246,6 +246,8 @@ MonoBehaviour:
   EventImage: {fileID: 1086526274}
   TitleText: {fileID: 1812683768}
   EventText: {fileID: 485819074}
+  ClearText: {fileID: 23342617}
+  FailText: {fileID: 1134492539}
   spritesDirectory: Sprites/Event
 --- !u!1 &59544732
 GameObject:
@@ -342,7 +344,6 @@ GameObject:
   - component: {fileID: 313425225}
   - component: {fileID: 313425224}
   - component: {fileID: 313425223}
-  - component: {fileID: 313425226}
   m_Layer: 5
   m_Name: NoButton
   m_TagString: Untagged
@@ -367,8 +368,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -270, y: -825}
-  m_SizeDelta: {x: 400, y: 200}
+  m_AnchoredPosition: {x: 0, y: -825}
+  m_SizeDelta: {x: 800, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &313425223
 MonoBehaviour:
@@ -413,8 +414,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 313425226}
-        m_MethodName: TestButtonDown
+      - m_Target: {fileID: 23464559}
+        m_MethodName: FailButtonDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -443,7 +444,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8144c0042530e487daa7145ea940fe49, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2c16761e6a534dfca5f5a6beba2d44f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -461,18 +462,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313425221}
   m_CullTransparentMesh: 0
---- !u!114 &313425226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 313425221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 569a348a9ba1f4cc18f83f13ecea1f76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &485819074
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +497,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 300}
+  m_SizeDelta: {x: 800, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &485819076
 MonoBehaviour:
@@ -712,7 +701,7 @@ GameObject:
   - component: {fileID: 1134492542}
   - component: {fileID: 1134492541}
   m_Layer: 5
-  m_Name: Text
+  m_Name: FailText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -769,7 +758,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Fail
 --- !u!222 &1134492542
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -979,7 +968,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 195}
+  m_AnchoredPosition: {x: 0, y: 230}
   m_SizeDelta: {x: 850, y: 850}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1477062572
@@ -1055,8 +1044,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 270, y: -825}
-  m_SizeDelta: {x: 400, y: 200}
+  m_AnchoredPosition: {x: 0, y: -580}
+  m_SizeDelta: {x: 800, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1569459738
 MonoBehaviour:
@@ -1102,7 +1091,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 23464559}
-        m_MethodName: EventButtonDown
+        m_MethodName: ClearButtonDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1131,7 +1120,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 216434e92c55a4dc98ddaf6734f49995, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2724a64b12f6142fbb8894db4df919fc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1184,8 +1173,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -455}
-  m_SizeDelta: {x: 850, y: 350}
+  m_AnchoredPosition: {x: 0, y: -350}
+  m_SizeDelta: {x: 850, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1595046891
 MonoBehaviour:
@@ -1206,7 +1195,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 20ba25384f28a449bbc7143153bec0b8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
