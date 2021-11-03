@@ -64,6 +64,8 @@ public class GameManager : MonoBehaviour
     private Image foregroundImage;
     [SerializeField]
     GameObject Result;
+    [SerializeField]
+    private Text titleText;
 
     private Queue<string> _pageQueue;
     private Queue<char> _charQueue;
@@ -421,6 +423,12 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Init();
+        TitleSet();
+    }
+
+    private void TitleSet(){
+        GameObject EData =　GameObject.Find("EventData");
+        titleText.text = EData.GetComponent<Event_Data>().EventData[ESManagement.Send()][1];
     }
  
     private void Update()
