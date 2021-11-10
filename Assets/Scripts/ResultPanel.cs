@@ -40,8 +40,14 @@ public class ResultPanel : MonoBehaviour
         PdataLoad();
         EdataLoad();
 
-        index = ESManagement.Send();
-        Answer = ESManagement.SendAnswer();
+        int introcheck = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][8]);
+        if(introcheck == 0){        //イントロシナリオにいく
+            index = 1;
+        }
+        else{
+            index = ESManagement.Send();
+            Answer = ESManagement.SendAnswer();
+        }
         HG = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][0]);
         RE = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][1]);
 
@@ -85,7 +91,7 @@ public class ResultPanel : MonoBehaviour
         StreamWriter file = new StreamWriter("Assets/Resources/PlayerData.csv",false);
         for (var y=0; y < 2; y++)
         {
-            for(var x=0;x<8;x++)
+            for(var x=0;x<Pdata.GetComponent<Player_Data>().PlayerData[0].Length;x++)
             {
                 file.Write(Pdata.GetComponent<Player_Data>().PlayerData[y][x]+",");
                 file.Flush();

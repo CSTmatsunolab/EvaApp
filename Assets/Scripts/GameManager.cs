@@ -11,6 +11,7 @@ using UnityEngine.SceneManagement;
 // アタッチすることができるようになる
 public class GameManager : MonoBehaviour
 {
+    private GameObject Pdata;
     private string _text = "";
     private const string COMMAND_WAIT_TIME = "wait";
     private float _waitTime = 0;
@@ -170,8 +171,17 @@ public class GameManager : MonoBehaviour
         if (_charQueue.Count > 0) OutputAllChar();
         else
         {
-            if (!ShowNextPage())
-            Result.SetActive(true);
+            if (!ShowNextPage()){
+                if(index=="1"){
+                    Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "2";
+                    // 現在のScene名を取得する
+                    Scene loadScene = SceneManager.GetActiveScene();
+                    // Sceneの読み直し
+                    SceneManager.LoadScene(loadScene.name);
+                }
+                Result.SetActive(true);
+            }
+            
            // UnityエディタのPlayモードを終了する
            //SceneManager.LoadScene("EatScene"); 
         }
@@ -414,9 +424,20 @@ public class GameManager : MonoBehaviour
         SetImage(cmd, parameter, foregroundImage);
     }
 
+    private void PdataLoad(){
+        Pdata = GameObject.Find("Player_Data");
+    }
+
     private void TextIndex()
     {
-        index = (ESManagement.Send()).ToString();
+        PdataLoad();
+        int introcheck = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][8]);
+        if(introcheck == 0){        //イントロシナリオにいく
+            index = "1";
+        }
+        else{
+            index = (ESManagement.Send()).ToString();
+        }
         textFile = ("Texts/Scenario" + index);
     }
 
@@ -428,7 +449,7 @@ public class GameManager : MonoBehaviour
 
     private void TitleSet(){
         GameObject EData =　GameObject.Find("EventData");
-        titleText.text = EData.GetComponent<Event_Data>().EventData[ESManagement.Send()][1];
+        titleText.text = EData.GetComponent<Event_Data>().EventData[int.Parse(index)][1];
     }
  
     private void Update()
