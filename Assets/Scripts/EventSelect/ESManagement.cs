@@ -44,7 +44,6 @@ public class ESManagement : MonoBehaviour
 
             a = Random.Range(3,13);//3~12
             //a = Random.Range(3,5);//指定範囲の動作確認用
-            a = 1;
 
             if(a == 6)
             {
