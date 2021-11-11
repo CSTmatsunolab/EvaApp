@@ -173,13 +173,20 @@ public class GameManager : MonoBehaviour
         {
             if (!ShowNextPage()){
                 if(index=="1"){
-                    Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "2";
+                    Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "1";
                     // 現在のScene名を取得する
                     Scene loadScene = SceneManager.GetActiveScene();
                     // Sceneの読み直し
                     SceneManager.LoadScene(loadScene.name);
                 }
-                Result.SetActive(true);
+                else if(index == "2"){
+                    Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "2";
+                    SceneManager.LoadScene("SelectScene");
+                }
+                else{
+                    Result.SetActive(true);
+                }
+                
             }
             
            // UnityエディタのPlayモードを終了する
@@ -434,6 +441,10 @@ public class GameManager : MonoBehaviour
         int introcheck = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][8]);
         if(introcheck == 0){        //イントロシナリオにいく
             index = "1";
+            
+        }
+        else if(introcheck == 1){        //イントロシナリオにいく
+            index = "2";
         }
         else{
             index = (ESManagement.Send()).ToString();
@@ -460,8 +471,21 @@ public class GameManager : MonoBehaviour
 
     public void GoToResult()
     {
-        Result.SetActive(true);//Resultパネルを表示
+        if(index=="1"){
+            Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "1";
+            // 現在のScene名を取得する
+            Scene loadScene = SceneManager.GetActiveScene();
+            // Sceneの読み直し
+            SceneManager.LoadScene(loadScene.name);
+        }
+        else if(index == "2"){
+            Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "2";
+            SceneManager.LoadScene("SelectScene");
+        }
+        else{
+            Result.SetActive(true);//Resultパネルを表示
         //Main.SetActive(false);//Mainパネルを非表示
+        }
     }
 
 

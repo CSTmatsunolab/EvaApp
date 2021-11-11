@@ -42,7 +42,7 @@ public class ResultPanel : MonoBehaviour
         EdataLoad();
 
         int introcheck = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][8]);
-        if(introcheck == 0){        //イントロシナリオにいく
+        if(introcheck == 0||introcheck == 1){        //イントロシナリオにいく
             index = 1;
         }
         else{
@@ -121,7 +121,7 @@ public class ResultPanel : MonoBehaviour
         StreamWriter file = new StreamWriter("Assets/Resources/PlayerData.csv",false);
         for (var y=0; y < 2; y++)
         {
-            for(var x=0;x<Pdata.GetComponent<Player_Data>().PlayerData[0].Length;x++)
+            for(var x=0;x<9;x++)
             {
                 file.Write(Pdata.GetComponent<Player_Data>().PlayerData[y][x]+",");
                 file.Flush();

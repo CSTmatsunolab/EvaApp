@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: anim2
+  m_Name: anim3
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -134,7 +134,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 2.8
+        value: 2
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -143,7 +143,7 @@ AnimationClip:
         outWeight: 0
       - serializedVersion: 3
         time: 1
-        value: 2.8
+        value: 2
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -162,7 +162,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 4.8
+        value: 2
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -171,7 +171,7 @@ AnimationClip:
         outWeight: 0
       - serializedVersion: 3
         time: 1
-        value: 4.8
+        value: 2
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -218,9 +218,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-
         value: 0
-
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -229,7 +227,7 @@ AnimationClip:
         outWeight: 0
       - serializedVersion: 3
         time: 1
-        value: 10
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -248,7 +246,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.2
+        value: 10
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -257,7 +255,7 @@ AnimationClip:
         outWeight: 0
       - serializedVersion: 3
         time: 1
-        value: -0.2
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -316,7 +314,7 @@ AnimationClip:
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 0
-      attribute: 1460864421
+      attribute: 538195251
       script: {fileID: 0}
       typeID: 224
       customType: 28
@@ -372,7 +370,7 @@ AnimationClip:
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 0
-      attribute: 538195251
+      attribute: 1460864421
       script: {fileID: 0}
       typeID: 224
       customType: 28
@@ -516,7 +514,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 2.8
+        value: 2
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -525,7 +523,7 @@ AnimationClip:
         outWeight: 0
       - serializedVersion: 3
         time: 1
-        value: 2.8
+        value: 2
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -544,7 +542,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 4.8
+        value: 2
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -553,7 +551,7 @@ AnimationClip:
         outWeight: 0
       - serializedVersion: 3
         time: 1
-        value: 4.8
+        value: 2
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -600,9 +598,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-
         value: 0
-
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -611,7 +607,7 @@ AnimationClip:
         outWeight: 0
       - serializedVersion: 3
         time: 1
-        value: 10
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -630,7 +626,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.2
+        value: 10
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -639,7 +635,7 @@ AnimationClip:
         outWeight: 0
       - serializedVersion: 3
         time: 1
-        value: -0.2
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
