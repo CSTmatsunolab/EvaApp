@@ -91,19 +91,19 @@ public class ResultPanel : MonoBehaviour
 
         if(HG > HGC)
         {
-            Result1.color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+            Result1.color = new Color(1.0f, 0.0f, 0.0f, 1.0f); //赤
         }
         if(HG < HGC)
         {
-            Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f);
+            Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
         }
         if(RE > REC)
         {
-            Result2.color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+            Result2.color = new Color(1.0f, 0.0f, 0.0f, 1.0f); //赤
         }
         if(RE < REC)
         {
-            Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f);
+            Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
         }
         
         Result1.text = ("満腹ゲージ：" + HG.ToString() + "→" + HGC.ToString());
