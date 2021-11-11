@@ -103,7 +103,7 @@ public class ResultPanel : MonoBehaviour
         }
         if(RE < REC)
         {
-            Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
+            Result2.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
         }
         
         Result1.text = ("満腹ゲージ：" + HG.ToString() + "→" + HGC.ToString());
