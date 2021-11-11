@@ -16,7 +16,8 @@ public class ResultPanel : MonoBehaviour
     int RE = 0; //安心ゲージ
     int HGC = 0; //イベントによる満腹ゲージの変動値
     int REC = 0; //イベントによる安心ゲージの変動値
-    public Text Result;
+    public Text Result1;
+    public Text Result2;
     
     
 
@@ -65,19 +66,48 @@ public class ResultPanel : MonoBehaviour
 
     private void ResultCalculation()
     {
-       ResultMake();
-       HGC = HG + HGC;
-       if(HGC < 0)
-           HGC = 0;
-       REC = RE + REC;
+        ResultMake();
+        HGC = HG + HGC;
+        if(HGC < 0)
+        {
+            HGC = 0;
+        }
+        else if(HGC > 10)
+        {
+            HGC = 10;
+        }
+        REC = RE + REC;
         if(REC < 0)
-           REC = 0;
+        {
+            REC = 0;
+        }else if(REC > 10)
+        {
+            REC = 10;
+        }
 
-       Pdata.GetComponent<Player_Data>().PlayerData[1][0] = HGC.ToString();
-       Pdata.GetComponent<Player_Data>().PlayerData[1][1] = RE.ToString();
-       CsvSave();
-       Result.text = ("満腹ゲージ：" + HG.ToString() + "→" + HGC.ToString() + Environment.NewLine +
-                      "安心ゲージ：" + RE.ToString() + "→" + REC.ToString());
+        Pdata.GetComponent<Player_Data>().PlayerData[1][0] = HGC.ToString();
+        Pdata.GetComponent<Player_Data>().PlayerData[1][1] = RE.ToString();
+        CsvSave();
+
+        if(HG > HGC)
+        {
+            Result1.color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+        }
+        if(HG < HGC)
+        {
+            Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f);
+        }
+        if(RE > REC)
+        {
+            Result2.color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+        }
+        if(RE < REC)
+        {
+            Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f);
+        }
+        
+        Result1.text = ("満腹ゲージ：" + HG.ToString() + "→" + HGC.ToString());
+        Result2.text = ("安心ゲージ：" + RE.ToString() + "→" + REC.ToString());
     
     }
 

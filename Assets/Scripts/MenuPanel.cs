@@ -9,6 +9,7 @@ public class MenuPanel : MonoBehaviour
     [SerializeField] GameObject Menu;
     [SerializeField] GameObject Drink;
     [SerializeField] GameObject Event;
+    [SerializeField] GameObject Explanation;
     GameObject Pdata;
     static public int flag = 0;
 
@@ -20,6 +21,7 @@ public class MenuPanel : MonoBehaviour
         BackToDrink();
         EventClose();
         RandomEvent();
+        ExplanationClose();
     }
 
     public void BackToMenu()
@@ -47,6 +49,16 @@ public class MenuPanel : MonoBehaviour
         Drink.SetActive(false);//Drinkパネルを非表示
     }
 
+    public void GoToExplanation()
+    {
+        Explanation.SetActive(true); //説明を表示
+    }
+
+    public void ExplanationClose()
+    {
+        Explanation.SetActive(false); //説明を非表示
+    }
+
     private void EventClose()
     {
         Event.SetActive(false);
@@ -67,6 +79,17 @@ public class MenuPanel : MonoBehaviour
             }
         }
     }
+
+    private void StartExplanation() //起動時に説明を表示
+    {
+        PdataLoad();
+        int y = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][8]);
+        if(y == 0)
+        {
+            Explanation.SetActive(true);
+        }
+    }
+
 
     //行動するボタンからイベント選択画面に遷移する場合
     public void GoButtonDown(){
