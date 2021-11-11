@@ -67,11 +67,17 @@ public class ResultPanel : MonoBehaviour
     {
        ResultMake();
        HGC = HG + HGC;
-       if(HGC < 0)
+       if(HGC < 0){
            HGC = 0;
+       }else if(HGC > 10){
+            HGC = 10;
+        }
        REC = RE + REC;
-        if(REC < 0)
+        if(REC < 0){
            REC = 0;
+        }else if(REC > 10){
+            REC = 10;
+        }
 
        Pdata.GetComponent<Player_Data>().PlayerData[1][0] = HGC.ToString();
        Pdata.GetComponent<Player_Data>().PlayerData[1][1] = RE.ToString();
