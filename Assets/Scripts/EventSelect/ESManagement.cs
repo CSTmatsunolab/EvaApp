@@ -42,7 +42,7 @@ public class ESManagement : MonoBehaviour
         int a = 0;
         if(flag == 0){
 
-            a = Random.Range(3,13);//3~12
+            a = Random.Range(3,16);//3~15
             //a = Random.Range(3,5);//指定範囲の動作確認用
 
             if(a == 6)
@@ -51,7 +51,7 @@ public class ESManagement : MonoBehaviour
             }
         }
         else if(flag == 1){
-            a = 12;
+            a = 14;
         }
         return a;
     }
