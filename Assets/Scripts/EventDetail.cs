@@ -26,7 +26,7 @@ public class EventDetail : MonoBehaviour{
         int a = int.Parse(this.name);   //リストボタンを押したときに名前を取得
         string str = spritesDirectory+a.ToString();     //イベント画像までのパスを作ってる
         TitleText.GetComponent<Text>().text = Edata.GetComponent<Event_Data>().EventData[a][1];
-        GaiyouText.GetComponent<Text>().text = Edata.GetComponent<Event_Data>().EventData[a][2];
+        GaiyouText.GetComponent<Text>().text = Edata.GetComponent<Event_Data>().EventData[a][9];
         EventImage.GetComponent<Image>().sprite = Resources.Load<Sprite>(str);
     }
 }

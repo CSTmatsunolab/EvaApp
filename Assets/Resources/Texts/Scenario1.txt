@@ -3,19 +3,24 @@
 !wait="2"
 !background_sprite="bg_yuka"
 
+!charaimg_sprite="polygon5"="bg_yuka"
+!charaimg_pos="polygon5"="0,0,0"
+!charaimg_size="polygon5"="12,12,1"
 !charaimg_sprite="polygon"="sleep"
 !charaimg_pos="polygon"="-0.2,0.2,0"
 !charaimg_size="polygon"="4,4,1"
+
+
+&!charaimg_anim="polygon5"="Yure,,,Replay"
 &「ごごご……」
-
-&!charaimg_sprite="polygon"="ue"
-
 &あなた「地震だ！」
+&!charaimg_sprite="polygon"="ue"
 &「3分後……」
 &あなた「かなり強い揺れだったな。」
 
-&!charaimg_pos="polygon"="10,1.77,0"
-!background_sprite="bg_anun"
+&!background_sprite="bg_anun"
+!charaimg_anim="polygon5"="anim2,0,1,EaseInOut%0,0,0,0%12,12,1%0,0,1"
+!charaimg_pos="polygon"="10,1.77,0"
 
 !charaimg_sprite="polygon3"="item_sairen"
 !charaimg_pos="polygon3"="0,0.6,0"
@@ -57,3 +62,6 @@
 
 &あなた「こういうときのために備蓄を用意してきてよかったー」
 &!charaimg_anim="polygon2"="anim2,0,1,EaseInOut%%2.8,4.8,1%10,-0.2,1"
+&!wait="2"
+&!foreground_color="0,0,0,0"
+!foreground_anim="fadeout,0,2,%0,0,0%%"

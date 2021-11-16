@@ -113,7 +113,13 @@ public class ResultPanel : MonoBehaviour
 
     public void NextButtonDown()
     {
-        SceneManager.LoadScene("EatScene");//食事画面に遷移
+        int flag = MenuPanel.Send();
+        if(flag == 1){
+            SceneManager.LoadScene("SelectScene");//選択画面に遷移
+        }
+        else{
+            SceneManager.LoadScene("EatScene");//食事画面に遷移
+        }
     }
 
     void CsvSave()

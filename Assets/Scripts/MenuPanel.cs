@@ -14,7 +14,8 @@ public class MenuPanel : MonoBehaviour
     [SerializeField] GameObject CharacterExplanation;//説明パネル3
     [SerializeField] GameObject ButtonExplanation;//説明パネル4
     GameObject Pdata;
-    static public int flag = 0;
+    static public int flag = 0;//行動するボタンからイベント選択画面に行くか、ランダムイベントからイベント選択画面に行くか
+    static public int Randflag = 0;
 
 
 
@@ -119,12 +120,19 @@ public class MenuPanel : MonoBehaviour
     private void RandomEvent(){
         PdataLoad();
         int i = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][6]);
+        if(i == 0){
+            Randflag = 0;
+        }
         if(i == 1){
             int a = Random.Range(1,100);
             Debug.Log(a);
-            if(a >= 33){
-                Event.SetActive(true);
+            if(Randflag == 0){
+                if(a >= 33){
+                    Randflag = 1;
+                    Event.SetActive(true);
+                }
             }
+            
         }
     }
 
@@ -149,7 +157,7 @@ public class MenuPanel : MonoBehaviour
         SceneManager.LoadScene("EventSelectScene");//イベント選択画面に遷移
     }
 
-    //ランダムイベントんお進むボタンからイベント選択画面に遷移する場合
+    //ランダムイベントの進むボタンからイベント選択画面に遷移する場合
     public void GoButtonDown2(){
         flag = 1;
         SceneManager.LoadScene("EventSelectScene");//イベント選択画面に遷移
@@ -158,6 +166,4 @@ public class MenuPanel : MonoBehaviour
     static public int Send(){
         return flag;
     }
-
-
 }
