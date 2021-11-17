@@ -58,7 +58,7 @@ public class DrinkButton : MonoBehaviour
         StreamWriter file = new StreamWriter("Assets/Resources/PlayerData.csv",false);
         for (var y=0; y < 2; y++)
         {
-            for(var x=0; x < 9; x++)
+            for(var x=0; x < 11; x++)
             {
                 file.Write(Pdata.GetComponent<Player_Data>().PlayerData[y][x]+",");
                 file.Flush();

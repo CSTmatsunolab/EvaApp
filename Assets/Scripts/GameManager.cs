@@ -67,6 +67,8 @@ public class GameManager : MonoBehaviour
     GameObject Result;
     [SerializeField]
     private Text titleText;
+     [SerializeField]
+    GameObject InputPanel;
 
     private Queue<string> _pageQueue;
     private Queue<char> _charQueue;
@@ -151,6 +153,7 @@ public class GameManager : MonoBehaviour
     private void Init()
     {
         Result.SetActive(false);
+        InputPanel.SetActive(false);
         TextIndex();
         _text = LoadTextFile(textFile);
         _pageQueue = SeparateString(_text, SEPARATE_PAGE);
@@ -172,16 +175,13 @@ public class GameManager : MonoBehaviour
         else
         {
             if (!ShowNextPage()){
-                if(index=="1"){
+                if(index=="1"){     //イントロのイベント１が再生され終わったとき
                     Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "1";
-                    // 現在のScene名を取得する
-                    Scene loadScene = SceneManager.GetActiveScene();
-                    // Sceneの読み直し
-                    SceneManager.LoadScene(loadScene.name);
+                    InputPanel.SetActive(true);//避難所名入力のインプットパネルを開く
                 }
-                else if(index == "2"){
+                else if(index == "2"){      //イベント２が終わったら選択画面に行く
                     Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "2";
-                    SceneManager.LoadScene("SelectScene");
+                    InputPanel.SetActive(true);//名前入力のインプットパネルを開く
                 }
                 else{
                     Result.SetActive(true);
@@ -435,7 +435,7 @@ public class GameManager : MonoBehaviour
         Pdata = GameObject.Find("Player_Data");
     }
 
-    private void TextIndex()
+    private void TextIndex()    //イントロのシナリオを始めるかチェックする
     {
         PdataLoad();
         int introcheck = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][8]);
@@ -471,22 +471,18 @@ public class GameManager : MonoBehaviour
 
     public void GoToResult()
     {
-        if(index=="1"){
+        if(index=="1"){     //イントロのイベント１が再生され終わったとき
             Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "1";
-            // 現在のScene名を取得する
-            Scene loadScene = SceneManager.GetActiveScene();
-            // Sceneの読み直し
-            SceneManager.LoadScene(loadScene.name);
+            InputPanel.SetActive(true);//避難所名入力のインプットパネルを開く
         }
-        else if(index == "2"){
+        else if(index == "2"){      //イベント２が終わったら選択画面に行く
             Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "2";
-            SceneManager.LoadScene("SelectScene");
+            InputPanel.SetActive(true);//名前入力のインプットパネルを開く
         }
         else{
-            Result.SetActive(true);//Resultパネルを表示
-        //Main.SetActive(false);//Mainパネルを非表示
+            Result.SetActive(true);
         }
+        //Main.SetActive(false);//Mainパネルを非表示
     }
-
 
 }
