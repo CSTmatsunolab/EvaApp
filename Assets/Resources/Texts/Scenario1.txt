@@ -62,6 +62,15 @@
 
 &あなた「こういうときのために備蓄を用意してきてよかったー」
 &!charaimg_anim="polygon2"="anim2,0,1,EaseInOut%%2.8,4.8,1%10,-0.2,1"
-&!wait="2"
-&!foreground_color="0,0,0,0"
-!foreground_anim="fadeout,0,2,%0,0,0%%"
+!wait="1"
+&!charaimg_delete="polygon"=""
+&!charaimg_delete="polygon2"=""
+
+&!charaimg_sprite="polygon0"="item_jutaku"
+!charaimg_pos="polygon0"="-0.9,0.2,0"
+!charaimg_size="polygon0"="8,8,1"
+!charaimg_sprite="polygon1"="ryukku_man"
+!charaimg_pos="polygon1"="0,-0.2,0"
+!charaimg_size="polygon1"="2.8,4.8,1"
+&あなた「ん？でも避難所ってどこにあるんだ？」
+&あなた「調べるか」

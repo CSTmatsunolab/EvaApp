@@ -104,6 +104,9 @@ public class GameManager : MonoBehaviour
         if (name.Equals("")) nameText.transform.parent.gameObject.SetActive(false);
         else
         {
+            if(name == "あなた"){
+                name = Pdata.GetComponent<Player_Data>().PlayerData[1][10];
+            }
             nameText.text = name;
             nameText.transform.parent.gameObject.SetActive(true);
         }

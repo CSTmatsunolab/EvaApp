@@ -10,12 +10,20 @@ public class InputText : MonoBehaviour
     //オブジェクトと結びつける
     public InputField inputField;
     public Text titletext;
+    public Image background;
+    public GameObject Hand;
+    public Sprite smartphone;
+    public Sprite syomei;
+    public GameObject submit;
+    public Sprite black;
+    public Sprite brown;
     GameObject Pdata;
     string name = "";
     int introcheck;
 
     void Start () {
     //Componentを扱えるようにする
+        Hand.SetActive(false);
         inputField = inputField.GetComponent<InputField> ();
         PdataLoad();
         introcheck = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][8]);
@@ -24,10 +32,15 @@ public class InputText : MonoBehaviour
 
     private void Titletext(){
         if (introcheck == 0){   //パネル表示１回目
-          titletext.text = "避難所名を入力してください(任意)";
+            Hand.SetActive(true);
+            background.sprite = smartphone;
+            submit.GetComponent<Image>().sprite = black;
+            titletext.text = "避難所名を入力してください(任意)";
         }
         if(introcheck == 1){    //パネル表示２回目
-          titletext.text = "名前を入力してください(任意)";
+            background.sprite = syomei;
+            submit.GetComponent<Image>().sprite = brown;
+            titletext.text = "名前を入力してください(任意)";
         }
     }
 
@@ -58,5 +71,15 @@ public class InputText : MonoBehaviour
 
     private void PdataLoad(){
         Pdata = GameObject.Find("Player_Data");
+    }
+
+    public void OnValueChanged()
+    {
+        string value = inputField.text;
+        if (value.IndexOf("\n") != -1)
+        {
+        	value = value.Replace("\r", "").Replace("\n", "");
+         	inputField.text = value;
+        }
     }
 }
