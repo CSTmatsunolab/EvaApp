@@ -13,6 +13,7 @@ public class MenuPanel : MonoBehaviour
     [SerializeField] GameObject GaugeExplanation2;//説明パネル2
     [SerializeField] GameObject CharacterExplanation;//説明パネル3
     [SerializeField] GameObject ButtonExplanation;//説明パネル4
+    [SerializeField] GameObject ButtonExplanation2;//説明パネル5
     GameObject Pdata;
     static public int flag = 0;
 
@@ -77,6 +78,13 @@ public class MenuPanel : MonoBehaviour
     {
         ButtonExplanation.SetActive(true); //説明パネル4を表示
         CharacterExplanation.SetActive(false); //説明パネル3を非表示
+        ButtonExplanation2.SetActive(false); //説明パネル5を非表示
+    }
+
+    public void GoToButtonExplanation2()
+    {
+        ButtonExplanation2.SetActive(true); //説明パネル5を表示
+        ButtonExplanation.SetActive(false); //説明パネル4を非表示
     }
 
     public void GaugeExplanationClose()
@@ -99,9 +107,15 @@ public class MenuPanel : MonoBehaviour
         ButtonExplanation.SetActive(false); //説明パネル4を非表示
     }
 
+    public void ButtonExplanation2Close()
+    {
+        ButtonExplanation2.SetActive(false); //説明パネル5を非表示
+    }
+
     public void AllExplanationClose()
     {
-        ButtonExplanation.SetActive(false); //説明を非表示
+        ButtonExplanation2.SetActive(false); //説明を非表示
+        ButtonExplanation.SetActive(false);
         CharacterExplanation.SetActive(false); 
         GaugeExplanation.SetActive(false);
         GaugeExplanation2.SetActive(false);
