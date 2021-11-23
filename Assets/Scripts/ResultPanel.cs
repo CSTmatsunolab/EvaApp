@@ -89,21 +89,29 @@ public class ResultPanel : MonoBehaviour
         Pdata.GetComponent<Player_Data>().PlayerData[1][1] = RE.ToString();
         CsvSave();
 
-        if(HG > HGC)
+        if (HG > HGC)
         {
             Result1.color = new Color(1.0f, 0.0f, 0.0f, 1.0f); //赤
         }
-        if(HG < HGC)
+        if (HG < HGC)
         {
             Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
         }
-        if(RE > REC)
+        if (RE > REC)
         {
             Result2.color = new Color(1.0f, 0.0f, 0.0f, 1.0f); //赤
         }
-        if(RE < REC)
+        if (RE < REC)
         {
             Result2.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
+        }
+        if (HG == HGC)
+        {
+            Result1.color = new Color(0.0f, 0.0f, 0.0f, 1.0f); //黒
+        }
+        if (RE == REC)
+        {
+            Result2.color = new Color(0.0f, 0.0f, 0.0f, 1.0f); //黒
         }
         
         Result1.text = ("満腹ゲージ：" + HG.ToString() + "→" + HGC.ToString());
