@@ -113,7 +113,13 @@ public class ResultPanel : MonoBehaviour
 
     public void NextButtonDown()
     {
-        SceneManager.LoadScene("EatScene");//食事画面に遷移
+        int flag = MenuPanel.Send();
+        if(flag == 1){
+            SceneManager.LoadScene("SelectScene");//選択画面に遷移
+        }
+        else{
+            SceneManager.LoadScene("EatScene");//食事画面に遷移
+        }
     }
 
     void CsvSave()
@@ -121,7 +127,7 @@ public class ResultPanel : MonoBehaviour
         StreamWriter file = new StreamWriter("Assets/Resources/PlayerData.csv",false);
         for (var y=0; y < 2; y++)
         {
-            for(var x=0;x<9;x++)
+            for(var x=0;x<11;x++)
             {
                 file.Write(Pdata.GetComponent<Player_Data>().PlayerData[y][x]+",");
                 file.Flush();
