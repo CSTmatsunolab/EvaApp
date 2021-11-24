@@ -17,6 +17,8 @@ public class MenuPanel : MonoBehaviour
     GameObject Pdata;
     static public int flag = 0;//行動するボタンからイベント選択画面に行くか、ランダムイベントからイベント選択画面に行くか
     static public int Randflag = 0;
+    static public int ChangeMusic = 0;
+
 
 
 
@@ -168,16 +170,23 @@ public class MenuPanel : MonoBehaviour
     //行動するボタンからイベント選択画面に遷移する場合
     public void GoButtonDown(){
         flag = 0;
+        ChangeMusic = 1;
         SceneManager.LoadScene("EventSelectScene");//イベント選択画面に遷移
     }
 
     //ランダムイベントの進むボタンからイベント選択画面に遷移する場合
     public void GoButtonDown2(){
         flag = 1;
+        ChangeMusic = 1;
         SceneManager.LoadScene("EventSelectScene");//イベント選択画面に遷移
     }
 
     static public int Send(){
         return flag;
+    }
+
+    public static int SendChangeMusic()
+    {
+        return ChangeMusic;
     }
 }

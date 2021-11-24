@@ -22,6 +22,7 @@ public class ESManagement : MonoBehaviour
     public static int Answer = 0;
     public static int Transform = 0;
 
+
     // Start is called before the first frame update
     void Start(){        
         index = rand();//乱数生成
@@ -38,17 +39,36 @@ public class ESManagement : MonoBehaviour
 
     //乱数(イベントのナンバー)を生成
     int rand(){
+        RdataLoad();
         int flag = MenuPanel.Send();
-        int a = 0;
-        if(flag == 0){
+        int a = 0; //indexに入る値
+        int kaburiCheck = 2;
 
+        if(flag == 0)
+        {
             a = Random.Range(3,18);//3~17
+            Debug.Log(a);
             //a = Random.Range(3,5);//指定範囲の動作確認用
+            
+            kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
+            Debug.Log("kaburiCheck = " + kaburiCheck);
+        
+            for(int i = 0;i < 5;i++) //もし解放済みのイベントだった場合、再抽選 最大5回
+            {
+                if(kaburiCheck == 1)
+                {
+                    a = Random.Range(3,18);//3~17
+                    kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
+                    Debug.Log("a1 = " + a);
+                }
+            }
+            
 
-            if(a == 6)
+            /*if(a == 6)
             {
                 a = 3; //イベント6の場合用の仮の設定
             }
+            */
         }
         else if(flag == 1){
             a = 16;
@@ -169,6 +189,7 @@ public class ESManagement : MonoBehaviour
     {
         return Answer;
     }
+
 
     void EventSave()
     {
