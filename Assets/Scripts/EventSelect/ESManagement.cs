@@ -46,7 +46,7 @@ public class ESManagement : MonoBehaviour
 
         if(flag == 0)
         {
-            a = Random.Range(3,18);//3~17
+            a = Random.Range(3,21);//3~20
             Debug.Log(a);
             //a = Random.Range(3,5);//指定範囲の動作確認用
             
@@ -71,7 +71,7 @@ public class ESManagement : MonoBehaviour
             */
         }
         else if(flag == 1){
-            a = 16;
+            a = 20;
         }
         return a;
     }
