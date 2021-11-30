@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;//乱数生成のために追加
 using UnityEngine.SceneManagement;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 public class QuizManagement : MonoBehaviour
 {
@@ -13,8 +14,12 @@ public class QuizManagement : MonoBehaviour
     public Text QuizSentence;
     public Text cleartext;
     public Text failtext;
+    public Image Maru;
+    public Image Batsu;
+    public GameObject Result;
     private GameObject Pdata;
     private GameObject Edata;
+
     int[] a = new int[10];//選出されたクイズのNo.
     int no = 0;//クイズが何題めか
     int Change = 0;
@@ -26,6 +31,9 @@ public class QuizManagement : MonoBehaviour
         EdataLoad();
         NoSet();
         QuizLoad();
+        Result.SetActive(false);
+        Maru.gameObject.SetActive(false);
+        Batsu.gameObject.SetActive(false);
     }
 
     private void PdataLoad(){
@@ -77,8 +85,10 @@ public class QuizManagement : MonoBehaviour
     void Answer(){
         if(Change==Change2){
             Debug.Log("正解");
+            StartCoroutine("Seikai");
         }else{
             Debug.Log("不正解");
+            StartCoroutine("Huseikai");
         }
     }
 
@@ -95,9 +105,6 @@ public class QuizManagement : MonoBehaviour
        
     }
 
-
-
-
     void Shuffle(){
         int x = 16;
         int[] b = new int[x];
@@ -111,4 +118,49 @@ public class QuizManagement : MonoBehaviour
         }
         
     }
+
+    IEnumerator　Seikai(){
+        Maru.gameObject.SetActive(true);
+        Color c = Maru.color;
+        c.a = 1f; 
+        Maru.color = c; // 画像の不透明度を1にする
+        yield return new WaitForSeconds(0.3f);
+        while (true)
+        {
+            yield return null; // 1フレーム待つ
+            c.a -= 0.02f;
+            Maru.color = c; // 画像の不透明度を下げる
+    
+            if (c.a <= 0f) // 不透明度が0以下のとき
+            {
+                c.a = 0f;
+                Maru.color = c; // 不透明度を0
+                break; // 繰り返し終了
+            }
+        }        
+        Maru.gameObject.SetActive(false); // 画像を非アクティブにする
+    }
+
+    IEnumerator　Huseikai(){
+        Batsu.gameObject.SetActive(true);
+        Color c = Batsu.color;
+        c.a = 1f; 
+        Batsu.color = c; // 画像の不透明度を1にする
+        yield return new WaitForSeconds(0.3f);
+        while (true)
+        {
+            yield return null; // 1フレーム待つ
+            c.a -= 0.02f;
+            Batsu.color = c; // 画像の不透明度を下げる
+    
+            if (c.a <= 0f) // 不透明度が0以下のとき
+            {
+                c.a = 0f;
+                Batsu.color = c; // 不透明度を0
+                break; // 繰り返し終了
+            }
+        }        
+        Batsu.gameObject.SetActive(false); // 画像を非アクティブにする
+    }
 }
+
