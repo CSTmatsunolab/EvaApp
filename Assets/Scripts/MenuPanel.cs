@@ -14,13 +14,15 @@ public class MenuPanel : MonoBehaviour
     [SerializeField] GameObject CharacterExplanation;//説明パネル3
     [SerializeField] GameObject ButtonExplanation;//説明パネル4
     [SerializeField] GameObject ButtonExplanation2;//説明パネル5
+    [SerializeField] GameObject ChallengeTest;//防災テストへの誘導パネル
+    public Image ChallengeImage;
+    public Sprite test;
+    public Sprite list;
     GameObject Pdata;
     static public int flag = 0;//行動するボタンからイベント選択画面に行くか、ランダムイベントからイベント選択画面に行くか
     static public int Randflag = 0;
     static public int ChangeMusic = 0;
-
-
-
+    int push = 0;//ボタンが押された回数
 
     void Start()
     {
@@ -30,6 +32,7 @@ public class MenuPanel : MonoBehaviour
         RandomEvent();
         AllExplanationClose();
         OpenGaugeExplanation();
+        GoChallengeTest();
     }
 
     public void BackToMenu()
@@ -129,6 +132,11 @@ public class MenuPanel : MonoBehaviour
         Event.SetActive(false);
     }
 
+    private void ChallengeTestClose()
+    {
+        ChallengeTest.SetActive(false);
+    }
+
     private void PdataLoad(){
         Pdata = GameObject.Find("Player_Data");
     }
@@ -180,6 +188,45 @@ public class MenuPanel : MonoBehaviour
         ChangeMusic = 1;
         SceneManager.LoadScene("EventSelectScene");//イベント選択画面に遷移
     }
+
+    private void GoChallengeTest()
+    {
+        PdataLoad();
+        int a = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][5]);
+        int b = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][6]);
+        if (a >= 8){
+            if (b == 0){
+                ChallengeTest.SetActive(true);
+                ChallengeImage.sprite = test;//ChallengeTestパネルを表示
+            }  
+        }else{
+            ChallengeTest.SetActive(false);
+        }
+    }
+
+    //チャレンジテストに挑戦するボタンからリスト誘導パネル
+    public void YesChallengeTest()
+    {
+        if (push == 0){
+            ChallengeImage.sprite = list;
+            push = 1;
+        }else if (push == 1){
+            SceneManager.LoadScene("ListScene");
+        }
+    }
+
+    //チャレンジテストに挑戦しないボタンが押された場合にChallengeTestパネルを消す
+    public void NotChallengeTest()
+    {
+        if (push == 0){
+            ChallengeTest.SetActive(false);
+            push = 1;
+        }else if (push == 1){
+            SceneManager.LoadScene("QuizScene");
+        }
+        
+    }
+
 
     static public int Send(){
         return flag;

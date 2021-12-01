@@ -71,7 +71,7 @@ public class ESManagement : MonoBehaviour
             */
         }
         else if(flag == 1){
-            a = 20;
+            a = 15;
         }
         return a;
     }

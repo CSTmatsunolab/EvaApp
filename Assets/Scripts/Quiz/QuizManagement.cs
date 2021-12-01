@@ -96,7 +96,7 @@ public class QuizManagement : MonoBehaviour
         Answer();
         no++;
         if(no > 9){
-            SceneManager.LoadScene("SelectScene");
+            Result.SetActive(true);
         }
         else{
         QuizLoad();
@@ -162,5 +162,7 @@ public class QuizManagement : MonoBehaviour
         }        
         Batsu.gameObject.SetActive(false); // 画像を非アクティブにする
     }
+
+
 }
 
