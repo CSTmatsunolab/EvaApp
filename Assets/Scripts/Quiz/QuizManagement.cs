@@ -163,6 +163,8 @@ public class QuizManagement : MonoBehaviour
         Batsu.gameObject.SetActive(false); // 画像を非アクティブにする
     }
 
-
+    public void GotoEvent(){
+        SceneManager.LoadScene("EventScene"); //ボタンが押されたら遷移
+    }
 }
 
