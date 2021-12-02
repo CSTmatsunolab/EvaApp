@@ -46,10 +46,11 @@ public class ESManagement : MonoBehaviour
 
         if(flag == 0)
         {
-            a = Random.Range(3,21);//3~20
+            //a = Random.Range(3,23);//3~22
+            //a = Random.Range(21,23);//指定範囲の動作確認用
+            a = 50;
             Debug.Log(a);
-            //a = Random.Range(3,5);//指定範囲の動作確認用
-            
+
             kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
             Debug.Log("kaburiCheck = " + kaburiCheck);
         
@@ -57,21 +58,19 @@ public class ESManagement : MonoBehaviour
             {
                 if(kaburiCheck == 1)
                 {
-                    a = Random.Range(3,18);//3~17
+                    //a = Random.Range(3,23);//3~21
+                    //a = Random.Range(21,23);//指定範囲の動作確認用
+                    a = 50;
                     kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
                     Debug.Log("a1 = " + a);
                 }
             }
-            
-
-            /*if(a == 6)
-            {
-                a = 3; //イベント6の場合用の仮の設定
-            }
-            */
         }
         else if(flag == 1){
             a = 15;
+        }
+        else if(flag == 2){
+            a = 50;
         }
         return a;
     }

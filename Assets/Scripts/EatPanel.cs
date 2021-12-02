@@ -55,6 +55,7 @@ public class EatPanel : MonoBehaviour
         BackToResult();
         GameObject Pdata = GameObject.Find("Player_Data");
         int i = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][6]);
+
         if (i == 1) //昼、夜の判定、昼だったら
             {
                 GoToSelect();
