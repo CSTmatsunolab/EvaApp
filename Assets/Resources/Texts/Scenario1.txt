@@ -69,6 +69,7 @@
 &!charaimg_sprite="polygon0"="item_jutaku"
 !charaimg_pos="polygon0"="-0.9,0.2,0"
 !charaimg_size="polygon0"="8,8,1"
+
 !charaimg_sprite="polygon1"="ryukku_man"
 !charaimg_pos="polygon1"="0,-0.2,0"
 !charaimg_size="polygon1"="2.8,4.8,1"
