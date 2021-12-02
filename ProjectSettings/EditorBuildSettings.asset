@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/QuizScene.unity
     guid: 6694a681aba5d4e4293301ba3bd3fac6
+  - enabled: 1
+    path: Assets/Scenes/EndingScene.unity
+    guid: ff619df741d9b46c5ba0e5449d70e391
   m_configObjects: {}
