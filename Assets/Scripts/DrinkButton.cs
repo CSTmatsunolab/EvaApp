@@ -7,32 +7,29 @@ using System.IO;
 
 public class DrinkButton : MonoBehaviour
 {
-    Button DButton;
-    void Start(){        
-        GameObject Pdata = GameObject.Find("Player_Data");
-        DButton = GameObject.Find ("Canvas/DrinkButton").GetComponent<Button>();
+    public Button DButton;
 
+    [SerializeField] GameObject G1;
+    [SerializeField] GameObject G2;
+    [SerializeField] GameObject G3;
+    [SerializeField] Text stock_text;
+    GameObject Pdata;
+    int x = 0;//水分
+    int y = 0;//水の所持数
+
+    void Start(){        
+        Pdata = GameObject.Find("Player_Data");
         //水分x
-        int x = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][2]);
+        x = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][2]);
         //水の所持数(ペットボトル)y
-        int y = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][3]);
+        y = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][3]);
 
         //水の所持数が0のとき or 水分が満タンの時ボタン無効化
-        if(y==0 || x==3){
-            DButton.interactable=false;
-        }
+        Put();
     }
 
-    public void DrinkButtonDown()
+    public void DrinkButtonDown()//ドリンクパネルの閉じるボタンを押したときの処理
     {
-        GameObject Pdata = GameObject.Find("Player_Data");
-        DButton = GameObject.Find ("Canvas/DrinkButton").GetComponent<Button>();
-
-        //水分x
-        int x = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][2]);
-        //水の所持数(ペットボトル)y
-        int y = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][3]);
-
         if(y>0){
             x=x+3;
             y=y-1;
@@ -45,16 +42,12 @@ public class DrinkButton : MonoBehaviour
             Pdata.GetComponent<Player_Data>().PlayerData[1][3]=str;
         }
         CsvSave();
-        
-        // 現在のScene名を取得する
-        Scene loadScene = SceneManager.GetActiveScene();
-        // Sceneの読み直し
-        SceneManager.LoadScene(loadScene.name);
+        Put();
     }
 
     void CsvSave()
     {
-        GameObject Pdata = GameObject.Find("Player_Data");
+        Pdata = GameObject.Find("Player_Data");
         StreamWriter file = new StreamWriter("Assets/Resources/PlayerData.csv",false);
         for (var y=0; y < 2; y++)
         {
@@ -65,5 +58,39 @@ public class DrinkButton : MonoBehaviour
             }
             file.WriteLine();
         }
+    }
+
+    private void DrinkCheck(){//水を飲むボタンの無効化
+        if(y==0 || x==3){
+            DButton.interactable=false;
+        }
+    }
+
+    private void DrinkGauge(){//ドリンクゲージの増減処理
+        int x = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][2]);
+        G1.gameObject.SetActive(true);
+        G2.gameObject.SetActive(true);
+        G3.gameObject.SetActive(true);
+        if(x==2){
+            G3.gameObject.SetActive(false);
+        }else if(x==1){
+            G3.gameObject.SetActive(false);
+            G2.gameObject.SetActive(false);
+        }else if(x==0){
+            G3.gameObject.SetActive(false);
+            G2.gameObject.SetActive(false);
+            G1.gameObject.SetActive(false);
+        }
+    }
+
+    private void WaterStock()//水の残量表示
+    {
+        stock_text.text = "×"+Pdata.GetComponent<Player_Data>().PlayerData[1][3];
+    }
+
+    private void Put(){//処理まとめ
+        DrinkCheck();
+        DrinkGauge();
+        WaterStock();
     }
 }
