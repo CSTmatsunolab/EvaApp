@@ -13,6 +13,7 @@ public class EatMainPanel : MonoBehaviour
     int j = 0;//まんぷくゲージ
     int k = 0;//時間
     int l = 0;//安心ゲージ
+    int m = 0;//水分ゲージ
     private GameObject Pdata = null;
     public GameObject KText = null;
     public GameObject RText = null;
@@ -28,6 +29,7 @@ public class EatMainPanel : MonoBehaviour
         j = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][0]);
         k = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][5]);
         l = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][1]);
+        m = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][2]);
         ktext.text= x.ToString() + "個";
     }
 
@@ -60,6 +62,7 @@ public class EatMainPanel : MonoBehaviour
         Pdata.GetComponent<Player_Data>().PlayerData[1][4]=i.ToString();//配列に格納
 
         TimeCheck();
+        ReduceWater();
         Result();
         CsvSave();
     }
@@ -68,6 +71,7 @@ public class EatMainPanel : MonoBehaviour
     {
         x=0;
         TimeCheck();
+        ReduceWater();
         Result();
         CsvSave();
     }
@@ -140,6 +144,14 @@ public class EatMainPanel : MonoBehaviour
                 }
             }
             //CsvSave();
+        }
+    }
+
+    private void ReduceWater(){
+        if(m>0){
+            m=m-1;
+            Debug.Log("水分-1操作");
+            Pdata.GetComponent<Player_Data>().PlayerData[1][2]=m.ToString();//配列に格納
         }
     }
 

@@ -40,8 +40,8 @@ public class ListManagement : MonoBehaviour
 
     private void TextLoad(){
         PdataLoad();
-        Kanpan.text = Pdata.GetComponent<Player_Data>().PlayerData[1][3];
-        Mizu.text = Pdata.GetComponent<Player_Data>().PlayerData[1][4];
+        Kanpan.text = Pdata.GetComponent<Player_Data>().PlayerData[1][4];
+        Mizu.text = Pdata.GetComponent<Player_Data>().PlayerData[1][3];
     }
 
     private void ListButtonMake(){
