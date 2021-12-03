@@ -70,7 +70,7 @@ public class ESManagement : MonoBehaviour
             a = Random.Range(3,23);
         }
         else if(flag == 2){
-            a = 50;
+            a = 53;
         }
         return a;
     }
