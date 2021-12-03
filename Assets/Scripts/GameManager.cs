@@ -488,4 +488,5 @@ public class GameManager : MonoBehaviour
         //Main.SetActive(false);//Mainパネルを非表示
     }
 
+    
 }

@@ -229,6 +229,7 @@ public class MenuPanel : MonoBehaviour
     //チャレンジテストに挑戦するボタンからリスト誘導パネル
     public void YesChallengeTest()
     {
+        Pdata.GetComponent<Player_Data>().PlayerData[1][8]="3";
         if (push == 0){
             ChallengeImage.sprite = list;
             push = 1;

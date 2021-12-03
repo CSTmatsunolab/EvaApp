@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 public class QuizManagement : MonoBehaviour
 {
+    public GameObject Content;
     public Text QuizNo;
     public Text QuizSentence;
     public Text cleartext;
@@ -17,21 +18,30 @@ public class QuizManagement : MonoBehaviour
     public Image Maru;
     public Image Batsu;
     public GameObject Result;
+    public GameObject Event;
     private GameObject Pdata;
     private GameObject Edata;
+    GameObject[] ListButton;
+    Image btnimg;
+    Text btntext;
+    static public int Seikaisu = 0;
+    
 
     int[] a = new int[10];//選出されたクイズのNo.
+    int[] result = new int[10];//
     int no = 0;//クイズが何題めか
     int Change = 0;
     int Change2 = 0;
     // Start is called before the first frame update
     void Start()
     {
+        Syokika();
         Shuffle();
         EdataLoad();
         NoSet();
         QuizLoad();
         Result.SetActive(false);
+        Event.SetActive(false);
         Maru.gameObject.SetActive(false);
         Batsu.gameObject.SetActive(false);
     }
@@ -85,9 +95,13 @@ public class QuizManagement : MonoBehaviour
     void Answer(){
         if(Change==Change2){
             Debug.Log("正解");
+            Debug.Log(result[no]);
+            Seikaisu++;
             StartCoroutine("Seikai");
         }else{
             Debug.Log("不正解");
+            result[no]=1;
+            Debug.Log(result[no]);
             StartCoroutine("Huseikai");
         }
     }
@@ -96,6 +110,7 @@ public class QuizManagement : MonoBehaviour
         Answer();
         no++;
         if(no > 9){
+            ListButtonMake();
             Result.SetActive(true);
         }
         else{
@@ -117,6 +132,26 @@ public class QuizManagement : MonoBehaviour
             Debug.Log(a[i]);
         }
         
+    }
+    private void ListButtonMake(){
+        EdataLoad();
+        GameObject btn = (GameObject)Resources.Load("Prefabs/ResultButton");
+        ListButton = new GameObject[10];
+        for (int i = 0 ;i < 10;i++){
+            
+            ListButton[i] = Instantiate(btn);
+            ListButton[i].transform.SetParent(Content.transform,false);
+            btnimg = ListButton[i].transform.Find("Image").gameObject.GetComponent<Image>();
+            btntext = ListButton[i].transform.Find("Text").gameObject.GetComponent<Text>();
+            ListButton[i].name = (a[i]).ToString();  //各ボタンにイベントのNoに応じた名前がつく
+            if(result[i]==0){
+                btnimg.sprite = Resources.Load<Sprite>("Sprites/Maru");
+            }else{
+                btnimg.sprite = Resources.Load<Sprite>("Sprites/Batsu");
+            }
+            
+            btntext.text = "第"+(i+1).ToString()+"問："+Edata.GetComponent<Event_Data>().EventData[a[i]][2];
+        }
     }
 
     IEnumerator　Seikai(){
@@ -163,6 +198,22 @@ public class QuizManagement : MonoBehaviour
         Batsu.gameObject.SetActive(false); // 画像を非アクティブにする
     }
 
+    public void GotoEvent(){
+        SceneManager.LoadScene("EndingScene"); //ボタンが押されたら遷移
+    }
 
+    private void Syokika(){
+        for(int i=0;i<10;i++){
+            result[i]=0;
+        }
+    }
+
+    public void ListButtonClose(){
+        Event.SetActive(false);//Eventパネルを非表示
+    }
+
+    static public int Send(){
+        return Seikaisu;
+    }
 }
 
