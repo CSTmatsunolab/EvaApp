@@ -77,7 +77,7 @@ public class EatMainPanel : MonoBehaviour
         StreamWriter file = new StreamWriter("Assets/Resources/PlayerData.csv", false);
         for (var y = 0; y < 2; y++)
         {
-            for (var x = 0; x < 11; x++)
+            for (var x = 0; x < 12; x++)
             {
                 file.Write(Pdata.GetComponent<Player_Data>().PlayerData[y][x] + ",");
                 file.Flush();
@@ -103,13 +103,43 @@ public class EatMainPanel : MonoBehaviour
 
     void TimeCheck()//昼と夜の変更
     {
-        if(Pdata.GetComponent<Player_Data>().PlayerData[1][6]=="0"){
+        if(Pdata.GetComponent<Player_Data>().PlayerData[1][6]=="0") //昼の場合
+        {
             Pdata.GetComponent<Player_Data>().PlayerData[1][6]="1";
         }
-        else{
-            Pdata.GetComponent<Player_Data>().PlayerData[1][6]="0";
+        else
+        {
+            Pdata.GetComponent<Player_Data>().PlayerData[1][6]="0"; //夜の場合
             k=k+1;
-            Pdata.GetComponent<Player_Data>().PlayerData[1][5]=k.ToString();
+            Pdata.GetComponent<Player_Data>().PlayerData[1][5]=k.ToString(); //日数の変更
+
+            int manpuku = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][0]);
+            int anshin = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][1]);
+            int suibun = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][2]);
+            int GameOverFlag = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][11]);
+
+            if(manpuku == 0)//満腹が0の時に起きる
+            {
+                if(suibun == 0)//水分が0
+                {
+                    GameOverFlag++;
+                    Pdata.GetComponent<Player_Data>().PlayerData[1][11]=GameOverFlag.ToString();
+                }
+                if(anshin == 0)//安心が0
+                {
+                    GameOverFlag++;
+                    Pdata.GetComponent<Player_Data>().PlayerData[1][11]=GameOverFlag.ToString();
+                }
+            }
+            if(anshin == 0 )//安心、水分
+            {
+                if(suibun == 0)//水分が0
+                {
+                    GameOverFlag++;
+                    Pdata.GetComponent<Player_Data>().PlayerData[1][11]=GameOverFlag.ToString();
+                }
+            }
+            //CsvSave();
         }
     }
 

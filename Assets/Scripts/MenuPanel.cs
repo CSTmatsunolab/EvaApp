@@ -15,13 +15,14 @@ public class MenuPanel : MonoBehaviour
     [SerializeField] GameObject ButtonExplanation;//説明パネル4
     [SerializeField] GameObject ButtonExplanation2;//説明パネル5
     [SerializeField] GameObject ChallengeTest;//防災テストへの誘導パネル
+    [SerializeField] GameObject GameOver;
     public Image ChallengeImage;
     public Sprite test;
     public Sprite list;
     GameObject Pdata;
     static public int flag = 0;//行動するボタンからイベント選択画面に行くか、ランダムイベントからイベント選択画面に行くか
     static public int Randflag = 0;
-    static public int ChangeMusic = 0;
+    //static public int ChangeMusic = 0;
     int push = 0;//ボタンが押された回数
 
     void Start()
@@ -29,6 +30,7 @@ public class MenuPanel : MonoBehaviour
         BackToMenu();
         BackToDrink();
         EventClose();
+        GameOverClose();
         RandomEvent();
         AllExplanationClose();
         OpenGaugeExplanation();
@@ -132,6 +134,11 @@ public class MenuPanel : MonoBehaviour
         Event.SetActive(false);
     }
 
+    private void GameOverClose()
+    {
+        GameOver.SetActive(false);
+    }
+
     private void ChallengeTestClose()
     {
         ChallengeTest.SetActive(false);
@@ -144,8 +151,15 @@ public class MenuPanel : MonoBehaviour
     private void RandomEvent(){
         PdataLoad();
         int i = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][6]);
+        int GameOverFlag = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][11]);
         if(i == 0){
             Randflag = 0;
+            if(GameOverFlag >= 2)
+            {
+                Debug.Log("GameOver");
+                GameOver.SetActive(true);
+            }
+
         }
         if(i == 1){
             int a = Random.Range(1,100);
@@ -178,14 +192,22 @@ public class MenuPanel : MonoBehaviour
     //行動するボタンからイベント選択画面に遷移する場合
     public void GoButtonDown(){
         flag = 0;
-        ChangeMusic = 1;
+        //ChangeMusic = 1;
         SceneManager.LoadScene("EventSelectScene");//イベント選択画面に遷移
     }
 
     //ランダムイベントの進むボタンからイベント選択画面に遷移する場合
     public void GoButtonDown2(){
         flag = 1;
-        ChangeMusic = 1;
+        //ChangeMusic = 1;
+        SceneManager.LoadScene("EventSelectScene");//イベント選択画面に遷移
+    }
+
+    //ゲームオーバー時の進むボタンから遷移
+    public void GoButtonDown3()
+    {
+        flag = 2;
+        //ChangeMusic = 1;
         SceneManager.LoadScene("EventSelectScene");//イベント選択画面に遷移
     }
 
@@ -233,8 +255,9 @@ public class MenuPanel : MonoBehaviour
         return flag;
     }
 
-    public static int SendChangeMusic()
+    /*public static int SendChangeMusic()
     {
         return ChangeMusic;
-    }
+    }*/
+    
 }
