@@ -16,6 +16,7 @@ public class MenuPanel : MonoBehaviour
     [SerializeField] GameObject ButtonExplanation2;//説明パネル5
     [SerializeField] GameObject ChallengeTest;//防災テストへの誘導パネル
     [SerializeField] GameObject GameOver;
+    [SerializeField] GameObject Haikyu;
     public Image ChallengeImage;
     public Sprite test;
     public Sprite list;
@@ -31,6 +32,7 @@ public class MenuPanel : MonoBehaviour
         BackToDrink();
         EventClose();
         GameOverClose();
+        HaikyuClose();
         RandomEvent();
         AllExplanationClose();
         OpenGaugeExplanation();
@@ -139,6 +141,11 @@ public class MenuPanel : MonoBehaviour
         GameOver.SetActive(false);
     }
 
+    private void HaikyuClose()
+    {
+        Haikyu.SetActive(false);
+    }
+
     private void ChallengeTestClose()
     {
         ChallengeTest.SetActive(false);
@@ -207,6 +214,14 @@ public class MenuPanel : MonoBehaviour
     public void GoButtonDown3()
     {
         flag = 2;
+        //ChangeMusic = 1;
+        SceneManager.LoadScene("EventSelectScene");//イベント選択画面に遷移
+    }
+
+    //配給のパネルから遷移
+    public void GoButtonDown4()
+    {
+        flag = 3;
         //ChangeMusic = 1;
         SceneManager.LoadScene("EventSelectScene");//イベント選択画面に遷移
     }
