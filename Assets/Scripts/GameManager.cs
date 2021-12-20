@@ -440,6 +440,10 @@ public class GameManager : MonoBehaviour
             index = "2";
             TitleSet();
         }
+        else if(introcheck == 50){
+            index = "50";
+            TitleSet();
+        }
         else if(introcheck == 51){
             index = "51";
             TitleSet();
@@ -487,7 +491,7 @@ public class GameManager : MonoBehaviour
             Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "2";
             InputPanel.SetActive(true);//名前入力のインプットパネルを開く
         }
-        else if((index=="51")||(index=="52")||(index=="53"))
+        else if((index == "50")||(index=="51")||(index=="52")||(index=="53"))
         {
             SceneManager.LoadScene("EndingScene");
         }

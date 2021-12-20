@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.IO;
+
 
 public class EndingManagement : MonoBehaviour
 {
     GameObject Pdata;
     public Text ResultText;
     public Text ScoreText;
+    public Text PName;
     public Image ScoreImage;
     public Sprite S;
     public Sprite A;
@@ -90,6 +93,43 @@ public class EndingManagement : MonoBehaviour
     }
 
     public void next(){
+        PName.text = Pdata.GetComponent<Player_Data>().PlayerData[1][10];
         Endroll.SetActive(true);
+        Reset();
+    }
+    
+    public void GoToTitle()
+    {
+        SceneManager.LoadScene("StartScene");//スタートシーンに遷移
+    }
+
+    private void Reset(){
+        Pdata.GetComponent<Player_Data>().PlayerData[1][0] = "5";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][1] = "5";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][2] = "3";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][3] = "3";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][4] = "3";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][5] = "1";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][6] = "0";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][7] = "0";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "0";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][9] = "避難所";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][10] = "あなた";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][11] = "0" ;
+        CsvSave();
+    }
+
+    void CsvSave()
+    {
+        StreamWriter file = new StreamWriter("Assets/Resources/PlayerData.csv",false);
+        for (var y=0; y < 2; y++)
+        {
+            for(var x=0; x < 12; x++)
+            {
+                file.Write(Pdata.GetComponent<Player_Data>().PlayerData[y][x]+",");
+                file.Flush();
+            }
+            file.WriteLine();
+        }
     }
 }
