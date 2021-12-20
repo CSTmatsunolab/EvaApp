@@ -17,6 +17,8 @@ public class EndingManagement : MonoBehaviour
 
     public GameObject Cloud;
     public GameObject Score;
+    public GameObject Endroll;
+    public GameObject NextButton;
     public Animator ScorePoints;
     int ScorePoint;
     
@@ -38,6 +40,7 @@ public class EndingManagement : MonoBehaviour
 
     private void TextSet(){
         Score.SetActive(false);
+        Endroll.SetActive(false);
         PdataLoad();
         ResultText.text = "避難所名：" + Pdata.GetComponent<Player_Data>().PlayerData[1][9]+"\n"
                         + "名前：" + Pdata.GetComponent<Player_Data>().PlayerData[1][10]+"\n"
@@ -63,8 +66,10 @@ public class EndingManagement : MonoBehaviour
 
     public void CloudPanelClose(){
         Cloud.SetActive(false);
+        NextButton.SetActive(false);
         Score.SetActive(true);
         ScorePoints.SetTrigger("PanelOn");
+        NextButton.SetActive(true);
     }
 
     private int Cal(int a){
@@ -82,5 +87,9 @@ public class EndingManagement : MonoBehaviour
         }else{
             ScoreImage.sprite = C;
         }
+    }
+
+    public void next(){
+        Endroll.SetActive(true);
     }
 }

@@ -14,6 +14,7 @@ public class PlayerVisualChange : MonoBehaviour
     public Sprite utsu_man;
     public Sprite sick_kokoro_yamu_man;
     public Sprite nodo_kawaku_dassui_man;
+    public Sprite genkiman;
 
     private Sprite sprite;
     private GameObject Pdata = null;
@@ -24,50 +25,58 @@ public class PlayerVisualChange : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SetVisual();
+    }
+
+    void PdataLoad(){
         Pdata = GameObject.Find("Player_Data");
+    }
+
+    private void Dataset(){
+        PdataLoad();
         manpuku = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][0]);
         anshin = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][1]);
         suibun = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][2]);
-
     }
- 
-    // Update is called once per frame
-    void Update () {
-        if (manpuku < 4) //満腹だけが３以下
-        {
-            image.enabled = true;
-            image.sprite = onaka_heru_man;
-        }
-        if (anshin < 4) //安心だけが３以下
-        {
-            image.enabled = true;
-            image.sprite = utsu_man;
-        }
+
+    public void SetVisual(){
+        Dataset();
         if (manpuku < 4 && anshin < 4) //満腹と安心が３以下
         {
             image.enabled = true;
             image.sprite = sick_kokoro_yamu_man;
         }
-        if (anshin < 4 && suibun < 1) //安心が３以下かつ水分が０
+        else if (anshin < 4 && suibun < 1) //安心が３以下かつ水分が０
         {
             image.enabled = true;
             image.sprite = nodo_kawaku_dassui_man;
         }
-        if (manpuku < 4 && suibun < 1) //満腹が３以下かつ水分が０
+        else if (manpuku < 4 && suibun < 1) //満腹が３以下かつ水分が０
         {
             image.enabled = true;
             image.sprite = nodo_kawaku_dassui_man;
         }
-        if (suibun < 1) //水分が０
+        else if (suibun < 1) //水分が０
         {
             image.enabled = true;
             image.sprite = nodo_kawaku_dassui_man;
         }
+        else if (manpuku < 4) //満腹だけが３以下
+        {
+            image.enabled = true;
+            image.sprite = onaka_heru_man;
+        }
+        else if (anshin < 4) //安心だけが３以下
+        {
+            image.enabled = true;
+            image.sprite = utsu_man;
+        }
+        
         else //通常
         {
             image.enabled = true;
+            image.sprite = genkiman;
         }
         
-    }
-    
+    }    
 }

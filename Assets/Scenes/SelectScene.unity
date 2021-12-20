@@ -238,6 +238,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1730434823}
+        m_MethodName: SetVisual
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3584896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7542,6 +7553,7 @@ MonoBehaviour:
     type: 3}
   nodo_kawaku_dassui_man: {fileID: 21300000, guid: 4fea44b538c684b20b1e6f3c05789c35,
     type: 3}
+  genkiman: {fileID: 21300000, guid: e0fc2e86e74670d45843c02c93a08e57, type: 3}
 --- !u!114 &1730434824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9069,7 +9081,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2029141244}
   - component: {fileID: 2029141243}
-  - component: {fileID: 2029141242}
   m_Layer: 0
   m_Name: SoundPlayer
   m_TagString: Untagged
@@ -9077,18 +9088,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2029141242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2029141241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df06feb62bc9e4c298750ec72e38ac34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &2029141243
 AudioSource:
   m_ObjectHideFlags: 0

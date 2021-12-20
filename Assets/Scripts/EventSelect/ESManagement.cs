@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;//乱数生成のために追加
 using UnityEngine.SceneManagement;
 using System.IO;
 
+
 public class ESManagement : MonoBehaviour
 {
     [SerializeField] GameObject EventBackground;
@@ -14,6 +15,8 @@ public class ESManagement : MonoBehaviour
     [SerializeField] GameObject EventText;
     [SerializeField] GameObject ClearText;
     [SerializeField] GameObject FailText;
+    public Image Maru;
+    public Image Batsu;
 
     [SerializeField] private string spritesDirectory = "Sprites/Event";
     GameObject Rdata;
@@ -22,6 +25,9 @@ public class ESManagement : MonoBehaviour
     public static int Answer = 0;
     public static int Transform = 0;
 
+    [SerializeField] private AudioSource SEplayer;
+    [SerializeField] private AudioClip SeikaiSE;
+    [SerializeField] private AudioClip FuseikaiSE;
 
     // Start is called before the first frame update
     void Start(){        
@@ -30,6 +36,8 @@ public class ESManagement : MonoBehaviour
         Transform = Random.Range(1,3);//1~2
         Debug.Log(Transform);
         EventLoad(index);
+        Maru.gameObject.SetActive(false);
+        Batsu.gameObject.SetActive(false);
     }
 
     //ResultData読み込み
@@ -65,6 +73,7 @@ public class ESManagement : MonoBehaviour
                     Debug.Log("a1 = " + a);
                 }
             }
+            
         }
         else if(flag == 1){
             a = Random.Range(3,23);
@@ -145,7 +154,10 @@ public class ESManagement : MonoBehaviour
             Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
             EventSave();
             Answer = 0;
-            SceneManager.LoadScene("EventScene"); //ボタンが押されたら遷移
+            Debug.Log("正解");
+            
+            SEplayer.PlayOneShot(SeikaiSE);
+            StartCoroutine("Seikai");
         }
         else if(Check == 2) //逆位置　不正解
         {
@@ -153,7 +165,10 @@ public class ESManagement : MonoBehaviour
             Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
             EventSave();
             Answer = 1;
-            SceneManager.LoadScene("EventScene"); //ボタンが押されたら遷移
+            Debug.Log("不正解"); 
+
+            SEplayer.PlayOneShot(FuseikaiSE);
+            StartCoroutine("Huseikai");
         }
     }
 
@@ -167,7 +182,10 @@ public class ESManagement : MonoBehaviour
             Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
             EventSave();
             Answer = 1;
-            SceneManager.LoadScene("EventScene"); //ボタンが押されたら遷移
+            Debug.Log("不正解"); 
+
+            SEplayer.PlayOneShot(FuseikaiSE);                     
+            StartCoroutine("Huseikai");
         }
         else if(Check == 2) //逆位置 正解
         {
@@ -175,8 +193,57 @@ public class ESManagement : MonoBehaviour
             Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
             EventSave();
             Answer = 0;
-            SceneManager.LoadScene("EventScene"); //ボタンが押されたら遷移
+            Debug.Log("正解");
+
+            SEplayer.PlayOneShot(SeikaiSE);
+            StartCoroutine("Seikai");
         }
+    }
+
+    IEnumerator　Seikai(){
+        Maru.gameObject.SetActive(true);
+        Color c = Maru.color;
+        c.a = 1f; 
+        Maru.color = c; // 画像の不透明度を1にする
+        yield return new WaitForSeconds(0.3f);
+        while (true)
+        {
+            yield return null; // 1フレーム待つ
+            c.a -= 0.02f;
+            Maru.color = c; // 画像の不透明度を下げる
+    
+            if (c.a <= 0f) // 不透明度が0以下のとき
+            {
+                c.a = 0f;
+                Maru.color = c; // 不透明度を0
+                break; // 繰り返し終了
+            }
+        }        
+        Maru.gameObject.SetActive(false); // 画像を非アクティブにする
+        SceneManager.LoadScene("EventScene"); 
+    }
+
+    IEnumerator　Huseikai(){
+        Batsu.gameObject.SetActive(true);
+        Color c = Batsu.color;
+        c.a = 1f; 
+        Batsu.color = c; // 画像の不透明度を1にする
+        yield return new WaitForSeconds(0.3f);
+        while (true)
+        {
+            yield return null; // 1フレーム待つ
+            c.a -= 0.02f;
+            Batsu.color = c; // 画像の不透明度を下げる
+    
+            if (c.a <= 0f) // 不透明度が0以下のとき
+            {
+                c.a = 0f;
+                Batsu.color = c; // 不透明度を0
+                break; // 繰り返し終了
+            }
+        }        
+        Batsu.gameObject.SetActive(false); // 画像を非アクティブにする
+        SceneManager.LoadScene("EventScene"); 
     }
 
     public static int Send()

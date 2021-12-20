@@ -3,7 +3,12 @@ using System.Collections;
  
 public class MusicFadeOut : MonoBehaviour
 {
-    AudioSource audioSource;
+    public AudioSource audioSource;
+    public AudioClip audioClip0;
+    public AudioClip audioClip1;
+    public AudioClip audioClip2;
+    private GameObject Pdata;
+    private string intro;
     /*public bool IsFade;
     public double FadeOutSeconds = 1.0;
     bool IsFadeOut = false;
@@ -13,26 +18,26 @@ public class MusicFadeOut : MonoBehaviour
  
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        //DontDestroyOnLoad(this);
-    }
- 
-    /*void Update()
-    {
-        if(ChangeMusic == 1)
-        {  
-            IsFadeOut = true;
-            if (IsFadeOut)
-            {
-                FadeOutSeconds = 3;
-                FadeDeltaTime += Time.deltaTime;
-                if (FadeDeltaTime == FadeOutSeconds)
-                {
-                    FadeDeltaTime = FadeOutSeconds;
-                    IsFadeOut = false;
-                }
-                audioSource.volume = (float)(1.0 - FadeDeltaTime / FadeOutSeconds);
+        PdataLoad();
+        intro = Pdata.GetComponent<Player_Data>().PlayerData[1][8];
+        if(intro == "0"||intro== "1"){
+            audioSource.clip = audioClip2;
+        }
+        else{
+            int answer = ESManagement.SendAnswer();
+            if(answer == 0 ){
+            audioSource.clip = audioClip0;
+            }
+            else if(answer == 1){
+            audioSource.clip = audioClip1;
             }
         }
-    }*/
+        audioSource.Play();
+    }
+
+    private void PdataLoad(){
+        Pdata = GameObject.Find("Player_Data");
+    }
+
+
 }

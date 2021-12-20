@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     private const string COMMAND_WAIT_TIME = "wait";
     private float _waitTime = 0;
     private string index = "";
+    private string answer = "";
 
     private const char SEPARATE_MAIN_START = '「';
     private const char SEPARATE_MAIN_END = '」';
@@ -178,18 +179,7 @@ public class GameManager : MonoBehaviour
         else
         {
             if (!ShowNextPage()){
-                if(index=="1"){     //イントロのイベント１が再生され終わったとき
-                    Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "1";
-                    InputPanel.SetActive(true);//避難所名入力のインプットパネルを開く
-                }
-                else if(index == "2"){      //イベント２が終わったら選択画面に行く
-                    Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "2";
-                    InputPanel.SetActive(true);//名前入力のインプットパネルを開く
-                }
-                else{
-                    Result.SetActive(true);
-                }
-                
+                GoToResult();
             }
             
            // UnityエディタのPlayモードを終了する
@@ -444,13 +434,29 @@ public class GameManager : MonoBehaviour
         int introcheck = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][8]);
         if(introcheck == 0){        //イントロシナリオにいく
             index = "1";
-            
+            TitleSet();
         }
         else if(introcheck == 1){        //イントロシナリオにいく
             index = "2";
+            TitleSet();
+        }
+        else if(introcheck == 51){
+            index = "51";
+            TitleSet();
+        }
+        else if(introcheck == 52){
+            index = "52";
+            TitleSet();
+        }
+        else if(introcheck == 53){
+            index = "53";
+            TitleSet();
         }
         else{
             index = (ESManagement.Send()).ToString();
+            TitleSet();
+            answer = (ESManagement.SendAnswer()).ToString();
+            index = index + "-" + answer;
         }
         textFile = ("Texts/Scenario" + index);
     }
@@ -458,7 +464,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Init();
-        TitleSet();
     }
 
     private void TitleSet(){
@@ -481,6 +486,10 @@ public class GameManager : MonoBehaviour
         else if(index == "2"){      //イベント２が終わったら選択画面に行く
             Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "2";
             InputPanel.SetActive(true);//名前入力のインプットパネルを開く
+        }
+        else if((index=="51")||(index=="52")||(index=="53"))
+        {
+            SceneManager.LoadScene("EndingScene");
         }
         else{
             Result.SetActive(true);
