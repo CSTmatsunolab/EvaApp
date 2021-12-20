@@ -7,6 +7,7 @@ public class MusicFadeOut : MonoBehaviour
     public AudioClip audioClip0;
     public AudioClip audioClip1;
     public AudioClip audioClip2;
+    public AudioClip audioClip3;
     private GameObject Pdata;
     private string intro;
     /*public bool IsFade;
@@ -20,8 +21,11 @@ public class MusicFadeOut : MonoBehaviour
     {
         PdataLoad();
         intro = Pdata.GetComponent<Player_Data>().PlayerData[1][8];
-        if(intro == "0"||intro== "1"){
+        if(intro == "0"){
             audioSource.clip = audioClip2;
+        }
+        else if(intro== "1"){
+            audioSource.clip = audioClip3;
         }
         else{
             int answer = ESManagement.SendAnswer();
