@@ -205,7 +205,7 @@ public class ESManagement : MonoBehaviour
     IEnumerator　Seikai(){
         Maru.gameObject.SetActive(true);
         Color c = Maru.color;
-        c.a = 1f; 
+        c.a = 1.3f; 
         Maru.color = c; // 画像の不透明度を1にする
         yield return new WaitForSeconds(0.3f);
         while (true)
@@ -228,7 +228,7 @@ public class ESManagement : MonoBehaviour
     IEnumerator　Huseikai(){
         Batsu.gameObject.SetActive(true);
         Color c = Batsu.color;
-        c.a = 1f; 
+        c.a = 1.3f; 
         Batsu.color = c; // 画像の不透明度を1にする
         yield return new WaitForSeconds(0.3f);
         while (true)
