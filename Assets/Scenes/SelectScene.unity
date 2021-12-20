@@ -2029,7 +2029,7 @@ Transform:
   - {fileID: 1791720753}
   - {fileID: 786401132}
   m_Father: {fileID: 626883868}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &321006839
 GameObject:
@@ -2532,7 +2532,7 @@ RectTransform:
   - {fileID: 900429053}
   - {fileID: 1325283187}
   m_Father: {fileID: 626883868}
-  m_RootOrder: 15
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3122,10 +3122,10 @@ RectTransform:
   - {fileID: 1073702665}
   - {fileID: 1476371068}
   - {fileID: 888135032}
-  - {fileID: 865355381}
-  - {fileID: 318078084}
-  - {fileID: 1650788376}
   - {fileID: 465898368}
+  - {fileID: 865355381}
+  - {fileID: 1650788376}
+  - {fileID: 318078084}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3904,7 +3904,7 @@ RectTransform:
   - {fileID: 95375885}
   - {fileID: 225704574}
   m_Father: {fileID: 626883868}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4294,19 +4294,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1161709411}
-        m_MethodName: DrinkButtonDown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2035493906}
-        m_MethodName: BackToDrink
+        m_MethodName: GoHaikyuButtonDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4346,8 +4335,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 418f8283fe03b48939013149186767a6, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4885,7 +4874,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987141854}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -6189,7 +6178,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 00ebf6cbd4c034c6b88d247c64bc0a1e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 46a65ecb46096444eadf77897f2975d8, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

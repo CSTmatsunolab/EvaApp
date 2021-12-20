@@ -80,6 +80,9 @@ public class ESManagement : MonoBehaviour
         else if(flag == 2){
             a = 53;
         }
+        else if(flag == 3){
+            a = 54;//配給用のイベント
+        }
         return a;
     }
 

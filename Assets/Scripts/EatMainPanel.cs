@@ -81,7 +81,7 @@ public class EatMainPanel : MonoBehaviour
         StreamWriter file = new StreamWriter("Assets/Resources/PlayerData.csv", false);
         for (var y = 0; y < 2; y++)
         {
-            for (var x = 0; x < 12; x++)
+            for (var x = 0; x < 13; x++)
             {
                 file.Write(Pdata.GetComponent<Player_Data>().PlayerData[y][x] + ",");
                 file.Flush();
@@ -121,7 +121,12 @@ public class EatMainPanel : MonoBehaviour
             int anshin = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][1]);
             int suibun = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][2]);
             int GameOverFlag = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][11]);
-
+            int HaikyuCount = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][12]);
+            if(HaikyuCount == 1)
+            {
+                HaikyuCount = 0;
+                Pdata.GetComponent<Player_Data>().PlayerData[1][12]=HaikyuCount.ToString();
+            }
             if(manpuku == 0)//満腹が0の時に起きる
             {
                 if(suibun == 0)//水分が0

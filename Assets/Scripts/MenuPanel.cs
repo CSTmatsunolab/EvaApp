@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
- 
+using System.IO;
+
 public class MenuPanel : MonoBehaviour
 {
     [SerializeField] GameObject Menu;
@@ -15,8 +16,8 @@ public class MenuPanel : MonoBehaviour
     [SerializeField] GameObject ButtonExplanation;//説明パネル4
     [SerializeField] GameObject ButtonExplanation2;//説明パネル5
     [SerializeField] GameObject ChallengeTest;//防災テストへの誘導パネル
-    [SerializeField] GameObject GameOver;
-    [SerializeField] GameObject Haikyu;
+    [SerializeField] GameObject GameOver;//ゲームオーバーシーン
+    [SerializeField] GameObject Haikyu;//配給時のパネル
     public Image ChallengeImage;
     public Sprite test;
     public Sprite list;
@@ -37,6 +38,7 @@ public class MenuPanel : MonoBehaviour
         AllExplanationClose();
         OpenGaugeExplanation();
         GoChallengeTest();
+        HaikyuEvent();
     }
 
     public void BackToMenu()
@@ -157,7 +159,7 @@ public class MenuPanel : MonoBehaviour
 
     private void RandomEvent(){
         PdataLoad();
-        int i = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][6]);
+        int i = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][6]);//昼、夜の判定
         int GameOverFlag = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][11]);
         if(i == 0){
             Randflag = 0;
@@ -168,7 +170,8 @@ public class MenuPanel : MonoBehaviour
             }
 
         }
-        if(i == 1){
+        if(i == 1)
+        {
             int a = Random.Range(1,100);
             Debug.Log(a);
             if(Randflag == 0){
@@ -176,9 +179,39 @@ public class MenuPanel : MonoBehaviour
                     Randflag = 1;
                     Event.SetActive(true);
                 }
-            }
-            
+            }    
         }
+    }
+
+    private void HaikyuEvent(){
+        PdataLoad();
+        int Day = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][5]);
+        int Time = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][6]);
+        int WaterStock = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][3]);
+        int FoodStock = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][4]);
+        int HaikyuCount = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][12]);
+        if(HaikyuCount == 0)
+        {
+            if(Day >= 2 && Day % 2 == 1)
+            {
+                if(Time == 0)
+                {
+                    Debug.Log("配給日");
+
+                    WaterStock = WaterStock + 2;
+                    FoodStock = FoodStock + 3;
+                    HaikyuCount = HaikyuCount +1;
+
+                    Pdata.GetComponent<Player_Data>().PlayerData[1][3]=WaterStock.ToString();
+                    Pdata.GetComponent<Player_Data>().PlayerData[1][4]=FoodStock.ToString();
+                    Pdata.GetComponent<Player_Data>().PlayerData[1][12]=HaikyuCount.ToString();
+                    CsvSave();
+                    Haikyu.SetActive(true);
+                }
+
+            }
+        }
+
     }
 
     private void OpenGaugeExplanation() //起動時に説明パネル1を表示
@@ -219,7 +252,7 @@ public class MenuPanel : MonoBehaviour
     }
 
     //配給のパネルから遷移
-    public void GoButtonDown4()
+    public void GoHaikyuButtonDown()
     {
         flag = 3;
         //ChangeMusic = 1;
@@ -274,5 +307,20 @@ public class MenuPanel : MonoBehaviour
     {
         return ChangeMusic;
     }*/
+
+    void CsvSave()
+    {
+        Pdata = GameObject.Find("Player_Data");
+        StreamWriter file = new StreamWriter("Assets/Resources/PlayerData.csv",false);
+        for (var y=0; y < 2; y++)
+        {
+            for(var x=0; x < 13; x++)
+            {
+                file.Write(Pdata.GetComponent<Player_Data>().PlayerData[y][x]+",");
+                file.Flush();
+            }
+            file.WriteLine();
+        }
+    }
     
 }
