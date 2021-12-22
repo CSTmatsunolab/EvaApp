@@ -73,6 +73,7 @@ public class ESManagement : MonoBehaviour
                     Debug.Log("a1 = " + a);
                 }
             }
+            
         }
         else if(flag == 1){
             a = Random.Range(3,23);

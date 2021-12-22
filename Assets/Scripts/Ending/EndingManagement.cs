@@ -1,0 +1,135 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.IO;
+
+
+public class EndingManagement : MonoBehaviour
+{
+    GameObject Pdata;
+    public Text ResultText;
+    public Text ScoreText;
+    public Text PName;
+    public Image ScoreImage;
+    public Sprite S;
+    public Sprite A;
+    public Sprite B;
+    public Sprite C;
+
+    public GameObject Cloud;
+    public GameObject Score;
+    public GameObject Endroll;
+    public GameObject NextButton;
+    public Animator ScorePoints;
+    int ScorePoint;
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        TextSet();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    private void PdataLoad(){
+        Pdata = GameObject.Find("Player_Data");
+    }
+
+    private void TextSet(){
+        Score.SetActive(false);
+        Endroll.SetActive(false);
+        PdataLoad();
+        ResultText.text = "避難所名：" + Pdata.GetComponent<Player_Data>().PlayerData[1][9]+"\n"
+                        + "名前：" + Pdata.GetComponent<Player_Data>().PlayerData[1][10]+"\n"
+                        + "経過日数：" + Pdata.GetComponent<Player_Data>().PlayerData[1][5]+"日"+"\n"
+                        + "クイズ正解数：" + (QuizManagement.Send()).ToString()+"問";
+        ScoreCalculation();
+        ScoreOutput(ScorePoint);
+    }
+
+    private void ScoreCalculation(){
+        int Correct = QuizManagement.Send();
+        int Manpuku = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][0]);
+        int Stress = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][1]);
+        int Water = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][2]);
+
+        Correct = Correct * 1000;
+        Manpuku = Cal(Manpuku);
+        Stress = Cal(Stress);
+        Water = Cal(Water); 
+        ScorePoint = Correct + Manpuku + Stress + Water;
+        ScoreText.text = ScorePoint.ToString();
+    } 
+
+    public void CloudPanelClose(){
+        Cloud.SetActive(false);
+        NextButton.SetActive(false);
+        Score.SetActive(true);
+        ScorePoints.SetTrigger("PanelOn");
+        NextButton.SetActive(true);
+    }
+
+    private int Cal(int a){
+        a = a * 100;
+        return a;
+    }
+
+    private void ScoreOutput(int a){
+        if(a>=10000){
+            ScoreImage.sprite = S;
+        }else if(a>=8000){
+            ScoreImage.sprite = A;
+        }else if(a>=6000){
+            ScoreImage.sprite = B;
+        }else{
+            ScoreImage.sprite = C;
+        }
+    }
+
+    public void next(){
+        PName.text = Pdata.GetComponent<Player_Data>().PlayerData[1][10];
+        Endroll.SetActive(true);
+        Reset();
+    }
+    
+    public void GoToTitle()
+    {
+        SceneManager.LoadScene("StartScene");//スタートシーンに遷移
+    }
+
+    private void Reset(){
+        Pdata.GetComponent<Player_Data>().PlayerData[1][0] = "5";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][1] = "5";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][2] = "3";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][3] = "3";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][4] = "3";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][5] = "1";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][6] = "0";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][7] = "0";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "0";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][9] = "避難所";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][10] = "あなた";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][11] = "0" ;
+        CsvSave();
+    }
+
+    void CsvSave()
+    {
+        StreamWriter file = new StreamWriter("Assets/Resources/PlayerData.csv",false);
+        for (var y=0; y < 2; y++)
+        {
+            for(var x=0; x < 12; x++)
+            {
+                file.Write(Pdata.GetComponent<Player_Data>().PlayerData[y][x]+",");
+                file.Flush();
+            }
+            file.WriteLine();
+        }
+    }
+}

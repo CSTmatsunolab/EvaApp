@@ -4,16 +4,34 @@ using UnityEngine;
 
 public class ClickSound : MonoBehaviour
 {
-    private AudioSource sound01;
-
-    void Start()
-    {
-        sound01 = GetComponent<AudioSource>();
-    }
+    public AudioSource sound;
+    public AudioClip audioClip0;
+    public AudioClip audioClip1;
+    public AudioClip audioClip2;
+    public AudioClip audioClip3;
 
     public void OnClick()
     {
-        sound01.PlayOneShot(sound01.clip);
+        sound.PlayOneShot(sound.clip);
     }
 
+    public void OnClick0()
+    {
+        sound.PlayOneShot(audioClip0);
+    }
+
+    public void OnClick1()
+    {
+        sound.PlayOneShot(audioClip1);
+    }
+
+    public void OnClick2()
+    {
+        sound.PlayOneShot(audioClip2);
+    }
+
+    public void OnClick3()
+    {
+        sound.PlayOneShot(audioClip3);
+    }
 }

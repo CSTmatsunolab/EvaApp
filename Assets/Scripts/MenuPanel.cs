@@ -163,7 +163,7 @@ public class MenuPanel : MonoBehaviour
         int GameOverFlag = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][11]);
         if(i == 0){
             Randflag = 0;
-            if(GameOverFlag >= 2)
+            if(GameOverFlag >= 2)//ゲームオーバーのフラグが2になったらゲームオーバー
             {
                 Debug.Log("GameOver");
                 GameOver.SetActive(true);
@@ -246,9 +246,10 @@ public class MenuPanel : MonoBehaviour
     //ゲームオーバー時の進むボタンから遷移
     public void GoButtonDown3()
     {
-        flag = 2;
+        //flag = 2;
         //ChangeMusic = 1;
-        SceneManager.LoadScene("EventSelectScene");//イベント選択画面に遷移
+        Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "50";
+        SceneManager.LoadScene("EventScene");//イベント選択画面に遷移
     }
 
     //配給のパネルから遷移

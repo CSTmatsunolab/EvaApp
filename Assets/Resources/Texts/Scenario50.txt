@@ -47,8 +47,10 @@
 !charaimg_sprite="polygon2"="car_side_kyukyusya"
 !charaimg_pos="polygon2"="3,-0.5,0"
 !charaimg_size="polygon2"="4.3,6.3,1"
-
+&!charaimg_anim="polygon2"="kyu,0,1,EaseInOut%%4.3,6.3,1%-10,-0.5,0"
+!wait="2"
 &「…」
+
 
 
 
@@ -109,7 +111,7 @@
 
 &あなた「（あ……僕の家だ）」
 &あなた「（よし、いつか帰れる日まで……頑張って健康的に過ごすぞ！）」
-
+&!charaimg_anim="polygon2"="kyu,,,Replay"
 
 &!wait="3"
 !foreground_color="0,0,0,0"

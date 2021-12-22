@@ -211,7 +211,18 @@ public class QuizManagement : MonoBehaviour
     }
 
     public void GotoEvent(){
-        SceneManager.LoadScene("EndingScene"); //ボタンが押されたら遷移
+        PdataLoad();
+        if(Seikaisu==10){
+            Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "51";
+        }
+        else if(Seikaisu >=6){
+            Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "52";
+        }
+        else{
+            Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "53";
+        }
+        
+        SceneManager.LoadScene("EventScene"); //ボタンが押されたら遷移
     }
 
     private void Syokika(){
