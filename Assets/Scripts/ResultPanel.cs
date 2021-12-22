@@ -45,6 +45,9 @@ public class ResultPanel : MonoBehaviour
         if(introcheck == 0||introcheck == 1){        //イントロシナリオにいく
             index = 1;
         }
+        else if(introcheck==54){
+            index = 54;
+        }
         else{
             index = ESManagement.Send();
             Answer = ESManagement.SendAnswer();
@@ -89,33 +92,43 @@ public class ResultPanel : MonoBehaviour
         Pdata.GetComponent<Player_Data>().PlayerData[1][1] = RE.ToString();
         CsvSave();
 
-        if (HG > HGC)
-        {
-            Result1.color = new Color(1.0f, 0.0f, 0.0f, 1.0f); //赤
-        }
-        if (HG < HGC)
-        {
+        if(index == 54){
             Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
-        }
-        if (RE > REC)
-        {
-            Result2.color = new Color(1.0f, 0.0f, 0.0f, 1.0f); //赤
-        }
-        if (RE < REC)
-        {
             Result2.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
+            Result1.text = "水が増えた！";
+            Result2.text = "食料が増えた！";
         }
-        if (HG == HGC)
-        {
-            Result1.color = new Color(0.0f, 0.0f, 0.0f, 1.0f); //黒
-        }
-        if (RE == REC)
-        {
-            Result2.color = new Color(0.0f, 0.0f, 0.0f, 1.0f); //黒
+        else{
+            if (HG > HGC)
+            {
+                Result1.color = new Color(1.0f, 0.0f, 0.0f, 1.0f); //赤
+            }
+            if (HG < HGC)
+            {
+                Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
+            }
+            if (RE > REC)
+            {
+                Result2.color = new Color(1.0f, 0.0f, 0.0f, 1.0f); //赤
+            }
+            if (RE < REC)
+            {
+                Result2.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
+            }
+            if (HG == HGC)
+            {
+                Result1.color = new Color(0.0f, 0.0f, 0.0f, 1.0f); //黒
+            }
+            if (RE == REC)
+            {
+                Result2.color = new Color(0.0f, 0.0f, 0.0f, 1.0f); //黒
+            }
+            
+            Result1.text = ("満腹ゲージ：" + HG.ToString() + "→" + HGC.ToString());
+            Result2.text = ("安心ゲージ：" + RE.ToString() + "→" + REC.ToString());
+
         }
         
-        Result1.text = ("満腹ゲージ：" + HG.ToString() + "→" + HGC.ToString());
-        Result2.text = ("安心ゲージ：" + RE.ToString() + "→" + REC.ToString());
     
     }
 
@@ -129,6 +142,7 @@ public class ResultPanel : MonoBehaviour
             SceneManager.LoadScene("SelectScene");//選択画面に遷移
         }
         if(flag == 3){
+            Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "2";
             SceneManager.LoadScene("SelectScene");//選択画面に遷移
         }
         else{

@@ -456,6 +456,11 @@ public class GameManager : MonoBehaviour
             index = "53";
             TitleSet();
         }
+        else if(introcheck == 54){
+            index = "54";
+            Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "2";
+            TitleSet();
+        }
         else{
             index = (ESManagement.Send()).ToString();
             TitleSet();

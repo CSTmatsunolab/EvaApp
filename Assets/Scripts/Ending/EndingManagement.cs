@@ -116,6 +116,7 @@ public class EndingManagement : MonoBehaviour
         Pdata.GetComponent<Player_Data>().PlayerData[1][9] = "避難所";
         Pdata.GetComponent<Player_Data>().PlayerData[1][10] = "あなた";
         Pdata.GetComponent<Player_Data>().PlayerData[1][11] = "0" ;
+        Pdata.GetComponent<Player_Data>().PlayerData[1][12] = "0" ;
         CsvSave();
     }
 
@@ -124,7 +125,7 @@ public class EndingManagement : MonoBehaviour
         StreamWriter file = new StreamWriter("Assets/Resources/PlayerData.csv",false);
         for (var y=0; y < 2; y++)
         {
-            for(var x=0; x < 12; x++)
+            for(var x=0; x < 13; x++)
             {
                 file.Write(Pdata.GetComponent<Player_Data>().PlayerData[y][x]+",");
                 file.Flush();

@@ -78,9 +78,6 @@ public class ESManagement : MonoBehaviour
         else if(flag == 1){
             a = Random.Range(3,23);
         }
-        else if(flag == 2){
-            a = 53;
-        }
         else if(flag == 3){
             a = 54;//配給用のイベント
         }
