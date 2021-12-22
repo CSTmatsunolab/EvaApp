@@ -25,6 +25,10 @@ public class QuizManagement : MonoBehaviour
     Image btnimg;
     Text btntext;
     static public int Seikaisu = 0;
+
+    [SerializeField] private AudioSource SEplayer;
+    [SerializeField] private AudioClip SeikaiSE;
+    [SerializeField] private AudioClip FuseikaiSE;
     
 
     int[] a = new int[10];//選出されたクイズのNo.
@@ -98,11 +102,19 @@ public class QuizManagement : MonoBehaviour
             Debug.Log(result[no]);
             Seikaisu++;
             StartCoroutine("Seikai");
+
+            SEplayer.PlayOneShot(SeikaiSE);
+            StartCoroutine("Seikai");
+
         }else{
             Debug.Log("不正解");
             result[no]=1;
             Debug.Log(result[no]);
             StartCoroutine("Huseikai");
+
+            SEplayer.PlayOneShot(FuseikaiSE);                     
+            StartCoroutine("Huseikai");
+
         }
     }
 
