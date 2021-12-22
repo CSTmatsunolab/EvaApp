@@ -125,6 +125,12 @@ public class ResultPanel : MonoBehaviour
         if(flag == 1){
             SceneManager.LoadScene("SelectScene");//選択画面に遷移
         }
+        if(flag == 2){
+            SceneManager.LoadScene("SelectScene");//選択画面に遷移
+        }
+        if(flag == 3){
+            SceneManager.LoadScene("SelectScene");//選択画面に遷移
+        }
         else{
             SceneManager.LoadScene("EatScene");//食事画面に遷移
         }
@@ -135,7 +141,7 @@ public class ResultPanel : MonoBehaviour
         StreamWriter file = new StreamWriter("Assets/Resources/PlayerData.csv",false);
         for (var y=0; y < 2; y++)
         {
-            for(var x=0;x<12;x++)
+            for(var x=0;x<13;x++)
             {
                 file.Write(Pdata.GetComponent<Player_Data>().PlayerData[y][x]+",");
                 file.Flush();
