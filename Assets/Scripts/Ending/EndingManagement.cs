@@ -9,6 +9,7 @@ using System.IO;
 public class EndingManagement : MonoBehaviour
 {
     GameObject Pdata;
+    GameObject Rdata;
     public Text ResultText;
     public Text ScoreText;
     public Text PName;
@@ -20,6 +21,7 @@ public class EndingManagement : MonoBehaviour
 
     public GameObject Cloud;
     public GameObject Score;
+    public GameObject Result;
     public GameObject Endroll;
     public GameObject NextButton;
     public Animator ScorePoints;
@@ -39,6 +41,10 @@ public class EndingManagement : MonoBehaviour
 
     private void PdataLoad(){
         Pdata = GameObject.Find("Player_Data");
+    }
+
+    private void RdataLoad(){
+        Rdata = GameObject.Find("ResultData");
     }
 
     private void TextSet(){
@@ -94,7 +100,9 @@ public class EndingManagement : MonoBehaviour
 
     public void next(){
         PName.text = Pdata.GetComponent<Player_Data>().PlayerData[1][10];
+
         Endroll.SetActive(true);
+        Result.SetActive(false);
         Reset();
     }
     
@@ -102,8 +110,15 @@ public class EndingManagement : MonoBehaviour
     {
         SceneManager.LoadScene("StartScene");//スタートシーンに遷移
     }
+    private void EndCheck(){
+        int a = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][8]);
+        Rdata.GetComponent<Result_Data>().ResultData[a][1]="1";
+
+    }
 
     private void Reset(){
+        RdataLoad();
+        EndCheck();
         Pdata.GetComponent<Player_Data>().PlayerData[1][0] = "5";
         Pdata.GetComponent<Player_Data>().PlayerData[1][1] = "5";
         Pdata.GetComponent<Player_Data>().PlayerData[1][2] = "3";
@@ -117,10 +132,14 @@ public class EndingManagement : MonoBehaviour
         Pdata.GetComponent<Player_Data>().PlayerData[1][10] = "あなた";
         Pdata.GetComponent<Player_Data>().PlayerData[1][11] = "0" ;
         Pdata.GetComponent<Player_Data>().PlayerData[1][12] = "0" ;
+        for(int i=3;i<=50;i++){
+            Rdata.GetComponent<Result_Data>().ResultData[i][1]="0";
+        }
         CsvSave();
+        EventSave();   
     }
 
-    void CsvSave()
+    private void CsvSave()
     {
         StreamWriter file = new StreamWriter("Assets/Resources/PlayerData.csv",false);
         for (var y=0; y < 2; y++)
@@ -128,6 +147,19 @@ public class EndingManagement : MonoBehaviour
             for(var x=0; x < 13; x++)
             {
                 file.Write(Pdata.GetComponent<Player_Data>().PlayerData[y][x]+",");
+                file.Flush();
+            }
+            file.WriteLine();
+        }
+    }
+    private void EventSave()
+    {
+        StreamWriter file = new StreamWriter("Assets/Resources/EventResult.csv",false);
+        for (var y=0; y < Rdata.GetComponent<Result_Data>().ResultData.Count; y++)
+        {
+            for(var x=0;x < 2;x++)
+            {
+                file.Write(Rdata.GetComponent<Result_Data>().ResultData[y][x]+",");
                 file.Flush();
             }
             file.WriteLine();

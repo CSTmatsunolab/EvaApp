@@ -35,12 +35,12 @@ public class InputText : MonoBehaviour
             Hand.SetActive(true);
             background.sprite = smartphone;
             submit.GetComponent<Image>().sprite = black;
-            titletext.text = "避難所名を入力してください(任意)";
+            titletext.text = "避難所名を\n入力してください(任意)";
         }
         if(introcheck == 1){    //パネル表示２回目
             background.sprite = syomei;
             submit.GetComponent<Image>().sprite = brown;
-            titletext.text = "名前を入力してください(任意)";
+            titletext.text = "名前を\n入力してください(任意)";
         }
     }
 

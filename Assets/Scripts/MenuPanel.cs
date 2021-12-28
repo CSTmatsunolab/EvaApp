@@ -219,7 +219,7 @@ public class MenuPanel : MonoBehaviour
         PdataLoad();
         int x = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][5]);
         int y = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][6]);
-        if(x == 2)
+        if(x == 1)
         {
             if(y == 0)
             {
@@ -269,11 +269,9 @@ public class MenuPanel : MonoBehaviour
         PdataLoad();
         int a = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][5]);
         int b = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][6]);
-        if (a >= 8){
-            if (b == 0){
-                ChallengeTest.SetActive(true);
-                ChallengeImage.sprite = test;//ChallengeTestパネルを表示
-            }  
+        if ((a >= 3)&&(b == 0)){
+            ChallengeTest.SetActive(true);
+            ChallengeImage.sprite = test;//ChallengeTestパネルを表示 
         }else{
             ChallengeTest.SetActive(false);
         }
