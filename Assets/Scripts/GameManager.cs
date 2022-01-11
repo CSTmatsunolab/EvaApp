@@ -439,6 +439,7 @@ public class GameManager : MonoBehaviour
         else if(introcheck == 1){        //イントロシナリオにいく
             index = "2";
             TitleSet();
+            Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "2";
         }
         else if(introcheck == 50){
             index = "50";
@@ -493,7 +494,6 @@ public class GameManager : MonoBehaviour
             InputPanel.SetActive(true);//避難所名入力のインプットパネルを開く
         }
         else if(index == "2"){      //イベント２が終わったら選択画面に行く
-            Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "2";
             InputPanel.SetActive(true);//名前入力のインプットパネルを開く
         }
         else if((index == "50")||(index=="51")||(index=="52")||(index=="53"))

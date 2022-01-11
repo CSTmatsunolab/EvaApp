@@ -239,6 +239,7 @@ public class MenuPanel : MonoBehaviour
     //ランダムイベントの進むボタンからイベント選択画面に遷移する場合
     public void GoButtonDown2(){
         flag = 1;
+        Debug.Log(flag);
         //ChangeMusic = 1;
         SceneManager.LoadScene("EventSelectScene");//イベント選択画面に遷移
     }

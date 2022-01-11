@@ -138,10 +138,11 @@ public class ResultPanel : MonoBehaviour
         if(flag == 1){
             SceneManager.LoadScene("SelectScene");//選択画面に遷移
         }
-        if(flag == 2){
+        /*if(flag == 2){
             SceneManager.LoadScene("SelectScene");//選択画面に遷移
         }
-        if(flag == 3){
+        */
+        else if(flag == 3){
             Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "2";
             SceneManager.LoadScene("SelectScene");//選択画面に遷移
         }
