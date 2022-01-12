@@ -223,6 +223,7 @@ public class MenuPanel : MonoBehaviour
         {
             if(y == 0)
             {
+                CsvSave();
                 GaugeExplanation.SetActive(true);
             }
         }
@@ -270,7 +271,7 @@ public class MenuPanel : MonoBehaviour
         PdataLoad();
         int a = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][5]);
         int b = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][6]);
-        if ((a >= 3)&&(b == 0)){
+        if ((a >= 8)&&(b == 0)){
             ChallengeTest.SetActive(true);
             ChallengeImage.sprite = test;//ChallengeTestパネルを表示 
         }else{
