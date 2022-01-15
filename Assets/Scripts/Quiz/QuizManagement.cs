@@ -133,7 +133,7 @@ public class QuizManagement : MonoBehaviour
     }
 
     void Shuffle(){
-        int x = 16;
+        int x = 21;
         int[] b = new int[x];
         for(int i=0;i<x;i++){
             b[i]=i+3;

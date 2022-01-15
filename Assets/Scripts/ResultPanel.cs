@@ -18,7 +18,7 @@ public class ResultPanel : MonoBehaviour
     int REC = 0; //イベントによる安心ゲージの変動値
     public Text Result1;
     public Text Result2;
-    
+    private string path;
     
 
     void Start()
@@ -89,7 +89,7 @@ public class ResultPanel : MonoBehaviour
         }
 
         Pdata.GetComponent<Player_Data>().PlayerData[1][0] = HGC.ToString();
-        Pdata.GetComponent<Player_Data>().PlayerData[1][1] = RE.ToString();
+        Pdata.GetComponent<Player_Data>().PlayerData[1][1] = REC.ToString();
         CsvSave();
 
         if(index == 54){
@@ -153,7 +153,8 @@ public class ResultPanel : MonoBehaviour
 
     void CsvSave()
     {
-        StreamWriter file = new StreamWriter("Assets/Resources/PlayerData.csv",false);
+        path = Application.persistentDataPath + "/PlayerData.csv";
+        StreamWriter file = new StreamWriter(path,false);
         for (var y=0; y < 2; y++)
         {
             for(var x=0;x<13;x++)

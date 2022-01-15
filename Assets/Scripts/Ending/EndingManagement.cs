@@ -26,6 +26,8 @@ public class EndingManagement : MonoBehaviour
     public GameObject NextButton;
     public Animator ScorePoints;
     int ScorePoint;
+    private string path;
+    private string path2;
     
     // Start is called before the first frame update
     void Start()
@@ -132,7 +134,7 @@ public class EndingManagement : MonoBehaviour
         Pdata.GetComponent<Player_Data>().PlayerData[1][10] = "あなた";
         Pdata.GetComponent<Player_Data>().PlayerData[1][11] = "0" ;
         Pdata.GetComponent<Player_Data>().PlayerData[1][12] = "0" ;
-        for(int i=3;i<=50;i++){
+        for(int i=3;i<=48;i++){
             Rdata.GetComponent<Result_Data>().ResultData[i][1]="0";
         }
         CsvSave();
@@ -141,7 +143,8 @@ public class EndingManagement : MonoBehaviour
 
     private void CsvSave()
     {
-        StreamWriter file = new StreamWriter("Assets/Resources/PlayerData.csv",false);
+        path = Application.persistentDataPath + "/PlayerData.csv";
+        StreamWriter file = new StreamWriter(path,false);
         for (var y=0; y < 2; y++)
         {
             for(var x=0; x < 13; x++)
@@ -154,7 +157,8 @@ public class EndingManagement : MonoBehaviour
     }
     private void EventSave()
     {
-        StreamWriter file = new StreamWriter("Assets/Resources/EventResult.csv",false);
+        path2 = Application.persistentDataPath + "/EventResult.csv";
+        StreamWriter file = new StreamWriter(path2,false);
         for (var y=0; y < Rdata.GetComponent<Result_Data>().ResultData.Count; y++)
         {
             for(var x=0;x < 2;x++)

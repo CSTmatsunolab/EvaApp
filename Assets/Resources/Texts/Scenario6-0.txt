@@ -11,7 +11,7 @@
 !charaimg_pos="polygon2"="-10,-0.34,0"
 !charaimg_size="polygon2"="2.47,2.88,1"
 !charaimg_active="polygon2"="true"
-!charaimg_anim="polygon2"="Sin,0,1,EaseInOut%%2.47,2.88,1%-1.33,-0.34,0"
+!charaimg_anim="polygon2"="Sinx,0,1,EaseInOut%%2.47,2.88,1%-1.33,-0.34,0"
 &隣のおじさん「ZZZ…」
 &!charaimg_sprite="polygon"="yoko"
 !charaimg_pos="polygon"="1.4,0,0"

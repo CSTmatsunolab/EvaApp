@@ -26,6 +26,7 @@ public class MenuPanel : MonoBehaviour
     static public int Randflag = 0;
     //static public int ChangeMusic = 0;
     int push = 0;//ボタンが押された回数
+    private string path;
 
     void Start()
     {
@@ -315,8 +316,9 @@ public class MenuPanel : MonoBehaviour
 
     void CsvSave()
     {
+        path = Application.persistentDataPath + "/PlayerData.csv";
         Pdata = GameObject.Find("Player_Data");
-        StreamWriter file = new StreamWriter("Assets/Resources/PlayerData.csv",false);
+        StreamWriter file = new StreamWriter(path,false);
         for (var y=0; y < 2; y++)
         {
             for(var x=0; x < 13; x++)

@@ -53,7 +53,7 @@
 !charaimg_sprite="polygon2"="mirrorbikkuri"
 !charaimg_pos="polygon2"="-1.3,-0.2,0"
 !charaimg_size="polygon2"="2.8,4.8,1"
-!charaimg_anim="polygon2"="anim2,0,1,EaseInOut%%2.8,4.8,1%-0.8,-0.2,1"
+!charaimg_anim="polygon2"="animo2,0,1,EaseInOut%%2.8,4.8,1%-0.8,-0.2,1"
 
 &あなた「ハッ！家の壁が倒壊してる！これは避難しなければならない！」
 &あなた「避難用のリュックを持ってこよう！」

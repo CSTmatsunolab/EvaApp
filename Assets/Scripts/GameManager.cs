@@ -446,7 +446,14 @@ public class GameManager : MonoBehaviour
             TitleSet();
         }
         else if(introcheck == 51){
-            index = "51";
+            int a = Random.Range(1,3);//1~2
+            if(a==1){
+                index = "49";
+                Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "49";
+            }
+            else{
+                index = "51";
+            }
             TitleSet();
         }
         else if(introcheck == 52){
@@ -496,7 +503,7 @@ public class GameManager : MonoBehaviour
         else if(index == "2"){      //イベント２が終わったら選択画面に行く
             InputPanel.SetActive(true);//名前入力のインプットパネルを開く
         }
-        else if((index == "50")||(index=="51")||(index=="52")||(index=="53"))
+        else if((index == "49")||(index == "50")||(index=="51")||(index=="52")||(index=="53"))
         {
             SceneManager.LoadScene("EndingScene");
         }

@@ -14,6 +14,7 @@ public class DrinkButton : MonoBehaviour
     [SerializeField] GameObject G3;
     [SerializeField] Text stock_text;
     GameObject Pdata;
+    private string path;
     int x = 0;//水分
     int y = 0;//水の所持数
 
@@ -23,7 +24,6 @@ public class DrinkButton : MonoBehaviour
         x = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][2]);
         //水の所持数(ペットボトル)y
         y = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][3]);
-
         //水の所持数が0のとき or 水分が満タンの時ボタン無効化
         Put();
     }
@@ -47,8 +47,9 @@ public class DrinkButton : MonoBehaviour
 
     void CsvSave()
     {
+        path = Application.persistentDataPath + "/PlayerData.csv";
         Pdata = GameObject.Find("Player_Data");
-        StreamWriter file = new StreamWriter("Assets/Resources/PlayerData.csv",false);
+        StreamWriter file = new StreamWriter(path,false);
         for (var y=0; y < 2; y++)
         {
             for(var x=0; x < 13; x++)

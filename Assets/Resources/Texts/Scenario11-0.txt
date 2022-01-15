@@ -27,7 +27,7 @@
 !charaimg_pos="polygon2"="1.2,-0.5,0"
 !charaimg_size="polygon2"="4.3,6.3,1"
 !charaimg_active="polygon2"="true"
-!charaimg_anim="polygon2"="Sin,0,1,Linear%%4.47,4.88,1%5,5,0"
+!charaimg_anim="polygon2"="runn,0,1,Linear%%4.47,4.88,1%5,5,0"
 
 
 &「〜3分後〜」
@@ -35,7 +35,7 @@
 &!charaimg_sprite="polygon2"="run_left_woman"
 !charaimg_active="polygon2"="true"
 !wait="5"
-!charaimg_anim="polygon2"="Sin,0,1,Linear%%4.47,4.88,1%1.2,-0.5,0"
+!charaimg_anim="polygon2"="runm,0,1,Linear%%4.47,4.88,1%1.2,-0.5,0"
 
 &ひな「持ってきたよ！」
 

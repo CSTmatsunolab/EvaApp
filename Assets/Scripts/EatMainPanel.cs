@@ -18,6 +18,7 @@ public class EatMainPanel : MonoBehaviour
     public GameObject KText = null;
     public GameObject RText = null;
     Text ktext;
+    private string path;
     // Start is called before the first frame update
     void Start()
     {
@@ -78,7 +79,8 @@ public class EatMainPanel : MonoBehaviour
 
     void CsvSave()//CSVに保存
     {
-        StreamWriter file = new StreamWriter("Assets/Resources/PlayerData.csv", false);
+        path = Application.persistentDataPath + "/PlayerData.csv";
+        StreamWriter file = new StreamWriter(path, false);
         for (var y = 0; y < 2; y++)
         {
             for (var x = 0; x < 13; x++)

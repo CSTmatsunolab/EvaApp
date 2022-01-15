@@ -16,9 +16,9 @@ public class stressGauge : MonoBehaviour
         GameObject Pdata = GameObject.Find("Player_Data");
         int i = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][1]);
 
-        int stress = 0;
-        stress = i;
-        _slider.value = stress;
+        int Hungry = 0;
+        Hungry = i;
+        _slider.value = Hungry;
     }
 
     void Update()

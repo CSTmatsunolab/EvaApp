@@ -29,6 +29,8 @@ public class ESManagement : MonoBehaviour
     [SerializeField] private AudioClip SeikaiSE;
     [SerializeField] private AudioClip FuseikaiSE;
 
+    private string path2;
+
     // Start is called before the first frame update
     void Start(){        
         index = rand();//乱数生成
@@ -54,9 +56,9 @@ public class ESManagement : MonoBehaviour
 
         if(flag == 0)
         {
-            a = Random.Range(3,27);//3~26
+            //a = Random.Range(3,27);//3~26
             //a = Random.Range(21,23);//指定範囲の動作確認用
-            //a = 50;
+            a = 11;
             Debug.Log(a);
 
             kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
@@ -66,7 +68,7 @@ public class ESManagement : MonoBehaviour
             {
                 if(kaburiCheck == 1)
                 {
-                    a = Random.Range(3,25);//3~25
+                    a = Random.Range(3,27);//3~26
                     //a = Random.Range(21,23);//指定範囲の動作確認用
                     //a = 50;
                     kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
@@ -77,7 +79,7 @@ public class ESManagement : MonoBehaviour
         }
         else if(flag == 1){
             //a = Random.Range(3,23);
-            a = 26;
+            a = Random.Range(3,27);//3~27
         }
         else if(flag == 3){
             a = 54;//配給用のイベント
@@ -260,7 +262,8 @@ public class ESManagement : MonoBehaviour
 
     void EventSave()
     {
-        StreamWriter file = new StreamWriter("Assets/Resources/EventResult.csv",false);
+        path2 = Application.persistentDataPath + "/EventResult.csv";
+        StreamWriter file = new StreamWriter(path2,false);
         for (var y=0; y < Rdata.GetComponent<Result_Data>().ResultData.Count; y++)
         {
             for(var x=0;x < 2;x++)

@@ -15,9 +15,8 @@
 &!charaimg_sprite="polygon3"="青空"
 !charaimg_pos="polygon3"="0,0,0"
 !charaimg_size="polygon3"="15.2,22,1"
-
+&!charaimg_anim="polygon"="ax,0,1,EaseInOut%%4.2,6.2,1%-2,-0.8,0"
 &「3時間後」
-&!charaimg_anim="polygon"="af,0,0.1,EaseInOut%%4.2,6.2,1%-2,-0.8,0"
 &!wait="2"
 
 &!charaimg_delete="polygon3"=""
