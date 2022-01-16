@@ -226,6 +226,7 @@ public class QuizManagement : MonoBehaviour
     }
 
     private void Syokika(){
+        Seikaisu=0;
         for(int i=0;i<10;i++){
             result[i]=0;
         }
