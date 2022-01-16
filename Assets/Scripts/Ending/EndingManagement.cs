@@ -24,6 +24,7 @@ public class EndingManagement : MonoBehaviour
     public GameObject Result;
     public GameObject Endroll;
     public GameObject NextButton;
+    public GameObject dragon;
     public Animator ScorePoints;
     int ScorePoint;
     private string path;
@@ -72,13 +73,18 @@ public class EndingManagement : MonoBehaviour
         Stress = Cal(Stress);
         Water = Cal(Water); 
         ScorePoint = Correct + Manpuku + Stress + Water;
-        ScoreText.text = ScorePoint.ToString();
+        ScoreText.text = "評価点　"+ScorePoint.ToString();
     } 
 
     public void CloudPanelClose(){
         Cloud.SetActive(false);
         NextButton.SetActive(false);
         Score.SetActive(true);
+        dragon.SetActive(false);
+        int a = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][8]);
+        if(a==49){
+            dragon.SetActive(true);
+        }
         ScorePoints.SetTrigger("PanelOn");
         NextButton.SetActive(true);
     }
@@ -113,7 +119,7 @@ public class EndingManagement : MonoBehaviour
         SceneManager.LoadScene("StartScene");//スタートシーンに遷移
     }
     private void EndCheck(){
-        int a = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][8]);
+        int a = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][8]);  
         Rdata.GetComponent<Result_Data>().ResultData[a][1]="1";
 
     }
