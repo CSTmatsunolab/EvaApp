@@ -56,18 +56,19 @@ public class ESManagement : MonoBehaviour
 
         if(flag == 0)
         {
-            a = Random.Range(3,30);//3~29
+            a = Random.Range(3,41);//3~40
             //a = Random.Range(21,23);//指定範囲の動作確認用
             Debug.Log(a);
 
             kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
             Debug.Log("kaburiCheck = " + kaburiCheck);
         
-            for(int i = 0;i < 5;i++) //もし解放済みのイベントだった場合、再抽選 最大5回
+            for(int i = 0;i < 10;i++) //もし解放済みのイベントだった場合、再抽選 最大5回
+                                    //実験にあたってなるべく被らせたくないので10回に
             {
                 if(kaburiCheck == 1)
                 {
-                    a = Random.Range(3,27);//3~26
+                    a = Random.Range(3,41);//3~40
                     //a = Random.Range(21,23);//指定範囲の動作確認用
                     //a = 50;
                     kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
@@ -79,18 +80,16 @@ public class ESManagement : MonoBehaviour
         else if(flag == 1){
             //a = Random.Range(3,23);
             a = Random.Range(3,30);//3~29
-            a = 29;
 
             kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
             Debug.Log("kaburiCheck = " + kaburiCheck);
         
-            for(int i = 0;i < 5;i++) //もし解放済みのイベントだった場合、再抽選 最大5回
+            for(int i = 0;i < 10;i++) //もし解放済みのイベントだった場合、再抽選 最大5回
+                                        //今回は10回
             {
                 if(kaburiCheck == 1)
                 {
-                    a = Random.Range(3,27);//3~26
-                    //a = Random.Range(21,23);//指定範囲の動作確認用
-                    //a = 50;
+                    a = Random.Range(3,41);//3~40
                     kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
                     Debug.Log("a1 = " + a);
                 }
