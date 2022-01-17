@@ -34,6 +34,8 @@
 &!charaimg_sprite="polygon3"="komatta_man3"
 &あなた「簡易トイレを作る？」
 &ひな「うん」
+&あなた「木の枝とか使うの？」
+&ひな「違うな」
 &ひな「段ボールの箱とビニール袋、新聞紙の3つがあればすぐできるよ」
 &!charaimg_sprite="polygon3"="odorokiman"
 &あなた「はやくおしえてくれ！！」
