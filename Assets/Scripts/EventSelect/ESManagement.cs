@@ -79,7 +79,21 @@ public class ESManagement : MonoBehaviour
         else if(flag == 1){
             //a = Random.Range(3,23);
             a = Random.Range(3,28);//3~27
-            a = 27;
+            
+            kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
+            Debug.Log("kaburiCheck = " + kaburiCheck);
+        
+            for(int i = 0;i < 5;i++) //もし解放済みのイベントだった場合、再抽選 最大5回
+            {
+                if(kaburiCheck == 1)
+                {
+                    a = Random.Range(3,27);//3~26
+                    //a = Random.Range(21,23);//指定範囲の動作確認用
+                    //a = 50;
+                    kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
+                    Debug.Log("a1 = " + a);
+                }
+            }
         }
         else if(flag == 3){
             a = 54;//配給用のイベント
