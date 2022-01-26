@@ -27,6 +27,7 @@ public class MenuPanel : MonoBehaviour
     //static public int ChangeMusic = 0;
     int push = 0;//ボタンが押された回数
     private string path;
+    static public int EC = 0;
 
     void Start()
     {
@@ -222,10 +223,11 @@ public class MenuPanel : MonoBehaviour
         int y = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][6]);
         if(x == 1)
         {
-            if(y == 0)
+            if(y == 0 && EC == 0)
             {
                 CsvSave();
                 GaugeExplanation.SetActive(true);
+                EC = 1;
             }
         }
     }
