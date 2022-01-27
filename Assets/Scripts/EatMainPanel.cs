@@ -65,7 +65,7 @@ public class EatMainPanel : MonoBehaviour
         TimeCheck();
         ReduceWater();
         Result();
-        CsvSave();
+        Pdata.GetComponent<Player_Data>().CsvSave();
     }
 
     public void NotEatButtondown()
@@ -74,22 +74,7 @@ public class EatMainPanel : MonoBehaviour
         TimeCheck();
         ReduceWater();
         Result();
-        CsvSave();
-    }
-
-    void CsvSave()//CSVに保存
-    {
-        path = Application.persistentDataPath + "/PlayerData.csv";
-        StreamWriter file = new StreamWriter(path, false);
-        for (var y = 0; y < 2; y++)
-        {
-            for (var x = 0; x < 13; x++)
-            {
-                file.Write(Pdata.GetComponent<Player_Data>().PlayerData[y][x] + ",");
-                file.Flush();
-            }
-            file.WriteLine();
-        }
+        Pdata.GetComponent<Player_Data>().CsvSave();
     }
 
     void Result()//食事結果の表示
@@ -150,7 +135,6 @@ public class EatMainPanel : MonoBehaviour
                     Pdata.GetComponent<Player_Data>().PlayerData[1][11]=GameOverFlag.ToString();
                 }
             }
-            //CsvSave();
         }
     }
 

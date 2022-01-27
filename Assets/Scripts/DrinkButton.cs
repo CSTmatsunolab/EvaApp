@@ -41,24 +41,8 @@ public class DrinkButton : MonoBehaviour
             str=y.ToString();
             Pdata.GetComponent<Player_Data>().PlayerData[1][3]=str;
         }
-        CsvSave();
+        Pdata.GetComponent<Player_Data>().CsvSave();
         Put();
-    }
-
-    void CsvSave()
-    {
-        path = Application.persistentDataPath + "/PlayerData.csv";
-        Pdata = GameObject.Find("Player_Data");
-        StreamWriter file = new StreamWriter(path,false);
-        for (var y=0; y < 2; y++)
-        {
-            for(var x=0; x < 13; x++)
-            {
-                file.Write(Pdata.GetComponent<Player_Data>().PlayerData[y][x]+",");
-                file.Flush();
-            }
-            file.WriteLine();
-        }
     }
 
     private void DrinkCheck(){//水を飲むボタンの無効化

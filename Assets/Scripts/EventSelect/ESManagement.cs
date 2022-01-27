@@ -56,6 +56,7 @@ public class ESManagement : MonoBehaviour
 
         if(flag == 0)
         {
+            
             a = Random.Range(3,41);//3~40
             //a = Random.Range(21,23);//指定範囲の動作確認用
             Debug.Log(a);
@@ -79,7 +80,7 @@ public class ESManagement : MonoBehaviour
         }
         else if(flag == 1){
             //a = Random.Range(3,23);
-            a = Random.Range(3,30);//3~29
+            a = Random.Range(3,41);//3~29
 
             kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
             Debug.Log("kaburiCheck = " + kaburiCheck);
@@ -169,7 +170,7 @@ public class ESManagement : MonoBehaviour
         {
             RdataLoad();
             Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
-            EventSave();
+            Rdata.GetComponent<Result_Data>().CsvSave();
             Answer = 0;
             Debug.Log("正解");
             
@@ -180,7 +181,7 @@ public class ESManagement : MonoBehaviour
         {
             RdataLoad();
             Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
-            EventSave();
+            Rdata.GetComponent<Result_Data>().CsvSave();
             Answer = 1;
             Debug.Log("不正解"); 
 
@@ -197,7 +198,7 @@ public class ESManagement : MonoBehaviour
         {
             RdataLoad();
             Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
-            EventSave();
+            Rdata.GetComponent<Result_Data>().CsvSave();
             Answer = 1;
             Debug.Log("不正解"); 
 
@@ -208,7 +209,7 @@ public class ESManagement : MonoBehaviour
         {
             RdataLoad();
             Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
-            EventSave();
+            Rdata.GetComponent<Result_Data>().CsvSave();
             Answer = 0;
             Debug.Log("正解");
 
@@ -271,21 +272,5 @@ public class ESManagement : MonoBehaviour
     public static int SendAnswer()
     {
         return Answer;
-    }
-
-
-    void EventSave()
-    {
-        path2 = Application.persistentDataPath + "/EventResult.csv";
-        StreamWriter file = new StreamWriter(path2,false);
-        for (var y=0; y < Rdata.GetComponent<Result_Data>().ResultData.Count; y++)
-        {
-            for(var x=0;x < 2;x++)
-            {
-                file.Write(Rdata.GetComponent<Result_Data>().ResultData[y][x]+",");
-                file.Flush();
-            }
-            file.WriteLine();
-        }
     }
 }

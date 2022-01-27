@@ -143,36 +143,7 @@ public class EndingManagement : MonoBehaviour
         for(int i=3;i<=48;i++){
             Rdata.GetComponent<Result_Data>().ResultData[i][1]="0";
         }
-        CsvSave();
-        EventSave();   
-    }
-
-    private void CsvSave()
-    {
-        path = Application.persistentDataPath + "/PlayerData.csv";
-        StreamWriter file = new StreamWriter(path,false);
-        for (var y=0; y < 2; y++)
-        {
-            for(var x=0; x < 13; x++)
-            {
-                file.Write(Pdata.GetComponent<Player_Data>().PlayerData[y][x]+",");
-                file.Flush();
-            }
-            file.WriteLine();
-        }
-    }
-    private void EventSave()
-    {
-        path2 = Application.persistentDataPath + "/EventResult.csv";
-        StreamWriter file = new StreamWriter(path2,false);
-        for (var y=0; y < Rdata.GetComponent<Result_Data>().ResultData.Count; y++)
-        {
-            for(var x=0;x < 2;x++)
-            {
-                file.Write(Rdata.GetComponent<Result_Data>().ResultData[y][x]+",");
-                file.Flush();
-            }
-            file.WriteLine();
-        }
+        Pdata.GetComponent<Player_Data>().CsvSave();
+        Rdata.GetComponent<Result_Data>().CsvSave();
     }
 }

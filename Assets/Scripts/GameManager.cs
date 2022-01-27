@@ -158,6 +158,7 @@ public class GameManager : MonoBehaviour
     {
         Result.SetActive(false);
         InputPanel.SetActive(false);
+        PdataLoad();
         TextIndex();
         _text = LoadTextFile(textFile);
         _pageQueue = SeparateString(_text, SEPARATE_PAGE);
@@ -426,12 +427,13 @@ public class GameManager : MonoBehaviour
 
     private void PdataLoad(){
         Pdata = GameObject.Find("Player_Data");
+        Debug.Log(Pdata.GetComponent<Player_Data>().PlayerData[1][8]);
     }
 
     private void TextIndex()    //イントロのシナリオを始めるかチェックする
     {
-        PdataLoad();
         int introcheck = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][8]);
+        Debug.Log(introcheck);
         if(introcheck == 0){        //イントロシナリオにいく
             index = "1";
             TitleSet();
@@ -447,6 +449,7 @@ public class GameManager : MonoBehaviour
         }
         else if(introcheck == 51){
             int a = Random.Range(1,3);//1~2
+            Debug.Log(a);
             if(a==1){
                 index = "49";
                 Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "49";

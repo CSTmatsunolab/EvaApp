@@ -40,7 +40,7 @@
 &!charaimg_sprite="polygon5"="himoti"
 !charaimg_pos="polygon5"="0,5,0"
 !charaimg_size="polygon5"="4.5,2.4,1"
-!charaimg_anim="polygon5"="ae,0,1,EaseInOut%%4.5,2.4,1%0,2.7,0"
+!charaimg_anim="polygon5"="rakka,0,1,EaseInOut%%4.5,2.4,1%0,2.7,0"
 &ひな「お菓子とか缶詰みたいなものは」
 &ひな「日持ちがいいけど」
 &!charaimg_sprite="polygon"="onigirikomattaman"

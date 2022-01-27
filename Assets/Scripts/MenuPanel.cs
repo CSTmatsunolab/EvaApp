@@ -55,6 +55,10 @@ public class MenuPanel : MonoBehaviour
 
     public void GoToTitle()
     {
+        PdataLoad();
+        Destroy(Pdata);
+        Destroy(GameObject.Find("EventData"));
+        Destroy(GameObject.Find("ResultData"));
         SceneManager.LoadScene("StartScene");//スタートシーンに遷移
     }
 
@@ -207,7 +211,7 @@ public class MenuPanel : MonoBehaviour
                     Pdata.GetComponent<Player_Data>().PlayerData[1][3]=WaterStock.ToString();
                     Pdata.GetComponent<Player_Data>().PlayerData[1][4]=FoodStock.ToString();
                     Pdata.GetComponent<Player_Data>().PlayerData[1][12]=HaikyuCount.ToString();
-                    CsvSave();
+                    Pdata.GetComponent<Player_Data>().CsvSave();
                     Haikyu.SetActive(true);
                 }
 
@@ -225,7 +229,7 @@ public class MenuPanel : MonoBehaviour
         {
             if(y == 0 && EC == 0)
             {
-                CsvSave();
+                Pdata.GetComponent<Player_Data>().CsvSave();
                 GaugeExplanation.SetActive(true);
                 EC = 1;
             }
@@ -315,21 +319,4 @@ public class MenuPanel : MonoBehaviour
     {
         return ChangeMusic;
     }*/
-
-    void CsvSave()
-    {
-        path = Application.persistentDataPath + "/PlayerData.csv";
-        Pdata = GameObject.Find("Player_Data");
-        StreamWriter file = new StreamWriter(path,false);
-        for (var y=0; y < 2; y++)
-        {
-            for(var x=0; x < 13; x++)
-            {
-                file.Write(Pdata.GetComponent<Player_Data>().PlayerData[y][x]+",");
-                file.Flush();
-            }
-            file.WriteLine();
-        }
-    }
-    
 }

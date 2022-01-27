@@ -27,7 +27,7 @@
 &ひな「それで、開けた穴にティッシュを刺せばツナの缶詰ランプの完成！」
 
 &!charaimg_active="polygon3"="true"
-!charaimg_anim="polygon3"="Sin,0,1,EaseInOut%%4.3,2.9,1%0,1,0"
+!charaimg_anim="polygon3"="Slin,0,1,EaseInOut%%4.3,2.9,1%0,1,0"
 
 &あなた「結構簡単だね！火をつけてもいい？」
 &ひな「いいよ。」

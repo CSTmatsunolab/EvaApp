@@ -90,7 +90,7 @@ public class ResultPanel : MonoBehaviour
 
         Pdata.GetComponent<Player_Data>().PlayerData[1][0] = HGC.ToString();
         Pdata.GetComponent<Player_Data>().PlayerData[1][1] = REC.ToString();
-        CsvSave();
+        Pdata.GetComponent<Player_Data>().CsvSave();
 
         if(index == 54){
             Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
@@ -148,21 +148,6 @@ public class ResultPanel : MonoBehaviour
         }
         else{
             SceneManager.LoadScene("EatScene");//食事画面に遷移
-        }
-    }
-
-    void CsvSave()
-    {
-        path = Application.persistentDataPath + "/PlayerData.csv";
-        StreamWriter file = new StreamWriter(path,false);
-        for (var y=0; y < 2; y++)
-        {
-            for(var x=0;x<13;x++)
-            {
-                file.Write(Pdata.GetComponent<Player_Data>().PlayerData[y][x]+",");
-                file.Flush();
-            }
-            file.WriteLine();
         }
     }
 }
