@@ -114,26 +114,10 @@ public class EatMainPanel : MonoBehaviour
                 HaikyuCount = 0;
                 Pdata.GetComponent<Player_Data>().PlayerData[1][12]=HaikyuCount.ToString();
             }
-            if(manpuku == 0)//満腹が0の時に起きる
+            if(manpuku == 0||suibun == 0||anshin == 0)//満腹が0の時に起きる
             {
-                if(suibun == 0)//水分が0
-                {
-                    GameOverFlag++;
-                    Pdata.GetComponent<Player_Data>().PlayerData[1][11]=GameOverFlag.ToString();
-                }
-                if(anshin == 0)//安心が0
-                {
-                    GameOverFlag++;
-                    Pdata.GetComponent<Player_Data>().PlayerData[1][11]=GameOverFlag.ToString();
-                }
-            }
-            if(anshin == 0 )//安心、水分
-            {
-                if(suibun == 0)//水分が0
-                {
-                    GameOverFlag++;
-                    Pdata.GetComponent<Player_Data>().PlayerData[1][11]=GameOverFlag.ToString();
-                }
+                GameOverFlag++;
+                Pdata.GetComponent<Player_Data>().PlayerData[1][11]=GameOverFlag.ToString();
             }
         }
     }

@@ -32,6 +32,7 @@ public class Result_Data : MonoBehaviour
                 Debug.Log("ResultData[" + i + "][" + j + "]=" + ResultData[i][j]);
             }
         }
+        CsvSave();
         DontDestroyOnLoad(this);
     }
 

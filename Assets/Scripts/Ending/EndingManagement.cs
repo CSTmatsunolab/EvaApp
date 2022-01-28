@@ -36,12 +36,6 @@ public class EndingManagement : MonoBehaviour
         TextSet();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void PdataLoad(){
         Pdata = GameObject.Find("Player_Data");
     }
@@ -145,5 +139,8 @@ public class EndingManagement : MonoBehaviour
         }
         Pdata.GetComponent<Player_Data>().CsvSave();
         Rdata.GetComponent<Result_Data>().CsvSave();
+        Destroy(Pdata);
+        Destroy(GameObject.Find("EventData"));
+        Destroy(Rdata);
     }
 }
