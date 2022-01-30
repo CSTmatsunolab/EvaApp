@@ -23,7 +23,7 @@
 !charaimg_pos="polygon"="-1.57,0,0"
 !charaimg_size="polygon"="2.8,4.1,1"
 
-&あなた「……。ああ。ひな…。」
+&あなた「……。ああ。ひなさん…。」
 
 &!charaimg_sprite="polygon2"="hina_shock"
 !charaimg_pos="polygon2"="1.65,0.12,0"

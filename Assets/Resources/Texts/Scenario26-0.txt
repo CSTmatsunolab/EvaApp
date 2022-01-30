@@ -14,13 +14,13 @@
 !charaimg_pos="polygon2"="-1.45,-0.05,0"
 !charaimg_size="polygon2"="2.7,4.3,1"
 
-&あなた「(あれ。何だかひなのおばあちゃん困ってそうだな。)」
+&あなた「(あれ。何だかひなさんのおばあちゃん困ってそうだな。)」
 
 &!charaimg_sprite="polygon2"="anata"
 !charaimg_pos="polygon2"="-1.5,-1.34,0"
 !charaimg_size="polygon2"="4,6,1"
 
-&あなた「ひなのおばあちゃん、こんにちは。」
+&あなた「ひなさんのおばあちゃん、こんにちは。」
 
 &!charaimg_sprite="polygon"="hina_sobo1"
 !charaimg_pos="polygon"="1,-0.1,0"

@@ -14,7 +14,7 @@
 !charaimg_pos="polygon2"="-1.45,-0.05,0"
 !charaimg_size="polygon2"="2.7,4.3,1"
 
-&あなた「ひな。どうかしたの？」
+&あなた「ひなさん。どうかしたの？」
 &ひな「それが、次に支援物資が来るのが1週間後になるかもしれないって…。」
 
 &!charaimg_sprite="polygon2"="kanashikuna_man"
