@@ -24,7 +24,9 @@ public class EndingManagement : MonoBehaviour
     public GameObject Result;
     public GameObject Endroll;
     public GameObject NextButton;
+    public GameObject man;
     public GameObject dragon;
+    public GameObject kyukyu;
     public Animator ScorePoints;
     int ScorePoint;
     private string path;
@@ -75,9 +77,13 @@ public class EndingManagement : MonoBehaviour
         NextButton.SetActive(false);
         Score.SetActive(true);
         dragon.SetActive(false);
+        kyukyu.SetActive(false);
         int a = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][8]);
         if(a==50){
             dragon.SetActive(true);
+        }else if(a==49){
+            man.SetActive(false);
+            kyukyu.SetActive(true);
         }
         ScorePoints.SetTrigger("PanelOn");
         NextButton.SetActive(true);
