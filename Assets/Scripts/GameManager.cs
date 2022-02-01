@@ -443,16 +443,16 @@ public class GameManager : MonoBehaviour
             TitleSet();
             Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "2";
         }
-        else if(introcheck == 50){
-            index = "50";
+        else if(introcheck == 49){
+            index = "49";
             TitleSet();
         }
         else if(introcheck == 51){
             int a = Random.Range(1,3);//1~2
             Debug.Log(a);
             if(a==1){
-                index = "49";
-                Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "49";
+                index = "50";
+                Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "50";
             }
             else{
                 index = "51";

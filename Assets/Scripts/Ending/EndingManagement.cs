@@ -76,7 +76,7 @@ public class EndingManagement : MonoBehaviour
         Score.SetActive(true);
         dragon.SetActive(false);
         int a = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][8]);
-        if(a==49){
+        if(a==50){
             dragon.SetActive(true);
         }
         ScorePoints.SetTrigger("PanelOn");
@@ -118,7 +118,7 @@ public class EndingManagement : MonoBehaviour
 
     }
 
-    private void Reset(){
+    private void Reset(){//csvを初期状態に戻す
         RdataLoad();
         EndCheck();
         Pdata.GetComponent<Player_Data>().PlayerData[1][0] = "5";

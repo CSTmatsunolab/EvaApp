@@ -10,14 +10,11 @@ public class MenuPanel : MonoBehaviour
     [SerializeField] GameObject Menu;
     [SerializeField] GameObject Drink;
     [SerializeField] GameObject Event;
-    [SerializeField] GameObject GaugeExplanation;//説明パネル1
-    [SerializeField] GameObject GaugeExplanation2;//説明パネル2
-    [SerializeField] GameObject CharacterExplanation;//説明パネル3
-    [SerializeField] GameObject ButtonExplanation;//説明パネル4
-    [SerializeField] GameObject ButtonExplanation2;//説明パネル5
+    [SerializeField] GameObject Explanation;
     [SerializeField] GameObject ChallengeTest;//防災テストへの誘導パネル
     [SerializeField] GameObject GameOver;//ゲームオーバーシーン
     [SerializeField] GameObject Haikyu;//配給時のパネル
+    public Image explanation;
     public Image ChallengeImage;
     public Sprite test;
     public Sprite list;
@@ -28,6 +25,7 @@ public class MenuPanel : MonoBehaviour
     int push = 0;//ボタンが押された回数
     private string path;
     static public int EC = 0;
+    private int page = 0;//説明パネルのページ数
 
     void Start()
     {
@@ -37,7 +35,7 @@ public class MenuPanel : MonoBehaviour
         GameOverClose();
         HaikyuClose();
         RandomEvent();
-        AllExplanationClose();
+        CloseExplanation();
         OpenGaugeExplanation();
         GoChallengeTest();
         HaikyuEvent();
@@ -72,71 +70,28 @@ public class MenuPanel : MonoBehaviour
         Drink.SetActive(false);//Drinkパネルを非表示
     }
 
-    public void GoToGaugeExplanation()
-    {
-        GaugeExplanation.SetActive(true); //説明パネル1を表示
-        GaugeExplanation2.SetActive(false); //説明パネル2を非表示
+    public void GoToExplanation(){//説明パネル表示
+        page = 0;
+        Explanation.SetActive(true);
+        BackToMenu();
     }
 
-    public void GoToGaugeExplanation2()
-    {
-        GaugeExplanation2.SetActive(true); //説明パネル2を表示
-        GaugeExplanation.SetActive(false); //説明パネル1を非表示
-        CharacterExplanation.SetActive(false); //説明パネル3を非表示
-    }
-    
-    public void GoToCharacterExplanation()
-    {
-        CharacterExplanation.SetActive(true); //説明パネル3を表示
-        GaugeExplanation2.SetActive(false); //説明パネル2を非表示
-        ButtonExplanation.SetActive(false); //説明パネル4を非表示
+    public void GoPage(){//説明パネル右ボタン
+        page++;
+        if(page > 4)
+            page = 0;
+        explanation.sprite = Resources.Load<Sprite>("Sprites/Explanation"+page.ToString());
     }
 
-    public void GoToButtonExplanation()
-    {
-        ButtonExplanation.SetActive(true); //説明パネル4を表示
-        CharacterExplanation.SetActive(false); //説明パネル3を非表示
-        ButtonExplanation2.SetActive(false); //説明パネル5を非表示
+    public void ReturnPage(){//説明パネル左ボタン
+        page--;
+        if(page < 0)
+            page = 4;
+        explanation.sprite = Resources.Load<Sprite>("Sprites/Explanation"+page.ToString());
     }
 
-    public void GoToButtonExplanation2()
-    {
-        ButtonExplanation2.SetActive(true); //説明パネル5を表示
-        ButtonExplanation.SetActive(false); //説明パネル4を非表示
-    }
-
-    public void GaugeExplanationClose()
-    {
-        GaugeExplanation.SetActive(false); //説明パネル1を非表示
-    }
-
-    public void GaugeExplanation2Close()
-    {
-        GaugeExplanation2.SetActive(false); //説明パネル2を非表示
-    }
-
-    public void CharacterExplanationClose()
-    {
-        CharacterExplanation.SetActive(false); //説明パネル3を非表示
-    }
-
-    public void ButtonExplanationClose()
-    {
-        ButtonExplanation.SetActive(false); //説明パネル4を非表示
-    }
-
-    public void ButtonExplanation2Close()
-    {
-        ButtonExplanation2.SetActive(false); //説明パネル5を非表示
-    }
-
-    public void AllExplanationClose()
-    {
-        ButtonExplanation2.SetActive(false); //説明を非表示
-        ButtonExplanation.SetActive(false);
-        CharacterExplanation.SetActive(false); 
-        GaugeExplanation.SetActive(false);
-        GaugeExplanation2.SetActive(false);
+    public void CloseExplanation(){//説明パネル非表示
+        Explanation.SetActive(false);
     }
 
     private void EventClose()
@@ -190,34 +145,27 @@ public class MenuPanel : MonoBehaviour
     }
 
     private void HaikyuEvent(){
-        PdataLoad();
         int Day = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][5]);
         int Time = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][6]);
         int WaterStock = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][3]);
         int FoodStock = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][4]);
         int HaikyuCount = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][12]);
-        if(HaikyuCount == 0)
+        if(HaikyuCount == 0 && Day >= 2 && Day % 2 == 1 && Time == 0)
         {
-            if(Day >= 2 && Day % 2 == 1)
-            {
-                if(Time == 0)
-                {
-                    Debug.Log("配給日");
+            int rand = Random.Range(1,100);//配給ガチャ
+            Debug.Log("配給日");
+            if(rand > 50){
+                WaterStock = WaterStock + 1;
+                FoodStock = FoodStock + 1;
+                HaikyuCount = HaikyuCount + 1;
 
-                    WaterStock = WaterStock + 2;
-                    FoodStock = FoodStock + 3;
-                    HaikyuCount = HaikyuCount +1;
-
-                    Pdata.GetComponent<Player_Data>().PlayerData[1][3]=WaterStock.ToString();
-                    Pdata.GetComponent<Player_Data>().PlayerData[1][4]=FoodStock.ToString();
-                    Pdata.GetComponent<Player_Data>().PlayerData[1][12]=HaikyuCount.ToString();
-                    Pdata.GetComponent<Player_Data>().CsvSave();
-                    Haikyu.SetActive(true);
-                }
-
-            }
+                Pdata.GetComponent<Player_Data>().PlayerData[1][3]=WaterStock.ToString();
+                Pdata.GetComponent<Player_Data>().PlayerData[1][4]=FoodStock.ToString();
+                Pdata.GetComponent<Player_Data>().PlayerData[1][12]=HaikyuCount.ToString();
+                Pdata.GetComponent<Player_Data>().CsvSave();
+                Haikyu.SetActive(true);
+            } 
         }
-
     }
 
     private void OpenGaugeExplanation() //起動時に説明パネル1を表示
@@ -230,7 +178,7 @@ public class MenuPanel : MonoBehaviour
             if(y == 0 && EC == 0)
             {
                 Pdata.GetComponent<Player_Data>().CsvSave();
-                GaugeExplanation.SetActive(true);
+                GoToExplanation();
                 EC = 1;
             }
         }
@@ -257,7 +205,7 @@ public class MenuPanel : MonoBehaviour
     {
         //flag = 2;
         //ChangeMusic = 1;
-        Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "50";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "49";
         SceneManager.LoadScene("EventScene");//イベント選択画面に遷移
     }
 

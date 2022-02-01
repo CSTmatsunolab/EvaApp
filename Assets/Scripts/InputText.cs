@@ -10,6 +10,7 @@ public class InputText : MonoBehaviour
     //オブジェクトと結びつける
     public InputField inputField;
     public Text titletext;
+    public Text input;
     public Image background;
     public GameObject Hand;
     public Sprite smartphone;
@@ -35,12 +36,14 @@ public class InputText : MonoBehaviour
             Hand.SetActive(true);
             background.sprite = smartphone;
             submit.GetComponent<Image>().sprite = black;
-            titletext.text = "避難所名を\n入力してください(任意)";
+            titletext.text = "<color=#FF0000>避難所名</color>を\n入力してください(任意)";
+            input.text = "避難所名";
         }
         if(introcheck == 1){    //パネル表示２回目
             background.sprite = syomei;
             submit.GetComponent<Image>().sprite = brown;
-            titletext.text = "名前を\n入力してください(任意)";
+            titletext.text = "<color=#FF0000>名前</color>を\n入力してください(任意)";
+            input.text = "名前";
         }
     }
 
