@@ -10,3 +10,7 @@
 
 ## Assets/Scripts内Readme
 C#ファイル情報
+
+## テスト項目一覧
+テストケースのスプレッドシートへのリンク
+https://docs.google.com/spreadsheets/d/1GnA_wxGBK6Fh9KUombMi88jkSPcac0pxt4MYv_n7csw/edit?usp=sharing
