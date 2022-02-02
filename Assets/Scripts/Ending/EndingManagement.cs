@@ -10,27 +10,26 @@ public class EndingManagement : MonoBehaviour
 {
     GameObject Pdata;
     GameObject Rdata;
-    public Text ResultText;
-    public Text ScoreText;
-    public Text PName;
-    public Image ScoreImage;
+    public Text ResultText;//結果のTextUI
+    public Text ScoreText;//得点のTextUI
+    public Text PName;//プレイヤーの名前のTextUI
+    public Image ScoreImage;//ランクのImageUI
+    //ランクのスプライト
     public Sprite S;
     public Sprite A;
     public Sprite B;
     public Sprite C;
 
-    public GameObject Cloud;
-    public GameObject Score;
-    public GameObject Result;
-    public GameObject Endroll;
-    public GameObject NextButton;
-    public GameObject man;
-    public GameObject dragon;
-    public GameObject kyukyu;
-    public Animator ScorePoints;
-    int ScorePoint;
-    private string path;
-    private string path2;
+    public GameObject Cloud;//Cloudパネル
+    public GameObject Score;//Scoreパネル
+    public GameObject Result;//Resultオブジェクト
+    public GameObject Endroll;//エンドロールパネル
+    public GameObject NextButton;//次へボタン
+    public GameObject man;//走っている男のオブジェクト
+    public GameObject dragon;//神龍のオブジェクト
+    public GameObject kyukyu;//救急車のオブジェクト
+    public Animator ScorePoints;//ScorePointsオブジェクトのアニメーターコントローラー
+    int ScorePoint;//得点
     
     // Start is called before the first frame update
     void Start()
@@ -46,7 +45,7 @@ public class EndingManagement : MonoBehaviour
         Rdata = GameObject.Find("ResultData");
     }
 
-    private void TextSet(){
+    private void TextSet(){//CloudTextの文章変更
         Score.SetActive(false);
         Endroll.SetActive(false);
         PdataLoad();
@@ -58,7 +57,7 @@ public class EndingManagement : MonoBehaviour
         ScoreOutput(ScorePoint);
     }
 
-    private void ScoreCalculation(){
+    private void ScoreCalculation(){//得点計算
         int Correct = QuizManagement.Send();
         int Manpuku = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][0]);
         int Stress = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][1]);
@@ -72,7 +71,7 @@ public class EndingManagement : MonoBehaviour
         ScoreText.text = "評価点　"+ScorePoint.ToString();
     } 
 
-    public void CloudPanelClose(){
+    public void CloudPanelClose(){//Cloudパネルの次へボタンを押したときの処理
         Cloud.SetActive(false);
         NextButton.SetActive(false);
         Score.SetActive(true);
@@ -89,12 +88,12 @@ public class EndingManagement : MonoBehaviour
         NextButton.SetActive(true);
     }
 
-    private int Cal(int a){
+    private int Cal(int a){//ゲージの残量を100倍する
         a = a * 100;
         return a;
     }
 
-    private void ScoreOutput(int a){
+    private void ScoreOutput(int a){//ScoreImageのスプライト変更
         if(a>=10000){
             ScoreImage.sprite = S;
         }else if(a>=8000){
@@ -106,7 +105,7 @@ public class EndingManagement : MonoBehaviour
         }
     }
 
-    public void next(){
+    public void next(){//Scoreパネルの次へボタンを押したときの処理
         PName.text = Pdata.GetComponent<Player_Data>().PlayerData[1][10];
 
         Endroll.SetActive(true);
@@ -118,7 +117,7 @@ public class EndingManagement : MonoBehaviour
     {
         SceneManager.LoadScene("StartScene");//スタートシーンに遷移
     }
-    private void EndCheck(){
+    private void EndCheck(){//エンディングシナリオのフラグ変更
         int a = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][8]);  
         Rdata.GetComponent<Result_Data>().ResultData[a][1]="1";
 

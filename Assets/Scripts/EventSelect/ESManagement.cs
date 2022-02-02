@@ -9,27 +9,25 @@ using System.IO;
 
 public class ESManagement : MonoBehaviour
 {
-    [SerializeField] GameObject EventBackground;
-    [SerializeField] GameObject EventImage;
-    [SerializeField] GameObject TitleText;
-    [SerializeField] GameObject EventText;
-    [SerializeField] GameObject ClearText;
-    [SerializeField] GameObject FailText;
-    public Image Maru;
-    public Image Batsu;
+    [SerializeField] GameObject EventBackground;//イベント選択画面の背景画像UI
+    [SerializeField] GameObject EventImage;//イベントの画像UI
+    [SerializeField] GameObject TitleText;//イベントのタイトルのTextUI
+    [SerializeField] GameObject EventText;//イベントの問題文のTextUI
+    [SerializeField] GameObject ClearText;//正解の選択肢のTextUI
+    [SerializeField] GameObject FailText;//不正解の選択肢のTextUI
+    public Image Maru;//まるの画像
+    public Image Batsu;//ばつの画像
 
-    [SerializeField] private string spritesDirectory = "Sprites/Event";
-    GameObject Rdata;
+    [SerializeField] private string spritesDirectory = "Sprites/Event";//イベント画像が保存されているフォルダへのパス
+    private GameObject Rdata;//イベント閲覧フラグのオブジェクト
 
-    public static int index = 0;
-    public static int Answer = 0;
-    public static int Transform = 0;
+    public static int index = 0;//イベントのナンバー
+    public static int Answer = 0;//イベントの回答
+    private int Transform = 0;//
 
-    [SerializeField] private AudioSource SEplayer;
-    [SerializeField] private AudioClip SeikaiSE;
-    [SerializeField] private AudioClip FuseikaiSE;
-
-    private string path2;
+    [SerializeField] private AudioSource SEplayer;//EventSelectManagementのAudioSourceコンポーネント
+    [SerializeField] private AudioClip SeikaiSE;//正解のSE
+    [SerializeField] private AudioClip FuseikaiSE;//不正解のSE
 
     // Start is called before the first frame update
     void Start(){        
@@ -218,8 +216,8 @@ public class ESManagement : MonoBehaviour
         }
     }
 
-    IEnumerator　Seikai(){
-        Maru.gameObject.SetActive(true);
+    IEnumerator　Seikai(){//正解の時のアニメーション
+        Maru.gameObject.SetActive(true);//MaruをActiveにする
         Color c = Maru.color;
         c.a = 1.3f; 
         Maru.color = c; // 画像の不透明度を1にする
@@ -241,8 +239,8 @@ public class ESManagement : MonoBehaviour
         SceneManager.LoadScene("EventScene"); 
     }
 
-    IEnumerator　Huseikai(){
-        Batsu.gameObject.SetActive(true);
+    IEnumerator　Huseikai(){//不正解の時のアニメーション
+        Batsu.gameObject.SetActive(true);//BatsuをActiveにする
         Color c = Batsu.color;
         c.a = 1.3f; 
         Batsu.color = c; // 画像の不透明度を1にする
@@ -264,12 +262,12 @@ public class ESManagement : MonoBehaviour
         SceneManager.LoadScene("EventScene"); 
     }
 
-    public static int Send()
+    public static int Send()//イベントナンバーを返す
     {
         return index;
     }
 
-    public static int SendAnswer()
+    public static int SendAnswer()//回答を返す
     {
         return Answer;
     }
