@@ -3,10 +3,10 @@
 
 | ディレクトリ名 | 中身の説明 |
 | ---- | ---- |
-|  Animetors  |  イベント演出のアニメーションに関するもの  |
+|  Animetors  |  アニメーターコントローラー  |
 |  Fonts  |  フォント  |
 |  Images  |  画像  |
-|  Resouces  |  ゲームデータのCSVファイルやプレハブのもの  |
+|  Resouces  |  ビルド後の読み込みファイル  |
 |  Scenes  |  シーンデータ  |
 |  Scripts  |  スクリプト  |
 |  Sounds  |  音声  |
