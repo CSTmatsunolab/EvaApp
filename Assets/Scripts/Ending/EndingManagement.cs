@@ -50,10 +50,18 @@ public class EndingManagement : MonoBehaviour
         Score.SetActive(false);
         Endroll.SetActive(false);
         PdataLoad();
+        RdataLoad();
+        
+        int OpenedEvent = 0;
+        for (int i = 0 ;i < EResultLine-1; i++){ //EventResult.csvの行数分、開放フラグを足すのを繰り返す 0行目は飛ばす       
+            OpenedEvent += int.Parse(Rdata.GetComponent<Result_Data>().ResultData[i+1][1]);
+        }
+
         ResultText.text = "避難所名：" + Pdata.GetComponent<Player_Data>().PlayerData[1][9]+"\n"
                         + "名前：" + Pdata.GetComponent<Player_Data>().PlayerData[1][10]+"\n"
                         + "経過日数：" + Pdata.GetComponent<Player_Data>().PlayerData[1][5]+"日"+"\n"
-                        + "クイズ正解数：" + (QuizManagement.Send()).ToString()+"問";
+                        + "イベント開放数：" + OpenedEvent+"\n"
+                        + "最終クイズ正解数：" + (QuizManagement.Send()).ToString()+"問";
         ScoreCalculation();
         ScoreOutput(ScorePoint);
     }
@@ -64,14 +72,14 @@ public class EndingManagement : MonoBehaviour
         int Stress = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][1]);
         int Water = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][2]);
         int OpenedEvent = 0;
-        for (int i = 0 ;i < EResultLine; i++){ //EventResult.csvの行数分、開放フラグを足すのを繰り返す 0行目は飛ばす       
-            OpenedEvent = int.Parse(Pdata.GetComponent<Result_Data>().ResultData[i+1][1]);
+        for (int i = 0 ;i < EResultLine-1; i++){ //EventResult.csvの行数分、開放フラグを足すのを繰り返す 0行目は飛ばす       
+            OpenedEvent += int.Parse(Rdata.GetComponent<Result_Data>().ResultData[i+1][1]);
         }
         Correct = Correct * 1000;
         Manpuku = Cal(Manpuku);
         Stress = Cal(Stress);
         Water = Cal(Water);
-        OpenedEvent = OpenedEvent * 100;    //イベントの開放数ぶんスコア100
+        OpenedEvent = (OpenedEvent * 100) -300;    //イベントの開放数ぶんスコア100, オープニング+エンディング(スコア200+100)を除く
         ScorePoint = Correct + Manpuku + Stress + Water + OpenedEvent;
         ScoreText.text = "評価点　"+ScorePoint.ToString();
     } 

@@ -6,8 +6,10 @@ using System.IO;
 
 public class ListManagement : MonoBehaviour
 {
+    int EResultLine = 55;//EventResultの行数(1行目(項目名)を含む)
     public Text Kanpan;
     public Text Mizu;
+    public Text OpenedEvent;
     public GameObject Content;
     [SerializeField] GameObject Event;
     GameObject[] ListButton;
@@ -17,6 +19,7 @@ public class ListManagement : MonoBehaviour
     GameObject Rdata;
     Image btnimg;
     Text btntext;
+    
 
     // Start is called before the first frame update
     void Start(){
@@ -40,8 +43,14 @@ public class ListManagement : MonoBehaviour
 
     private void TextLoad(){
         PdataLoad();
+        RdataLoad();
         Kanpan.text = Pdata.GetComponent<Player_Data>().PlayerData[1][4];
         Mizu.text = Pdata.GetComponent<Player_Data>().PlayerData[1][3];
+        int OpenedEventCount = 0;
+        for (int i = 0 ;i < EResultLine-1; i++){ //EventResult.csvの行数分、開放フラグを足すのを繰り返す 0行目は飛ばす       
+            OpenedEventCount += int.Parse(Rdata.GetComponent<Result_Data>().ResultData[i+1][1]);
+        }
+        OpenedEvent.text = OpenedEventCount.ToString();
     }
 
     private void ListButtonMake(){
