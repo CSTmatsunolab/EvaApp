@@ -30,6 +30,7 @@ public class EndingManagement : MonoBehaviour
     public GameObject kyukyu;//救急車のオブジェクト
     public Animator ScorePoints;//ScorePointsオブジェクトのアニメーターコントローラー
     int ScorePoint;//得点
+    int EResultLine = 55;//EventResultの行数(1行目(項目名)を含む)
     
     // Start is called before the first frame update
     void Start()
@@ -62,12 +63,16 @@ public class EndingManagement : MonoBehaviour
         int Manpuku = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][0]);
         int Stress = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][1]);
         int Water = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][2]);
-
+        int OpenedEvent = 0;
+        for (int i = 0 ;i < EResultLine; i++){ //EventResult.csvの行数分、開放フラグを足すのを繰り返す 0行目は飛ばす       
+            OpenedEvent = int.Parse(Pdata.GetComponent<Result_Data>().ResultData[i+1][1]);
+        }
         Correct = Correct * 1000;
         Manpuku = Cal(Manpuku);
         Stress = Cal(Stress);
-        Water = Cal(Water); 
-        ScorePoint = Correct + Manpuku + Stress + Water;
+        Water = Cal(Water);
+        OpenedEvent = OpenedEvent * 100;    //イベントの開放数ぶんスコア100
+        ScorePoint = Correct + Manpuku + Stress + Water + OpenedEvent;
         ScoreText.text = "評価点　"+ScorePoint.ToString();
     } 
 
@@ -94,11 +99,11 @@ public class EndingManagement : MonoBehaviour
     }
 
     private void ScoreOutput(int a){//ScoreImageのスプライト変更
-        if(a>=10000){
+        if(a>=10500){
             ScoreImage.sprite = S;
-        }else if(a>=8000){
+        }else if(a>=8500){
             ScoreImage.sprite = A;
-        }else if(a>=6000){
+        }else if(a>=6500){
             ScoreImage.sprite = B;
         }else{
             ScoreImage.sprite = C;
