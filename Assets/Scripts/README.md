@@ -4,83 +4,79 @@
 ## EatScene
 | スクリプト名 | 中身の説明 |
 | ---- | ---- |
-|  EatMainPanel  |    |
-|  EatPanel  |    |
-|  NotEatButton  |  |
-|  ResultPanel  |    |
+|  EatMainPanel  |  食事画面のパネル制御  |
+|  EatPanel  |  食事のパネル  |
+|  NotEatButton  | 食べないボタン |
+|  ResultPanel  |  食事結果のパネル  |
 
 
 ## EndingScene
 | スクリプト名 | 中身の説明 |
 | ---- | ---- |
-|  EndingManagement  |  |
-|  Endroll  |  |
-|    | 　 |
+|  EndingManagement  | エンディング画面全体の制御 |
+|  Endroll  | エンドロールの制御 |
 
 ## EventScene
 | スクリプト名 | 中身の説明 |
 | ---- | ---- |
-|  GameManager  |    |
-|  InputText  |  |
-|  ResultPanel  |    |
-|    | 　 |
+|  GameManager  |  イベント画面全体の制御  |
+|  InputText  | プレイヤー名、避難所名の入力 |
+|  ResultPanel  |  イベント結果のパネル  |
 
 
 ## EvenrtSelectScene
 | スクリプト名 | 中身の説明 |
 | ---- | ---- |
 |  ButtonSound  |    |
-|  ESManagement  |  |
+|  ESManagement  | イベント選択画面全体の制御 |
 |  EventButton  |    |
-|  EventDetail  |    |
-|    | 　 |
+|  EventDetail  |  イベントの名前、クイズの選択肢やサムネイルなどの表示  |
 
 ## ListScene
 | スクリプト名 | 中身の説明 |
 | ---- | ---- |
-|  ListManagemant  |  |
-|  ReturnButton  |  |
-|  WaterStock  |  |
-|    | 　 |
+|  ListManagemant  | リスト画面の制御 |
+|  ReturnButton  | 選択画面に戻る |
+|  WaterStock  | 水の貯蓄量の表示 |
 
 ## QuizScene
 | スクリプト名 | 中身の説明 |
 | ---- | ---- |
-|  Answer  |  |
-|  ButtonSound  |    |
-|  QuizManagement  |  |
-|    | 　 |
+|  Answer  | クイズ画面でのイベント画像の表示 |
+|  ButtonSound  |  ボタンの効果音  |
+|  QuizManagement  | クイズ画面の制御 |
 
 ## SelectScene
 | スクリプト名 | 中身の説明 |
 | ---- | ---- |
-|  DayText  |    |
+|  DayText  |  日数を表示  |
 |  DayTextSelect  |  |
-|  DrinkButton  |    |
-|  GotoQuiz  |    |
-|  HungryGauge  |    |
-|  ListButton  |  |
-|  MenuPanel  |    |
+|  DrinkButton  |  水を飲むボタン  |
+|  GotoQuiz  |  クイズに進む  |
+|  HungryGauge  |  満腹ゲージの制御  |
+|  ListButton  | リスト画面に進む |
+|  MenuPanel  |  選択画面のパネルの制御  |
 |  MusicFadeOut  |  |
-|  PlayerVisualChange  |  |
-|  stressGauge  |    |
+|  PlayerVisualChange  | 状態に合わせてプレイヤーの見た目を変える |
+|  stressGauge  |  安心ゲージの制御  |
 |  TimeBase  |  |
 |  TimeText  |  |
-|  WaterCount  |  |
+|  WaterCount  | 水分カウンターの制御 |
 
 
 ## StartScene
 | スクリプト名 | 中身の説明 |
 | ---- | ---- |
-|  Event_Data  |    |
-|  Player_Data  |    |
-|  Result_Data  |    |
-|  SelectButton  |    |
+|  Event_Data  |  イベントデータのCSVファイルの読み込み  |
+|  Player_Data  |  プレイヤーデータのCSVファイルの読み込み  |
+|  Result_Data  |  イベント結果のCSVファイルの読み込み  |
+|  SelectButton  |  選択画面に進む  |
 |  TestButton  |  |
 |    | 　 |
 
 ## 未分類
 | スクリプト名 | 中身の説明 |
-|  AspectKeeper  |    |
+| ---- | ---- |
+|  AspectKeeper  |  アスペクト比の設定  |
 |  Background  |    |
-|  ClickSound  |    |
+|  ClickSound  |  ボタンの効果音  |
