@@ -62,7 +62,7 @@ public class ESManagement : MonoBehaviour
             kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
             Debug.Log("kaburiCheck = " + kaburiCheck);
         
-            for(int i = 0;i < 15;i++) //もし解放済みのイベントだった場合、再抽選 最大5回
+            for(int i = 0;i < 20;i++) //もし解放済みのイベントだった場合、再抽選 最大5回
                                     //実験にあたってなるべく被らせたくないので15回に
             {
                 if(kaburiCheck == 1)
@@ -83,7 +83,7 @@ public class ESManagement : MonoBehaviour
             kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
             Debug.Log("kaburiCheck = " + kaburiCheck);
         
-            for(int i = 0;i < 15;i++) //もし解放済みのイベントだった場合、再抽選 最大5回
+            for(int i = 0;i < 20;i++) //もし解放済みのイベントだった場合、再抽選 最大5回
                                         //今回は15回
             {
                 if(kaburiCheck == 1)
