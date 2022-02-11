@@ -487,7 +487,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void TitleSet(){
-        GameObject EData =　GameObject.Find("EventData");
+        GameObject EData = GameObject.Find("EventData");
         titleText.text = EData.GetComponent<Event_Data>().EventData[int.Parse(index)][1];
     }
  

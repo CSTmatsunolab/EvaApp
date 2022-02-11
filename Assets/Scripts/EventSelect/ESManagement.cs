@@ -216,7 +216,7 @@ public class ESManagement : MonoBehaviour
         }
     }
 
-    IEnumerator　Seikai(){//正解の時のアニメーション
+    IEnumerator Seikai(){//正解の時のアニメーション
         Maru.gameObject.SetActive(true);//MaruをActiveにする
         Color c = Maru.color;
         c.a = 1.3f; 
@@ -239,7 +239,7 @@ public class ESManagement : MonoBehaviour
         SceneManager.LoadScene("EventScene"); 
     }
 
-    IEnumerator　Huseikai(){//不正解の時のアニメーション
+    IEnumerator Huseikai(){//不正解の時のアニメーション
         Batsu.gameObject.SetActive(true);//BatsuをActiveにする
         Color c = Batsu.color;
         c.a = 1.3f; 

@@ -152,13 +152,14 @@ public class EndingManagement : MonoBehaviour
         Pdata.GetComponent<Player_Data>().PlayerData[1][10] = "あなた";
         Pdata.GetComponent<Player_Data>().PlayerData[1][11] = "0" ;
         Pdata.GetComponent<Player_Data>().PlayerData[1][12] = "0" ;
-        for(int i=3;i<=48;i++){
-            Rdata.GetComponent<Result_Data>().ResultData[i][1]="0";
-        }
+        // 被験者実験のため一度削除
+        //for(int i=3;i<=48;i++){
+        //    Rdata.GetComponent<Result_Data>().ResultData[i][1]="0";
+        //}
         Pdata.GetComponent<Player_Data>().CsvSave();
         Rdata.GetComponent<Result_Data>().CsvSave();
         Destroy(Pdata);
         Destroy(GameObject.Find("EventData"));
-        Destroy(Rdata);
+        //Destroy(Rdata);
     }
 }

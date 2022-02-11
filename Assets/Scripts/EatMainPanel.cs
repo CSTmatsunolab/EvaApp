@@ -43,7 +43,7 @@ public class EatMainPanel : MonoBehaviour
     }
 
     public void MinusButtondown()   {
-        if(x>0)　//食べる量が0以上の時のみ
+        if(x>0) //食べる量が0以上の時のみ
         {
             ++i;//貯蓄を増やす
             --x;//食べる量を減らす
@@ -53,7 +53,7 @@ public class EatMainPanel : MonoBehaviour
 
     public void EatButtondown()
     {
-        j = j + x;　//まんぷくゲージに加算
+        j = j + (x*3); //まんぷくゲージに加算
         Debug.Log(x);
         Debug.Log(i);
         if(j > 10){

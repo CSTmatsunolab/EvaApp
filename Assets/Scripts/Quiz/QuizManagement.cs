@@ -166,7 +166,7 @@ public class QuizManagement : MonoBehaviour
         }
     }
 
-    IEnumerator　Seikai(){
+    IEnumerator Seikai(){
         Maru.gameObject.SetActive(true);
         Color c = Maru.color;
         c.a = 1f; 
@@ -188,7 +188,7 @@ public class QuizManagement : MonoBehaviour
         Maru.gameObject.SetActive(false); // 画像を非アクティブにする
     }
 
-    IEnumerator　Huseikai(){
+    IEnumerator Huseikai(){
         Batsu.gameObject.SetActive(true);
         Color c = Batsu.color;
         c.a = 1f; 

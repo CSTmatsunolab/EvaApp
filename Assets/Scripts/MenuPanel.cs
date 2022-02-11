@@ -155,8 +155,8 @@ public class MenuPanel : MonoBehaviour
             int rand = Random.Range(1,100);//配給ガチャ
             Debug.Log("配給日");
             if(rand > 50){
-                WaterStock = WaterStock + 1;
-                FoodStock = FoodStock + 1;
+                WaterStock = WaterStock + 3;
+                FoodStock = FoodStock + 3;
                 HaikyuCount = HaikyuCount + 1;
 
                 Pdata.GetComponent<Player_Data>().PlayerData[1][3]=WaterStock.ToString();

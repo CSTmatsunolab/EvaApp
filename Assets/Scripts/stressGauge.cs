@@ -12,7 +12,7 @@ public class stressGauge : MonoBehaviour
     {
         // スライダーを取得する
         _slider = GameObject.Find("stressGauge").GetComponent<Slider>();
-        //　配列の取得 
+        // 配列の取得 
         GameObject Pdata = GameObject.Find("Player_Data");
         int i = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][1]);
 
