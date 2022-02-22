@@ -28,7 +28,7 @@
 !charaimg_size="polygon2"="1.2,4.3,1"
 
 &あなた「家の修理が終わるまで、仮設住宅暮らし頑張らないとな！！」
-&!charaimg_anim="polygon2"="anix,0,1,EaseInOut%%1.2,6.3,1%6,-0.2,0"
+&!charaimg_anim="polygon2"="aniz,0,1,EaseInOut%%1.2,6.3,1%6,-0.2,0"
 
 &あなた「トイレはどこだ？」
 

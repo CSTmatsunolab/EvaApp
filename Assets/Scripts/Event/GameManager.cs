@@ -307,11 +307,11 @@ public class GameManager : MonoBehaviour
         string[] ps = parameters[0].Replace(" ", "").Split(',');
         string path = animationsDirectory + SceneManager.GetActiveScene().name + "/" + image.name;
         AnimationClip prevAnimation = Resources.Load<AnimationClip>(path + "/" + ps[0]);
-        AnimationClip animation;
+        Debug.Log(path+ "/" + ps[0]);
+        AnimationClip animation = new AnimationClip();
         #if UNITY_EDITOR
             if (ps[3].Equals("Replay") && prevAnimation != null)
                 return Instantiate(prevAnimation);
-            animation = new AnimationClip();
             Color startcolor = image.color;
             Vector3[] start = new Vector3[3];
             start[0] = image.GetComponent<RectTransform>().sizeDelta;
@@ -328,6 +328,7 @@ public class GameManager : MonoBehaviour
             AnimationCurve[,] curves = new AnimationCurve[4, 4];
             if (ps[3].Equals("EaseInOut"))
             {
+                
                 curves[0, 0] = AnimationCurve.EaseInOut(float.Parse(ps[1]), startcolor.r, float.Parse(ps[2]), endcolor.r);
                 curves[0, 1] = AnimationCurve.EaseInOut(float.Parse(ps[1]), startcolor.g, float.Parse(ps[2]), endcolor.g);
                 curves[0, 2] = AnimationCurve.EaseInOut(float.Parse(ps[1]), startcolor.b, float.Parse(ps[2]), endcolor.b);
@@ -338,6 +339,7 @@ public class GameManager : MonoBehaviour
                     curves[i + 1, 1] = AnimationCurve.EaseInOut(float.Parse(ps[1]), start[i].y, float.Parse(ps[2]), end[i].y);
                     curves[i + 1, 2] = AnimationCurve.EaseInOut(float.Parse(ps[1]), start[i].z, float.Parse(ps[2]), end[i].z);
                 }
+                
             }
             else
             {
