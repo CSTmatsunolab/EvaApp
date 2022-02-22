@@ -7,8 +7,6 @@
 |  EatMainPanel  |  食事画面の主人公ステータス計算  |
 |  EatPanel  |  食事画面の制御（表示するパネルの切り替えなど）  |
 |  NotEatButton  | 食べないボタン |
-|  ResultPanel  |  食事結果のパネル  |
-
 
 ## EndingScene
 | スクリプト名 | 中身の説明 |
