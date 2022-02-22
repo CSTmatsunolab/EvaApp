@@ -6,7 +6,7 @@
 |  Animetors  |  アニメーターコントローラー  |
 |  Fonts  |  フォント  |
 |  Images  |  画像  |
-|  Resouces  |  ビルド後の読み込みファイル  |
+|  Resouces  |  ビルド後の読み込みファイル *Readmeあり  |
 |  Scenes  |  シーンデータ  |
-|  Scripts  |  スクリプト  |
+|  Scripts  |  スクリプト *Readmeあり  |
 |  Sounds  |  音声  |
