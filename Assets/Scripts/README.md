@@ -4,8 +4,8 @@
 ## EatScene
 | スクリプト名 | 中身の説明 |
 | ---- | ---- |
-|  EatMainPanel  |  食事画面のパネル制御  |
-|  EatPanel  |  食事のパネル  |
+|  EatMainPanel  |  食事画面の主人公ステータス計算  |
+|  EatPanel  |  食事画面の制御（表示するパネルの切り替えなど）  |
 |  NotEatButton  | 食べないボタン |
 |  ResultPanel  |  食事結果のパネル  |
 
@@ -27,9 +27,10 @@
 ## EvenrtSelectScene
 | スクリプト名 | 中身の説明 |
 | ---- | ---- |
-|  ButtonSound  |    |
+|  ButtonSound  |  イベント選択画面などの正解不正解のSEを流す  |
 |  ESManagement  | イベント選択画面全体の制御 |
-|  EventButton  |    |
+|  DayTextSelect  | イベント選択画面で日数を表示 |
+|  EventButton  |  イベント選択画面に遷移するボタン（開発中に便宜的に作られたので、不要なスクリプト）  |
 |  EventDetail  |  イベントの名前、クイズの選択肢やサムネイルなどの表示  |
 
 ## ListScene
@@ -49,18 +50,17 @@
 ## SelectScene
 | スクリプト名 | 中身の説明 |
 | ---- | ---- |
-|  DayText  |  日数を表示  |
-|  DayTextSelect  |  |
+|  DayText  |  選択画面左上の日数を表示  |
 |  DrinkButton  |  水を飲むボタン  |
 |  GotoQuiz  |  クイズに進む  |
 |  HungryGauge  |  満腹ゲージの制御  |
 |  ListButton  | リスト画面に進む |
 |  MenuPanel  |  選択画面のパネルの制御  |
-|  MusicFadeOut  |  |
+|  MusicFadeOut  | イベント画面で、場合に応じて音楽を変更する |
 |  PlayerVisualChange  | 状態に合わせてプレイヤーの見た目を変える |
 |  stressGauge  |  安心ゲージの制御  |
-|  TimeBase  |  |
-|  TimeText  |  |
+|  TimeBase  | 選択画面左上の昼夜の背景の色を変更する |
+|  TimeText  | 選択画面左上の昼夜を変更する |
 |  WaterCount  | 水分カウンターの制御 |
 
 
@@ -71,12 +71,12 @@
 |  Player_Data  |  プレイヤーデータのCSVファイルの読み込み  |
 |  Result_Data  |  イベント結果のCSVファイルの読み込み  |
 |  SelectButton  |  選択画面に進む  |
-|  TestButton  |  |
+|  TestButton  | 食事画面に遷移するボタン（開発中に便宜的に作られたので、不要なスクリプト） |
 |    | 　 |
 
 ## 未分類
 | スクリプト名 | 中身の説明 |
 | ---- | ---- |
-|  AspectKeeper  |  アスペクト比の設定  |
-|  Background  |    |
+|  AspectKeeper  |  ビルド時にカメラの範囲のみユーザに見えるようにする  |
+|  Background  |  タイトル画面などの背景を動かす  |
 |  ClickSound  |  ボタンの効果音  |
