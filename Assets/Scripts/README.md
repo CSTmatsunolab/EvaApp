@@ -31,7 +31,6 @@
 |  ESManagement  | イベント選択画面全体の制御 |
 |  DayTextSelect  | イベント選択画面で日数を表示 |
 |  EventButton  |  イベント選択画面に遷移するボタン（開発中に便宜的に作られたので、不要なスクリプト）  |
-|  EventDetail  |  イベントの名前、クイズの選択肢やサムネイルなどの表示  |
 
 ## ListScene
 | スクリプト名 | 中身の説明 |
@@ -39,6 +38,7 @@
 |  ListManagemant  | リスト画面の制御 |
 |  ReturnButton  | 選択画面に戻る |
 |  WaterStock  | 水の貯蓄量の表示 |
+|  EventDetail  |  イベントの名前、サムネイル、イベント概要の設定  |
 
 ## QuizScene
 | スクリプト名 | 中身の説明 |
@@ -52,7 +52,6 @@
 | ---- | ---- |
 |  DayText  |  選択画面左上の日数を表示  |
 |  DrinkButton  |  水を飲むボタン  |
-|  GotoQuiz  |  クイズに進む  |
 |  HungryGauge  |  満腹ゲージの制御  |
 |  ListButton  | リスト画面に進む |
 |  MenuPanel  |  選択画面のパネルの制御  |
@@ -72,6 +71,7 @@
 |  Result_Data  |  イベント結果のCSVファイルの読み込み  |
 |  SelectButton  |  選択画面に進む  |
 |  TestButton  | 食事画面に遷移するボタン（開発中に便宜的に作られたので、不要なスクリプト） |
+|  GotoQuiz  |  クイズ画面に進む（開発中に便宜的に作られたので、不要なスクリプト）  |
 |    | 　 |
 
 ## 未分類
