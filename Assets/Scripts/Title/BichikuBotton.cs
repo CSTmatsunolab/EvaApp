@@ -2,23 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
-public class BackTitle : MonoBehaviour
+public class BichikuBotton : MonoBehaviour
 {
     GameObject[] bichiku;
     GameObject[] title;
-    void Awake(){
-        bichiku = GameObject.FindGameObjectsWithTag("bichiku");
+    void Start(){
         title = GameObject.FindGameObjectsWithTag("title");
-    }
-    public void BackTitleButtonDown()
-    {
-        
+        bichiku = GameObject.FindGameObjectsWithTag("bichiku");
         foreach(GameObject bi in bichiku){
             bi.SetActive (false);
         }
+    }
+    public void BichikueButtonDown()
+    {        
         foreach(GameObject ti in title){
-            ti.SetActive (true);
+            ti.SetActive (false);
+        }
+        foreach(GameObject bi in bichiku){
+            bi.SetActive (true);
         }
     }
     bool ContainsScene(string sceneName)

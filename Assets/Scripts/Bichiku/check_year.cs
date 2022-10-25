@@ -3,20 +3,49 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.IO;
 
 public class check_year : MonoBehaviour
 {
-   public InputField inputField_y;
-   public InputField inputField_m;
-   public InputField inputField_d;
-   public GameObject toggle;
-   DateTime TodayNow;
-   int year;
-   int month;
-   int day;
-   bool y_flag = false;
-   bool m_flag = false;
-   bool d_flag = false;
+    public InputField inputField_y;
+    public InputField inputField_m;
+    public InputField inputField_d;
+    public GameObject DaysSave;
+    DateTime TodayNow;
+    static TextAsset csvFile;
+    static List<string[]> daysData = new List<string[]>();
+    int year;
+    int month;
+    int day;
+    bool y_flag = false;
+    bool m_flag = false;
+    bool d_flag = false;
+    
+    void Awake(){
+        csvFile = Resources.Load("Texts/Bichiku_days") as TextAsset;
+        StringReader reader = new StringReader(csvFile.text);//
+        while (reader.Peek() != -1)//最後まで読み込むと-1になる関数
+        {
+            string line = reader.ReadLine();//一行ずつ読み込み
+            daysData.Add(line.Split(','));
+        }
+        if(transform.parent.name == "Itembox1"){
+            inputField_y.text = daysData[0][0];
+            inputField_m.text = daysData[0][1];
+            inputField_d.text = daysData[0][2];
+        }
+        if(transform.parent.name == "Itembox2"){
+            inputField_y.text = daysData[1][0];
+            inputField_m.text = daysData[1][1];
+            inputField_d.text = daysData[1][2];
+        }
+        year = int.Parse(inputField_y.text);
+        month = int.Parse(inputField_m.text);
+        day = int.Parse(inputField_d.text);
+        y_flag = true;
+        m_flag = true;
+        d_flag = true;
+    }
 
    // Update is called once per frame
    public void InputYear()
@@ -57,6 +86,7 @@ public class check_year : MonoBehaviour
        check();
    }
 
+
    void check(){
        if(y_flag == true && m_flag == true && d_flag == true){
            if(TodayNow.Year == year && TodayNow.Month == month && TodayNow.Day >= day){
@@ -78,7 +108,8 @@ public class check_year : MonoBehaviour
                m_flag = false;
                d_flag = false;
            }else{
-               Debug.Log("ok");  
+                Debug.Log("ok"); 
+                DaysSave.GetComponent<Days_save>().save();
            }
        }
    }
