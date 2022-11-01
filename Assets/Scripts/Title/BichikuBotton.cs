@@ -6,33 +6,34 @@ using System.Linq;
 
 public class BichikuBotton : MonoBehaviour
 {
-    GameObject[] bichiku;
-    GameObject[] title;
-    void Start(){
-        title = GameObject.FindGameObjectsWithTag("title");
-        bichiku = GameObject.FindGameObjectsWithTag("bichiku");
-        foreach(GameObject bi in bichiku){
-            bi.SetActive (false);
-        }
-    }
+    // GameObject[] bichiku;
+    // GameObject[] title;
+    // void Start(){
+    //     title = GameObject.FindGameObjectsWithTag("title");
+    //     bichiku = GameObject.FindGameObjectsWithTag("bichiku");
+    //     foreach(GameObject bi in bichiku){
+    //         bi.SetActive (false);
+    //     }
+    // }
     public void BichikueButtonDown()
-    {        
-        foreach(GameObject ti in title){
-            ti.SetActive (false);
-        }
-        foreach(GameObject bi in bichiku){
-            bi.SetActive (true);
-        }
+    {      
+        SceneManager.LoadScene("Bichiku");   
+        // foreach(GameObject ti in title){
+        //     ti.SetActive (false);
+        // }
+        // foreach(GameObject bi in bichiku){
+        //     bi.SetActive (true);
+        // }
     }
-    bool ContainsScene(string sceneName)
-    {
-        for (int i = 0; i < SceneManager.sceneCount; i++)
-        {
-            if (SceneManager.GetSceneAt(i).name == sceneName)
-            {
-                return true;
-            }
-        }
-        return false;
-    }
+    // bool ContainsScene(string sceneName)
+    // {
+    //     for (int i = 0; i < SceneManager.sceneCount; i++)
+    //     {
+    //         if (SceneManager.GetSceneAt(i).name == sceneName)
+    //         {
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
 }

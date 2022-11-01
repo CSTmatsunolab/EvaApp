@@ -4,24 +4,37 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class check_checks : MonoBehaviour
 {
     public Toggle toggle;
     public GameObject ChecksSave;
-    static TextAsset csvFile;
+    int c = 0;
+    //static TextAsset csvFile;
+    //static string[] csvFile;
     static List<string[]> checksData = new List<string[]>();
     private StreamWriter sw;
     string[] t = new string[17];
     // Start is called before the first frame update
-    void Awake(){
-        csvFile = Resources.Load("Texts/Bichiku_checks") as TextAsset;
-        StringReader reader = new StringReader(csvFile.text);//
-        while (reader.Peek() != -1)//最後まで読み込むと-1になる関数
-        {
-            string line = reader.ReadLine();//一行ずつ読み込み
-            checksData.Add(line.Split(','));
-        }
+    void Update(){
+        if(c == 0){
+            checkC();
+        } 
+    }
+    public void OnToggleChanged(){
+        ChecksSave.GetComponent<Checks_save>().save();
+    }
+    void checkC(){
+        //csvFile = Resources.Load("Texts/Bichiku_checks") as TextAsset;
+        checksData = File.ReadAllLines(@"Assets/Resources/Texts/Bichiku_checks.csv").Select(line => line.Split(',')).ToList();
+ 
+        // StringReader reader = new StringReader(csvFile.text);//
+        // while (reader.Peek() != -1)//最後まで読み込むと-1になる関数
+        // {
+        //     string line = reader.ReadLine();//一行ずつ読み込み
+        //     checksData.Add(line.Split(','));
+        // }
         if(transform.parent.name == "Itembox0"){
             if(checksData[0][0] == "true") {
                 toggle.SetIsOnWithoutCallback( true );
@@ -141,9 +154,7 @@ public class check_checks : MonoBehaviour
                 toggle.SetIsOnWithoutCallback( false );
             }
         }
-    }
-    public void OnToggleChanged(){
-        ChecksSave.GetComponent<Checks_save>().save();
+        c = 1;
     }
 }
 public static class ToggleExt

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.IO;
+using System.Linq;
 
 public class check_year : MonoBehaviour
 {
@@ -12,23 +13,31 @@ public class check_year : MonoBehaviour
     public InputField inputField_d;
     public GameObject DaysSave;
     DateTime TodayNow;
-    static TextAsset csvFile;
+    //static TextAsset csvFile;
     static List<string[]> daysData = new List<string[]>();
     int year;
     int month;
     int day;
+    int y = 0;
     bool y_flag = false;
     bool m_flag = false;
     bool d_flag = false;
     
-    void Awake(){
-        csvFile = Resources.Load("Texts/Bichiku_days") as TextAsset;
-        StringReader reader = new StringReader(csvFile.text);//
-        while (reader.Peek() != -1)//最後まで読み込むと-1になる関数
-        {
-            string line = reader.ReadLine();//一行ずつ読み込み
-            daysData.Add(line.Split(','));
+    void Update(){
+        if(y == 0){
+            checkY();
         }
+    }
+
+    void checkY(){
+        //csvFile = Resources.Load("Texts/Bichiku_days") as TextAsset;
+        daysData = File.ReadAllLines(@"Assets/Resources/Texts/Bichiku_days.csv").Select(line => line.Split(',')).ToList();
+        // StringReader reader = new StringReader(csvFile.text);//
+        // while (reader.Peek() != -1)//最後まで読み込むと-1になる関数
+        // {
+        //     string line = reader.ReadLine();//一行ずつ読み込み
+        //     daysData.Add(line.Split(','));
+        // }
         if(transform.parent.name == "Itembox1"){
             inputField_y.text = daysData[0][0];
             inputField_m.text = daysData[0][1];
@@ -45,6 +54,7 @@ public class check_year : MonoBehaviour
         y_flag = true;
         m_flag = true;
         d_flag = true;
+        y = 1;
     }
 
    // Update is called once per frame
