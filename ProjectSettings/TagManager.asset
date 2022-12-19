@@ -6,6 +6,11 @@ TagManager:
   tags:
   - bichiku
   - title
+  - Itembox
+  - Toggle
+  - check
+  - IName
+  - IExplain
   layers:
   - Default
   - TransparentFX

@@ -7,14 +7,14 @@ public class DropdownButton : MonoBehaviour
 {
     public Toggle toggle;
     public GameObject[] ItemBox;
-    public GameObject[] test;
     public GameObject content14;
     public Scrollbar scroll;
 
     public void OffToggleChanged(){
         if(toggle.isOn == false){
         ItemBox = GameObject.FindGameObjectsWithTag("Itembox");
-        int i =16;
+        int i = ItemBox.Length - 1;
+        Debug.Log(i);
         bool flag = true;
         while(flag == true){
             print("親の名前は、" + transform.parent.name);
@@ -32,7 +32,7 @@ public class DropdownButton : MonoBehaviour
             i = i - 1;
         }
         content14.GetComponent<RectTransform>().sizeDelta = new Vector2 ((content14.GetComponent<RectTransform>().sizeDelta.x),(content14.GetComponent<RectTransform>().sizeDelta.y + 160f));
-        if(transform.parent.name == "Itembox16"){
+        if(transform.parent.name == ItemBox[33].name){
             for(int j  = 0 ; j < 5 ; j++){
                     scroll.value = scroll.value - 1;
             }
@@ -43,7 +43,7 @@ public class DropdownButton : MonoBehaviour
         if(toggle.isOn){
         ItemBox = GameObject.FindGameObjectsWithTag("Itembox");
 
-        int i =16;
+        int i = ItemBox.Length - 1;
         bool flag = true;
         while(flag == true){
             print("親の名前は、" + transform.parent.name);

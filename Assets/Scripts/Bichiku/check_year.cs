@@ -38,15 +38,20 @@ public class check_year : MonoBehaviour
         //     string line = reader.ReadLine();//一行ずつ読み込み
         //     daysData.Add(line.Split(','));
         // }
-        if(transform.parent.name == "Itembox1"){
+        if(transform.parent.name == "ItemboxF0"){
             inputField_y.text = daysData[0][0];
             inputField_m.text = daysData[0][1];
             inputField_d.text = daysData[0][2];
         }
-        if(transform.parent.name == "Itembox2"){
+        if(transform.parent.name == "ItemboxF1"){
             inputField_y.text = daysData[1][0];
             inputField_m.text = daysData[1][1];
             inputField_d.text = daysData[1][2];
+        }
+        if(transform.parent.name == "ItemboxF2"){
+            inputField_y.text = daysData[2][0];
+            inputField_m.text = daysData[2][1];
+            inputField_d.text = daysData[2][2];
         }
         year = int.Parse(inputField_y.text);
         month = int.Parse(inputField_m.text);

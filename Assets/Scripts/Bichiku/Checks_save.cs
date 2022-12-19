@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using static System.Console;
+using System.Linq;
 using System;
 
 public class Checks_save : MonoBehaviour
@@ -25,13 +26,34 @@ public class Checks_save : MonoBehaviour
     public Toggle t14;
     public Toggle t15;
     public Toggle t16;
-    string[] t = new string[17];
+    public Toggle t17;
+    public Toggle t18;
+    public Toggle t19;
+    public Toggle t20;
+    public Toggle t21;
+    public Toggle t22;
+    public Toggle t23;
+    public Toggle t24;
+    public Toggle t25;
+    public Toggle t26;
+    public Toggle t27;
+    public Toggle t28;
+    public Toggle t29;
+    public Toggle t30;
+    public Toggle t31;
+    public Toggle t32;
+    public Toggle t33;
+    public GameObject Weight;
+    static List<string[]> nameData = new List<string[]>();
+    float CurrentWeight;
+    string[] ItemWeight = new string[34];
+    int i;
+    string[] t = new string[34];
     private StreamWriter sw;
 
 
 
     public async void save(){
-
         if(t0.isOn) t[0] = "true"; 
         else t[0] = "false";
 
@@ -82,6 +104,71 @@ public class Checks_save : MonoBehaviour
 
         if(t16.isOn) t[16] = "true"; 
         else t[16] = "false";
+
+        if(t17.isOn) t[17] = "true"; 
+        else t[17] = "false";
+
+        if(t18.isOn) t[18] = "true"; 
+        else t[18] = "false";
+
+        if(t19.isOn) t[19] = "true"; 
+        else t[19] = "false";
+
+        if(t20.isOn) t[20] = "true"; 
+        else t[20] = "false";
+
+        if(t21.isOn) t[21] = "true"; 
+        else t[21] = "false";
+
+        if(t22.isOn) t[22] = "true"; 
+        else t[22] = "false";
+
+        if(t23.isOn) t[23] = "true"; 
+        else t[23] = "false";
+
+        if(t24.isOn) t[24] = "true"; 
+        else t[24] = "false";
+
+        if(t25.isOn) t[25] = "true"; 
+        else t[25] = "false";
+
+        if(t26.isOn) t[26] = "true"; 
+        else t[26] = "false";
+
+        if(t27.isOn) t[27] = "true"; 
+        else t[27] = "false";
+
+        if(t28.isOn) t[28] = "true"; 
+        else t[28] = "false";
+
+        if(t29.isOn) t[29] = "true"; 
+        else t[29] = "false";
+
+        if(t30.isOn) t[30] = "true"; 
+        else t[30] = "false";
+
+        if(t31.isOn) t[31] = "true"; 
+        else t[31] = "false";
+
+        if(t32.isOn) t[32] = "true"; 
+        else t[32] = "false";
+
+        if(t33.isOn) t[33] = "true"; 
+        else t[33] = "false";
+
+        nameData = File.ReadAllLines(@"Assets/Resources/Texts/ItemName.csv").Select(line => line.Split(',')).ToList();
+        for(i = 0;i<34; i++){
+            ItemWeight[i] = nameData[i][2];
+        }
+        CurrentWeight = 0;
+        for(i = 0;i<34; i++){
+            if(t[i] == "true"){
+                CurrentWeight = CurrentWeight + float.Parse(ItemWeight[i]);
+            }
+        }
+        Weight.GetComponent<UnityEngine.UI.Text>().text  = CurrentWeight.ToString();
+
+
         sw = new StreamWriter(@"Assets/Resources/Texts/Bichiku_checks.csv", false);
         string[] s1 = t;
         string s2 = string.Join(",", s1);

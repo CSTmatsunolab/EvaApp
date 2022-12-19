@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using Random = UnityEngine.Random;//乱数生成のために追加
 using UnityEngine.SceneManagement;
 using System.IO;
+using System.Linq;
 
 
 public class ESManagement : MonoBehaviour
@@ -29,6 +30,8 @@ public class ESManagement : MonoBehaviour
     [SerializeField] private AudioClip SeikaiSE;//正解のSE
     [SerializeField] private AudioClip FuseikaiSE;//不正解のSE
 
+    static List<string[]> checksData = new List<string[]>();
+
     // Start is called before the first frame update
     void Start(){        
         index = rand();//乱数生成
@@ -52,10 +55,13 @@ public class ESManagement : MonoBehaviour
         int a = 0; //indexに入る値
         int kaburiCheck = 2;
 
+        checksData = File.ReadAllLines(@"Assets/Resources/Texts/Bichiku_checks.csv").Select(line => line.Split(',')).ToList();
+
         if(flag == 0)
         {
             
             a = Random.Range(3,41);//3~40
+            //a = 12;
             //a = Random.Range(21,23);//指定範囲の動作確認用
             Debug.Log(a);
 
@@ -79,6 +85,9 @@ public class ESManagement : MonoBehaviour
         else if(flag == 1){
             //a = Random.Range(3,23);
             a = Random.Range(3,41);//3~29
+            //if(checksData[0][14] == "true") {
+                a = 12;
+            //}
 
             kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
             Debug.Log("kaburiCheck = " + kaburiCheck);
@@ -94,6 +103,24 @@ public class ESManagement : MonoBehaviour
                 }
             }
         }
+        // else if(flag == 4){
+        //     //a = Random.Range(3,23);
+        //     a = 13;
+
+        //     kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
+        //     Debug.Log("kaburiCheck = " + kaburiCheck);
+        
+        //     for(int i = 0;i < 20;i++) //もし解放済みのイベントだった場合、再抽選 最大5回
+        //                                 //今回は15回
+        //     {
+        //         if(kaburiCheck == 1)
+        //         {
+        //             a = Random.Range(3,41);//3~40
+        //             kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
+        //             Debug.Log("a1 = " + a);
+        //         }
+        //     }
+        // }
         else if(flag == 3){
             a = 54;//配給用のイベント
         }
