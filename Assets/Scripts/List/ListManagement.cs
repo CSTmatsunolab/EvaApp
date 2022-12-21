@@ -19,7 +19,7 @@ public class ListManagement : MonoBehaviour
     GameObject Rdata;
     Image btnimg;
     Text btntext;
-    
+
 
     // Start is called before the first frame update
     void Start(){
@@ -35,11 +35,11 @@ public class ListManagement : MonoBehaviour
     private void EdataLoad(){
         Edata = GameObject.Find("EventData");
     }
-    
+
     private void RdataLoad(){
         Rdata = GameObject.Find("ResultData");
     }
-    
+
 
     private void TextLoad(){
         PdataLoad();
@@ -47,7 +47,7 @@ public class ListManagement : MonoBehaviour
         Kanpan.text = Pdata.GetComponent<Player_Data>().PlayerData[1][4];
         Mizu.text = Pdata.GetComponent<Player_Data>().PlayerData[1][3];
         int OpenedEventCount = 0;
-        for (int i = 0 ;i < EResultLine-1; i++){ //EventResult.csvの行数分、開放フラグを足すのを繰り返す 0行目は飛ばす       
+        for (int i = 0 ;i < EResultLine-1; i++){ //EventResult.csvの行数分、開放フラグを足すのを繰り返す 0行目は飛ばす
             OpenedEventCount += int.Parse(Rdata.GetComponent<Result_Data>().ResultData[i+1][1]);
         }
         OpenedEvent.text = OpenedEventCount.ToString();
@@ -61,13 +61,16 @@ public class ListManagement : MonoBehaviour
         btn = (GameObject)Resources.Load("Prefabs/Button");
         ListButton = new GameObject[a];
         for (int i = 0 ;i < a;i++){
-            
+
             ListButton[i] = Instantiate(btn);
             ListButton[i].transform.SetParent(Content.transform,false);
             btnimg = ListButton[i].transform.Find("Image").gameObject.GetComponent<Image>();
             btntext = ListButton[i].transform.Find("Text").gameObject.GetComponent<Text>();
             ListButton[i].name = (i+1).ToString();  //各ボタンにイベントのNoに応じた名前がつく
             b = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[i+1][1]);
+            if (Pdata.GetComponent<Player_Data>().PlayerData[1][10] == "Debugger"){
+                b = 1;
+            }
             if(b == 0){
                 ListButton[i].GetComponent<Button>().interactable = false;
                 btntext.text = "???";
