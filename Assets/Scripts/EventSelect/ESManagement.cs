@@ -16,6 +16,14 @@ public class ESManagement : MonoBehaviour
     [SerializeField] GameObject EventText;//イベントの問題文のTextUI
     [SerializeField] GameObject ClearText;//正解の選択肢のTextUI
     [SerializeField] GameObject FailText;//不正解の選択肢のTextUI
+    [SerializeField] GameObject Mondaitext;//不正解の選択肢のTextUI
+    [SerializeField] GameObject Sentakutext;//不正解の選択肢のTextUI
+    [SerializeField] GameObject Answer1text;//イベントのタイトルのTextUI
+    [SerializeField] GameObject Answer2text;//イベントの問題文のTextUI
+    [SerializeField] GameObject Answer3text;//正解の選択肢のTextUI
+    [SerializeField] GameObject Answer4text;//不正解の選択肢のTextUI
+    string[] kaitou = new string[4];
+    public GameObject yontaku;
     public Image Maru;//まるの画像
     public Image Batsu;//ばつの画像
 
@@ -25,6 +33,8 @@ public class ESManagement : MonoBehaviour
     public static int index = 0;//イベントのナンバー
     public static int Answer = 0;//イベントの回答
     private int Transform = 0;//
+    int[] array={0,0,0,0};
+
 
     [SerializeField] private AudioSource SEplayer;//EventSelectManagementのAudioSourceコンポーネント
     [SerializeField] private AudioClip SeikaiSE;//正解のSE
@@ -86,7 +96,7 @@ public class ESManagement : MonoBehaviour
             //a = Random.Range(3,23);
             a = Random.Range(3,41);//3~29
             //if(checksData[0][14] == "true") {
-                a = 12;
+                a = 48;
             //}
 
             kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
@@ -129,117 +139,237 @@ public class ESManagement : MonoBehaviour
 
     //イベント画面のテキストや画像関係のロード
     void EventLoad(int a){
-        Image eventbg;
-        Image eventimg;
-        Text titletext;
-        Text eventtext;
-        Text cleartext;
-        Text failtext;
 
-        GameObject EData = GameObject.Find("EventData");
+            Image eventbg;
+            Image eventimg;
+            Text titletext;
+            Text eventtext;
+            Text cleartext;
+            Text failtext;
 
-        eventbg = EventBackground.GetComponent<Image>();
-        eventimg = EventImage.GetComponent<Image>();
-        titletext = TitleText.GetComponent<Text>();
-        eventtext = EventText.GetComponent<Text>();
-        cleartext = ClearText.GetComponent<Text>();
-        failtext = FailText.GetComponent<Text>();
+            GameObject EData = GameObject.Find("EventData");
+
+            eventbg = EventBackground.GetComponent<Image>();
+            eventimg = EventImage.GetComponent<Image>();
+            titletext = TitleText.GetComponent<Text>();
+            eventtext = EventText.GetComponent<Text>();
+            cleartext = ClearText.GetComponent<Text>();
+            failtext = FailText.GetComponent<Text>();
 
 
-        //イベントセレクトシーンの背景の色(半透明)
-        string str = spritesDirectory+a.ToString();
-        eventbg.sprite = Resources.Load<Sprite>(str);
-        var c = eventbg.color;
-        eventbg.color = new Color(c.r, c.g, c.b, 100.0f/255.0f);//透明度を上げる
+            //イベントセレクトシーンの背景の色(半透明)
+            string str = spritesDirectory+a.ToString();
+            eventbg.sprite = Resources.Load<Sprite>(str);
+            var c = eventbg.color;
+            eventbg.color = new Color(c.r, c.g, c.b, 100.0f/255.0f);//透明度を上げる
 
-        //ランダムに選択されたイベントNo.のイラストを読み込む
-        eventimg.sprite = Resources.Load<Sprite>(str);
+            //ランダムに選択されたイベントNo.のイラストを読み込む
+            eventimg.sprite = Resources.Load<Sprite>(str);
 
-        //ランダムに選択されたイベントNo.のタイトルを読み込む
-        titletext.text = EData.GetComponent<Event_Data>().EventData[a][1];
+            //ランダムに選択されたイベントNo.のタイトルを読み込む
+            titletext.text = EData.GetComponent<Event_Data>().EventData[a][1];
 
-        //ランダムに選択されたイベントNo.の概要を読み込む
-        eventtext.text = EData.GetComponent<Event_Data>().EventData[a][2];
+            //ランダムに選択されたイベントNo.の概要を読み込む
+            eventtext.text = EData.GetComponent<Event_Data>().EventData[a][2];
 
-        //ランダムに選択されたイベントNo.の正解選択肢を読み込む
-        cleartext.text = EData.GetComponent<Event_Data>().EventData[a][7];
-        //ランダムに選択されたイベントNo.の不正解選択肢を読み込む
-        failtext.text = EData.GetComponent<Event_Data>().EventData[a][8];
-
-        int Change = 0;
-        Change = Transform;
-
-        if(Change == 1) //正解
-        {
             //ランダムに選択されたイベントNo.の正解選択肢を読み込む
             cleartext.text = EData.GetComponent<Event_Data>().EventData[a][7];
             //ランダムに選択されたイベントNo.の不正解選択肢を読み込む
             failtext.text = EData.GetComponent<Event_Data>().EventData[a][8];
-            Debug.Log("Change = 1");
-        }
-        else if(Change == 2) //不正解
-        {
-            //ランダムに選択されたイベントNo.の不正解選択肢を読み込む
-            cleartext.text = EData.GetComponent<Event_Data>().EventData[a][8];
-            //ランダムに選択されたイベントNo.の正解選択肢を読み込む
-            failtext.text = EData.GetComponent<Event_Data>().EventData[a][7];
-            Debug.Log("Change = 2");
+
+            int Change = 0;
+            Change = Transform;
+        if(a != 48){
+            if(Change == 1) //正解
+            {
+                //ランダムに選択されたイベントNo.の正解選択肢を読み込む
+                cleartext.text = EData.GetComponent<Event_Data>().EventData[a][7];
+                //ランダムに選択されたイベントNo.の不正解選択肢を読み込む
+                failtext.text = EData.GetComponent<Event_Data>().EventData[a][8];
+                Debug.Log("Change = 1");
+            }
+            else if(Change == 2) //不正解
+            {
+                //ランダムに選択されたイベントNo.の不正解選択肢を読み込む
+                cleartext.text = EData.GetComponent<Event_Data>().EventData[a][8];
+                //ランダムに選択されたイベントNo.の正解選択肢を読み込む
+                failtext.text = EData.GetComponent<Event_Data>().EventData[a][7];
+                Debug.Log("Change = 2");
+            }
         }
     }
 
     public void ClearButtonDown()//イベント画面に遷移
     {
-        int Check = 0;
-        Check = Transform;
-        if(Check == 1) //正位置　正解
-        {
-            RdataLoad();
-            Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
-            Rdata.GetComponent<Result_Data>().CsvSave();
-            Answer = 0;
-            Debug.Log("正解");
-            
-            SEplayer.PlayOneShot(SeikaiSE);
-            StartCoroutine("Seikai");
-        }
-        else if(Check == 2) //逆位置　不正解
-        {
-            RdataLoad();
-            Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
-            Rdata.GetComponent<Result_Data>().CsvSave();
-            Answer = 1;
-            Debug.Log("不正解"); 
+        if(index == 48){
+            //展開
+            yontaku.gameObject.SetActive (true);
+            GameObject EData = GameObject.Find("EventData");
+            Text mondaitext;
+            Text answer1text;
+            Text answer2text;
+            Text answer3text;
+            Text answer4text;
+            mondaitext = Mondaitext.GetComponent<Text>();
+            answer1text = Answer1text.GetComponent<Text>();
+            answer2text = Answer2text.GetComponent<Text>();
+            answer3text = Answer3text.GetComponent<Text>();
+            answer4text = Answer4text.GetComponent<Text>();
 
-            SEplayer.PlayOneShot(FuseikaiSE);
-            StartCoroutine("Huseikai");
+            mondaitext.text = EData.GetComponent<Event_Data>().EventData[index][2];
+            answer1text.text = EData.GetComponent<Event_Data>().EventData[index][9];
+            answer2text.text = EData.GetComponent<Event_Data>().EventData[index][10];
+            answer3text.text = EData.GetComponent<Event_Data>().EventData[index][11];
+            answer4text.text = EData.GetComponent<Event_Data>().EventData[index][12];
+        }
+        if(index != 48){
+            int Check = 0;
+            Check = Transform;
+            if(Check == 1) //正位置　正解
+            {
+                RdataLoad();
+                Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
+                Rdata.GetComponent<Result_Data>().CsvSave();
+                Answer = 0;
+                Debug.Log("正解");
+                
+                SEplayer.PlayOneShot(SeikaiSE);
+                StartCoroutine("Seikai");
+            }
+            else if(Check == 2) //逆位置　不正解
+            {
+                RdataLoad();
+                Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
+                Rdata.GetComponent<Result_Data>().CsvSave();
+                Answer = 1;
+                Debug.Log("不正解"); 
+
+                SEplayer.PlayOneShot(FuseikaiSE);
+                StartCoroutine("Huseikai");
+            }
         }
     }
 
     public void FailButtonDown()//イベント画面に遷移
     {
-        int Check = 0;
-        Check = Transform;
-        if(Check == 1) //正位置　不正解
-        {
-            RdataLoad();
-            Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
-            Rdata.GetComponent<Result_Data>().CsvSave();
-            Answer = 1;
-            Debug.Log("不正解"); 
+        if(index == 48){
+            if(array[0]==1 && array[1]==0 && array[2]==0 && array[3]==0){
+                RdataLoad();
+                Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
+                Rdata.GetComponent<Result_Data>().CsvSave();
+                Answer = 0;
+                Debug.Log("正解");
+                SEplayer.PlayOneShot(SeikaiSE);
+                StartCoroutine("Seikai");
+            }else{
+                RdataLoad();
+                Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
+                Rdata.GetComponent<Result_Data>().CsvSave();
+                Answer = 1;
+                Debug.Log("不正解"); 
 
-            SEplayer.PlayOneShot(FuseikaiSE);                     
-            StartCoroutine("Huseikai");
+                SEplayer.PlayOneShot(FuseikaiSE);                     
+                StartCoroutine("Huseikai");
+            }
         }
-        else if(Check == 2) //逆位置 正解
-        {
-            RdataLoad();
-            Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
-            Rdata.GetComponent<Result_Data>().CsvSave();
-            Answer = 0;
-            Debug.Log("正解");
+        if(index != 48){
+            int Check = 0;
+            Check = Transform;
+            if(Check == 1) //正位置　不正解
+            {
+                RdataLoad();
+                Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
+                Rdata.GetComponent<Result_Data>().CsvSave();
+                Answer = 1;
+                Debug.Log("不正解"); 
 
-            SEplayer.PlayOneShot(SeikaiSE);
-            StartCoroutine("Seikai");
+                SEplayer.PlayOneShot(FuseikaiSE);                     
+                StartCoroutine("Huseikai");
+            }
+            else if(Check == 2) //逆位置 正解
+            {
+                RdataLoad();
+                Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
+                Rdata.GetComponent<Result_Data>().CsvSave();
+                Answer = 0;
+                Debug.Log("正解");
+
+                SEplayer.PlayOneShot(SeikaiSE);
+                StartCoroutine("Seikai");
+            }
+        }
+    }
+    public void Answer1ButtonDown(){
+        GameObject EData = GameObject.Find("EventData");
+        Text sentakutext;
+        sentakutext = Sentakutext.GetComponent<Text>();
+        if(array[0] == 0){
+            array[0] = 1;
+            kaitou[0]=EData.GetComponent<Event_Data>().EventData[index][9];
+        }
+        else{
+            array[0] = 0;
+            kaitou[0]="";
+        }
+        sentakutext.text = "";
+        for (int i = 0; i < kaitou.Length; i++)
+        {
+            sentakutext.text = sentakutext.text + kaitou[i] + " "; //テキストの上書き
+        }
+    }
+    public void Answer2ButtonDown(){
+        GameObject EData = GameObject.Find("EventData");
+        Text sentakutext;
+        sentakutext = Sentakutext.GetComponent<Text>();
+        if(array[1] == 0){
+            array[1] = 1;
+            
+            kaitou[1]=EData.GetComponent<Event_Data>().EventData[index][10];
+        }
+        else{
+            array[1] = 0;
+            kaitou[1]="";
+        }
+        sentakutext.text = "";
+        for (int i = 0; i < kaitou.Length; i++)
+        {
+            sentakutext.text = sentakutext.text + kaitou[i] + " "; //テキストの上書き
+        }
+    }
+    public void Answer3ButtonDown(){
+        GameObject EData = GameObject.Find("EventData");
+        Text sentakutext;
+        sentakutext = Sentakutext.GetComponent<Text>();
+        if(array[2] == 0){
+            array[2] = 1;
+            kaitou[2]=EData.GetComponent<Event_Data>().EventData[index][11];
+        }
+        else{
+            array[2] = 0;
+            kaitou[2]="";
+        }
+        sentakutext.text = "";
+        for (int i = 0; i < kaitou.Length; i++)
+        {
+            sentakutext.text = sentakutext.text + kaitou[i] + " "; //テキストの上書き
+        }
+    }
+    public void Answer4ButtonDown(){
+        GameObject EData = GameObject.Find("EventData");
+        Text sentakutext;
+        sentakutext = Sentakutext.GetComponent<Text>();
+        if(array[3] == 0){
+            array[3] = 1;
+            kaitou[3]=EData.GetComponent<Event_Data>().EventData[index][12];
+        }
+        else{
+            array[3] = 0;
+            kaitou[3]="";
+        }
+        sentakutext.text = "";
+        for (int i = 0; i < kaitou.Length; i++)
+        {
+            sentakutext.text = sentakutext.text + kaitou[i] + " "; //テキストの上書き
         }
     }
 
