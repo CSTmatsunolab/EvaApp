@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.IO;
 using System;
+using System.Linq;
 
 public class ResultPanel : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class ResultPanel : MonoBehaviour
     public Text Result1;
     public Text Result2;
     private string path;
+    static List<string[]> checksData = new List<string[]>();
     
 
     void Start()
@@ -42,13 +44,18 @@ public class ResultPanel : MonoBehaviour
         EdataLoad();
 
         int introcheck = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][8]);
+        Debug.Log(introcheck);
         if(introcheck == 0||introcheck == 1){        //イントロシナリオにいく
             index = 1;
         }
         else if(introcheck==54){
             index = 54;
         }
+
         else{
+            if(introcheck==48){
+                index = 48;
+            }
             index = ESManagement.Send();
             Answer = ESManagement.SendAnswer();
         }
@@ -69,6 +76,7 @@ public class ResultPanel : MonoBehaviour
 
     private void ResultCalculation()
     {
+        checksData = File.ReadAllLines(@"Assets/Resources/Texts/Bichiku_checks.csv").Select(line => line.Split(',')).ToList();
         ResultMake();
         HGC = HG + HGC;
         if(HGC < 0)
@@ -87,16 +95,34 @@ public class ResultPanel : MonoBehaviour
         {
             REC = 10;
         }
+        if(index==48){
+            if(checksData[0][14] == "true") {
+                if(Answer == 0){
+                    int WaterStock = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][3]);
+                    WaterStock = WaterStock + 3;
+                    Pdata.GetComponent<Player_Data>().PlayerData[1][3]=WaterStock.ToString();
+                    Debug.Log(Pdata.GetComponent<Player_Data>().PlayerData[1][3]);
+                }
+            }
+        }
 
         Pdata.GetComponent<Player_Data>().PlayerData[1][0] = HGC.ToString();
         Pdata.GetComponent<Player_Data>().PlayerData[1][1] = REC.ToString();
         Pdata.GetComponent<Player_Data>().CsvSave();
 
-        if(index == 54){
+        if(index == 54 || index == 48){
             Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
             Result2.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
             Result1.text = "水が増えた！";
             Result2.text = "食料が増えた！";
+            if(checksData[0][14] == "false") {
+                Result1.text = "チェックリストにアイテムがないため";
+                Result2.text = "水はもらえなかった";
+            }
+            if(Answer == 1){
+                Result1.text = "不正解のため";
+                Result2.text = "水はもらえなかった";
+            }
         }
         else{
             if (HG > HGC)

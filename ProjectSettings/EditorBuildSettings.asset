@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndingScene.unity
     guid: ff619df741d9b46c5ba0e5449d70e391
+  - enabled: 1
+    path: Assets/Scenes/Bichiku.unity
+    guid: 5f8df78c563944fbba47cd8c59b1e720
   m_configObjects: {}
