@@ -213,13 +213,13 @@ public class QuizManagement : MonoBehaviour
     public void GotoEvent(){
         PdataLoad();
         if(Seikaisu==10){
-            Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "51";
+            Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "97";
         }
         else if(Seikaisu >=6){
-            Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "52";
+            Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "98";
         }
         else{
-            Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "53";
+            Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "99";
         }
         
         SceneManager.LoadScene("EventScene"); //ボタンが押されたら遷移

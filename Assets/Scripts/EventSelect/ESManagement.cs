@@ -132,7 +132,7 @@ public class ESManagement : MonoBehaviour
         //     }
         // }
         else if(flag == 3){
-            a = 54;//配給用のイベント
+            a = 100;//配給用のイベント
         }
         return a;
     }

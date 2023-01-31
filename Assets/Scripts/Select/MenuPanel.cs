@@ -205,7 +205,7 @@ public class MenuPanel : MonoBehaviour
     {
         //flag = 2;
         //ChangeMusic = 1;
-        Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "49";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "95";
         SceneManager.LoadScene("EventScene");//イベント選択画面に遷移
     }
 
@@ -213,7 +213,7 @@ public class MenuPanel : MonoBehaviour
     public void GoHaikyuButtonDown()
     {
         flag = 3;
-        Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "54";
+        Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "100";
         SceneManager.LoadScene("EventScene");//イベント画面に遷移
         /*
         //ChangeMusic = 1;
