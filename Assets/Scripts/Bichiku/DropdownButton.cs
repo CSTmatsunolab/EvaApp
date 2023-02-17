@@ -31,7 +31,7 @@ public class DropdownButton : MonoBehaviour
             }
             i = i - 1;
         }
-        content14.GetComponent<RectTransform>().sizeDelta = new Vector2 ((content14.GetComponent<RectTransform>().sizeDelta.x),(content14.GetComponent<RectTransform>().sizeDelta.y + 180f));
+        content14.GetComponent<RectTransform>().sizeDelta = new Vector2 ((content14.GetComponent<RectTransform>().sizeDelta.x),(content14.GetComponent<RectTransform>().sizeDelta.y + 178f));
         if(transform.parent.name == ItemBox[33].name){
             for(int j  = 0 ; j < 5 ; j++){
                     scroll.value = scroll.value - 1;
@@ -60,7 +60,7 @@ public class DropdownButton : MonoBehaviour
             }
             i = i - 1;
         }
-        content14.GetComponent<RectTransform>().sizeDelta = new Vector2 ((content14.GetComponent<RectTransform>().sizeDelta.x),(content14.GetComponent<RectTransform>().sizeDelta.y - 180f));
+        content14.GetComponent<RectTransform>().sizeDelta = new Vector2 ((content14.GetComponent<RectTransform>().sizeDelta.x),(content14.GetComponent<RectTransform>().sizeDelta.y - 178f));
         }
     }
 }
