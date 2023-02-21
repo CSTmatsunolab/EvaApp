@@ -30,7 +30,7 @@ public class ESManagement : MonoBehaviour
     [SerializeField] private string spritesDirectory = "Sprites/Event";//イベント画像が保存されているフォルダへのパス
     private GameObject Rdata;//イベント閲覧フラグのオブジェクト
 
-    public static int index = 0;//イベントのナンバー
+    public static int index = 44;//イベントのナンバー
     public static int Answer = 0;//イベントの回答
     private int Transform = 0;//
     int[] array={0,0,0,0};
@@ -43,8 +43,8 @@ public class ESManagement : MonoBehaviour
     static List<string[]> checksData = new List<string[]>();
 
     // Start is called before the first frame update
-    void Start(){        
-        index = rand();//乱数生成
+    void Start(){
+        // index = rand();//乱数生成
         Debug.Log(index);//コンソールにイベントNo.を表示
         Transform = Random.Range(1,3);//1~2
         Debug.Log(Transform);
@@ -69,7 +69,7 @@ public class ESManagement : MonoBehaviour
 
         if(flag == 0)
         {
-            
+
             a = Random.Range(3,41);//3~40
             //a = 12;
             //a = Random.Range(21,23);//指定範囲の動作確認用
@@ -77,7 +77,7 @@ public class ESManagement : MonoBehaviour
 
             kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
             Debug.Log("kaburiCheck = " + kaburiCheck);
-        
+
             for(int i = 0;i < 20;i++) //もし解放済みのイベントだった場合、再抽選 最大5回
                                     //実験にあたってなるべく被らせたくないので15回に
             {
@@ -90,7 +90,7 @@ public class ESManagement : MonoBehaviour
                     Debug.Log("a1 = " + a);
                 }
             }
-            
+
         }
         else if(flag == 1){
             //a = Random.Range(3,23);
@@ -101,7 +101,7 @@ public class ESManagement : MonoBehaviour
 
             kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
             Debug.Log("kaburiCheck = " + kaburiCheck);
-        
+
             for(int i = 0;i < 20;i++) //もし解放済みのイベントだった場合、再抽選 最大5回
                                         //今回は15回
             {
@@ -119,7 +119,7 @@ public class ESManagement : MonoBehaviour
 
         //     kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
         //     Debug.Log("kaburiCheck = " + kaburiCheck);
-        
+
         //     for(int i = 0;i < 20;i++) //もし解放済みのイベントだった場合、再抽選 最大5回
         //                                 //今回は15回
         //     {
@@ -232,9 +232,11 @@ public class ESManagement : MonoBehaviour
                 Rdata.GetComponent<Result_Data>().CsvSave();
                 Answer = 0;
                 Debug.Log("正解");
-                
-                SEplayer.PlayOneShot(SeikaiSE);
-                StartCoroutine("Seikai");
+                SceneManager.LoadScene("EventScene");
+                if( index < 40 && index > 45){
+                    SEplayer.PlayOneShot(SeikaiSE);
+                    StartCoroutine("Seikai");
+                }
             }
             else if(Check == 2) //逆位置　不正解
             {
@@ -242,10 +244,12 @@ public class ESManagement : MonoBehaviour
                 Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
                 Rdata.GetComponent<Result_Data>().CsvSave();
                 Answer = 1;
-                Debug.Log("不正解"); 
-
-                SEplayer.PlayOneShot(FuseikaiSE);
-                StartCoroutine("Huseikai");
+                Debug.Log("不正解");
+                SceneManager.LoadScene("EventScene");
+                if( index < 40 && index > 45){
+                    SEplayer.PlayOneShot(FuseikaiSE);
+                    StartCoroutine("Huseikai");
+                }
             }
         }
     }
@@ -266,9 +270,8 @@ public class ESManagement : MonoBehaviour
                 Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
                 Rdata.GetComponent<Result_Data>().CsvSave();
                 Answer = 1;
-                Debug.Log("不正解"); 
-
-                SEplayer.PlayOneShot(FuseikaiSE);                     
+                Debug.Log("不正解");
+                SEplayer.PlayOneShot(FuseikaiSE);
                 StartCoroutine("Huseikai");
             }
         }
@@ -281,10 +284,12 @@ public class ESManagement : MonoBehaviour
                 Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
                 Rdata.GetComponent<Result_Data>().CsvSave();
                 Answer = 1;
-                Debug.Log("不正解"); 
-
-                SEplayer.PlayOneShot(FuseikaiSE);                     
-                StartCoroutine("Huseikai");
+                Debug.Log("不正解");
+                SceneManager.LoadScene("EventScene");
+                if( index < 40 && index > 45){
+                    SEplayer.PlayOneShot(FuseikaiSE);
+                    StartCoroutine("Huseikai");
+                }
             }
             else if(Check == 2) //逆位置 正解
             {
@@ -293,9 +298,11 @@ public class ESManagement : MonoBehaviour
                 Rdata.GetComponent<Result_Data>().CsvSave();
                 Answer = 0;
                 Debug.Log("正解");
-
-                SEplayer.PlayOneShot(SeikaiSE);
-                StartCoroutine("Seikai");
+                SceneManager.LoadScene("EventScene");
+                if( index < 40 && index > 45){
+                    SEplayer.PlayOneShot(SeikaiSE);
+                    StartCoroutine("Seikai");
+                }
             }
         }
     }
@@ -323,7 +330,7 @@ public class ESManagement : MonoBehaviour
         sentakutext = Sentakutext.GetComponent<Text>();
         if(array[1] == 0){
             array[1] = 1;
-            
+
             kaitou[1]=EData.GetComponent<Event_Data>().EventData[index][10];
         }
         else{
@@ -376,7 +383,7 @@ public class ESManagement : MonoBehaviour
     IEnumerator Seikai(){//正解の時のアニメーション
         Maru.gameObject.SetActive(true);//MaruをActiveにする
         Color c = Maru.color;
-        c.a = 1.3f; 
+        c.a = 1.3f;
         Maru.color = c; // 画像の不透明度を1にする
         yield return new WaitForSeconds(0.3f);
         while (true)
@@ -384,22 +391,22 @@ public class ESManagement : MonoBehaviour
             yield return null; // 1フレーム待つ
             c.a -= 0.02f;
             Maru.color = c; // 画像の不透明度を下げる
-    
+
             if (c.a <= 0f) // 不透明度が0以下のとき
             {
                 c.a = 0f;
                 Maru.color = c; // 不透明度を0
                 break; // 繰り返し終了
             }
-        }        
+        }
         Maru.gameObject.SetActive(false); // 画像を非アクティブにする
-        SceneManager.LoadScene("EventScene"); 
+        SceneManager.LoadScene("EventScene");
     }
 
     IEnumerator Huseikai(){//不正解の時のアニメーション
         Batsu.gameObject.SetActive(true);//BatsuをActiveにする
         Color c = Batsu.color;
-        c.a = 1.3f; 
+        c.a = 1.3f;
         Batsu.color = c; // 画像の不透明度を1にする
         yield return new WaitForSeconds(0.3f);
         while (true)
@@ -407,16 +414,16 @@ public class ESManagement : MonoBehaviour
             yield return null; // 1フレーム待つ
             c.a -= 0.02f;
             Batsu.color = c; // 画像の不透明度を下げる
-    
+
             if (c.a <= 0f) // 不透明度が0以下のとき
             {
                 c.a = 0f;
                 Batsu.color = c; // 不透明度を0
                 break; // 繰り返し終了
             }
-        }        
+        }
         Batsu.gameObject.SetActive(false); // 画像を非アクティブにする
-        SceneManager.LoadScene("EventScene"); 
+        SceneManager.LoadScene("EventScene");
     }
 
     public static int Send()//イベントナンバーを返す
