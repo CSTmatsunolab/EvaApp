@@ -30,7 +30,7 @@ public class EndingManagement : MonoBehaviour
     public GameObject kyukyu;//救急車のオブジェクト
     public Animator ScorePoints;//ScorePointsオブジェクトのアニメーターコントローラー
     int ScorePoint;//得点
-    int EResultLine = 55;//EventResultの行数(1行目(項目名)を含む)
+    int EResultLine = 101;//EventResultの行数(1行目(項目名)を含む)
     
     // Start is called before the first frame update
     void Start()

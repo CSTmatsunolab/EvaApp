@@ -48,8 +48,8 @@ public class ResultPanel : MonoBehaviour
         if(introcheck == 0||introcheck == 1){        //イントロシナリオにいく
             index = 1;
         }
-        else if(introcheck==54){
-            index = 54;
+        else if(introcheck==100){
+            index = 100;
         }
 
         else{
@@ -110,7 +110,7 @@ public class ResultPanel : MonoBehaviour
         Pdata.GetComponent<Player_Data>().PlayerData[1][1] = REC.ToString();
         Pdata.GetComponent<Player_Data>().CsvSave();
 
-        if(index == 54 || index == 48){
+        if(index == 100 || index == 48){
             Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
             Result2.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
             Result1.text = "水が増えた！";

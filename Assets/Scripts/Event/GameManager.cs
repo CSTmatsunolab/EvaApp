@@ -445,32 +445,32 @@ public class GameManager : MonoBehaviour
             TitleSet();
             Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "2";
         }
-        else if(introcheck == 49){
-            index = "49";
+        else if(introcheck == 95){
+            index = "95";
             TitleSet();
         }
-        else if(introcheck == 51){
+        else if(introcheck == 97){
             int a = Random.Range(1,3);//1~2
             Debug.Log(a);
             if(a==1){
-                index = "50";
-                Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "50";
+                index = "96";
+                Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "96";
             }
             else{
-                index = "51";
+                index = "97";
             }
             TitleSet();
         }
-        else if(introcheck == 52){
-            index = "52";
+        else if(introcheck == 98){
+            index = "98";
             TitleSet();
         }
-        else if(introcheck == 53){
-            index = "53";
+        else if(introcheck == 99){
+            index = "99";
             TitleSet();
         }
-        else if(introcheck == 54){
-            index = "54";
+        else if(introcheck == 100){
+            index = "100";
             Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "2";
             TitleSet();
         }
@@ -508,7 +508,7 @@ public class GameManager : MonoBehaviour
         else if(index == "2"){      //イベント２が終わったら選択画面に行く
             InputPanel.SetActive(true);//名前入力のインプットパネルを開く
         }
-        else if((index == "49")||(index == "50")||(index=="51")||(index=="52")||(index=="53"))
+        else if((index == "95")||(index == "96")||(index=="97")||(index=="98")||(index=="99"))
         {
             SceneManager.LoadScene("EndingScene");
         }
