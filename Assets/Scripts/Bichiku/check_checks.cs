@@ -285,10 +285,10 @@ public class check_checks : MonoBehaviour
     //             toggle.SetIsOnWithoutCallback( false );
     //         }
     //     }
-    //     c = 1;
-    //     if (transform.parent.name == ParentG[33].name){
-    //         ChecksSave.GetComponent<Checks_save>().save();
-    //     }
+         c = 1;
+        if (transform.parent.name == ParentG[33].name){
+            ChecksSave.GetComponent<Checks_save>().save();
+        }
     }
 }
 public static class ToggleExt
