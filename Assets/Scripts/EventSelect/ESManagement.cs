@@ -94,14 +94,25 @@ public class ESManagement : MonoBehaviour
         }
         else if(flag == 1){
             //a = Random.Range(3,23);
-            a = Random.Range(3,41);//3~29
+            //a = Random.Range(3,41);//3~29
             //if(checksData[0][14] == "true") {
-                a = 48;
+                a = Random.Range(48,51);
+                //a = 50;
             //}
 
             kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
             Debug.Log("kaburiCheck = " + kaburiCheck);
-
+            for(int i = 0;i < 3;i++) //もし解放済みのイベントだった場合、再抽選 最大5回
+                                        //今回は15回
+            {
+                if(kaburiCheck == 1)
+                {
+                    a = Random.Range(48,51);
+                    kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
+                    Debug.Log("a1 = " + a);
+                }
+            }
+        
             for(int i = 0;i < 20;i++) //もし解放済みのイベントだった場合、再抽選 最大5回
                                         //今回は15回
             {
@@ -179,7 +190,7 @@ public class ESManagement : MonoBehaviour
 
             int Change = 0;
             Change = Transform;
-        if(a != 48){
+        if(a != 48 && a != 49 && a != 50){
             if(Change == 1) //正解
             {
                 //ランダムに選択されたイベントNo.の正解選択肢を読み込む
@@ -201,7 +212,7 @@ public class ESManagement : MonoBehaviour
 
     public void ClearButtonDown()//イベント画面に遷移
     {
-        if(index == 48){
+        if(index == 48||index == 49||index == 50){
             //展開
             yontaku.gameObject.SetActive (true);
             GameObject EData = GameObject.Find("EventData");
@@ -217,12 +228,12 @@ public class ESManagement : MonoBehaviour
             answer4text = Answer4text.GetComponent<Text>();
 
             mondaitext.text = EData.GetComponent<Event_Data>().EventData[index][2];
-            answer1text.text = EData.GetComponent<Event_Data>().EventData[index][9];
-            answer2text.text = EData.GetComponent<Event_Data>().EventData[index][10];
-            answer3text.text = EData.GetComponent<Event_Data>().EventData[index][11];
-            answer4text.text = EData.GetComponent<Event_Data>().EventData[index][12];
+            answer1text.text = EData.GetComponent<Event_Data>().EventData[index][10];
+            answer2text.text = EData.GetComponent<Event_Data>().EventData[index][11];
+            answer3text.text = EData.GetComponent<Event_Data>().EventData[index][12];
+            answer4text.text = EData.GetComponent<Event_Data>().EventData[index][13];
         }
-        if(index != 48){
+        if(index != 48 && index != 49 && index != 50){
             int Check = 0;
             Check = Transform;
             if(Check == 1) //正位置　正解
@@ -256,7 +267,7 @@ public class ESManagement : MonoBehaviour
 
     public void FailButtonDown()//イベント画面に遷移
     {
-        if(index == 48){
+        if(index == 48 || index == 49){
             if(array[0]==1 && array[1]==0 && array[2]==0 && array[3]==0){
                 RdataLoad();
                 Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
@@ -274,8 +285,27 @@ public class ESManagement : MonoBehaviour
                 SEplayer.PlayOneShot(FuseikaiSE);
                 StartCoroutine("Huseikai");
             }
+        }else if(index == 50){
+            if(array[0]==0 && array[1]==0 && array[2]==1 && array[3]==0){
+                RdataLoad();
+                Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
+                Rdata.GetComponent<Result_Data>().CsvSave();
+                Answer = 0;
+                Debug.Log("正解");
+                SEplayer.PlayOneShot(SeikaiSE);
+                StartCoroutine("Seikai");
+            }else{
+                RdataLoad();
+                Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
+                Rdata.GetComponent<Result_Data>().CsvSave();
+                Answer = 1;
+                Debug.Log("不正解"); 
+
+                SEplayer.PlayOneShot(FuseikaiSE);                     
+                StartCoroutine("Huseikai");
+            }
         }
-        if(index != 48){
+        if(index != 48 && index != 49 && index != 50){
             int Check = 0;
             Check = Transform;
             if(Check == 1) //正位置　不正解
@@ -312,7 +342,7 @@ public class ESManagement : MonoBehaviour
         sentakutext = Sentakutext.GetComponent<Text>();
         if(array[0] == 0){
             array[0] = 1;
-            kaitou[0]=EData.GetComponent<Event_Data>().EventData[index][9];
+            kaitou[0]=EData.GetComponent<Event_Data>().EventData[index][10];
         }
         else{
             array[0] = 0;
@@ -330,8 +360,8 @@ public class ESManagement : MonoBehaviour
         sentakutext = Sentakutext.GetComponent<Text>();
         if(array[1] == 0){
             array[1] = 1;
-
-            kaitou[1]=EData.GetComponent<Event_Data>().EventData[index][10];
+            
+            kaitou[1]=EData.GetComponent<Event_Data>().EventData[index][11];
         }
         else{
             array[1] = 0;
@@ -349,7 +379,7 @@ public class ESManagement : MonoBehaviour
         sentakutext = Sentakutext.GetComponent<Text>();
         if(array[2] == 0){
             array[2] = 1;
-            kaitou[2]=EData.GetComponent<Event_Data>().EventData[index][11];
+            kaitou[2]=EData.GetComponent<Event_Data>().EventData[index][12];
         }
         else{
             array[2] = 0;
@@ -367,7 +397,7 @@ public class ESManagement : MonoBehaviour
         sentakutext = Sentakutext.GetComponent<Text>();
         if(array[3] == 0){
             array[3] = 1;
-            kaitou[3]=EData.GetComponent<Event_Data>().EventData[index][12];
+            kaitou[3]=EData.GetComponent<Event_Data>().EventData[index][13];
         }
         else{
             array[3] = 0;

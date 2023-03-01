@@ -53,9 +53,8 @@ public class ResultPanel : MonoBehaviour
         }
 
         else{
-            if(introcheck==48){
-                index = 48;
-            }
+            index = introcheck;
+            
             index = ESManagement.Send();
             Answer = ESManagement.SendAnswer();
         }
@@ -78,6 +77,17 @@ public class ResultPanel : MonoBehaviour
     {
         checksData = File.ReadAllLines(@"Assets/Resources/Texts/Bichiku_checks.csv").Select(line => line.Split(',')).ToList();
         ResultMake();
+        if(index==50){
+            if(checksData[0][11] == "true") {
+                if(Answer == 0){
+                    HGC = 0;
+                    REC = 3;
+                }else if(Answer == 1){
+                    HGC = -1;
+                    REC = -3;
+                }
+            }
+        }
         HGC = HG + HGC;
         if(HGC < 0)
         {
@@ -99,29 +109,94 @@ public class ResultPanel : MonoBehaviour
             if(checksData[0][14] == "true") {
                 if(Answer == 0){
                     int WaterStock = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][3]);
-                    WaterStock = WaterStock + 3;
+                    WaterStock = WaterStock + 1;
                     Pdata.GetComponent<Player_Data>().PlayerData[1][3]=WaterStock.ToString();
                     Debug.Log(Pdata.GetComponent<Player_Data>().PlayerData[1][3]);
                 }
             }
         }
+        if(index==49){
+            if(checksData[0][0] == "true") {
+                if(Answer == 0){
+                    int FoodStock = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][4]);
+                    FoodStock = FoodStock + 1;
+                    Pdata.GetComponent<Player_Data>().PlayerData[1][4]=FoodStock.ToString();
+                    Debug.Log(Pdata.GetComponent<Player_Data>().PlayerData[1][4]);
+                }
+            }
+        }
+        
 
         Pdata.GetComponent<Player_Data>().PlayerData[1][0] = HGC.ToString();
         Pdata.GetComponent<Player_Data>().PlayerData[1][1] = REC.ToString();
         Pdata.GetComponent<Player_Data>().CsvSave();
 
-        if(index == 100 || index == 48){
+        if(index == 100){
+            Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
+            Result2.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
+            Result1.text = "水が増えた！";
+            Result2.text = "食料が増えた！";
+            
+        }else if(index == 48){
             Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
             Result2.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
             Result1.text = "水が増えた！";
             Result2.text = "食料が増えた！";
             if(checksData[0][14] == "false") {
                 Result1.text = "チェックリストにアイテムがないため";
-                Result2.text = "水はもらえなかった";
+                Result2.text = "報酬はもらえなかった";
             }
             if(Answer == 1){
                 Result1.text = "不正解のため";
                 Result2.text = "水はもらえなかった";
+            }
+        }else if(index == 49){
+            Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
+            Result2.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
+            Result1.text = "水が増えた！";
+            Result2.text = "食料が増えた！";
+            if(checksData[0][0] == "false") {
+                Result1.text = "チェックリストにアイテムがないため";
+                Result2.text = "報酬はもらえなかった";
+            }
+            if(Answer == 1){
+                Result1.text = "不正解のため";
+                Result2.text = "食量はもらえなかった";
+            }
+        }else if(index == 50){
+            if (HG > HGC)
+            {
+                Result1.color = new Color(1.0f, 0.0f, 0.0f, 1.0f); //赤
+            }
+            if (HG < HGC)
+            {
+                Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
+            }
+            if (RE > REC)
+            {
+                Result2.color = new Color(1.0f, 0.0f, 0.0f, 1.0f); //赤
+            }
+            if (RE < REC)
+            {
+                Result2.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
+            }
+            if (HG == HGC)
+            {
+                Result1.color = new Color(0.0f, 0.0f, 0.0f, 1.0f); //黒
+            }
+            if (RE == REC)
+            {
+                Result2.color = new Color(0.0f, 0.0f, 0.0f, 1.0f); //黒
+            }
+            Result1.text = ("満腹ゲージ：" + HG.ToString() + "→" + HGC.ToString());
+            Result2.text = ("安心ゲージ：" + RE.ToString() + "→" + REC.ToString());
+            if(checksData[0][11] == "false") {
+                Result1.text = "チェックリストにアイテムがないため";
+                Result2.text = "安心度は変動しなかった";
+            }
+            if(Answer == 1){
+                Result1.text = "不正解のため";
+                Result2.text = "安心度が減った";
             }
         }
         else{
