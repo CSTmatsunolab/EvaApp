@@ -244,7 +244,7 @@ public class ESManagement : MonoBehaviour
                 Answer = 0;
                 Debug.Log("正解");
                 SceneManager.LoadScene("EventScene");
-                if( index < 40 && index > 45){
+                if( index < 40 || index > 45){
                     SEplayer.PlayOneShot(SeikaiSE);
                     StartCoroutine("Seikai");
                 }
@@ -257,7 +257,7 @@ public class ESManagement : MonoBehaviour
                 Answer = 1;
                 Debug.Log("不正解");
                 SceneManager.LoadScene("EventScene");
-                if( index < 40 && index > 45){
+                if( index < 40 || index > 45){
                     SEplayer.PlayOneShot(FuseikaiSE);
                     StartCoroutine("Huseikai");
                 }
@@ -316,7 +316,7 @@ public class ESManagement : MonoBehaviour
                 Answer = 1;
                 Debug.Log("不正解");
                 SceneManager.LoadScene("EventScene");
-                if( index < 40 && index > 45){
+                if( index < 40 || index > 45){
                     SEplayer.PlayOneShot(FuseikaiSE);
                     StartCoroutine("Huseikai");
                 }
@@ -329,7 +329,7 @@ public class ESManagement : MonoBehaviour
                 Answer = 0;
                 Debug.Log("正解");
                 SceneManager.LoadScene("EventScene");
-                if( index < 40 && index > 45){
+                if( index < 40 || index > 45){
                     SEplayer.PlayOneShot(SeikaiSE);
                     StartCoroutine("Seikai");
                 }
