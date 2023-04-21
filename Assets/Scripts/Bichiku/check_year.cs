@@ -8,6 +8,7 @@ using System.Linq;
 
 public class check_year : MonoBehaviour
 {
+    TextAsset csvFile;
     public InputField inputField_y;
     public InputField inputField_m;
     public InputField inputField_d;
@@ -30,14 +31,14 @@ public class check_year : MonoBehaviour
     }
 
     void checkY(){
-        //csvFile = Resources.Load("Texts/Bichiku_days") as TextAsset;
-        daysData = File.ReadAllLines(@"Assets/Resources/Texts/Bichiku_days.csv").Select(line => line.Split(',')).ToList();
-        // StringReader reader = new StringReader(csvFile.text);//
-        // while (reader.Peek() != -1)//最後まで読み込むと-1になる関数
-        // {
-        //     string line = reader.ReadLine();//一行ずつ読み込み
-        //     daysData.Add(line.Split(','));
-        // }
+        csvFile = Resources.Load("Bichiku_days") as TextAsset;
+        //daysData = File.ReadAllLines(@"Assets/Resources/Texts/Bichiku_days.csv").Select(line => line.Split(',')).ToList();
+        StringReader reader = new StringReader(csvFile.text);//
+        while (reader.Peek() != -1)//最後まで読み込むと-1になる関数
+        {
+             string line = reader.ReadLine();//一行ずつ読み込み
+             daysData.Add(line.Split(','));
+        }
         if(transform.parent.name == "ItemboxF0"){
             inputField_y.text = daysData[0][0];
             inputField_m.text = daysData[0][1];

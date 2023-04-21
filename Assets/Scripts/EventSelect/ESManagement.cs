@@ -10,6 +10,7 @@ using System.Linq;
 
 public class ESManagement : MonoBehaviour
 {
+    TextAsset csvFile;
     [SerializeField] GameObject EventBackground;//イベント選択画面の背景画像UI
     [SerializeField] GameObject EventImage;//イベントの画像UI
     [SerializeField] GameObject TitleText;//イベントのタイトルのTextUI
@@ -64,8 +65,14 @@ public class ESManagement : MonoBehaviour
         int flag = MenuPanel.Send();
         int a = 0; //indexに入る値
         int kaburiCheck = 2;
+        csvFile = Resources.Load("Bichiku_checks") as TextAsset; // Resouces下のCSV読み込み
+        StringReader reader = new StringReader(csvFile.text);
 
-        checksData = File.ReadAllLines(@"Assets/Resources/Texts/Bichiku_checks.csv").Select(line => line.Split(',')).ToList();
+        while (reader.Peek() != -1) // reader.Peaekが-1になるまで
+        {
+            string line = reader.ReadLine(); // 一行ずつ読み込み
+            checksData.Add(line.Split(',')); // , 区切りでリストに追加
+        }
 
         if(flag == 0)
         {

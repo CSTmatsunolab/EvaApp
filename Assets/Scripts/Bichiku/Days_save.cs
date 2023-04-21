@@ -29,7 +29,7 @@ public class Days_save : MonoBehaviour
     }
 
     public void save(){
-        sw = new StreamWriter(@"Assets/Resources/Texts/Bichiku_days.csv", false);
+        sw = new StreamWriter(@"Assets/Resources/Bichiku_days.csv", false);
         string[] s1 = {iF_y1.text,iF_m1.text,iF_d1.text};
         string[] s2 = {iF_y2.text,iF_m2.text,iF_d2.text};
         string[] s3 = {iF_y3.text,iF_m3.text,iF_d3.text};

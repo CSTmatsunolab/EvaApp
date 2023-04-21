@@ -9,6 +9,7 @@ using System;
 
 public class Checks_save : MonoBehaviour
 {
+    TextAsset csvFile;
     public Toggle t0;
     public Toggle t1;
     public Toggle t2;
@@ -155,8 +156,13 @@ public class Checks_save : MonoBehaviour
 
         if(t33.isOn) t[33] = "true"; 
         else t[33] = "false";
-
-        nameData = File.ReadAllLines(@"Assets/Resources/Texts/ItemName.csv").Select(line => line.Split(',')).ToList();
+        csvFile = Resources.Load("ItemName") as TextAsset;
+        StringReader reader = new StringReader(csvFile.text);//
+        while (reader.Peek() != -1)//最後まで読み込むと-1になる関数
+        {
+            string line = reader.ReadLine();//一行ずつ読み込み
+            nameData.Add(line.Split(','));
+        }
         for(i = 0;i<34; i++){
             ItemWeight[i] = nameData[i][2];
         }
@@ -169,7 +175,7 @@ public class Checks_save : MonoBehaviour
         Weight.GetComponent<UnityEngine.UI.Text>().text  = CurrentWeight.ToString();
 
 
-        sw = new StreamWriter(@"Assets/Resources/Texts/Bichiku_checks.csv", false);
+        sw = new StreamWriter(@"Assets/Resources/Bichiku_checks.csv", false);
         string[] s1 = t;
         string s2 = string.Join(",", s1);
         await sw.WriteLineAsync(s2);

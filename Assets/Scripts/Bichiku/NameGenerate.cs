@@ -8,6 +8,7 @@ using System.Linq;
 
 public class NameGenerate : MonoBehaviour
 {
+    TextAsset csvFile;
     public GameObject[] Name;
     public GameObject[] Explain;
     int i;
@@ -30,7 +31,15 @@ public class NameGenerate : MonoBehaviour
     }
 
     void naming(){
-        nameData = File.ReadAllLines(@"Assets/Resources/Texts/ItemName.csv").Select(line => line.Split(',')).ToList();
+        csvFile = Resources.Load("ItemName") as TextAsset; // Resouces下のCSV読み込み
+        StringReader reader = new StringReader(csvFile.text);
+
+
+        while (reader.Peek() != -1) // reader.Peaekが-1になるまで
+        {
+            string line = reader.ReadLine(); // 一行ずつ読み込み
+            nameData.Add(line.Split(',')); // , 区切りでリストに追加
+        }
         Name = GameObject.FindGameObjectsWithTag("IName");
         Explain = GameObject.FindGameObjectsWithTag("IExplain");
         int j = Name.Length;

@@ -9,6 +9,7 @@ using System.Linq;
 
 public class ResultPanel : MonoBehaviour
 {
+    TextAsset csvFile;
     private GameObject Pdata = null;
     private GameObject Edata = null;
     int index = 0;
@@ -20,7 +21,7 @@ public class ResultPanel : MonoBehaviour
     public Text Result1;
     public Text Result2;
     private string path;
-    static List<string[]> checksData = new List<string[]>();
+    public List<string[]> checksData = new List<string[]>();
     
 
     void Start()
@@ -75,7 +76,13 @@ public class ResultPanel : MonoBehaviour
 
     private void ResultCalculation()
     {
-        checksData = File.ReadAllLines(@"Assets/Resources/Texts/Bichiku_checks.csv").Select(line => line.Split(',')).ToList();
+        csvFile = Resources.Load("Bichiku_checks") as TextAsset;
+        StringReader reader = new StringReader(csvFile.text);
+        while (reader.Peek() != -1) // reader.Peaekが-1になるまで
+        {
+            string line = reader.ReadLine(); // 一行ずつ読み込み
+            checksData.Add(line.Split(',')); // , 区切りでリストに追加
+        }
         ResultMake();
         if(index==50){
             if(checksData[0][11] == "true") {

@@ -8,6 +8,7 @@ using System.Linq;
 
 public class check : MonoBehaviour
 {
+    TextAsset csvFile;
     public Toggle toggle;
     public GameObject ChecksSave;
     public GameObject[] ParentG;
@@ -29,15 +30,15 @@ public class check : MonoBehaviour
     }
     void checkC(){
         //csvFile = Resources.Load("Texts/Bichiku_checks") as TextAsset;
-        checksData = File.ReadAllLines(@"Assets/Resources/Texts/Bichiku_checks.csv").Select(line => line.Split(',')).ToList();
+        csvFile = Resources.Load("Bichiku_checks") as TextAsset;
+        StringReader reader = new StringReader(csvFile.text);
+        while (reader.Peek() != -1) // reader.Peaekが-1になるまで
+        {
+            string line = reader.ReadLine(); // 一行ずつ読み込み
+            checksData.Add(line.Split(',')); // , 区切りでリストに追加
+        }
         ParentG = GameObject.FindGameObjectsWithTag("Itembox");
         checks = GameObject.FindGameObjectsWithTag("check");
-        // StringReader reader = new StringReader(csvFile.text);//
-        // while (reader.Peek() != -1)//最後まで読み込むと-1になる関数
-        // {
-        //     string line = reader.ReadLine();//一行ずつ読み込み
-        //     checksData.Add(line.Split(','));
-        // }
         for(int i=0;i<34;i++){
                 if(checksData[0][i] == "true") {
                     Debug.Log("true"); 
