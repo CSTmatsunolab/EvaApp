@@ -11,8 +11,6 @@ public class check : MonoBehaviour
     TextAsset csvFile;
     public Toggle toggle;
     public GameObject ChecksSave;
-    public GameObject[] ParentG;
-    public GameObject[] checks;
     int c = 0;
     //static TextAsset csvFile;
     //static string[] csvFile;
@@ -47,10 +45,16 @@ public class check : MonoBehaviour
         //         checksData.Add(line.Split(',')); // , 区切りでリストに追加
         //     }
         // }
+        GameObject[] ItemBox = new GameObject[34];
+        GameObject[] checks = new GameObject[34];
+        for(int a = 0; a < 34; a++){
+            ItemBox[a] = GameObject.Find(a.ToString());
+        }
+        for(int a = 0; a < 34; a++){
+            checks[a] = ItemBox[a].GetComponent<Transform>().transform.Find("checkbox").gameObject;
+        } 
         Bdata = GameObject.Find("BagData");
 
-        ParentG = GameObject.FindGameObjectsWithTag("Itembox");
-        checks = GameObject.FindGameObjectsWithTag("check");
         for(int i=0;i<34;i++){
                 if(Bdata.GetComponent<Bag_Data>().BagData[0][i] == "true") {
                     Debug.Log("true"); 
@@ -299,7 +303,7 @@ public class check : MonoBehaviour
     //         }
     //     }
         c = 1;
-        if (transform.parent.name == ParentG[33].name){
+        if (transform.parent.name == ItemBox[33].name){
             ChecksSave.GetComponent<Checks_save>().save();
         }
     }

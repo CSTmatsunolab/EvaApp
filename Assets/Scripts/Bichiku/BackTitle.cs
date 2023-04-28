@@ -13,6 +13,7 @@ public class BackTitle : MonoBehaviour
     // }
     public void BackTitleButtonDown()
     {
+        Destroy(GameObject.Find("EventData"));
         SceneManager.LoadScene("StartScene");
         // foreach(GameObject bi in bichiku){
         //     bi.SetActive (false);

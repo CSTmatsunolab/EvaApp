@@ -13,6 +13,7 @@ public class check_year : MonoBehaviour
     public InputField inputField_m;
     public InputField inputField_d;
     public GameObject DaysSave;
+    private GameObject Bdata;
     DateTime TodayNow;
     //static TextAsset csvFile;
     static List<string[]> daysData = new List<string[]>();
@@ -31,28 +32,29 @@ public class check_year : MonoBehaviour
     }
 
     void checkY(){
-        csvFile = Resources.Load("Bichiku_days") as TextAsset;
-        //daysData = File.ReadAllLines(@"Assets/Resources/Texts/Bichiku_days.csv").Select(line => line.Split(',')).ToList();
-        StringReader reader = new StringReader(csvFile.text);//
-        while (reader.Peek() != -1)//最後まで読み込むと-1になる関数
-        {
-             string line = reader.ReadLine();//一行ずつ読み込み
-             daysData.Add(line.Split(','));
+        Bdata = GameObject.Find("BagData");
+        // csvFile = Resources.Load("Bichiku_days") as TextAsset;
+        // daysData = File.ReadAllLines(@"Assets/Resources/Texts/Bichiku_days.csv").Select(line => line.Split(',')).ToList();
+        // StringReader reader = new StringReader(csvFile.text);//
+        // while (reader.Peek() != -1)//最後まで読み込むと-1になる関数
+        // {
+        //      string line = reader.ReadLine();//一行ずつ読み込み
+        //      daysData.Add(line.Split(','));
+        // }
+        if(transform.parent.name == "1"){
+            inputField_y.text = Bdata.GetComponent<Days_Data>().DaysData[0][0];
+            inputField_m.text = Bdata.GetComponent<Days_Data>().DaysData[0][1];
+            inputField_d.text = Bdata.GetComponent<Days_Data>().DaysData[0][2];
         }
-        if(transform.parent.name == "ItemboxF0"){
-            inputField_y.text = daysData[0][0];
-            inputField_m.text = daysData[0][1];
-            inputField_d.text = daysData[0][2];
+        if(transform.parent.name == "2"){
+            inputField_y.text = Bdata.GetComponent<Days_Data>().DaysData[1][0];
+            inputField_m.text = Bdata.GetComponent<Days_Data>().DaysData[1][1];
+            inputField_d.text = Bdata.GetComponent<Days_Data>().DaysData[1][2];
         }
-        if(transform.parent.name == "ItemboxF1"){
-            inputField_y.text = daysData[1][0];
-            inputField_m.text = daysData[1][1];
-            inputField_d.text = daysData[1][2];
-        }
-        if(transform.parent.name == "ItemboxF2"){
-            inputField_y.text = daysData[2][0];
-            inputField_m.text = daysData[2][1];
-            inputField_d.text = daysData[2][2];
+        if(transform.parent.name == "3"){
+            inputField_y.text = Bdata.GetComponent<Days_Data>().DaysData[2][0];
+            inputField_m.text = Bdata.GetComponent<Days_Data>().DaysData[2][1];
+            inputField_d.text = Bdata.GetComponent<Days_Data>().DaysData[2][2];
         }
         year = int.Parse(inputField_y.text);
         month = int.Parse(inputField_m.text);

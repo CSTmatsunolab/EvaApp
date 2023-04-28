@@ -10,6 +10,7 @@ public class Player_Data : MonoBehaviour
     public List<string[]> PlayerData = new List<string[]>(); // CSVの中身を入れるリスト;
     private Button ContinueButton;
     void Start(){
+        Debug.Log(Application.persistentDataPath);
         string path = Application.persistentDataPath + "/PlayerData.csv";
         if (!File.Exists(path)){
             ContinueButton = GameObject.Find("Canvas/ContinueButton").GetComponent<Button>();

@@ -6,14 +6,18 @@ using UnityEngine.UI;
 public class DropdownButton : MonoBehaviour
 {
     public Toggle toggle;
-    public GameObject[] ItemBox;
     public GameObject content14;
     public Scrollbar scroll;
+    int a;
 
     public void OffToggleChanged(){
         if(toggle.isOn == false){
-        ItemBox = GameObject.FindGameObjectsWithTag("Itembox");
-        int i = ItemBox.Length - 1;
+        GameObject[] ItemBox = new GameObject[34];
+        //a = int.Parse(this.name);
+        for(int a = 0; a < 34; a++){
+            ItemBox[a] = GameObject.Find(a.ToString());
+        }
+        int i = 33;
         Debug.Log(i);
         bool flag = true;
         while(flag == true){
@@ -41,9 +45,11 @@ public class DropdownButton : MonoBehaviour
     }
     public void OnToggleChanged(){
         if(toggle.isOn){
-        ItemBox = GameObject.FindGameObjectsWithTag("Itembox");
-
-        int i = ItemBox.Length - 1;
+        GameObject[] ItemBox = new GameObject[34];
+        for(int a = 0; a < 34; a++){
+            ItemBox[a] = GameObject.Find(a.ToString());
+        }
+        int i = 33;
         bool flag = true;
         while(flag == true){
             print("親の名前は、" + transform.parent.name);
