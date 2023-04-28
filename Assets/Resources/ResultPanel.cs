@@ -12,6 +12,7 @@ public class ResultPanel : MonoBehaviour
     TextAsset csvFile;
     private GameObject Pdata = null;
     private GameObject Edata = null;
+    private GameObject Bdata;
     int index = 0;
     int Answer = 0;
     int HG = 0; //満腹ゲージ
@@ -76,16 +77,20 @@ public class ResultPanel : MonoBehaviour
 
     private void ResultCalculation()
     {
-        csvFile = Resources.Load("Bichiku_checks") as TextAsset;
-        StringReader reader = new StringReader(csvFile.text);
-        while (reader.Peek() != -1) // reader.Peaekが-1になるまで
-        {
-            string line = reader.ReadLine(); // 一行ずつ読み込み
-            checksData.Add(line.Split(',')); // , 区切りでリストに追加
-        }
+        //csvFile = Resources.Load("Bichiku_checks") as TextAsset;
+        //StringReader reader = new StringReader(csvFile.text);
+        // while (reader.Peek() != -1) // reader.Peaekが-1になるまで
+        // {
+        //     string line = reader.ReadLine(); // 一行ずつ読み込み
+        //     checksData.Add(line.Split(',')); // , 区切りでリストに追加
+        // }
+        Bdata = GameObject.Find("BagData");
+        Debug.Log(Bdata.GetComponent<Bag_Data>().BagData[0][11]);
+        Debug.Log(Bdata.GetComponent<Bag_Data>().BagData[0][14]);
+        Debug.Log(Bdata.GetComponent<Bag_Data>().BagData[0][1]);
         ResultMake();
         if(index==50){
-            if(checksData[0][11] == "true") {
+            if(Bdata.GetComponent<Bag_Data>().BagData[0][11] == "true") {
                 if(Answer == 0){
                     HGC = 0;
                     REC = 3;
@@ -113,7 +118,7 @@ public class ResultPanel : MonoBehaviour
             REC = 10;
         }
         if(index==48){
-            if(checksData[0][14] == "true") {
+            if(Bdata.GetComponent<Bag_Data>().BagData[0][14] == "true") {
                 if(Answer == 0){
                     int WaterStock = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][3]);
                     WaterStock = WaterStock + 1;
@@ -123,7 +128,7 @@ public class ResultPanel : MonoBehaviour
             }
         }
         if(index==49){
-            if(checksData[0][0] == "true") {
+            if(Bdata.GetComponent<Bag_Data>().BagData[0][1] == "true") {
                 if(Answer == 0){
                     int FoodStock = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][4]);
                     FoodStock = FoodStock + 1;
@@ -149,7 +154,7 @@ public class ResultPanel : MonoBehaviour
             Result2.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
             Result1.text = "水が増えた！";
             Result2.text = "食料が増えた！";
-            if(checksData[0][14] == "false") {
+            if(Bdata.GetComponent<Bag_Data>().BagData[0][14] == "false") {
                 Result1.text = "チェックリストにアイテムがないため";
                 Result2.text = "報酬はもらえなかった";
             }
@@ -162,7 +167,7 @@ public class ResultPanel : MonoBehaviour
             Result2.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
             Result1.text = "水が増えた！";
             Result2.text = "食料が増えた！";
-            if(checksData[0][0] == "false") {
+            if(Bdata.GetComponent<Bag_Data>().BagData[0][1] == "false") {
                 Result1.text = "チェックリストにアイテムがないため";
                 Result2.text = "報酬はもらえなかった";
             }
@@ -197,7 +202,7 @@ public class ResultPanel : MonoBehaviour
             }
             Result1.text = ("満腹ゲージ：" + HG.ToString() + "→" + HGC.ToString());
             Result2.text = ("安心ゲージ：" + RE.ToString() + "→" + REC.ToString());
-            if(checksData[0][11] == "false") {
+            if(Bdata.GetComponent<Bag_Data>().BagData[0][11] == "false") {
                 Result1.text = "チェックリストにアイテムがないため";
                 Result2.text = "安心度は変動しなかった";
             }

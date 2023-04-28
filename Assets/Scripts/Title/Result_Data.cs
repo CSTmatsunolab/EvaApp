@@ -62,6 +62,7 @@ public class Result_Data : MonoBehaviour
     public void CsvSave()
     {
         string path = Application.persistentDataPath + "/EventResult.csv";
+        //Debug.Log();
         using (var fs = new StreamWriter(path, false, System.Text.Encoding.GetEncoding("UTF-8")))
         {
             for (var y=0; y < ResultData.Count; y++)

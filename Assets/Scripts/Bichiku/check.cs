@@ -19,6 +19,7 @@ public class check : MonoBehaviour
     static List<string[]> checksData = new List<string[]>();
     private StreamWriter sw;
     string[] t = new string[34];
+    private GameObject Bdata;
     // Start is called before the first frame update
     void Update(){
         if(c == 0){
@@ -29,18 +30,29 @@ public class check : MonoBehaviour
         ChecksSave.GetComponent<Checks_save>().save();
     }
     void checkC(){
-        //csvFile = Resources.Load("Texts/Bichiku_checks") as TextAsset;
-        csvFile = Resources.Load("Bichiku_checks") as TextAsset;
-        StringReader reader = new StringReader(csvFile.text);
-        while (reader.Peek() != -1) // reader.Peaekが-1になるまで
-        {
-            string line = reader.ReadLine(); // 一行ずつ読み込み
-            checksData.Add(line.Split(',')); // , 区切りでリストに追加
-        }
+        // csvFile = Resources.Load("Texts/Bichiku_checks") as TextAsset;
+        // csvFile = Resources.Load("Bichiku_checks") as TextAsset;
+        // StringReader reader = new StringReader(csvFile.text);
+        // while (reader.Peek() != -1) // reader.Peaekが-1になるまで
+        // {
+        //     string line = reader.ReadLine(); // 一行ずつ読み込み
+        //     checksData.Add(line.Split(',')); // , 区切りでリストに追加
+        // }
+        // string path = Application.persistentDataPath + "/Bichiku_checks.csv";
+        // using (var fs = new StreamReader(path, System.Text.Encoding.GetEncoding("UTF-8")))
+        // {
+        //     while (fs.Peek() != -1)
+        //     {
+        //         string line = fs.ReadLine(); // 一行ずつ読み込み
+        //         checksData.Add(line.Split(',')); // , 区切りでリストに追加
+        //     }
+        // }
+        Bdata = GameObject.Find("BagData");
+
         ParentG = GameObject.FindGameObjectsWithTag("Itembox");
         checks = GameObject.FindGameObjectsWithTag("check");
         for(int i=0;i<34;i++){
-                if(checksData[0][i] == "true") {
+                if(Bdata.GetComponent<Bag_Data>().BagData[0][i] == "true") {
                     Debug.Log("true"); 
                     checks[i].SetIsOnWithoutCallback( true );
                 }else {

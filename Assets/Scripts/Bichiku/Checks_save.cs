@@ -45,12 +45,14 @@ public class Checks_save : MonoBehaviour
     public Toggle t32;
     public Toggle t33;
     public GameObject Weight;
+    private GameObject Bdata;
     static List<string[]> nameData = new List<string[]>();
+    //public List<string[]> BagData = new List<string[]>();
     float CurrentWeight;
     string[] ItemWeight = new string[34];
     int i;
     string[] t = new string[34];
-    private StreamWriter sw;
+    //private StreamWriter sw;
 
 
 
@@ -173,13 +175,24 @@ public class Checks_save : MonoBehaviour
             }
         }
         Weight.GetComponent<UnityEngine.UI.Text>().text  = CurrentWeight.ToString();
+        Bdata = GameObject.Find("BagData");
 
-
-        sw = new StreamWriter(@"Assets/Resources/Bichiku_checks.csv", false);
+        string path = Application.persistentDataPath + "/Bichiku_checks.csv";
+        Debug.Log(path);
         string[] s1 = t;
         string s2 = string.Join(",", s1);
-        await sw.WriteLineAsync(s2);
-        sw.Close();
+        for(int i=0;i<34;i++){
+            Bdata.GetComponent<Bag_Data>().BagData[0][i] = t[i];
+        }
+        using (var fs = new StreamWriter(path, false, System.Text.Encoding.GetEncoding("UTF-8")))
+        {
+            //for (var y=0; y < 34; y++)
+            //{
+                fs.Write(s2);
+                Debug.Log(s2);
+                fs.Flush();
+            //}
+        }
         Debug.Log("saved!"); 
     }
 }

@@ -30,6 +30,7 @@ public class ESManagement : MonoBehaviour
 
     [SerializeField] private string spritesDirectory = "Sprites/Event";//イベント画像が保存されているフォルダへのパス
     private GameObject Rdata;//イベント閲覧フラグのオブジェクト
+    private GameObject Bdata;
 
     public static int index = 0;//イベントのナンバー
     public static int Answer = 0;//イベントの回答
@@ -57,6 +58,7 @@ public class ESManagement : MonoBehaviour
     //ResultData読み込み
     private void RdataLoad(){
         Rdata = GameObject.Find("ResultData");
+        Bdata = GameObject.Find("BagData");
     }
 
     //乱数(イベントのナンバー)を生成
@@ -64,15 +66,16 @@ public class ESManagement : MonoBehaviour
         RdataLoad();
         int flag = MenuPanel.Send();
         int a = 0; //indexに入る値
+        int b = 0;
         int kaburiCheck = 2;
-        csvFile = Resources.Load("Bichiku_checks") as TextAsset; // Resouces下のCSV読み込み
-        StringReader reader = new StringReader(csvFile.text);
+        //csvFile = Resources.Load("Bichiku_checks") as TextAsset; // Resouces下のCSV読み込み
+        // StringReader reader = new StringReader(csvFile.text);
 
-        while (reader.Peek() != -1) // reader.Peaekが-1になるまで
-        {
-            string line = reader.ReadLine(); // 一行ずつ読み込み
-            checksData.Add(line.Split(',')); // , 区切りでリストに追加
-        }
+        // while (reader.Peek() != -1) // reader.Peaekが-1になるまで
+        // {
+        //     string line = reader.ReadLine(); // 一行ずつ読み込み
+        //     checksData.Add(line.Split(',')); // , 区切りでリストに追加
+        // }
 
         if(flag == 0)
         {
@@ -100,12 +103,13 @@ public class ESManagement : MonoBehaviour
 
         }
         else if(flag == 1){
-            //a = Random.Range(3,23);
+            b = Random.Range(0,6);
             //a = Random.Range(3,41);//3~29
-            //if(checksData[0][14] == "true") {
+            if(b < 5) {
                 a = Random.Range(48,51);
-                //a = 50;
-            //}
+            } else{
+                a = Random.Range(3,41); 
+            }
 
             kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
             Debug.Log("kaburiCheck = " + kaburiCheck);
