@@ -36,6 +36,8 @@ public class ESManagement : MonoBehaviour
     public static int Answer = 0;//イベントの回答
     private int Transform = 0;//
     int[] array={0,0,0,0};
+    int[] A = {10,11,12,13};
+    int[] B = {14,15,16,17};
 
 
     [SerializeField] private AudioSource SEplayer;//EventSelectManagementのAudioSourceコンポーネント
@@ -227,6 +229,8 @@ public class ESManagement : MonoBehaviour
             //展開
             yontaku.gameObject.SetActive (true);
             GameObject EData = GameObject.Find("EventData");
+            int tempA;
+            int tempB;
             Text mondaitext;
             Text answer1text;
             Text answer2text;
@@ -237,12 +241,22 @@ public class ESManagement : MonoBehaviour
             answer2text = Answer2text.GetComponent<Text>();
             answer3text = Answer3text.GetComponent<Text>();
             answer4text = Answer4text.GetComponent<Text>();
+            for (int i = 0; i < 4; i++)
+            {
+                tempA = A[i];
+                tempB = B[i];
+                int randomIndex = Random.Range(0, 4); 
+                A[i] = A[randomIndex]; 
+                B[i] = B[randomIndex];
+                A[randomIndex] = tempA; 
+                B[randomIndex] = tempB;
+            } 
 
             mondaitext.text = EData.GetComponent<Event_Data>().EventData[index][2];
-            answer1text.text = EData.GetComponent<Event_Data>().EventData[index][10];
-            answer2text.text = EData.GetComponent<Event_Data>().EventData[index][11];
-            answer3text.text = EData.GetComponent<Event_Data>().EventData[index][12];
-            answer4text.text = EData.GetComponent<Event_Data>().EventData[index][13];
+            answer1text.text = EData.GetComponent<Event_Data>().EventData[index][A[0]];
+            answer2text.text = EData.GetComponent<Event_Data>().EventData[index][A[1]];
+            answer3text.text = EData.GetComponent<Event_Data>().EventData[index][A[2]];
+            answer4text.text = EData.GetComponent<Event_Data>().EventData[index][A[3]];
         }
         if(index != 48 && index != 49 && index != 50){
             int Check = 0;
@@ -278,8 +292,14 @@ public class ESManagement : MonoBehaviour
 
     public void FailButtonDown()//イベント画面に遷移
     {
-        if(index == 48 || index == 49){
-            if(array[0]==1 && array[1]==0 && array[2]==0 && array[3]==0){
+        if(index == 48 || index == 49 || index == 50){
+            GameObject EData = GameObject.Find("EventData");
+            int[] ANS = new int[4];
+            for (int i = 0; i < 4; i++)
+            {
+                ANS[i] = int.Parse(EData.GetComponent<Event_Data>().EventData[index][B[i]]);
+            }
+            if(array[0]==ANS[0] && array[1]==ANS[1] && array[2]==ANS[2] && array[3]==ANS[3]){
                 RdataLoad();
                 Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
                 Rdata.GetComponent<Result_Data>().CsvSave();
@@ -294,25 +314,6 @@ public class ESManagement : MonoBehaviour
                 Answer = 1;
                 Debug.Log("不正解");
                 SEplayer.PlayOneShot(FuseikaiSE);
-                StartCoroutine("Huseikai");
-            }
-        }else if(index == 50){
-            if(array[0]==0 && array[1]==0 && array[2]==1 && array[3]==0){
-                RdataLoad();
-                Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
-                Rdata.GetComponent<Result_Data>().CsvSave();
-                Answer = 0;
-                Debug.Log("正解");
-                SEplayer.PlayOneShot(SeikaiSE);
-                StartCoroutine("Seikai");
-            }else{
-                RdataLoad();
-                Rdata.GetComponent<Result_Data>().ResultData[index][1] = "1";
-                Rdata.GetComponent<Result_Data>().CsvSave();
-                Answer = 1;
-                Debug.Log("不正解"); 
-
-                SEplayer.PlayOneShot(FuseikaiSE);                     
                 StartCoroutine("Huseikai");
             }
         }
@@ -353,7 +354,7 @@ public class ESManagement : MonoBehaviour
         sentakutext = Sentakutext.GetComponent<Text>();
         if(array[0] == 0){
             array[0] = 1;
-            kaitou[0]=EData.GetComponent<Event_Data>().EventData[index][10];
+            kaitou[0]=EData.GetComponent<Event_Data>().EventData[index][A[0]];
         }
         else{
             array[0] = 0;
@@ -372,7 +373,7 @@ public class ESManagement : MonoBehaviour
         if(array[1] == 0){
             array[1] = 1;
             
-            kaitou[1]=EData.GetComponent<Event_Data>().EventData[index][11];
+            kaitou[1]=EData.GetComponent<Event_Data>().EventData[index][A[1]];
         }
         else{
             array[1] = 0;
@@ -390,7 +391,7 @@ public class ESManagement : MonoBehaviour
         sentakutext = Sentakutext.GetComponent<Text>();
         if(array[2] == 0){
             array[2] = 1;
-            kaitou[2]=EData.GetComponent<Event_Data>().EventData[index][12];
+            kaitou[2]=EData.GetComponent<Event_Data>().EventData[index][A[2]];
         }
         else{
             array[2] = 0;
@@ -408,7 +409,7 @@ public class ESManagement : MonoBehaviour
         sentakutext = Sentakutext.GetComponent<Text>();
         if(array[3] == 0){
             array[3] = 1;
-            kaitou[3]=EData.GetComponent<Event_Data>().EventData[index][13];
+            kaitou[3]=EData.GetComponent<Event_Data>().EventData[index][A[3]];
         }
         else{
             array[3] = 0;
