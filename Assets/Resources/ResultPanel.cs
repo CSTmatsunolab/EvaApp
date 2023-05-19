@@ -162,7 +162,7 @@ public class ResultPanel : MonoBehaviour
                 Result1.text = "不正解のため";
                 Result2.text = "水はもらえなかった";
             }
-        }else if(index == 49){
+        }else if(index ==  49){
             Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
             Result2.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
             Result1.text = "水が増えた！";
