@@ -11,7 +11,7 @@ public class Days_Data : MonoBehaviour
 void Start()
     {
         string path = Application.persistentDataPath + "/Bichiku_days.csv";
-        //if (path == null){
+        if (!File.Exists(path)){
         //string csv_path = "Player_Data";  // CSVファイルのパス
         csvFile = Resources.Load("Bichiku_days") as TextAsset; // Resouces下のCSV読み込み
         StringReader reader = new StringReader(csvFile.text);
@@ -33,8 +33,8 @@ void Start()
                 }
             }
             CsvSave();
-        //}
-        path = Application.persistentDataPath + "/Bichiku_days.csv";
+        }
+        //path = Application.persistentDataPath + "/Bichiku_days.csv";
         using (var fs = new StreamReader(path, System.Text.Encoding.GetEncoding("UTF-8")))
         {
             while (fs.Peek() != -1)
@@ -52,9 +52,9 @@ void Start()
         string path = Application.persistentDataPath + "/Bichiku_days.csv";
         using (var fs = new StreamWriter(path, false, System.Text.Encoding.GetEncoding("UTF-8")))
         {
-            for (var y=0; y < 2; y++)
+            for (var y=0; y < 3; y++)
             {
-                for(var x=0; x < 13; x++)
+                for(var x=0; x < 2; x++)
                 {
                     fs.Write(DaysData[y][x]+",");
                     fs.Flush();

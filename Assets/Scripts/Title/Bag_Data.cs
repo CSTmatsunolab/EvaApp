@@ -10,9 +10,8 @@ public class Bag_Data : MonoBehaviour
 
 void Start()
     {
-        Debug.Log(Application.persistentDataPath + "/Bichiku_checks.csv");
         string path = Application.persistentDataPath + "/Bichiku_checks.csv";
-        //if (path == null){
+        if (!File.Exists(path)){
         //string csv_path = "Player_Data";  // CSVファイルのパス
         csvFile = Resources.Load("Bichiku_checks") as TextAsset; // Resouces下のCSV読み込み
         StringReader reader = new StringReader(csvFile.text);
@@ -25,8 +24,8 @@ void Start()
             BagData.Add(line.Split(',')); // , 区切りでリストに追加
         }
             CsvSave();
-        //}
-        path = Application.persistentDataPath + "/Bichiku_checks.csv";
+        }
+        //path = Application.persistentDataPath + "/Bichiku_checks.csv";
         using (var fs = new StreamReader(path, System.Text.Encoding.GetEncoding("UTF-8")))
         {
             while (fs.Peek() != -1)
