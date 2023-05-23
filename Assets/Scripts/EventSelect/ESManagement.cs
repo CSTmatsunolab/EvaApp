@@ -49,6 +49,7 @@ public class ESManagement : MonoBehaviour
     // Start is called before the first frame update
     void Start(){
         index = rand();//乱数生成
+        // if(index > 39 && index < 45)    index++;
         Debug.Log(index);//コンソールにイベントNo.を表示
         Transform = Random.Range(1,3);//1~2
         Debug.Log(Transform);
@@ -110,7 +111,7 @@ public class ESManagement : MonoBehaviour
             if(b < 5) {
                 a = Random.Range(48,51);
             } else{
-                a = Random.Range(3,41); 
+                a = Random.Range(3,41);
             }
 
             kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
@@ -125,7 +126,7 @@ public class ESManagement : MonoBehaviour
                     Debug.Log("a1 = " + a);
                 }
             }
-        
+
             for(int i = 0;i < 20;i++) //もし解放済みのイベントだった場合、再抽選 最大5回
                                         //今回は15回
             {
@@ -245,12 +246,12 @@ public class ESManagement : MonoBehaviour
             {
                 tempA = A[i];
                 tempB = B[i];
-                int randomIndex = Random.Range(0, 4); 
-                A[i] = A[randomIndex]; 
+                int randomIndex = Random.Range(0, 4);
+                A[i] = A[randomIndex];
                 B[i] = B[randomIndex];
-                A[randomIndex] = tempA; 
+                A[randomIndex] = tempA;
                 B[randomIndex] = tempB;
-            } 
+            }
 
             mondaitext.text = EData.GetComponent<Event_Data>().EventData[index][2];
             answer1text.text = EData.GetComponent<Event_Data>().EventData[index][A[0]];
@@ -372,7 +373,7 @@ public class ESManagement : MonoBehaviour
         sentakutext = Sentakutext.GetComponent<Text>();
         if(array[1] == 0){
             array[1] = 1;
-            
+
             kaitou[1]=EData.GetComponent<Event_Data>().EventData[index][A[1]];
         }
         else{
