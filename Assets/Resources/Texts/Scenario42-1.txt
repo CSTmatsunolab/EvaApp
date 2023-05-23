@@ -3,23 +3,31 @@
 !wait="2"
 !background_sprite="room_office_normal"
 
+&「台風の後に地震が発生し、社員たちは緊急避難を余儀なくされた。」
+&「あなたは会社の指示に従って会社内の備蓄品を確認しましたが、二重災害が想定されておらず飲料水や非常食の在庫が残りわずかでした。」
+
 &!charaimg_sprite="polygon"="odorokiman"
 !charaimg_pos="polygon"="-1.37,0.2,0"
 !charaimg_size="polygon"="3,4,1"
-&あなた「台風で３日間会社に閉じ込められた挙句、地震で帰れなくなるなんて……」
+&あなた「台風で会社に閉じ込められた挙句、地震で帰れなくなるなんて……」
 
 &!charaimg_sprite="polygon2"="hina_naku"
 !charaimg_pos="polygon2"="1.6,0,0"
 !charaimg_size="polygon2"="3.4,3.4,1"
-&ひな「運が無さすぎるよ」
+&ひな「運が無さすぎますね」
 
 &!charaimg_sprite="polygon"="komatta_man2"
 !charaimg_pos="polygon"="-0.9,0.2,0"
 !charaimg_size="polygon"="3.8,5.8,1"
 
-&あなた「でも備蓄は１週間分あるみたいだね」
-
-&!charaimg_sprite="polygon2"="pose_gutspose_woman"
-!charaimg_pos="polygon2"="1.2,-1,0"
+&あなた「これではまずいですね。水や食料が足りないと、社員たちの健康状態が心配です。」
+&!charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
+!charaimg_pos="polygon2"="1.2,-0.5,0"
 !charaimg_size="polygon2"="4.3,6.3,1"
-&ひな「ひとまず１週間分の備蓄は保管してあるから安心だね」
+&ひな「そうですね。でも、これ以上備蓄品がないということは、会社も準備不足なんですか？」
+&あなた「そうだと思います。災害が起きる前に、もっと備蓄を充実させておくべきでした。」
+&ひな「でも、備蓄品ってどうやって確保すればいいんですか？」
+&あなた「まずは、水や非常食は最低限1ヶ月分確保しておくべきです。それから、救急用品や毛布、懐中電灯なども必要ですね。」
+&あなた「これからは、改めて備蓄品のチェックと充実を進めたいと思います。」
+&ひな「そうですね。今回は助かりましたが、次回はもっとしっかり準備しておかないといけませんね。」
+&あなた「そうですね。災害時には、社員たちの生命を守るためにも、準備は欠かせません。」

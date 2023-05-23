@@ -3,24 +3,26 @@
 !wait="2"
 !background_sprite="room_office_normal"
 
+&「台風の後に地震が発生し、社員たちは緊急避難を余儀なくされた。」
+&「あなたは会社の指示に従って会社内の備蓄品を確認しましたが、二重災害が想定されておらず飲料水や非常食の在庫が残りわずかでした。」
+
 &!charaimg_sprite="polygon"="odorokiman"
 !charaimg_pos="polygon"="-1.37,0.2,0"
 !charaimg_size="polygon"="3,4,1"
-&あなた「台風で３日間会社に閉じ込められた挙句、地震で帰れなくなるなんて……」
+&あなた「台風で会社に閉じ込められた挙句、地震で帰れなくなるなんて……」
 
 &!charaimg_sprite="polygon2"="hina_naku"
 !charaimg_pos="polygon2"="1.6,0,0"
 !charaimg_size="polygon2"="3.4,3.4,1"
-&ひな「運が無さすぎるよ」
+&ひな「運が無さすぎますね」
 
 &!charaimg_sprite="polygon"="komatta_man2"
 !charaimg_pos="polygon"="-0.9,0.2,0"
 !charaimg_size="polygon"="3.8,5.8,1"
 
-&あなた「備蓄は足りてるのかな」
-&あなた「こうなったら歩いてでも帰ろう」
+&あなた「でも備蓄は１週間分あるみたいだね」
 
-&!charaimg_sprite="polygon2"="bikkuri_woman"
-!charaimg_pos="polygon2"="1.35,0,0"
-!charaimg_size="polygon2"="6,7,1"
-&ひな「ひとまず１週間分の備蓄は保管してあるからそれから考えよう！」
+&!charaimg_sprite="polygon2"="pose_gutspose_woman"
+!charaimg_pos="polygon2"="1.2,-1,0"
+!charaimg_size="polygon2"="4.3,6.3,1"
+&ひな「ひとまず１週間分の備蓄は保管してあるから安心だね」

@@ -30,7 +30,7 @@ public class ESManagement : MonoBehaviour
     [SerializeField] private string spritesDirectory = "Sprites/Event";//イベント画像が保存されているフォルダへのパス
     private GameObject Rdata;//イベント閲覧フラグのオブジェクト
 
-    public static int index = 44;//イベントのナンバー
+    public static int index = 40;//イベントのナンバー
     public static int Answer = 0;//イベントの回答
     private int Transform = 0;//
     int[] array={0,0,0,0};
@@ -45,6 +45,7 @@ public class ESManagement : MonoBehaviour
     // Start is called before the first frame update
     void Start(){
         // index = rand();//乱数生成
+        if(index > 39 && index < 45)    index++;
         Debug.Log(index);//コンソールにイベントNo.を表示
         Transform = Random.Range(1,3);//1~2
         Debug.Log(Transform);
