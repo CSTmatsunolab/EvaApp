@@ -25,9 +25,9 @@ void Start()
         }
         // データ確認用
         
-        for (int i = 0; i < DaysData.Count; i++)
+        for (int i = 0; i < 3; i++)
             {
-            for (int j = 0; j < DaysData[0].Length; j++)
+            for (int j = 0; j < 3; j++)
                 {
                 Debug.Log("DaysData[" + i + "][" + j + "]=" + DaysData[i][j]);
                 }
@@ -54,10 +54,9 @@ void Start()
         {
             for (var y=0; y < 3; y++)
             {
-                for(var x=0; x < 2; x++)
+                for(var x=0; x < 3; x++)
                 {
                     fs.Write(DaysData[y][x]+",");
-                    fs.Flush();
                 }
                 fs.WriteLine();
             }

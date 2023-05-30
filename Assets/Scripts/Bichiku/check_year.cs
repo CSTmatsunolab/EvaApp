@@ -33,6 +33,7 @@ public class check_year : MonoBehaviour
 
     void checkY(){
         Bdata = GameObject.Find("BagData");
+        y = 1;
         // csvFile = Resources.Load("Bichiku_days") as TextAsset;
         // daysData = File.ReadAllLines(@"Assets/Resources/Texts/Bichiku_days.csv").Select(line => line.Split(',')).ToList();
         // StringReader reader = new StringReader(csvFile.text);//
@@ -62,7 +63,7 @@ public class check_year : MonoBehaviour
         y_flag = true;
         m_flag = true;
         d_flag = true;
-        y = 1;
+        check();
     }
 
    // Update is called once per frame
