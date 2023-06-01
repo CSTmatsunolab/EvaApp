@@ -63,6 +63,14 @@ public class check_year : MonoBehaviour
         y_flag = true;
         m_flag = true;
         d_flag = true;
+        if(year == 3000){
+            inputField_y.text = null;
+            inputField_m.text = null;
+            inputField_d.text = null;
+            y_flag = false;
+            m_flag = false;
+            d_flag = false;
+        }
         check();
     }
 
