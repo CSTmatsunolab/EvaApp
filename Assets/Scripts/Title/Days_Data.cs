@@ -18,7 +18,7 @@ void Start()
 
         // , で分割しつつ一行ずつ読み込み
         // リストに追加していく
-        while (reader.Peek() != -1) // reader.Peaekが-1になるまで
+        while (reader.Peek() != -1) // reader.Peekが-1になるまで
         {
             string line = reader.ReadLine(); // 一行ずつ読み込み
             DaysData.Add(line.Split(',')); // , 区切りでリストに追加
@@ -54,9 +54,12 @@ void Start()
         {
             for (var y=0; y < 3; y++)
             {
-                for(var x=0; x < 3; x++)
+                for(var x=0; x < 2; x++)
                 {
                     fs.Write(DaysData[y][x]+",");
+                    if(x == 1){
+                        fs.Write(DaysData[y][2]);
+                    }
                 }
                 fs.WriteLine();
             }
