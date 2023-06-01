@@ -109,7 +109,7 @@ public class ESManagement : MonoBehaviour
             b = Random.Range(0,6);
             //a = Random.Range(3,41);//3~29
             if(b < 5) {
-                a = Random.Range(48,51);
+                a = Random.Range(48,54);
             } else{
                 a = Random.Range(3,45);
             }
@@ -121,7 +121,7 @@ public class ESManagement : MonoBehaviour
             {
                 if(kaburiCheck == 1)
                 {
-                    a = Random.Range(48,51);
+                    a = Random.Range(48,54);
                     kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
                     Debug.Log("a1 = " + a);
                 }
@@ -204,7 +204,7 @@ public class ESManagement : MonoBehaviour
 
             int Change = 0;
             Change = Transform;
-        if(a != 48 && a != 49 && a != 50){
+        if(a != 48 && a != 49 && a != 50 &&a != 51 &&a != 52 &&a != 53){
             if(Change == 1) //正解
             {
                 //ランダムに選択されたイベントNo.の正解選択肢を読み込む
@@ -226,7 +226,7 @@ public class ESManagement : MonoBehaviour
 
     public void ClearButtonDown()//イベント画面に遷移
     {
-        if(index == 48||index == 49||index == 50){
+        if(index == 48||index == 49||index == 50 ||index == 51 ||index == 52 ||index == 53){
             //展開
             yontaku.gameObject.SetActive (true);
             GameObject EData = GameObject.Find("EventData");
@@ -259,7 +259,7 @@ public class ESManagement : MonoBehaviour
             answer3text.text = EData.GetComponent<Event_Data>().EventData[index][A[2]];
             answer4text.text = EData.GetComponent<Event_Data>().EventData[index][A[3]];
         }
-        if(index != 48 && index != 49 && index != 50){
+        if(index != 48 && index != 49 && index != 50 && index != 51 && index != 52 && index != 53){
             int Check = 0;
             Check = Transform;
             if(Check == 1) //正位置　正解
@@ -293,7 +293,7 @@ public class ESManagement : MonoBehaviour
 
     public void FailButtonDown()//イベント画面に遷移
     {
-        if(index == 48 || index == 49 || index == 50){
+        if(index == 48 || index == 49 || index == 50 || index == 51 || index == 52 || index == 53){
             GameObject EData = GameObject.Find("EventData");
             int[] ANS = new int[4];
             for (int i = 0; i < 4; i++)
@@ -318,7 +318,7 @@ public class ESManagement : MonoBehaviour
                 StartCoroutine("Huseikai");
             }
         }
-        if(index != 48 && index != 49 && index != 50){
+        if(index != 48 && index != 49 && index != 50 && index != 51 && index != 52 && index != 53){
             int Check = 0;
             Check = Transform;
             if(Check == 1) //正位置　不正解
