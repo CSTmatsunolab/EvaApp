@@ -49,7 +49,7 @@ public class ESManagement : MonoBehaviour
     // Start is called before the first frame update
     void Start(){
         index = rand();//乱数生成
-        // if(index > 39 && index < 45)    index++;
+        // if(index > 39 && index < 46)    index++;
         Debug.Log(index);//コンソールにイベントNo.を表示
         Transform = Random.Range(1,3);//1~2
         Debug.Log(Transform);
@@ -83,7 +83,7 @@ public class ESManagement : MonoBehaviour
         if(flag == 0)
         {
 
-            a = Random.Range(3,45);//3~40
+            a = Random.Range(3,46);//3~40
             //a = 12;
             //a = Random.Range(21,23);//指定範囲の動作確認用
             Debug.Log(a);
