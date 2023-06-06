@@ -54,31 +54,31 @@
 &!charaimg_delete="polygon"="ue_questionman"
 &!charaimg_delete="polygon2"="hina_egao"
 &!charaimg_sprite="polygon4"="shochi1"
-!charaimg_pos="polygon4"="0,20,0"
+!charaimg_pos="polygon4"="0,0,0,12,0"
 !charaimg_size="polygon4"="4.3,2.9,1"
 
 &「まずは、三角巾を八つ折りにします」
 
 &!charaimg_sprite="polygon4"="shochi2"
-!charaimg_pos="polygon4"="0,20,0"
+!charaimg_pos="polygon4"="0,0,0,12,0"
 !charaimg_size="polygon4"="4.3,2.9,1"
 
 &「次に、三角巾を中央部の足底にあてます」
 
 &!charaimg_sprite="polygon4"="shochi3"
-!charaimg_pos="polygon4"="0,20,0"
+!charaimg_pos="polygon4"="0,0,0,12,0"
 !charaimg_size="polygon4"="4.3,2.9,1"
 
 &「次に、三角巾の両端を足関節後方に引き上げて交差させます」
 
 &!charaimg_sprite="polygon4"="shochi4"
-!charaimg_pos="polygon4"="0,20,0"
+!charaimg_pos="polygon4"="0,0,0,12,0"
 !charaimg_size="polygon4"="4.3,2.9,1"
 
 &「次に、三角巾の両端を足の後ろの方に回し、足首の前で交差させ、両端をかかと斜めに巻いた三角巾の内側に通します」
 
 &!charaimg_sprite="polygon4"="shochi5"
-!charaimg_pos="polygon4"="0,20,0"
+!charaimg_pos="polygon4"="0,0,0,12,0"
 !charaimg_size="polygon4"="4.3,2.9,1"
 
 &「最後に、三角巾の両端を足首の前方に引き締めながら、足首の前で結びます」
