@@ -259,6 +259,9 @@ public class ResultPanel : MonoBehaviour
             Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "2";
             SceneManager.LoadScene("SelectScene");//選択画面に遷移
         }
+        else if(flag == 4){
+            SceneManager.LoadScene("SelectScene");//選択画面に遷移
+        }
         else{
             SceneManager.LoadScene("EatScene");//食事画面に遷移
         }

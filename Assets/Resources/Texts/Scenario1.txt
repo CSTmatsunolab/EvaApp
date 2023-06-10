@@ -61,6 +61,7 @@
 &!charaimg_sprite="polygon2"="ryukku_man"
 
 &あなた「こういうときのために備蓄を用意してきてよかったー」
+
 &!charaimg_anim="polygon2"="anim2,0,1,EaseInOut%%2.8,4.8,1%10,-0.2,1"
 !wait="1"
 &!charaimg_delete="polygon"=""

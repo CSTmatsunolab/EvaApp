@@ -473,6 +473,9 @@ public class GameManager : MonoBehaviour
             index = "100";
             Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "2";
             TitleSet();
+        }else if(introcheck == 101){
+            index = "101";
+            TitleSet();
         }
         else{
             index = (ESManagement.Send()).ToString();
@@ -511,6 +514,9 @@ public class GameManager : MonoBehaviour
         else if((index == "95")||(index == "96")||(index=="97")||(index=="98")||(index=="99"))
         {
             SceneManager.LoadScene("EndingScene");
+        }
+        else if(index == "101"){
+            SceneManager.LoadScene("SubBichiku");
         }
         else{
             Result.SetActive(true);
