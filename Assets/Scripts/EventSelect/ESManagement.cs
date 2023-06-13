@@ -109,7 +109,7 @@ public class ESManagement : MonoBehaviour
             b = Random.Range(0,6);
             //a = Random.Range(3,41);//3~29
             if(b < 5) {
-                a = Random.Range(48,54);
+                a = Random.Range(50,54);
             } else{
                 a = Random.Range(3,45);
             }

@@ -2,13 +2,13 @@
 !foreground_anim="fadein,0,2,%0,0,0,0%%"
 !background_sprite="taiikukan"
 
-&!charaimg_sprite="polygon"="pose_gutsposeman"
+&!charaimg_sprite="polygon"="newspaper"
 !charaimg_pos="polygon"="0,0,0"
-!charaimg_size="polygon"="6.5,6.5,1"
-&あなた「手元に、新聞紙とラップがあるよ。」
-&あなた「新聞紙にラップをかけてお皿代わりにすればいいね！」
+!charaimg_size="polygon"="4,7,1"
+&あなた「もし、ラップと新聞紙があったら、新聞紙にラップを巻いてお皿代わりに使うことができる。」
+&あなた「割れているお皿や汚れているお皿を使うよりも安全だね。」
 
 &!charaimg_sprite="polygon"="eatcarry"
 !charaimg_pos="polygon"="0,0,0"
-!charaimg_size="polygon"="6.5,6.5,1"
-&あなた「新聞紙とラップがあれば、安全にご飯が食べれるね！」
+!charaimg_size="polygon"="4,7,1"
+&あなた「これで安心してご飯を食べることができるね！」
