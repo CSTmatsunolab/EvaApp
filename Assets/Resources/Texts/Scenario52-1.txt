@@ -3,13 +3,13 @@
 !wait="2"
 !background_sprite="bg_gakkou"
 
-!charaimg_sprite="polygon"="ue_questionman"
+!charaimg_sprite="polygon"="sick_samuke"
 !charaimg_pos="polygon"="0,0,0"
 !charaimg_size="polygon"="4.5,6.5,1"
-&あなた「これで暖かくなるのかな」
+&あなた「まだ寒いよ」
 
-&!charaimg_sprite="polygon2"="face_smile_man4"
+&!charaimg_sprite="polygon"="pose_touch_hand_man_woman"
 !charaimg_pos="polygon"="0,0,0"
-!charaimg_size="polygon2"="4.5,6.5,1"
+!charaimg_size="polygon"="4.5,6.5,1"
 
-&あなた「わー暖かい！これで夜も過ごせるね！」
+&ひな「エマージェンシーシートがおすすめだよ!これで冷える夜も過ごすことができるよ！」
