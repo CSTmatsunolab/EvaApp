@@ -8,19 +8,15 @@
 !charaimg_size="polygon"="2.8,4.8,1"
 
 &あなた「痛ててて…」
-
-&!charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
-!charaimg_pos="polygon2"="1.2,-0.8,0"
-!charaimg_size="polygon2"="4.6,6.6,1"
-
-&ひな「どうしたの？大丈夫？」
-&あなた「避難してくる途中で足を捻っちゃったんだ」
+&あなた「捻挫しちゃったかな…」
+&あなた「応急処置できるものがないし、仕方もわからないし…」
+&あなた「自然に治すしかないかな」
 
 &!charaimg_sprite="polygon2"="pose_shock_woman"
 !charaimg_pos="polygon2"="1.2,-0.2,0"
 !charaimg_size="polygon2"="4,6,1"
 
-&ひな「それは大変だ！救急用品に三角巾があるからそれで応急処置しよう！」
+&ひな「それはだめだよ！ちゃんと処置しなきゃ！私の救急用品に三角巾があるからそれで応急処置しよう！」
 
 &!charaimg_sprite="polygon2"="hina_shock"
 !charaimg_pos="polygon2"="1,0.12,0"
