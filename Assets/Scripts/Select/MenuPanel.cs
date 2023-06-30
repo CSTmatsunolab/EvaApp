@@ -157,14 +157,17 @@ public class MenuPanel : MonoBehaviour
             int rand = Random.Range(1,100);//配給ガチャ
             Debug.Log("配給日");
             if(rand > 50){
-                WaterStock = WaterStock + 3;
-                FoodStock = FoodStock + 3;
+                WaterStock = WaterStock + 2;
+                FoodStock = FoodStock + 2;
                 HaikyuCount = HaikyuCount + 1;
 
                 Pdata.GetComponent<Player_Data>().PlayerData[1][3]=WaterStock.ToString();
                 Pdata.GetComponent<Player_Data>().PlayerData[1][4]=FoodStock.ToString();
                 Pdata.GetComponent<Player_Data>().PlayerData[1][12]=HaikyuCount.ToString();
                 Pdata.GetComponent<Player_Data>().CsvSave();
+                for(int i=0;i<13;i++){
+                    Debug.Log(Pdata.GetComponent<Player_Data>().PlayerData[1][i]);
+                }
                 Haikyu.SetActive(true);
             } 
         }
