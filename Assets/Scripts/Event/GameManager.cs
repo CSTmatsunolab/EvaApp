@@ -5,12 +5,14 @@ using System.Collections;
 using System.IO;
 using UnityEditor;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 
 // MonoBehaviourを継承することでオブジェクトにコンポーネントとして
 // アタッチすることができるようになる
 public class GameManager : MonoBehaviour
 {
+    private Rigidbody2D rbody2D;
     private GameObject Pdata;
     private string _text = "";
     private const string COMMAND_WAIT_TIME = "wait";
@@ -174,8 +176,9 @@ public class GameManager : MonoBehaviour
         return true;
     }
 
-    private void OnClick()
+    public void OnClick()
     {
+        if (_charQueue != null){
         if (_charQueue.Count > 0) OutputAllChar();
         else
         {
@@ -186,7 +189,9 @@ public class GameManager : MonoBehaviour
            // UnityエディタのPlayモードを終了する
            //SceneManager.LoadScene("EatScene"); 
         }
+        }
     }
+
 
     private void SetBackgroundImage(string cmd, string parameter)
     {
@@ -473,6 +478,9 @@ public class GameManager : MonoBehaviour
             index = "100";
             Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "2";
             TitleSet();
+        }else if(introcheck == 101){
+            index = "101";
+            TitleSet();
         }
         else{
             index = (ESManagement.Send()).ToString();
@@ -485,6 +493,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        rbody2D = GetComponent<Rigidbody2D>();
         Init();
     }
 
@@ -493,11 +502,11 @@ public class GameManager : MonoBehaviour
         titleText.text = EData.GetComponent<Event_Data>().EventData[int.Parse(index)][1];
     }
  
-    private void Update()
-    {
-        // 左(=0)クリックされたらOnClickメソッドを呼び出し
-        if (Input.GetMouseButtonDown(0)) OnClick();
-    }
+    // private void Update()
+    // {
+    //     // 左(=0)クリックされたらOnClickメソッドを呼び出し
+    //     if (Input.GetMouseButtonDown(0)) OnClick();
+    // }
 
     public void GoToResult()
     {
@@ -511,6 +520,9 @@ public class GameManager : MonoBehaviour
         else if((index == "95")||(index == "96")||(index=="97")||(index=="98")||(index=="99"))
         {
             SceneManager.LoadScene("EndingScene");
+        }
+        else if(index == "101"){
+            SceneManager.LoadScene("SubBichiku");
         }
         else{
             Result.SetActive(true);

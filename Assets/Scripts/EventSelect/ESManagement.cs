@@ -31,6 +31,7 @@ public class ESManagement : MonoBehaviour
     [SerializeField] private string spritesDirectory = "Sprites/Event";//イベント画像が保存されているフォルダへのパス
     private GameObject Rdata;//イベント閲覧フラグのオブジェクト
     private GameObject Bdata;
+    private GameObject Pdata;
 
     public static int index = 0;//イベントのナンバー
     public static int Answer = 0;//イベントの回答
@@ -62,6 +63,7 @@ public class ESManagement : MonoBehaviour
     private void RdataLoad(){
         Rdata = GameObject.Find("ResultData");
         Bdata = GameObject.Find("BagData");
+        Pdata = GameObject.Find("Player_Data");
     }
 
     //乱数(イベントのナンバー)を生成
@@ -138,24 +140,23 @@ public class ESManagement : MonoBehaviour
                 }
             }
         }
-        // else if(flag == 4){
-        //     //a = Random.Range(3,23);
-        //     a = 13;
-
-        //     kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
-        //     Debug.Log("kaburiCheck = " + kaburiCheck);
-
-        //     for(int i = 0;i < 20;i++) //もし解放済みのイベントだった場合、再抽選 最大5回
-        //                                 //今回は15回
-        //     {
-        //         if(kaburiCheck == 1)
-        //         {
-        //             a = Random.Range(3,41);//3~40
-        //             kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
-        //             Debug.Log("a1 = " + a);
-        //         }
-        //     }
-        // }
+        else if(flag == 4){
+            //a = 101;
+            a = Random.Range(48,51);
+            Pdata.GetComponent<Player_Data>().PlayerData[1][8] = a.ToString();
+            // kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
+            // Debug.Log("kaburiCheck = " + kaburiCheck);
+            // for(int i = 0;i < 3;i++) //もし解放済みのイベントだった場合、再抽選 最大5回
+            //                             //今回は15回
+            // {
+            //     if(kaburiCheck == 1)
+            //     {
+            //         a = Random.Range(48,51);
+            //         kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
+            //         Debug.Log("a1 = " + a);
+            //     }
+            // }
+        }
         else if(flag == 3){
             a = 100;//配給用のイベント
         }
@@ -164,35 +165,41 @@ public class ESManagement : MonoBehaviour
 
     //イベント画面のテキストや画像関係のロード
     void EventLoad(int a){
+        Image eventbg;
+        Image eventimg;
+        Text titletext;
+        Text eventtext;
+        Text cleartext;
+        Text failtext;
 
-            Image eventbg;
-            Image eventimg;
-            Text titletext;
-            Text eventtext;
-            Text cleartext;
-            Text failtext;
+        GameObject EData = GameObject.Find("EventData");
 
-            GameObject EData = GameObject.Find("EventData");
+        eventbg = EventBackground.GetComponent<Image>();
+        eventimg = EventImage.GetComponent<Image>();
+        titletext = TitleText.GetComponent<Text>();
+        eventtext = EventText.GetComponent<Text>();
+        cleartext = ClearText.GetComponent<Text>();
+        failtext = FailText.GetComponent<Text>();
 
-            eventbg = EventBackground.GetComponent<Image>();
-            eventimg = EventImage.GetComponent<Image>();
-            titletext = TitleText.GetComponent<Text>();
-            eventtext = EventText.GetComponent<Text>();
-            cleartext = ClearText.GetComponent<Text>();
-            failtext = FailText.GetComponent<Text>();
+        //イベントセレクトシーンの背景の色(半透明)
+        string str = spritesDirectory+a.ToString();
+        eventbg.sprite = Resources.Load<Sprite>(str);
+        var c = eventbg.color;
+        eventbg.color = new Color(c.r, c.g, c.b, 100.0f/255.0f);//透明度を上げる
 
+        //ランダムに選択されたイベントNo.のイラストを読み込む
+        eventimg.sprite = Resources.Load<Sprite>(str);
 
-            //イベントセレクトシーンの背景の色(半透明)
-            string str = spritesDirectory+a.ToString();
-            eventbg.sprite = Resources.Load<Sprite>(str);
-            var c = eventbg.color;
-            eventbg.color = new Color(c.r, c.g, c.b, 100.0f/255.0f);//透明度を上げる
+        //ランダムに選択されたイベントNo.のタイトルを読み込む
+        titletext.text = EData.GetComponent<Event_Data>().EventData[a][1];
 
-            //ランダムに選択されたイベントNo.のイラストを読み込む
-            eventimg.sprite = Resources.Load<Sprite>(str);
+        //ランダムに選択されたイベントNo.の概要を読み込む
+        eventtext.text = EData.GetComponent<Event_Data>().EventData[a][2];
 
-            //ランダムに選択されたイベントNo.のタイトルを読み込む
-            titletext.text = EData.GetComponent<Event_Data>().EventData[a][1];
+        //ランダムに選択されたイベントNo.の正解選択肢を読み込む
+        cleartext.text = EData.GetComponent<Event_Data>().EventData[a][7];
+        //ランダムに選択されたイベントNo.の不正解選択肢を読み込む
+        failtext.text = EData.GetComponent<Event_Data>().EventData[a][8];
 
             //ランダムに選択されたイベントNo.の概要を読み込む
             eventtext.text = EData.GetComponent<Event_Data>().EventData[a][2];

@@ -18,8 +18,10 @@ public class MenuPanel : MonoBehaviour
     public Image ChallengeImage;
     public Sprite test;
     public Sprite list;
+    private GameObject Rdata;
     GameObject Pdata;
     static public int flag = 0;//行動するボタンからイベント選択画面に行くか、ランダムイベントからイベント選択画面に行くか
+    //static public int Fflag = 0;//行動するボタンからイベント選択画面に行くか、ランダムイベントからイベント選択画面に行くか
     static public int Randflag = 0;
     //static public int ChangeMusic = 0;
     int push = 0;//ボタンが押された回数
@@ -155,14 +157,17 @@ public class MenuPanel : MonoBehaviour
             int rand = Random.Range(1,100);//配給ガチャ
             Debug.Log("配給日");
             if(rand > 50){
-                WaterStock = WaterStock + 3;
-                FoodStock = FoodStock + 3;
+                WaterStock = WaterStock + 2;
+                FoodStock = FoodStock + 2;
                 HaikyuCount = HaikyuCount + 1;
 
                 Pdata.GetComponent<Player_Data>().PlayerData[1][3]=WaterStock.ToString();
                 Pdata.GetComponent<Player_Data>().PlayerData[1][4]=FoodStock.ToString();
                 Pdata.GetComponent<Player_Data>().PlayerData[1][12]=HaikyuCount.ToString();
                 Pdata.GetComponent<Player_Data>().CsvSave();
+                for(int i=0;i<13;i++){
+                    Debug.Log(Pdata.GetComponent<Player_Data>().PlayerData[1][i]);
+                }
                 Haikyu.SetActive(true);
             } 
         }
@@ -194,10 +199,19 @@ public class MenuPanel : MonoBehaviour
 
     //ランダムイベントの進むボタンからイベント選択画面に遷移する場合
     public void GoButtonDown2(){
-        flag = 1;
-        Debug.Log(flag);
-        //ChangeMusic = 1;
-        SceneManager.LoadScene("EventSelectScene");//イベント選択画面に遷移
+        Rdata = GameObject.Find("ResultData");
+        if(int.Parse(Rdata.GetComponent<Result_Data>().ResultData[48][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[49][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[50][1]) == 0){
+            flag = 4;
+            Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "101";
+            SceneManager.LoadScene("EventScene");
+
+        }
+        else{
+            flag = 1;
+            Debug.Log(flag);
+            //ChangeMusic = 1;
+            SceneManager.LoadScene("EventSelectScene");
+        }
     }
 
     //ゲームオーバー時の進むボタンから遷移
