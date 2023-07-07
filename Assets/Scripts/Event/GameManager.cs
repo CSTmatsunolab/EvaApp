@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
     GameObject Result;
     [SerializeField]
     private Text titleText;
-     [SerializeField]
+    [SerializeField]
     GameObject InputPanel;
 
     private Queue<string> _pageQueue;
@@ -185,9 +185,9 @@ public class GameManager : MonoBehaviour
             if (!ShowNextPage()){
                 GoToResult();
             }
-            
+
            // UnityエディタのPlayモードを終了する
-           //SceneManager.LoadScene("EatScene"); 
+           //SceneManager.LoadScene("EatScene");
         }
         }
     }
@@ -333,7 +333,7 @@ public class GameManager : MonoBehaviour
             AnimationCurve[,] curves = new AnimationCurve[4, 4];
             if (ps[3].Equals("EaseInOut"))
             {
-                
+
                 curves[0, 0] = AnimationCurve.EaseInOut(float.Parse(ps[1]), startcolor.r, float.Parse(ps[2]), endcolor.r);
                 curves[0, 1] = AnimationCurve.EaseInOut(float.Parse(ps[1]), startcolor.g, float.Parse(ps[2]), endcolor.g);
                 curves[0, 2] = AnimationCurve.EaseInOut(float.Parse(ps[1]), startcolor.b, float.Parse(ps[2]), endcolor.b);
@@ -344,7 +344,7 @@ public class GameManager : MonoBehaviour
                     curves[i + 1, 1] = AnimationCurve.EaseInOut(float.Parse(ps[1]), start[i].y, float.Parse(ps[2]), end[i].y);
                     curves[i + 1, 2] = AnimationCurve.EaseInOut(float.Parse(ps[1]), start[i].z, float.Parse(ps[2]), end[i].z);
                 }
-                
+
             }
             else
             {
@@ -379,7 +379,7 @@ public class GameManager : MonoBehaviour
                         EditorCurveBinding.FloatCurve("", typeof(RectTransform), a[i] + "." + b2[j]),
                         curves[i + 1, j]
                     );
-                }   
+                }
             }
             if (!Directory.Exists("Assets/Resources/" + path))
                 Directory.CreateDirectory("Assets/Resources/" + path);
@@ -501,12 +501,12 @@ public class GameManager : MonoBehaviour
         GameObject EData = GameObject.Find("EventData");
         titleText.text = EData.GetComponent<Event_Data>().EventData[int.Parse(index)][1];
     }
- 
-    // private void Update()
-    // {
-    //     // 左(=0)クリックされたらOnClickメソッドを呼び出し
-    //     if (Input.GetMouseButtonDown(0)) OnClick();
-    // }
+
+    private void Update()
+    {
+        // 左(=0)クリックされたらOnClickメソッドを呼び出し
+        if (Input.GetMouseButtonDown(0)) OnClick();
+    }
 
     public void GoToResult()
     {
@@ -530,5 +530,5 @@ public class GameManager : MonoBehaviour
         //Main.SetActive(false);//Mainパネルを非表示
     }
 
-    
+
 }
