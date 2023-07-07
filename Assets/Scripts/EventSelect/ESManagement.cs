@@ -49,10 +49,10 @@ public class ESManagement : MonoBehaviour
     // Start is called before the first frame update
     void Start(){
         index = rand();//乱数生成
-/*        if (index >= 41 && index <= 53) {
+/*        if (index >= 41 && index <= 55) {
             do {
                 index++;
-            } while (index >= 49 && index <= 53);
+            } while (index >= 48 && index <= 53);
         }   */
         Debug.Log(index);//コンソールにイベントNo.を表示
         Transform = Random.Range(1,3);//1~2
@@ -100,7 +100,7 @@ public class ESManagement : MonoBehaviour
             {
                 if(kaburiCheck == 1)
                 {
-                    a = Random.Range(3,52);//3~40
+                    a = Random.Range(3,55);//3~40
                     //a = Random.Range(21,23);//指定範囲の動作確認用
                     //a = 50;
                     kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
@@ -274,7 +274,7 @@ public class ESManagement : MonoBehaviour
                 Answer = 0;
                 Debug.Log("正解");
                 SceneManager.LoadScene("EventScene");
-                if( index < 40 || index > 55){
+                if(index < 41 || index > 55 || index > 47 && index < 54){
                     SEplayer.PlayOneShot(SeikaiSE);
                     StartCoroutine("Seikai");
                 }
@@ -287,7 +287,7 @@ public class ESManagement : MonoBehaviour
                 Answer = 1;
                 Debug.Log("不正解");
                 SceneManager.LoadScene("EventScene");
-                if( index < 40 || index > 54){
+                if(index < 41 || index > 55 || index > 47 && index < 54){
                     SEplayer.PlayOneShot(FuseikaiSE);
                     StartCoroutine("Huseikai");
                 }
@@ -333,7 +333,7 @@ public class ESManagement : MonoBehaviour
                 Answer = 1;
                 Debug.Log("不正解");
                 SceneManager.LoadScene("EventScene");
-                if( index < 40 || index > 55){
+                if(index < 41 || index > 55 || index > 47 && index < 54){
                     SEplayer.PlayOneShot(FuseikaiSE);
                     StartCoroutine("Huseikai");
                 }
@@ -346,7 +346,7 @@ public class ESManagement : MonoBehaviour
                 Answer = 0;
                 Debug.Log("正解");
                 SceneManager.LoadScene("EventScene");
-                if( index < 40 || index > 55){
+                if(index < 41 || index > 55 || index > 47 && index < 54){
                     SEplayer.PlayOneShot(SeikaiSE);
                     StartCoroutine("Seikai");
                 }
