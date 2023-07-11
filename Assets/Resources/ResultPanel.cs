@@ -89,7 +89,7 @@ public class ResultPanel : MonoBehaviour
         Debug.Log(Bdata.GetComponent<Bag_Data>().BagData[0][14]);
         Debug.Log(Bdata.GetComponent<Bag_Data>().BagData[0][1]);
         ResultMake();
-        if(index==50){
+        if(index==52){
             if(Bdata.GetComponent<Bag_Data>().BagData[0][11] == "true") {
                 if(Answer == 0){
                     HGC = 0;
@@ -100,7 +100,7 @@ public class ResultPanel : MonoBehaviour
                 }
             }
         }
-        if(index==51){
+        if(index==53){
              if(Bdata.GetComponent<Bag_Data>().BagData[0][26] == "true") {
                  if(Answer == 0){
                      HGC = 0;
@@ -111,7 +111,7 @@ public class ResultPanel : MonoBehaviour
                  }
              }
          }
-        if(index==52){
+        if(index==54){
             if(Bdata.GetComponent<Bag_Data>().BagData[0][20] == "true") {
                 if(Answer == 0){
                     HGC = 0; 
@@ -122,7 +122,7 @@ public class ResultPanel : MonoBehaviour
                 }
             }
         }
-         if(index==53){
+         if(index==55){
              if(Bdata.GetComponent<Bag_Data>().BagData[0][16] == "true") {
                  if(Answer == 0){
                      HGC = 0;
@@ -151,7 +151,7 @@ public class ResultPanel : MonoBehaviour
         {
             REC = 10;
         }
-        if(index==48){
+        if(index==50){
             if(Bdata.GetComponent<Bag_Data>().BagData[0][14] == "true") {
                 if(Answer == 0){
                     int WaterStock = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][3]);
@@ -161,7 +161,7 @@ public class ResultPanel : MonoBehaviour
                 }
             }
         }
-        if(index==49){
+        if(index==51){
             if(Bdata.GetComponent<Bag_Data>().BagData[0][1] == "true") {
                 if(Answer == 0){
                     int FoodStock = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][4]);
@@ -183,7 +183,7 @@ public class ResultPanel : MonoBehaviour
             Result1.text = "水が増えた！";
             Result2.text = "食料が増えた！";
             
-        }else if(index == 48){
+        }else if(index == 50){
             Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
             Result2.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
             Result1.text = "水が増えた！";
@@ -196,7 +196,7 @@ public class ResultPanel : MonoBehaviour
                 Result1.text = "不正解のため";
                 Result2.text = "水はもらえなかった";
             }
-        }else if(index ==  49){
+        }else if(index ==  51){
             Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
             Result2.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
             Result1.text = "水が増えた！";
@@ -209,7 +209,7 @@ public class ResultPanel : MonoBehaviour
                 Result1.text = "不正解のため";
                 Result2.text = "食量はもらえなかった";
             }
-        }else if(index == 50)
+        }else if(index == 52)
         {
             if (HG > HGC)
             {
@@ -245,7 +245,7 @@ public class ResultPanel : MonoBehaviour
                 Result1.text = "不正解のため";
                 Result2.text = "安心度が減った";
             }
-        }else if(index == 51)
+        }else if(index == 53)
         {
             if (HG > HGC)
             {
@@ -281,7 +281,7 @@ public class ResultPanel : MonoBehaviour
                 Result1.text = "不正解のため";
                 Result2.text = "安心度が減った";
             }
-        }else if(index == 52)
+        }else if(index == 54)
         {
             if (HG > HGC)
             {
@@ -317,7 +317,7 @@ public class ResultPanel : MonoBehaviour
                 Result1.text = "不正解のため";
                 Result2.text = "安心度が減った";
             }
-        }else if(index == 53)
+        }else if(index == 55)
         {
             if (HG > HGC)
             {

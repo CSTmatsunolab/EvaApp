@@ -3,89 +3,59 @@
 !wait="2"
 !background_sprite="taiikukan"
 
-!charaimg_sprite="polygon"="utsumuki_man"
+!charaimg_sprite="polygon"="ue_questionman"
 !charaimg_pos="polygon"="-1.3,0.2,0"
 !charaimg_size="polygon"="2.8,4.8,1"
 
-&あなた「痛ててて…」
+&あなた「(あれ？ポリタンクとかを持って外に大勢人が出ていくなぁ。どうしたんだろう？)」
+&あなた「あの、外で何かあったんですか？」
 
-&!charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
+&!charaimg_sprite="polygon2"="hinannsya1"
 !charaimg_pos="polygon2"="1.2,-0.8,0"
-!charaimg_size="polygon2"="4.6,6.6,1"
+!charaimg_size="polygon2"="4.2,6.2,1"
 
-&ひな「どうしたの！？」
-&あなた「支援物資を運んでいるときに、転んじゃって…」
+&通りすがりの人「給水車が来たので、飲水を貰いに行ってるんですよ。」
 
-&!charaimg_sprite="polygon2"="pose_shock_woman"
-!charaimg_pos="polygon2"="1.2,-0.2,0"
-!charaimg_size="polygon2"="4,6,1"
+&!charaimg_sprite="polygon"="face_smile_man4"
+!charaimg_pos="polygon"="-1.3,0.2,0"
+!charaimg_size="polygon"="2.4,4.4,1"
 
-&ひな「大丈夫！？血も出てる…」
-&ひな「消毒液持ってるから、すぐ取ってくるね！」
+&あなた「そうなんですね！ありがとうございます。」
 
-&!charaimg_sprite="polygon2"="run_right_woman"
-!charaimg_pos="polygon2"="1.2,-0.5,0"
-!charaimg_size="polygon2"="4.3,6.3,1"
-!charaimg_active="polygon2"="true"
-!charaimg_anim="polygon2"="runn,0,1,Linear%%4.47,4.88,1%5,5,0"
+&!charaimg_delete="polygon2"="hinannsya1"
+&!charaimg_sprite="polygon"="komattaman_kyuusui"
+!charaimg_pos="polygon"="0.5,0.5,0"
+!charaimg_size="polygon"="4.8,6.8,1"
 
+&あなた「(僕も飲水を貰いに給水車のところに行かなきゃ！！)」
+&あなた「あっ…空のポリタンクが無いや…」
 
-&「〜3分後〜」
-
-&!charaimg_sprite="polygon2"="run_left_woman"
-!charaimg_active="polygon2"="true"
-!wait="5"
-!charaimg_anim="polygon2"="runm,0,1,Linear%%4.47,4.88,1%1.2,-0.5,0"
-
-&ひな「持ってきたよ！」
-
-&!charaimg_sprite="polygon4"="disinfection"
-!charaimg_pos="polygon4"="0,2,0"
-!charaimg_size="polygon4"="4.3,2.9,1"
-
-&あなた「ありがとう！」
-
-&!charaimg_sprite="polygon2"="pose_shock_woman"
-!charaimg_pos="polygon2"="1.2,-0.5,0"
+&!charaimg_sprite="polygon"="komatta_man2"
+!charaimg_pos="polygon"="-0.9,0.1,0"
+!charaimg_size="polygon"="3.8,5.8,1"
+&!charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
+!charaimg_pos="polygon2"="1.5,-0.6,0"
 !charaimg_size="polygon2"="4.3,6.3,1"
 
-&ひな「消毒する前に傷口を水で洗わないと。」
-&あなた「まだ水道が復旧していないし、飲水用に配られた水を使うのはもったいくて使えないよ…」
-&ひな「でも、傷口を綺麗にしないと消毒できない！菌が繁殖しちゃう…」
+&ひな「あっ！いたいた！」
+&ひな「給水車が来たんだって。飲水を貰いに一緒に行きましょう！」
+&あなた「ひなさん！僕も今から行くところだったんだ。」
+&あなた「でも空のポリタンクが無くて…」
 
-&!charaimg_delete="polygon4"="disinfection"
-&!charaimg_size="polygon"="2.5,4.5,1"
-!charaimg_pos="polygon"="-1.8,-0.5,0"
-!charaimg_delete="polygon2"="pose_shock_woman"
-&!charaimg_sprite="pose_shock_woman"="pose_shock_woman"
-!charaimg_size="pose_shock_woman"="3,5,1"
-!charaimg_pos="pose_shock_woman"="1.8,-0.5,0"
-&!charaimg_sprite="polygon3"="obasan03_smile"
-!charaimg_pos="polygon3"="0,0,0"
-!charaimg_size="polygon3"="2.3,4.3,1"
+&!charaimg_sprite="polygon3"="shopping_bag_rejibukuro_empty"
+!charaimg_pos="polygon3"="0,2,0"
+!charaimg_size="polygon3"="3.3,1.9,1"
 
-&女性「どうしたの？」
-&ひな「水がなくて傷口が洗えないんです…今の状態だと消毒もできなくて…」
+&ひな「ポリタンクの代わりに、ビニール袋は？」
+&あなた「ビニール袋も無いや…」
+&あなた「これじゃあ、飲水を貰いに行けない…。どうしよう……。」
+&ひな「バケツでも水は受け取れるんだけど...」
+&ひな「口を閉じれないから水が長持ちしないし、空気に触れ続けるから飲み水にはあまり使えないんだ」
+&あなた「そうなんだ」
 
-&!charaimg_sprite="polygon3"="obasan_surprise"
-!charaimg_pos="polygon3"="0,0,0"
-!charaimg_size="polygon3"="2.3,4.3,1"
+&!charaimg_sprite="polygon"="face_smile_man4"
+!charaimg_pos="polygon"="-1.3,0.2,0"
+!charaimg_size="polygon"="2.4,4.4,1"
 
-&女性「それは大変！！」
-
-&!charaimg_sprite="polygon4"="wetwipes"
-!charaimg_pos="polygon4"="0,2,0"
-!charaimg_size="polygon4"="4.3,2.9,1"
-
-&女性「このウエットティッシュを使いなさい」
-&あなた「ウエットティッシュ！！」
-&あなた・ひな「ありがとうございます！」
-
-&!charaimg_sprite="polygon3"="obasan03_smile"
-!charaimg_pos="polygon3"="0,0,0"
-!charaimg_size="polygon3"="2.3,4.3,1"
-
-&ひな「これで、傷口を綺麗にできます！」
-&女性「ウエットティッシュは体を清潔に保つのにも使えるから便利よ。」
-&女性「まだ何個か持っているから二人にあげるわ。」
-&女性「ささっ。早く傷口を消毒してあげて」
+&ひな「水には他にも用途はあるし、一応バケツで吸水しておこう」
+&あなた「うん」

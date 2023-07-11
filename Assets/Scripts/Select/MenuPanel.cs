@@ -200,7 +200,7 @@ public class MenuPanel : MonoBehaviour
     //ランダムイベントの進むボタンからイベント選択画面に遷移する場合
     public void GoButtonDown2(){
         Rdata = GameObject.Find("ResultData");
-        if(int.Parse(Rdata.GetComponent<Result_Data>().ResultData[48][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[49][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[50][1]) == 0){
+        if(int.Parse(Rdata.GetComponent<Result_Data>().ResultData[50][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[51][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[52][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[53][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[54][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[55][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[56][1]) == 0){
             flag = 4;
             Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "101";
             SceneManager.LoadScene("EventScene");
