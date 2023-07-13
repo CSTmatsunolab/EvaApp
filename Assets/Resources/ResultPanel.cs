@@ -134,6 +134,29 @@ public class ResultPanel : MonoBehaviour
              }
          }
         
+        if(index==57){
+            if(Bdata.GetComponent<Bag_Data>().BagData[0][20] == "true") {
+                if(Answer == 0){
+                    HGC = 0; 
+                    REC = 3;
+                }else if(Answer == 1){
+                    HGC = -2;
+                    REC = -2;
+                }
+            }
+        }
+         if(index==58){
+             if(Bdata.GetComponent<Bag_Data>().BagData[0][25] == "true") {
+                 if(Answer == 0){
+                     HGC = 0;
+                     REC = 3;
+                 }else if(Answer == 1){
+                     HGC = -1;
+                     REC = -3;
+                 }
+             }
+         }
+
         HGC = HG + HGC;
         if(HGC < 0)
         {
@@ -353,7 +376,80 @@ public class ResultPanel : MonoBehaviour
                 Result1.text = "不正解のため";
                 Result2.text = "安心度が減った";
             }
+        }else if(index == 57)
+        {
+            if (HG > HGC)
+            {
+                Result1.color = new Color(1.0f, 0.0f, 0.0f, 1.0f); //赤
+            }
+            if (HG < HGC)
+            {
+                Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
+            }
+            if (RE > REC)
+            {
+                Result2.color = new Color(1.0f, 0.0f, 0.0f, 1.0f); //赤
+            }
+            if (RE < REC)
+            {
+                Result2.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
+            }
+            if (HG == HGC)
+            {
+                Result1.color = new Color(0.0f, 0.0f, 0.0f, 1.0f); //黒
+            }
+            if (RE == REC)
+            {
+                Result2.color = new Color(0.0f, 0.0f, 0.0f, 1.0f); //黒
+            }
+            Result1.text = ("満腹ゲージ：" + HG.ToString() + "→" + HGC.ToString());
+            Result2.text = ("安心ゲージ：" + RE.ToString() + "→" + REC.ToString());
+            if(Bdata.GetComponent<Bag_Data>().BagData[0][20] == "false") {
+                Result1.text = "チェックリストにアイテムがないため";
+                Result2.text = "安心度は変動しなかった";
+            }
+            if(Answer == 1){
+                Result1.text = "不正解のため";
+                Result2.text = "安心度が減った";
+            }
+        }else if(index == 58)
+        {
+            if (HG > HGC)
+            {
+                Result1.color = new Color(1.0f, 0.0f, 0.0f, 1.0f); //赤
+            }
+            if (HG < HGC)
+            {
+                Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
+            }
+            if (RE > REC)
+            {
+                Result2.color = new Color(1.0f, 0.0f, 0.0f, 1.0f); //赤
+            }
+            if (RE < REC)
+            {
+                Result2.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
+            }
+            if (HG == HGC)
+            {
+                Result1.color = new Color(0.0f, 0.0f, 0.0f, 1.0f); //黒
+            }
+            if (RE == REC)
+            {
+                Result2.color = new Color(0.0f, 0.0f, 0.0f, 1.0f); //黒
+            }
+            Result1.text = ("満腹ゲージ：" + HG.ToString() + "→" + HGC.ToString());
+            Result2.text = ("安心ゲージ：" + RE.ToString() + "→" + REC.ToString());
+            if(Bdata.GetComponent<Bag_Data>().BagData[0][25] == "false") {
+                Result1.text = "チェックリストにアイテムがないため";
+                Result2.text = "安心度は変動しなかった";
+            }
+            if(Answer == 1){
+                Result1.text = "不正解のため";
+                Result2.text = "安心度が減った";
+            }
         }
+
 
         else{
             if (HG > HGC)
