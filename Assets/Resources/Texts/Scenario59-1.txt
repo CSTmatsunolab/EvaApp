@@ -17,15 +17,25 @@
 !charaimg_size="polygon2"="4.6,6.6,1"
 
 &ひな「ガムテープ持ってる？」
-&あなた「持ってきてないや‥」
-
-&ひな「私が持ってるから貸すよ！ガムテープに自分の名前を書いて貼っておくといいよ。貼って剥せるから他にもメモとして使うと便利だよ。」
 
 &!charaimg_sprite="polygon"="ue_questionman"
 !charaimg_pos="polygon"="-1.3,0.2,0"
 !charaimg_size="polygon"="2.8,4.8,1"
 
-&ひな「でも、ガムテープは2種類あって、布テープと呼ばれるガムテープじゃないと文字が書けないから気をつけてね。」
+&あなた「持ってるけど？？」
+
+&!charaimg_sprite="polygon2"="hina_shock"
+!charaimg_pos="polygon2"="1,0.12,0"
+!charaimg_size="polygon2"="2.3,4.3,1"
+
+&ひな「そのガムテープはクラフトテープと言って文字が書けないんだ。」
+
+&!charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
+!charaimg_pos="polygon2"="1.2,-0.8,0"
+!charaimg_size="polygon2"="4.6,6.6,1"
+
+&ひな「だから、私が持ってるガムテープを貸すよ！ガムテープは2種類あって、布テープと呼ばれるガムテープじゃないと文字が書けないから気をつけてね。」
+&ひな「ガムテープに自分の名前を書いて貼っておくといいよ。貼って剥せるから他にもメモとして使うと便利だよ。」
 
 &!charaimg_sprite="polygon"="face_smile_man4"
 !charaimg_pos="polygon"="-1.3,0.2,0"
