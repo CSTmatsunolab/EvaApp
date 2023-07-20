@@ -502,11 +502,11 @@ public class GameManager : MonoBehaviour
         titleText.text = EData.GetComponent<Event_Data>().EventData[int.Parse(index)][1];
     }
 
-    private void Update()
-    {
-        // 左(=0)クリックされたらOnClickメソッドを呼び出し
-        if (Input.GetMouseButtonDown(0)) OnClick();
-    }
+    // private void Update()
+    // {
+    //     // 左(=0)クリックされたらOnClickメソッドを呼び出し
+    //     if (Input.GetMouseButtonDown(0)) OnClick();
+    // }
 
     public void GoToResult()
     {
