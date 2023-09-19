@@ -1,0 +1,15 @@
+!foreground_color="0,0,0"
+!foreground_anim="fadein,0,2,%0,0,0,0%%"
+!wait="2"
+!background_sprite="bg_gakkou"
+
+!charaimg_sprite="polygon"="mirrorbikkuri"
+!charaimg_pos="polygon"="0,0,0"
+!charaimg_size="polygon"="4.5,6.5,1"
+&あなた「避難所の汚れが溜まってきたね」
+
+&!charaimg_sprite="polygon"="pose_gutspose_woman"
+!charaimg_pos="polygon"="0,0,0"
+!charaimg_size="polygon"="4.5,6.5,1"
+
+&ひな「避難所は人が多く集まるからゴミが溜まりやすいね。安全に作業するには手袋が有効的だよ！」
