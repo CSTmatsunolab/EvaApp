@@ -90,7 +90,7 @@ public class ESManagement : MonoBehaviour
         {
 
             a = Random.Range(3,50);//3~40
-            a = 56;
+            //a = 56;
             //a = Random.Range(21,23);//指定範囲の動作確認用
             Debug.Log(a);
 
@@ -117,7 +117,7 @@ public class ESManagement : MonoBehaviour
             if(b < 5) {
                 a = Random.Range(50,60);
             } else{
-                a = Random.Range(3,45);
+                a = Random.Range(3,50);
             }
 
             kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
@@ -138,7 +138,7 @@ public class ESManagement : MonoBehaviour
             {
                 if(kaburiCheck == 1)
                 {
-                    a = Random.Range(3,45);//3~40
+                    a = Random.Range(3,50);//3~40
                     kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
                     Debug.Log("a1 = " + a);
                 }
