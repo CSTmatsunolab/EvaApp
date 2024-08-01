@@ -122,14 +122,18 @@ public class QuizManagement : MonoBehaviour
         Answer();
         no++;
         if(no > 9){
-            ListButtonMake();
-            Result.SetActive(true);
+            Invoke("Invoke1",1.0f);
         }
         else{
         QuizLoad();
         NoSet();
         }
        
+    }
+
+    void Invoke1(){
+            ListButtonMake();
+            Result.SetActive(true);
     }
 
     void Shuffle(){

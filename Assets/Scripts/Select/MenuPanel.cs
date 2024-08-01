@@ -147,11 +147,14 @@ public class MenuPanel : MonoBehaviour
     }
 
     private void HaikyuEvent(){
+        PdataLoad();
         int Day = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][5]);
         int Time = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][6]);
         int WaterStock = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][3]);
         int FoodStock = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][4]);
         int HaikyuCount = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][12]);
+        Debug.Log(Pdata.GetComponent<Player_Data>().PlayerData[1][12]);
+        Debug.Log(HaikyuCount);
         if(HaikyuCount == 0 && Day >= 2 && Day % 2 == 1 && Time == 0)
         {
             int rand = Random.Range(1,100);//配給ガチャ
@@ -200,7 +203,7 @@ public class MenuPanel : MonoBehaviour
     //ランダムイベントの進むボタンからイベント選択画面に遷移する場合
     public void GoButtonDown2(){
         Rdata = GameObject.Find("ResultData");
-        if(int.Parse(Rdata.GetComponent<Result_Data>().ResultData[50][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[51][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[52][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[53][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[54][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[55][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[56][1]) == 0){
+        if(int.Parse(Rdata.GetComponent<Result_Data>().ResultData[50][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[51][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[52][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[53][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[54][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[55][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[56][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[57][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[58][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[59][1]) == 0 && int.Parse(Rdata.GetComponent<Result_Data>().ResultData[60][1]) == 0){
             flag = 4;
             Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "101";
             SceneManager.LoadScene("EventScene");
