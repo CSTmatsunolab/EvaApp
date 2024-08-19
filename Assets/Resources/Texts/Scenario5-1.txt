@@ -31,10 +31,11 @@
 &あなた「わっ！トイレめちゃくちゃ混んでるじゃん！！」
 &あなた「さっき済ましておけばよかった…」
 &!charaimg_sprite="polygon3"="komatta_man2"
+!charaimg_pos="polygon3"="-1.5,0,0"
 &あなた「仕方ないから並ぶか」
 
 &!charaimg_sprite="polygon4"="job_staff_jumper_man"
-!charaimg_pos="polygon4"="-1.6,-0.5,0"
+!charaimg_pos="polygon4"="1.6,-0.5,0"
 !charaimg_size="polygon4"="4.3,6.3,1"
 &避難所スタッフ「そのとおりです！」
 &あなた「あ、スタッフのお兄さん」

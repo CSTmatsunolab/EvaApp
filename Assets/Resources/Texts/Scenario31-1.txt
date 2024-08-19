@@ -9,7 +9,7 @@
 &ひなのお婆ちゃん「1200ml……」
 
 &!charaimg_sprite="polygon"="ue_questionman"
-!charaimg_pos="polygon"="-1.37,0.2,0"
+!charaimg_pos="polygon"="-0.7,0.2,0"
 !charaimg_size="polygon"="3.8,5.8,1"
 &あなた「え？ 今なんて……？」
 
@@ -17,6 +17,7 @@
 &ひな「1200ml、１日に必要な飲水の量だよ！」
 
 &!charaimg_sprite="polygon"="odorokiman"
+!charaimg_pos="polygon"="-1.4,0.2,0"
 !charaimg_size="polygon"="3,4,1"
 &あなた「うわ！ びっくりした……」
 
@@ -26,12 +27,14 @@
 &あなた「1200ml？ 2Lとかじゃなくて？」
 
 &!charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
+!charaimg_pos="polygon2"="1.2,0.3,0"
+!charaimg_size="polygon2"="3.3,4.3,1"
 &ひな「体重50kgの成人は一日2500mlほどの水分を出すらしくて、」
 &ひな「そのうち食事等で得ているのは1300ml、」
 &ひな「残り1200mlほどが飲水にあたるんだって。」
 
 &!charaimg_sprite="polygon"="ue_bikkuriman"
-!charaimg_pos="polygon"="-1.37,0.2,0"
+!charaimg_pos="polygon"="-0.7,0.2,0"
 !charaimg_size="polygon"="3.8,5.8,1"
 &あなた「へえ、そうなんだ！」
 

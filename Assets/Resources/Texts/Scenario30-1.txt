@@ -8,8 +8,8 @@
 &あなた「お腹いっぱいだ……！！」
 
 &!charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
-!charaimg_pos="polygon2"="1.2,-0.5,0"
-!charaimg_size="polygon2"="4.3,6.3,1"
+!charaimg_pos="polygon2"="1.2,0.3,0"
+!charaimg_size="polygon2"="3.3,4.3,1"
 &ひな「食欲ないの？」
 &あなた「そうなんだ。あまり動いてないし……今日はいいかな」
 &!charaimg_sprite="polygon"="onigirikomattaman"

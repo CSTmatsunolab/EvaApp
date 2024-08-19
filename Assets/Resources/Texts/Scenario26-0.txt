@@ -11,7 +11,7 @@
 
 &!charaimg_pos="polygon"="1.25,-0.15,0"
 &!charaimg_sprite="polygon2"="ue_questionman"
-!charaimg_pos="polygon2"="-1.45,-0.05,0"
+!charaimg_pos="polygon2"="-1.15,-0.05,0"
 !charaimg_size="polygon2"="2.7,4.3,1"
 
 &あなた「(あれ。何だかひなさんのおばあちゃん困ってそうだな。)」
@@ -35,7 +35,7 @@
 &ひなのお婆ちゃん「！！。あら、こんにちは。」
 
 &!charaimg_sprite="polygon2"="ue_questionman"
-!charaimg_pos="polygon2"="-1.46,-0.05,0"
+!charaimg_pos="polygon2"="-1.16,-0.05,0"
 !charaimg_size="polygon2"="2.54,4.13,1"
 
 &あなた「何かありましたか？」
@@ -59,7 +59,7 @@
 &ひなのお婆ちゃん「それがねぇ……。薬の名前を忘れてしまったのよ……。」
 
 &!charaimg_sprite="polygon2"="komatta_man3"
-!charaimg_pos="polygon2"="-1.16,0.26,0"
+!charaimg_pos="polygon2"="-1.16,-0.5,0"
 !charaimg_size="polygon2"="2.46,4,1"
 
 &あなた「それは困りましたね……。」
@@ -79,7 +79,7 @@
 &避難所スタッフ「薬の名前を教えていただければ、支援物資の中にあるか確認してきますよ。」
 
 &!charaimg_sprite="polygon2"="komatta_man3"
-!charaimg_pos="polygon2"="-1.16,0.26,0"
+!charaimg_pos="polygon2"="-1.16,-0.5,0"
 !charaimg_size="polygon2"="2.46,4,1"
 
 &あなた「それが、薬の名前が分からなくて…。」
@@ -87,14 +87,14 @@
 &避難所スタッフ「では、どんな薬だったか調べてみましょうか。」
 
 &!charaimg_sprite="polygon2"="ue_bikkuriman"
-!charaimg_pos="polygon2"="-1.33,0.08,0"
+!charaimg_pos="polygon2"="-1.13,0.08,0"
 !charaimg_size="polygon2"="2.66,4.1,1"
 
 &あなた「そんなことできるんですか！？」
 &避難所スタッフ「薬の効果や処方された際の注意点からある程度推測することができます。」
 
 &!charaimg_delete="polygon2"="ue_bikkuriman"
-&!charaimg_pos="polygon3"="-1.44,-1.16,0"
+&!charaimg_pos="polygon3"="-1.24,-1.16,0"
 &!charaimg_sprite="polygon"="hina_sobo_kusuri"
 !charaimg_pos="polygon"="1.07,0.2,0"
 !charaimg_size="polygon"="3.36,5.66,1"
@@ -108,7 +108,7 @@
 &ひなのお婆ちゃん「はい。○○……です。」
 
 &!charaimg_sprite="polygon2"="face_smile_man4"
-!charaimg_pos="polygon2"="0.12,0.5,0"
+!charaimg_pos="polygon2"="0.12,0.3,0"
 !charaimg_size="polygon2"="3.2,5.3,1"
 
 &あなた「よかった。これで薬の名前が分かりそう！」

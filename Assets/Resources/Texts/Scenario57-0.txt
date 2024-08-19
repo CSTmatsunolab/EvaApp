@@ -5,7 +5,7 @@
 
 &!charaimg_sprite="polygon"="kega"
 !charaimg_pos="polygon"="0,0,0"
-!charaimg_size="polygon"="3.5,3.5,1"
+!charaimg_size="polygon"="3.5,4,1"
 &あなた「いてて、、、ガラスで怪我をしちゃった。。。」
 &あなた「手元に、ガーゼと絆創膏と消毒液があるけど、まずはガラスを取り除かなきゃ、、、」
 
@@ -14,8 +14,8 @@
 !charaimg_size="polygon"="2.8,4.8,1"
 
 !charaimg_sprite="polygon1"="pose_touch_hand_man_woman"
-!charaimg_pos="polygon1"="1.2,-0.5,0"
-!charaimg_size="polygon1"="3.7,6.7,1"
+!charaimg_pos="polygon1"="1.2,0.3,0"
+!charaimg_size="polygon1"="2.7,4.7,1"
 &ひな「そんな時ピンセットがあれば、ガラスの破片や異物を取り除いたり、」
 &ひな「包帯やガーゼを正確に処理するなどの応急処置に活用できるよ！」
 &ひな「ピンセットは細かい操作が可能なため、傷口への触れ方をコントロールするのに適しているね。」

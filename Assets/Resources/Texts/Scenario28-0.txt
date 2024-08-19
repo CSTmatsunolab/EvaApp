@@ -8,8 +8,8 @@
 &あなた「お腹すいたな……」
 
 &!charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
-!charaimg_pos="polygon2"="1.2,-0.5,0"
-!charaimg_size="polygon2"="4.3,6.3,1"
+!charaimg_pos="polygon2"="1.2,0.3,0"
+!charaimg_size="polygon2"="3.3,4.3,1"
 &ひな「あれ、その非常食って消費期限切れてない？」
 &あなた「そうだけど、せっかく持ってきたからもったいなくて……」
 &!charaimg_sprite="polygon"="onigirikomattaman"
@@ -23,7 +23,8 @@
 &あなた「消費期限が切れた食品はなるべく食べずに廃棄したほうがいいね。」
 
 &!charaimg_sprite="polygon"="smartphone_blank_man"
-!charaimg_pos="polygon"="-1,0.2,0"
+!charaimg_pos="polygon"="-1.4,0.2,0"
+!charaimg_size="polygon"="2,4,1"
 &あなた「あ、でも水の場合はまた別に注意が必要みたいだね」
 &!charaimg_sprite="polygon2"="bikkuri_woman"
 &ひな「そうなの？」

@@ -22,7 +22,7 @@
 
 
 &!charaimg_sprite="polygon"="ue_bikkuriman"
-!charaimg_pos="polygon"="-1.2,0.3,0"
+!charaimg_pos="polygon"="-1,0xs,0"
 !charaimg_size="polygon"="3.2,5.2,1"
 &あなた「え！？そうなんだ！」
 
@@ -35,5 +35,6 @@
 &あなた「知らなかった……大変だな。」
 
 &!charaimg_sprite="polygon2"="pose_gutspose_woman"
+!charaimg_pos="polygon2"="1.2,0.5,0"
 &ひな「先生方への負担も大きいし、一刻も早くこの生活が終わるといいね。」
 &あなた「そうだね……。」

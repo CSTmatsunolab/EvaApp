@@ -7,8 +7,8 @@
 !charaimg_pos="polygon"="-1.37,-0.47,0"
 !charaimg_size="polygon"="2.8,4.9,1"
 !charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
-!charaimg_pos="polygon2"="1.43,-0.17,0"
-!charaimg_size="polygon2"="3.49,5.58,1"
+!charaimg_pos="polygon2"="1.43,0.6,0"
+!charaimg_size="polygon2"="2.49,3.58,1"
 
 &あなた「家の修理が終わったから、家に帰れることになった！」
 
@@ -16,8 +16,8 @@
 !charaimg_pos="polygon"="-1.37,-0.47,0"
 !charaimg_size="polygon"="2.8,4.9,1"
 &!charaimg_sprite="polygon2"="hina_egao"
-!charaimg_pos="polygon2"="1.41,0.09,0"
-!charaimg_size="polygon2"="1.78,3.9,1"
+!charaimg_pos="polygon2"="1.5,-0.3,0"
+!charaimg_size="polygon2"="3,3,1"
 
 &ひな「そうなのね。よかった。」
 &あなた「うん。色々とありがとうね。」

@@ -78,8 +78,8 @@
 &ひな「あと、充分に体を温めることができるから基礎代謝を上げることができるの。」
 
 &!charaimg_sprite="polygon2"="hina_egao"
-!charaimg_pos="polygon2"="1.5,-0.3,0"
-!charaimg_size="polygon2"="2.5,4,1"
+!charaimg_pos="polygon2"="1.5,-0.2,0"
+!charaimg_size="polygon2"="3,3.3,1"
 
 &ひな「だからきっと、そのメンタルの部分と寒さも焚き火で少しは楽になるわよ。」
 
@@ -113,8 +113,8 @@
 !charaimg_pos="polygon"="-1.56,-1.63,0"
 !charaimg_size="polygon"="4.54,6.8,1"
 &!charaimg_sprite="polygon2"="hina_egao"
-!charaimg_pos="polygon2"="1.56,0,0"
-!charaimg_size="polygon2"="2.5,3.8,1"
+!charaimg_pos="polygon2"="1.5,-0.2,0"
+!charaimg_size="polygon2"="3,3.3,1"
 
 
 &あなた「ほんとだ。焚き火を見てると落ち着く。」

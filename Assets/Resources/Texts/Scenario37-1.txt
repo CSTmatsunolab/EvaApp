@@ -22,7 +22,7 @@
 
 
 &!charaimg_sprite="polygon"="ue_bikkuriman"
-!charaimg_pos="polygon"="-1.2,0.3,0"
+!charaimg_pos="polygon"="-1,0,0"
 !charaimg_size="polygon"="3.2,5.2,1"
 &あなた「え！？そうなんだ！」
 

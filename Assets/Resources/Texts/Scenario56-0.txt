@@ -50,7 +50,7 @@
 &あなた「持ってるけど、なんで？」
 
 &!charaimg_sprite="polygon2"="hina_egao"
-!charaimg_pos="polygon2"="1.2,0,0"
+!charaimg_pos="polygon2"="1.2,-0.2,0"
 !charaimg_size="polygon2"="2,4,1"
 
 &ひな「災害時は特別措置として」

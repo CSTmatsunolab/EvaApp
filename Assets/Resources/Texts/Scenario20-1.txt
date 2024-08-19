@@ -10,14 +10,14 @@
 &ひな「あっ！」
 
 &!charaimg_sprite="polygon2"="ue_questionman"
-!charaimg_pos="polygon2"="-1.3,0.2,0"
+!charaimg_pos="polygon2"="-1,0.2,0"
 !charaimg_size="polygon2"="3,5,1"
 
 &あなた「どうしたの？」
 &ひな「歯ブラシを持ってくるのを忘れてしまったみたい…。」
 
 &!charaimg_sprite="polygon2"="ue_bikkuriman"
-!charaimg_pos="polygon2"="-1.2,0.3,0"
+!charaimg_pos="polygon2"="-1,0.3,0"
 !charaimg_size="polygon2"="3.2,5.2,1"
 
 &あなた「えっ。歯ブラシ忘れたの！？」
@@ -56,7 +56,7 @@
 &ひな「そもそも水不足なのに、歯磨きの時に口をすすぐための水なんて確保できないじゃない！！」
 
 &!charaimg_sprite="polygon"="hina_naku"
-!charaimg_pos="polygon"="1.6,0,0"
+!charaimg_pos="polygon"="1.4,0,0"
 !charaimg_size="polygon"="3.4,3.4,1"
 
 &ひな「どうしよう…。このままだと虫歯になってしまうよ……。」

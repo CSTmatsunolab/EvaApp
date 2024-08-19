@@ -27,8 +27,8 @@
 
 &!charaimg_size="polygon2"="0,0,1"
 !charaimg_sprite="polygon4"="smartphone_blank_man"
-!charaimg_pos="polygon4"="1.2,-0.5,0"
-!charaimg_size="polygon4"="4.3,6.3,1"
+!charaimg_pos="polygon4"="1,-0.5,0"
+!charaimg_size="polygon4"="3,6,1"
 
 &あなた「避難所は後からでも利用できるし、迷っているなら利用するべきですよ」
 
@@ -43,7 +43,7 @@
 &!charaimg_size="polygon5"="0,0,1"
 !charaimg_size="polygon4"="0,0,1"
 !charaimg_sprite="polygon6"="pistol_pose_man"
-!charaimg_pos="polygon6"="1.2,-0.5,0"
-!charaimg_size="polygon6"="4.3,6.3,1"
+!charaimg_pos="polygon6"="1,-0.5,0"
+!charaimg_size="polygon6"="3,6,1"
 
 &あなた「よし、きっといいことができたぞ」

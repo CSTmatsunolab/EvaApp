@@ -4,7 +4,7 @@
 !background_sprite="taiikukan"
 
 !charaimg_sprite="polygon"="ue_questionman"
-!charaimg_pos="polygon"="-1.3,0.2,0"
+!charaimg_pos="polygon"="-1.1,0.2,0"
 !charaimg_size="polygon"="2.8,4.8,1"
 
 &あなた「(あれ？ポリタンクとかを持って外に大勢人が出ていくなぁ。どうしたんだろう？)」
@@ -18,7 +18,7 @@
 
 &!charaimg_sprite="polygon"="face_smile_man4"
 !charaimg_pos="polygon"="-1.3,0.2,0"
-!charaimg_size="polygon"="2.4,4.4,1"
+!charaimg_size="polygon"="3.4,4.4,1"
 
 &あなた「そうなんですね！ありがとうございます。」
 
@@ -31,7 +31,7 @@
 &あなた「あっ…空のポリタンクが無いや…」
 
 &!charaimg_sprite="polygon"="komatta_man2"
-!charaimg_pos="polygon"="-0.9,0.1,0"
+!charaimg_pos="polygon"="-1.5,0.1,0"
 !charaimg_size="polygon"="3.8,5.8,1"
 &!charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
 !charaimg_pos="polygon2"="1.5,0,0"
@@ -55,7 +55,7 @@
 
 &!charaimg_sprite="polygon"="face_smile_man4"
 !charaimg_pos="polygon"="-1.3,0.2,0"
-!charaimg_size="polygon"="2.4,4.4,1"
+!charaimg_size="polygon"="3.4,4.4,1"
 
 &ひな「水には他にも用途はあるし、一応バケツで吸水しておこう」
 &あなた「うん」

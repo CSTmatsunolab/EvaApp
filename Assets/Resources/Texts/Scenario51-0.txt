@@ -20,19 +20,20 @@
 &あなた「そして、手で開けられる缶詰も探してみよう！」
 
 &!charaimg_sprite="polygon"="ue_questionman"
-!charaimg_pos="polygon"="-1.48,-0.08,0"
+!charaimg_pos="polygon"="-0.7,-0.08,0"
 !charaimg_size="polygon"="5,5,1"
 &あなた「そういえばひなさんは、缶詰のどこを重視して買ってる？」
 
 
-&!charaimg_pos="polygon"="-1.48,-0.08,0"
+&!charaimg_pos="polygon"="-0.7,-0.08,0"
 &!charaimg_sprite="polygon2"="hina_egao"
-!charaimg_pos="polygon2"="1,0.12,0"
-!charaimg_size="polygon2"="4.3,4.3,1"
+!charaimg_pos="polygon2"="1.5,-0.4,0"
+!charaimg_size="polygon2"="3.3,3.3,1"
 &ひな「とにかく味、量、安さかな！」
 
 &!charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
-!charaimg_size="polygon2"="4.3,6.3,1"
+!charaimg_pos="polygon2"="1.2,0.3,0"
+!charaimg_size="polygon2"="3.3,4.3,1"
 &!charaimg_sprite="polygon"="odorokiman"
 !charaimg_pos="polygon"="-1.37,0.2,0"
 !charaimg_size="polygon"="3,4,1"
