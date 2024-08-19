@@ -1,6 +1,6 @@
 !background_sprite="taiikukan"
 &!charaimg_sprite="polygon"="komatta_man3"
-&!charaimg_pos="polygon"="-1.26,0.2,0"
+&!charaimg_pos="polygon"="-1.26,0,0"
 !charaimg_size="polygon"="3,5,1"
 
 !foreground_color="0,0,0"

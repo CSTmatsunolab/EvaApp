@@ -19,7 +19,7 @@
 &厚木さん「同伴避難とは、"ペットと同じ場所で避難する"という意味ですよ。」
 
 &!charaimg_sprite="polygon"="face_smile_man4"
-!charaimg_pos="polygon"="-1.3,0.5,0"
+!charaimg_pos="polygon"="-1.3,0,0"
 !charaimg_size="polygon"="3.2,4,1"
 &あなた「あ、厚木さん！」
 &厚木さん「ちなみに"同行避難"は、ペットと一緒に "避難所まで移動すること"という意味らしいです。」
@@ -48,10 +48,10 @@
 &いぬ「ワンワン！」
 
 &!charaimg_sprite="polygon3"="pet_darui_dog"
-!charaimg_pos="polygon3"="1.6,2.33,0"
+!charaimg_pos="polygon3"="1.6,2.4,0"
 
 &!charaimg_sprite="polygon"="face_smile_man4"
-!charaimg_pos="polygon"="-1.3,0.2,0"
+!charaimg_pos="polygon"="-1.3,0,0"
 !charaimg_size="polygon"="2.5,4.5,1"
 &あなた「かわいい〜！！」
 

@@ -9,7 +9,7 @@
 &ひな「大変！」
 
 &!charaimg_sprite="polygon"="ue_bikkuriman"
-!charaimg_pos="polygon"="-1.37,0.2,0"
+!charaimg_pos="polygon"="-0.7,0.2,0"
 !charaimg_size="polygon"="3.8,5.8,1"
 &あなた「どうしたの？」
 

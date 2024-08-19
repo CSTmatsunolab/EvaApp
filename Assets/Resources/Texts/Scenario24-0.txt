@@ -15,7 +15,7 @@
 &ひな「お尻が痛そうな顔しているね。」
 
 &!charaimg_sprite="polygon5"="siriita"
-&!charaimg_pos="polygon5"="0,2,0"
+&!charaimg_pos="polygon5"="0,3,0"
 !charaimg_size="polygon5"="4.5,2.4,1"
 
 &あなた「そうなんだ。体育館は床が硬くて。」

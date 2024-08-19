@@ -9,8 +9,8 @@
 &ひな「くらくらする……」
 
 &!charaimg_sprite="polygon"="ue_bikkuriman"
-!charaimg_pos="polygon"="-1.37,0.2,0"
-!charaimg_size="polygon"="3.8,5.8,1"
+!charaimg_pos="polygon"="-1,0.2,0"
+!charaimg_size="polygon"="3,5.8,1"
 &あなた「え！？ 大丈夫……？」
 
 &ひな「濡れたタオルを持ってきてくれない？」

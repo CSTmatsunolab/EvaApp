@@ -22,14 +22,14 @@
 !charaimg_pos="sikiri"="10,0,0"
 !charaimg_size="sikiri"="7,7,1"
 !charaimg_sprite="polygon3"="neruhito"
-!charaimg_pos="polygon3"="0,0,0"
-!charaimg_size="polygon3"="5,5,1"
+!charaimg_pos="polygon3"="1,-0.5,0"
+!charaimg_size="polygon3"="5,2.5,1"
 &あなた「スゥー。」
 &!charaimg_sprite="polygon3"="sleep"
 &あなた「なんか周りの人が気になるな」
 &隣のおじさん「ZZZ…」
 &!charaimg_sprite="polygon3"="komatta_man2"
-!charaimg_pos="polygon3"="0.5,0,0"
+!charaimg_pos="polygon3"="1,0,0"
 !charaimg_size="polygon3"="5,6,1"
 &あなた「ダメだ、眠れない！」
 &!charaimg_sprite="polygon3"="danbo"

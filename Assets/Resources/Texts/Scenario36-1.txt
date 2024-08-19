@@ -21,7 +21,7 @@
 &あなた「（たぶん言語が通じなくて困っているみたいだ…… なんとか助けられないかな？）」
 
 &!charaimg_sprite="polygon"="smartphone_photo_man_tate"
-!charaimg_pos="polygon"="0.44,0.7,0"
+!charaimg_pos="polygon"="-1,-1.5,0"
 !charaimg_size="polygon"="5,5,1"
 &あなた「こういうときは……」
 

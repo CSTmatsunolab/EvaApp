@@ -61,7 +61,7 @@
 !charaimg_size="pose_shock_woman"="3,5,1"
 !charaimg_pos="pose_shock_woman"="1.8,-0.5,0"
 &!charaimg_sprite="polygon3"="obasan03_smile"
-!charaimg_pos="polygon3"="0,0,0"
+!charaimg_pos="polygon3"="0,-0.75,0"
 !charaimg_size="polygon3"="2.3,4.3,1"
 
 &女性「どうしたの？」

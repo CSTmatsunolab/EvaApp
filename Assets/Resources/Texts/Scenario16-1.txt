@@ -15,7 +15,7 @@
 &ひな「これからラジオ体操をするんだけど、一緒に行かない？」
 
 &!charaimg_sprite="polygon"="komatta_man2"
-!charaimg_pos="polygon"="-0.9,0.2,0"
+!charaimg_pos="polygon"="-1.5,0.2,0"
 !charaimg_size="polygon"="3.8,5.8,1"
 
 &あなた「えー。ラジオ体操？」
@@ -26,13 +26,13 @@
 &あなた「運動するどころか、座っている時間が長いよ。」
 
 &!charaimg_sprite="polygon2"="pose_gutspose_woman"
-!charaimg_pos="polygon2"="1.2,-1,0"
+!charaimg_pos="polygon2"="1.2,0,0"
 !charaimg_size="polygon2"="4.3,6.3,1"
 
 &ひな「そこで、ラジオ体操なんだよ！！」
 
 &!charaimg_sprite="polygon"="ue_questionman"
-!charaimg_pos="polygon"="-1.3,0.2,0"
+!charaimg_pos="polygon"="-1.0,0.2,0"
 !charaimg_size="polygon"="2.8,4.8,1"
 
 &あなた「？？？」
@@ -48,7 +48,7 @@
 &ひな「最悪の場合、死亡する可能性もある病気なの。」
 
 &!charaimg_sprite="polygon"="odorokiman"
-!charaimg_pos="polygon"="-1.3,0.2,0"
+!charaimg_pos="polygon"="-1.3,0,0"
 !charaimg_size="polygon"="2.4,4.4,1"
 
 &あなた「そんな…。だからラジオ体操で運動不足を解消するんだね。」
@@ -58,10 +58,10 @@
 &「〜♩ラジオ体操、第一♩〜」
 
 &!charaimg_sprite="polygon"="pose_gutsposeman"
-!charaimg_pos="polygon"="-1.4,-0.5,0"
+!charaimg_pos="polygon"="-1.4,0,0"
 !charaimg_size="polygon"="3.4,5.4,1"
 &!charaimg_sprite="polygon2"="pose_gutspose_woman"
-!charaimg_pos="polygon2"="1.4,-0.5,0"
+!charaimg_pos="polygon2"="1.4,-0,0"
 !charaimg_size="polygon2"="3.8,5.8,1"
 
 &あなた「あっ！ラジオ体操が始まったみたい！」

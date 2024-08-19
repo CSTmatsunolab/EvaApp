@@ -16,7 +16,7 @@
 
 &!charaimg_sprite="polygon5"="mizubasya"
 &!charaimg_pos="polygon5"="0,2,0"
-!charaimg_size="polygon5"="4.5,2.4,1"
+!charaimg_size="polygon5"="4.5,3.4,1"
 
 &あなた「そうなんだ。」
 &あなた「体育館の床が硬くて、ペットボトルに水を入れてクッション代わりにしてたら」
