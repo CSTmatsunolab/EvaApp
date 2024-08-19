@@ -85,7 +85,7 @@ public class ESManagement : MonoBehaviour
         //     string line = reader.ReadLine(); // 一行ずつ読み込み
         //     checksData.Add(line.Split(',')); // , 区切りでリストに追加
         // }
-
+        
         if(flag == 0)
         {
 
@@ -116,6 +116,7 @@ public class ESManagement : MonoBehaviour
             //a = Random.Range(3,41);//3~29
             if(b < 5) {
                 a = Random.Range(50,60);
+                //a=52;
             } else{
                 a = Random.Range(3,41);
             }
@@ -145,9 +146,10 @@ public class ESManagement : MonoBehaviour
             }
         }
         else if(flag == 4){
-            //a = 101;
-            a = Random.Range(50,60);
+            a=59;
+            //a = Random.Range(50,60);
             Pdata.GetComponent<Player_Data>().PlayerData[1][8] = a.ToString();
+            //Debug.Log(Pdata.GetComponent<Player_Data>().PlayerData[1][1]);
             // kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
             // Debug.Log("kaburiCheck = " + kaburiCheck);
             // for(int i = 0;i < 3;i++) //もし解放済みのイベントだった場合、再抽選 最大5回

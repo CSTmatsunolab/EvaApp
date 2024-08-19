@@ -207,6 +207,7 @@ public class MenuPanel : MonoBehaviour
             flag = 4;
             Pdata.GetComponent<Player_Data>().PlayerData[1][8] = "101";
             SceneManager.LoadScene("EventScene");
+            //SceneManager.LoadScene("EventSelectScene");
 
         }
         else{

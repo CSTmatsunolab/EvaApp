@@ -53,6 +53,7 @@ public class ResultPanel : MonoBehaviour
         else if(introcheck==100){
             index = 100;
         }
+        
 
         else{
             index = introcheck;
@@ -72,6 +73,11 @@ public class ResultPanel : MonoBehaviour
         {
             HGC = int.Parse(Edata.GetComponent<Event_Data>().EventData[index][5]);
             REC = int.Parse(Edata.GetComponent<Event_Data>().EventData[index][6]);
+        }
+        if(introcheck==101){
+            index = 101;
+            HGC = 0;
+            REC = 0;
         }
     }
 
@@ -93,10 +99,10 @@ public class ResultPanel : MonoBehaviour
             if(Bdata.GetComponent<Bag_Data>().BagData[0][11] == "true") {
                 if(Answer == 0){
                     HGC = 0;
-                    REC = 3;
+                    REC = 2;
                 }else if(Answer == 1){
                     HGC = -1;
-                    REC = -3;
+                    REC = -2;
                 }
             }
         }
@@ -104,10 +110,10 @@ public class ResultPanel : MonoBehaviour
              if(Bdata.GetComponent<Bag_Data>().BagData[0][26] == "true") {
                  if(Answer == 0){
                      HGC = 0;
-                     REC = 3;
+                     REC = 2;
                  }else if(Answer == 1){
                      HGC = -1;
-                     REC = -3;
+                     REC = -2;
                  }
              }
         }
@@ -115,29 +121,40 @@ public class ResultPanel : MonoBehaviour
             if(Bdata.GetComponent<Bag_Data>().BagData[0][20] == "true") {
                 if(Answer == 0){
                     HGC = 0; 
-                    REC = 3;
+                    REC = 2;
                 }else if(Answer == 1){
                     HGC = 0;
-                    REC = -3;
+                    REC = -2;
                 }
             }
         }
-         if(index==55){
-             if(Bdata.GetComponent<Bag_Data>().BagData[0][16] == "true") {
+        if(index==55){
+             if(Bdata.GetComponent<Bag_Data>().BagData[0][15] == "true") {
                  if(Answer == 0){
                      HGC = 0;
-                     REC = 3;
+                     REC = 2;
                  }else if(Answer == 1){
                      HGC = -1;
-                     REC = -3;
+                     REC = -2;
+                 }
+             }
+        }
+        if(index==56){
+             if(Bdata.GetComponent<Bag_Data>().BagData[0][31] == "true") {
+                 if(Answer == 0){
+                     HGC = 0;
+                     REC = 2;
+                 }else if(Answer == 1){
+                     HGC = -0;
+                     REC = -1;
                  }
              }
          }
         if(index==57){
-            if(Bdata.GetComponent<Bag_Data>().BagData[0][20] == "true") {
+            if(Bdata.GetComponent<Bag_Data>().BagData[0][18] == "true") {
                 if(Answer == 0){
                     HGC = 0; 
-                    REC = 3;
+                    REC = 2;
                 }else if(Answer == 1){
                     HGC = -2;
                     REC = -2;
@@ -145,13 +162,13 @@ public class ResultPanel : MonoBehaviour
             }
         }
          if(index==58){
-             if(Bdata.GetComponent<Bag_Data>().BagData[0][25] == "true") {
+             if(Bdata.GetComponent<Bag_Data>().BagData[0][23] == "true") {
                  if(Answer == 0){
                      HGC = 0;
-                     REC = 3;
+                     REC = 2;
                  }else if(Answer == 1){
                      HGC = -1;
-                     REC = -3;
+                     REC = -2;
                  }
              }
          }
@@ -159,10 +176,10 @@ public class ResultPanel : MonoBehaviour
              if(Bdata.GetComponent<Bag_Data>().BagData[0][27] == "true") {
                  if(Answer == 0){
                      HGC = 0;
-                     REC = 3;
+                     REC = 2;
                  }else if(Answer == 1){
                      HGC = -1;
-                     REC = -3;
+                     REC = -2;
                  }
              }
          }
@@ -220,7 +237,7 @@ public class ResultPanel : MonoBehaviour
             Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
             Result2.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
             Result1.text = "水が増えた！";
-            Result2.text = "食料が増えた！";
+            Result2.text = "";
             if(Bdata.GetComponent<Bag_Data>().BagData[0][14] == "false") {
                 Result1.text = "チェックリストにアイテムがないため";
                 Result2.text = "報酬はもらえなかった";
@@ -232,8 +249,8 @@ public class ResultPanel : MonoBehaviour
         }else if(index ==  51){
             Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
             Result2.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
-            Result1.text = "水が増えた！";
-            Result2.text = "食料が増えた！";
+            Result1.text = "食料が増えた！";
+            Result2.text = "";
             if(Bdata.GetComponent<Bag_Data>().BagData[0][1] == "false") {
                 Result1.text = "チェックリストにアイテムがないため";
                 Result2.text = "報酬はもらえなかった";
@@ -378,7 +395,48 @@ public class ResultPanel : MonoBehaviour
             }
             Result1.text = ("満腹ゲージ：" + HG.ToString() + "→" + HGC.ToString());
             Result2.text = ("安心ゲージ：" + RE.ToString() + "→" + REC.ToString());
-            if(Bdata.GetComponent<Bag_Data>().BagData[0][16] == "false") {
+            if(Bdata.GetComponent<Bag_Data>().BagData[0][15] == "false") {
+                //Result1.text = ("満腹ゲージ：" + HG.ToString() + "→" + HGC.ToString());
+                //Result2.text = ("安心ゲージ：" + RE.ToString() + "→" + REC.ToString());
+                Result1.text = "チェックリストにアイテムがないため";
+                Result2.text = "安心度は変動しなかった";
+            }
+            if(Answer == 1){
+                Result1.text = "不正解のため";
+                Result2.text = "安心度が減った";
+            }
+        
+        }else if(index == 56)
+        {
+            if (HG > HGC)
+            {
+                Result1.color = new Color(1.0f, 0.0f, 0.0f, 1.0f); //赤
+            }
+            if (HG < HGC)
+            {
+                Result1.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
+            }
+            if (RE > REC)
+            {
+                Result2.color = new Color(1.0f, 0.0f, 0.0f, 1.0f); //赤
+            }
+            if (RE < REC)
+            {
+                Result2.color = new Color(0.0f, 0.0f, 1.0f, 1.0f); //青
+            }
+            if (HG == HGC)
+            {
+                Result1.color = new Color(0.0f, 0.0f, 0.0f, 1.0f); //黒
+            }
+            if (RE == REC)
+            {
+                Result2.color = new Color(0.0f, 0.0f, 0.0f, 1.0f); //黒
+            }
+            Result1.text = ("満腹ゲージ：" + HG.ToString() + "→" + HGC.ToString());
+            Result2.text = ("安心ゲージ：" + RE.ToString() + "→" + REC.ToString());
+            if(Bdata.GetComponent<Bag_Data>().BagData[0][31] == "false") {
+                //Result1.text = ("満腹ゲージ：" + HG.ToString() + "→" + HGC.ToString());
+                //Result2.text = ("安心ゲージ：" + RE.ToString() + "→" + REC.ToString());
                 Result1.text = "チェックリストにアイテムがないため";
                 Result2.text = "安心度は変動しなかった";
             }
@@ -415,7 +473,7 @@ public class ResultPanel : MonoBehaviour
             }
             Result1.text = ("満腹ゲージ：" + HG.ToString() + "→" + HGC.ToString());
             Result2.text = ("安心ゲージ：" + RE.ToString() + "→" + REC.ToString());
-            if(Bdata.GetComponent<Bag_Data>().BagData[0][20] == "false") {
+            if(Bdata.GetComponent<Bag_Data>().BagData[0][18] == "false") {
                 Result1.text = "チェックリストにアイテムがないため";
                 Result2.text = "安心度は変動しなかった";
             }
@@ -451,7 +509,7 @@ public class ResultPanel : MonoBehaviour
             }
             Result1.text = ("満腹ゲージ：" + HG.ToString() + "→" + HGC.ToString());
             Result2.text = ("安心ゲージ：" + RE.ToString() + "→" + REC.ToString());
-            if(Bdata.GetComponent<Bag_Data>().BagData[0][25] == "false") {
+            if(Bdata.GetComponent<Bag_Data>().BagData[0][23] == "false") {
                 Result1.text = "チェックリストにアイテムがないため";
                 Result2.text = "安心度は変動しなかった";
             }

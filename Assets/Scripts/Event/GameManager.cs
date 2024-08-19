@@ -522,6 +522,7 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("EndingScene");
         }
         else if(index == "101"){
+            Debug.Log(Pdata.GetComponent<Player_Data>().PlayerData[1][1]);
             SceneManager.LoadScene("SubBichiku");
         }
         else{
