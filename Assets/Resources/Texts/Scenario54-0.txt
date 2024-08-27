@@ -4,7 +4,7 @@
 !background_sprite="bg_gakkou"
 
 !charaimg_sprite="polygon"="ue_questionman"
-!charaimg_pos="polygon"="-0.3,0,0"
+!charaimg_pos="polygon"="0,0,0"
 !charaimg_size="polygon"="4.5,6.5,1"
 &あなた「これで暖かくなるのかな」
 

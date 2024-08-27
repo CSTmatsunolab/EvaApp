@@ -26,7 +26,7 @@
 !charaimg_sprite="polygon3"="bikkuri"
 !charaimg_pos="polygon"="10,0.2,0"
 !charaimg_active="polygon3"="true"
-!charaimg_anim="polygon3"="Sin,0,1,EaseInOut%%5,5,1%1,0.3,0"
+!charaimg_anim="polygon3"="Sin,0,1,EaseInOut%%5,5,1%-1,0.3,0"
 !wait="1"
 &あなた「わっ！トイレめちゃくちゃ混んでるじゃん！！」
 &あなた「さっき済ましておけばよかった…」

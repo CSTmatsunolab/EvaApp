@@ -3,8 +3,8 @@
 !wait="2"
 !background_sprite="taiikukan"
 !charaimg_sprite="polygon"="ue_bikkuriman"
-!charaimg_pos="polygon"="-0.7,0.2,0"
-!charaimg_size="polygon"="3.8,5.8,1"
+!charaimg_pos="polygon"="-1,0.2,0"
+!charaimg_size="polygon"="3,5,1"
 
 &あなた「あ！置いておいた水に日光があたっちゃってる…」
 

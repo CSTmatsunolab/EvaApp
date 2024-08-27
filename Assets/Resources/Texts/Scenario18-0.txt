@@ -19,10 +19,10 @@
 &「3時間後」
 &!wait="2"
 &!charaimg_delete="polygon3"=""
-!charaimg_sprite="polygon"="onigirinomalman"
+&!charaimg_sprite="polygon"="onigirinomalman"
 !charaimg_pos="polygon"="-1,-0.4,0"
 !charaimg_size="polygon"="3.2,4.2,1"
-!charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
+&!charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
 !charaimg_pos="polygon2"="10,0.7,0"
 !charaimg_size="polygon2"="3.2,4.2,1"
 !charaimg_anim="polygon2"="ad,0,1,EaseInOut%%4.2,6.2,1%1.6,-0.4,0"

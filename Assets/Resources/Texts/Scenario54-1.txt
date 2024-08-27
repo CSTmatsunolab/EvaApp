@@ -9,7 +9,7 @@
 &あなた「まだ寒いよ」
 
 &!charaimg_sprite="polygon"="pose_touch_hand_man_woman"
-!charaimg_pos="polygon"="0,0.8,0"
-!charaimg_size="polygon"="3.5,4.5,1"
+!charaimg_pos="polygon"="0,0.5,0"
+!charaimg_size="polygon"="3.5,6,1"
 
 &ひな「エマージェンシーシートがおすすめだよ!これで冷える夜も過ごすことができるよ！」

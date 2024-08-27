@@ -36,7 +36,7 @@
 &あなた「あ…。仕切りがないと丸見えだもんね…。」
 
 &!charaimg_pos="polygon"="-1.6,-0.2,0"
-&!charaimg_size="polygon"="3.8,5.8,1"
+&!charaimg_size="polygon"="2.2,5.8,1"
 &!charaimg_pos="polygon2"="1.4,-0.4,0"
 &!charaimg_size="polygon2"="3.8,5.8,1"
 &!charaimg_sprite="polygon3"="job_staff_jumper_man"
@@ -56,7 +56,7 @@
 
 &!charaimg_sprite="polygon"="yogoreman"
 !charaimg_pos="polygon"="-1.6,0.2,0"
-!charaimg_size="polygon"="2.8,3.8,1"
+!charaimg_size="polygon"="2.2,3.8,1"
 &!charaimg_sprite="polygon2"="yogorewoman"
 !charaimg_pos="polygon2"="1.4,0,0"
 !charaimg_size="polygon2"="3.8,5.8,1"

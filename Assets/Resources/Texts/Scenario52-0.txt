@@ -55,7 +55,7 @@
 
 &!charaimg_delete="polygon4"="disinfection"
 &!charaimg_size="polygon"="2,4,1"
-!charaimg_pos="polygon"="-1.8,-0.3,0"
+!charaimg_pos="polygon"="-1.5,-0.3,0"
 !charaimg_delete="polygon2"="pose_shock_woman"
 &!charaimg_sprite="pose_shock_woman"="pose_shock_woman"
 !charaimg_size="pose_shock_woman"="3,5,1"

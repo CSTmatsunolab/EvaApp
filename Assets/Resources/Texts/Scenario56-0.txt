@@ -44,8 +44,8 @@
 &ひな「身分証は持ってる？」
 
 &!charaimg_sprite="polygon"="ue_questionman"
-!charaimg_pos="polygon"="-1,0,0"
-!charaimg_size="polygon"="2.8,4.8,1"
+!charaimg_pos="polygon"="-1,0.1,0"
+!charaimg_size="polygon"="3,5,1"
 
 &あなた「持ってるけど、なんで？」
 
