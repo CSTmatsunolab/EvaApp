@@ -111,7 +111,7 @@ public class EatMainPanel : MonoBehaviour
             int HaikyuCount = int.Parse(Pdata.GetComponent<Player_Data>().PlayerData[1][12]);
             if(HaikyuCount == 1)
             {
-                HaikyuCount = 0;
+                //HaikyuCount = 0;
                 Pdata.GetComponent<Player_Data>().PlayerData[1][12]=HaikyuCount.ToString();
             }
             if(manpuku == 0||suibun == 0||anshin == 0)//満腹が0の時に起きる

@@ -138,7 +138,7 @@ public class MenuPanel : MonoBehaviour
             int a = Random.Range(1,100);
             Debug.Log(a);
             if(Randflag == 0){
-                if(a >= 33){
+                if(a >= 40){
                     Randflag = 1;
                     Event.SetActive(true);
                 }
