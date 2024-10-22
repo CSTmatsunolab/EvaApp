@@ -12,7 +12,7 @@ public class PlayerVisualChange : MonoBehaviour
     public Image image;
     public Sprite onaka_heru_man;
     public Sprite utsu_man;
-    public Sprite sick_kokoro_yamu_man;
+    public Sprite kanashikuna_man;
     public Sprite nodo_kawaku_dassui_man;
     public Sprite genkiman;
 
@@ -44,7 +44,7 @@ public class PlayerVisualChange : MonoBehaviour
         if (manpuku < 4 && anshin < 4) //満腹と安心が３以下
         {
             image.enabled = true;
-            image.sprite = sick_kokoro_yamu_man;
+            image.sprite = utsu_man;
         }
         else if (anshin < 4 && suibun < 1) //安心が３以下かつ水分が０
         {
@@ -69,7 +69,7 @@ public class PlayerVisualChange : MonoBehaviour
         else if (anshin < 4) //安心だけが３以下
         {
             image.enabled = true;
-            image.sprite = utsu_man;
+            image.sprite = kanashikuna_man;
         }
         
         else //通常

@@ -3,9 +3,13 @@
 !wait="2"
 !background_sprite="taiikukan"
 
+&!charaimg_sprite="polygon3"="takibi"
+!charaimg_pos="polygon3"="10,3,0"
+!charaimg_size="polygon3"="2.45,3.9,1"
+
 &!charaimg_sprite="polygon"="sick_samuke"
 !charaimg_pos="polygon"="0,0,0"
-!charaimg_size="polygon"="3.2,4.9,1"
+!charaimg_size="polygon"="7,7,1"
 
 &あなた「あー。寒い寒い……。」
 &あなた「冬の避難所がこんなに寒いとは思いもしなかった…。」
@@ -14,39 +18,39 @@
 
 &!charaimg_pos="polygon"="-1.47,0,0"
 &!charaimg_sprite="polygon2"="bikkuri_woman"
-!charaimg_pos="polygon2"="1.52,-0.24,0"
-!charaimg_size="polygon2"="3.86,5.48,1"
+!charaimg_pos="polygon2"="1.52,0.3,0"
+!charaimg_size="polygon2"="7,7,1"
 
 &ひな「ちょっと！大丈夫！？」
 
 &!charaimg_sprite="polygon"="sick_kaoiro_man"
-!charaimg_pos="polygon"="-1.57,0,0"
-!charaimg_size="polygon"="2.8,4.1,1"
+!charaimg_pos="polygon"="-1.57,-0.3,0"
+!charaimg_size="polygon"="7,7,1"
 
 &あなた「……。ああ。ひなさん…。」
 
 &!charaimg_sprite="polygon2"="hina_shock"
-!charaimg_pos="polygon2"="1.65,0.12,0"
-!charaimg_size="polygon2"="2.4,3.9,1"
+!charaimg_pos="polygon2"="1.47,0.3,0"
+!charaimg_size="polygon2"="7,7,1"
 
 &ひな「どうしたの！？すごい辛そうだけど…？」
 &あなた「あ…。あまりの寒さにやられちゃって……。」
 
 &!charaimg_sprite="polygon2"="bikkuri_woman"
-!charaimg_pos="polygon2"="1.52,-0.24,0"
-!charaimg_size="polygon2"="3.86,5.48,1"
+!charaimg_pos="polygon2"="1.47,0.3,0"
+!charaimg_size="polygon2"="7,7,1"
 
 &ひな「あら。そうなの…。」
 
-&!charaimg_sprite="polygon2"="pose_gutspose_woman"
-!charaimg_pos="polygon2"="1.4,0,0"
-!charaimg_size="polygon2"="3.4,5.6,1"
+&!charaimg_sprite="polygon2"="pose_gutspose_woman_re"
+!charaimg_pos="polygon2"="1.47,-0.4,0"
+!charaimg_size="polygon2"="7,7,1"
 
 &ひな「そんなあなたに朗報よ！」
 
 &!charaimg_sprite="polygon"="ue_questionman"
-!charaimg_pos="polygon"="-1,-0.08,0"
-!charaimg_size="polygon"="2.74,4.15,1"
+!charaimg_pos="polygon"="-1,0.7,0"
+!charaimg_size="polygon"="4.5,4.5,1"
 
 &あなた「？？？」
 
@@ -57,43 +61,43 @@
 &ひな「これから外で焚き火をする予定なの！！」
 
 &!charaimg_sprite="polygon"="sick_kaoiro_man"
-!charaimg_pos="polygon"="-1.57,0,0"
-!charaimg_size="polygon"="2.8,4.1,1"
+!charaimg_pos="polygon"="-1.57,-0.3,0"
+!charaimg_size="polygon"="7,7,1"
 
 &あなた「………。」
 &あなた「焚き火のどこが朗報なの。」
 
 &!charaimg_sprite="polygon"="kanashinaki_man"
 !charaimg_pos="polygon"="-1.5,0,0"
-!charaimg_size="polygon"="3.25,4.9,1"
+!charaimg_size="polygon"="6,6,1"
 
 &あなた「この寒空の下で焚き火をしても全然嬉しくない！！」
 
 &!charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
-!charaimg_pos="polygon2"="1.56,-0.76,0"
-!charaimg_size="polygon2"="3.76,6.37,1"
+!charaimg_pos="polygon2"="1.56,-0.3,0"
+!charaimg_size="polygon2"="7,7,1"
 
 &ひな「そんなことないわ。」
 &ひな「焚き火には精神安定につながると言われているのよ。」
 &ひな「あと、充分に体を温めることができるから基礎代謝を上げることができるの。」
 
-&!charaimg_sprite="polygon2"="hina_egao"
-!charaimg_pos="polygon2"="1.5,-0.2,0"
-!charaimg_size="polygon2"="3,3.3,1"
+&!charaimg_sprite="polygon2"="hina_egao_re"
+!charaimg_pos="polygon2"="1.5,-1,0"
+!charaimg_size="polygon2"="6.5,6.5,1"
 
 &ひな「だからきっと、そのメンタルの部分と寒さも焚き火で少しは楽になるわよ。」
 
 &!charaimg_sprite="polygon"="komatta_man3"
 !charaimg_pos="polygon"="-1.5,-0.3,0"
-!charaimg_size="polygon"="3.34,4.84,1"
+!charaimg_size="polygon"="7,7,1"
 
 &あなた「……。そうかな…。」
 &ひな「実際に行ってみましょう！」
 &あなた「うーん…。でも……。」
 
-&!charaimg_sprite="polygon2"="pose_gutspose_woman"
-!charaimg_pos="polygon2"="1.53,0,0"
-!charaimg_size="polygon2"="3.4,5.6,1"
+&!charaimg_sprite="polygon2"="pose_gutspose_woman_re"
+!charaimg_pos="polygon2"="1.47,0,0"
+!charaimg_size="polygon2"="7,7,1"
 
 &ひな「いいから！行くよ！！」
 
@@ -110,11 +114,11 @@
 
 
 &!charaimg_sprite="polygon"="waraman"
-!charaimg_pos="polygon"="-1.56,-1.63,0"
-!charaimg_size="polygon"="4.54,6.8,1"
-&!charaimg_sprite="polygon2"="hina_egao"
-!charaimg_pos="polygon2"="1.5,-0.2,0"
-!charaimg_size="polygon2"="3,3.3,1"
+!charaimg_pos="polygon"="-1.56,-1.2,0"
+!charaimg_size="polygon"="7.5,7.5,1"
+&!charaimg_sprite="polygon2"="hina_egao_re"
+!charaimg_pos="polygon2"="1.5,-1,0"
+!charaimg_size="polygon2"="7,7,1"
 
 
 &あなた「ほんとだ。焚き火を見てると落ち着く。」

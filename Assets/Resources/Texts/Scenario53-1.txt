@@ -3,8 +3,8 @@
 !background_sprite="taiikukan"
 
 &!charaimg_sprite="polygon"="newspaper"
-!charaimg_pos="polygon"="0,0,0"
-!charaimg_size="polygon"="4,7,1"
+!charaimg_pos="polygon"="0,1,0"
+!charaimg_size="polygon"="5,7,1"
 &あなた「もし、ラップと新聞紙があったら、新聞紙にラップを巻いてお皿代わりに使うことができる。」
 &あなた「割れているお皿や汚れているお皿を使うよりも安全だね。」
 

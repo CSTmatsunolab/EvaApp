@@ -4,42 +4,48 @@
 !background_sprite="taiikukan"
 
 &!charaimg_sprite="polygon"="nomalman"
-!charaimg_pos="polygon"="-6,-0.4,0"
-!charaimg_size="polygon"="3.2,4.2,1"
-&!charaimg_anim="polygon"="ad,0,1,EaseInOut%%4.2,6.2,1%-1.6,-0.4,0"
+!charaimg_pos="polygon"="-6,0,0"
+!charaimg_size="polygon"="7,7,1"
+&!charaimg_anim="polygon"="ad,0,1,EaseInOut%%7,7,1%-1.6,0,0"
 &あなた「トイレ、トイレ〜♪」
 
 &!charaimg_sprite="polygon2"="run_left_woman"
-!charaimg_pos="polygon2"="10,-0.1,0"
-!charaimg_size="polygon2"="4.2,6.2,1"
-!charaimg_anim="polygon2"="ad,0,1,EaseInOut%%4.2,6.2,1%1.6,-0.4,0"
+!charaimg_pos="polygon2"="10,-0.2,0"
+!charaimg_size="polygon2"="7,7,1"
+!charaimg_anim="polygon2"="ad,0,1,EaseInOut%%7,7,1%1.6,-0.2,0"
 
 !charaimg_sprite="polygon2"="bikkuri_woman"
 
 &ひな「トイレの水が止まったらしいよ！」
 &!charaimg_active="polygon"="false"
 !charaimg_sprite="polygon3"="mirrorbikkuri"
-!charaimg_size="polygon3"="3.2,4.2,1"
-!charaimg_pos="polygon3"="-1.3,0.5,0"
+!charaimg_size="polygon3"="7,7,1"
+!charaimg_pos="polygon3"="-1.3,0,0"
 
 &あなた「ハッ！嘘だそんなこと！」
 &!charaimg_sprite="polygon3"="odorokiman"
-!charaimg_size="polygon3"="3.2,4.2,1"
+!charaimg_size="polygon3"="3.8,3.8,1"
+!charaimg_pos="polygon3"="-1.3,0.5,0"
 
 &あなた「僕の便意はどうして解放すれば良いのだ...」
 
 &!charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
-!charaimg_pos="polygon2"="10,0.7,0"
-!charaimg_size="polygon2"="3.2,4.2,1"
+!charaimg_pos="polygon2"="10,-0.2,0"
+!charaimg_size="polygon2"="7,7,1"
 
 &ひな「簡易トイレを作ればいいじゃん」
 &!charaimg_sprite="polygon3"="komatta_man3"
+!charaimg_pos="polygon3"="-1.3,-0.5,0"
+!charaimg_size="polygon3"="7,7,1"
 &あなた「簡易トイレを作る？」
 &ひな「うん」
 &あなた「木の枝とか使うの？」
 &ひな「違うな」
 &ひな「段ボールの箱とビニール袋、新聞紙の3つがあればすぐできるよ」
 &!charaimg_sprite="polygon3"="odorokiman"
+!charaimg_pos="polygon3"="-1.3,0.5,0"
+!charaimg_size="polygon3"="3.8,3.8,1"
+
 &あなた「はやくおしえてくれ！！」
 &ひな「まずは段ボールを用意するよ」
 &!charaimg_sprite="polygon5"="toire1"
@@ -61,7 +67,7 @@
 &ひな「その通り。粉末洗剤などを振り撒けば、臭いも少しは抑えられるわ」
 &!charaimg_delete="polygon5"=""
 &!charaimg_sprite="polygon3"="face_smile_man4"
-!charaimg_size="polygon3"="4.2,6,1"
+!charaimg_size="polygon3"="3.8,3.8,1"
 &あなた「なるほど！ありがとう！」
 &あなた「それじゃ」
 &あなた「いっちょやってみっか！」

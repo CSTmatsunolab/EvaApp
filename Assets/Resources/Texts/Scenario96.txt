@@ -11,26 +11,26 @@
 !charaimg_size="polygon3"="3.5,4.6,1"
 
 !charaimg_sprite="polygon2"="ryukku_man"
-!charaimg_pos="polygon2"="-10,-0.2,0"
-!charaimg_size="polygon2"="1.2,4.3,1"
+!charaimg_pos="polygon2"="-10,-1,0"
+!charaimg_size="polygon2"="6,6,1"
 
 !charaimg_sprite="polygon5"="shenron"
-!charaimg_pos="polygon5"="2,10,0"
-!charaimg_size="polygon5"="4,6,1"
+!charaimg_pos="polygon5"="4,10,0"
+!charaimg_size="polygon5"="4,4,1"
 
-&!charaimg_anim="polygon2"="anix,0,1,EaseInOut%%1.2,6.3,1%-1.4,-0.2,0"
+&!charaimg_anim="polygon2"="anix,0,1,EaseInOut%%6,6,1%-1.9,-1,0"
 &あなた「よーやく、仮設住宅に着いたぞ。」
 
 &!charaimg_sprite="polygon2"="ryukku_man_komari"
-!charaimg_pos="polygon2"="0,0.4,0"
-!charaimg_size="polygon2"="1.2,4.3,1"
+!charaimg_pos="polygon2"="-1.9,-1,0"
+!charaimg_size="polygon2"="6,6,1"
 
 &あなた「でもやっぱり、自分の家に帰りたいな。」
 
 &？？？「よくぞ、クイズに全問正解したな。」
 &あなた「ん？空から声が！！」
 
-&!charaimg_anim="polygon5"="kourin,0,1,EaseInOut%%4,6,1%1,1,0"
+&!charaimg_anim="polygon5"="kourin,0,1,EaseInOut%%6,6,1%2,1.5,0"
 &!charaimg_sprite="polygon2"="ryukku_man_odoroki"
 &あなた「うわっ！神龍だ！」
 &神龍「クイズに全問正解した褒美に、」
@@ -52,7 +52,7 @@
 &「5分後」
 &!charaimg_delete="polygon3"="Prefab"
 &!charaimg_delete="polygon5"="shenron"
-&!charaimg_pos="polygon2"="-10,-0.2,0"
+&!charaimg_pos="polygon2"="-10,-1,0"
 &!charaimg_sprite="poly"="bg_Aozora2"
 &!wait="2"
 &!charaimg_delete="polygon0"="青空"
@@ -62,7 +62,7 @@
 &あなた「やったー！久しぶりの我が家だ！」
 
 &!charaimg_anim="poly"="anp,0,1,EaseInOut%%22,22,1%0,-5,0"
-&!charaimg_anim="polygon2"="anku,0,1,EaseInOut%%1.2,6.3,1%-1.4,-8,0"
+&!charaimg_anim="polygon2"="anku,0,1,EaseInOut%%6,6,1%-1.4,-8,0"
 
 &「全問正解おめでとうございます！！」
 

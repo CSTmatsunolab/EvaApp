@@ -5585,7 +5585,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -28}
-  m_SizeDelta: {x: 700, y: 700}
+  m_SizeDelta: {x: 700, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1730434823
 MonoBehaviour:
@@ -5602,8 +5602,7 @@ MonoBehaviour:
   image: {fileID: 1730434824}
   onaka_heru_man: {fileID: 21300000, guid: 4a554c972436949989f31ce412cdd6b1, type: 3}
   utsu_man: {fileID: 21300000, guid: 4d783e6c9455f46339403962ba7eeefe, type: 3}
-  sick_kokoro_yamu_man: {fileID: 21300000, guid: d50837befc7e04916988d026cc9847e1,
-    type: 3}
+  kanashikuna_man: {fileID: 21300000, guid: 208ab6bc21cbb43ad82302024bb095e0, type: 3}
   nodo_kawaku_dassui_man: {fileID: 21300000, guid: 4fea44b538c684b20b1e6f3c05789c35,
     type: 3}
   genkiman: {fileID: 21300000, guid: e0fc2e86e74670d45843c02c93a08e57, type: 3}

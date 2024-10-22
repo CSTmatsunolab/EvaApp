@@ -4,26 +4,26 @@
 !background_sprite="bg_getabako"
 
 &!charaimg_sprite="polygon"="anata"
-!charaimg_pos="polygon"="-1.6,-1.2,0"
-!charaimg_size="polygon"="3.5,5.54,1"
+!charaimg_pos="polygon"="-1.6,0,0"
+!charaimg_size="polygon"="7,7,1"
 &!charaimg_sprite="polygon2"="job_staff_jumper_man"
-!charaimg_pos="polygon2"="1.43,-1.26,0"
-!charaimg_size="polygon2"="3.4,5.6,1"
+!charaimg_pos="polygon2"="1.43,-0.2,0"
+!charaimg_size="polygon2"="7,7,1"
 
 &避難所スタッフ「避難所では、靴を脱いで生活していただきます。」
 &あなた「そうなんですね。わかりました。」
 &避難所スタッフ「他にご不明点がありましたらお声がけください。」
 
 &!charaimg_sprite="polygon"="waraman"
-!charaimg_pos="polygon"="-1.6,-1.2,0"
-!charaimg_size="polygon"="3.5,5.54,1"
+!charaimg_pos="polygon"="-1.6,-0.5,0"
+!charaimg_size="polygon"="7,7,1"
 
 &あなた「ありがとうございます！」
 
 &!charaimg_delete="polygon2"="job_staff_jumper_man"
 &!charaimg_sprite="polygon"="anata"
-!charaimg_pos="polygon"="-1,-1,0"
-!charaimg_size="polygon"="3.5,5.54,1"
+!charaimg_pos="polygon"="-1.5,0,0"
+!charaimg_size="polygon"="7,7,1"
 &!charaimg_sprite="polygon3"="shoes_sneaker"
 !charaimg_pos="polygon3"="0.46,-0.6,0"
 !charaimg_size="polygon3"="1.48,2.3,1"
@@ -32,17 +32,17 @@
 &あなた「さて、靴を脱いでっ……と。」
 
 &!charaimg_sprite="polygon"="komariman"
-!charaimg_pos="polygon"="-1,-1,0"
-!charaimg_size="polygon"="3.5,5.54,1"
+!charaimg_pos="polygon"="-1.5,0,0"
+!charaimg_size="polygon"="7,7,1"
 
 &あなた「………。」
 &あなた「そういえば、自分の靴はどこに置いておけばいいんだろう。」
 
-&!charaimg_pos="polygon"="-1.8,-1,0"
+&!charaimg_pos="polygon"="-1.8,0,0"
 &!charaimg_pos="polygon3"="-0.46,-0.58,0"
 &!charaimg_sprite="polygon2"="job_staff_jumper_man"
-!charaimg_pos="polygon2"="1.64,-1.24,0"
-!charaimg_size="polygon2"="3.4,5.6,1"
+!charaimg_pos="polygon2"="1.64,-0.2,0"
+!charaimg_size="polygon2"="7,7,1"
 
 &避難所スタッフ「どうかなさいましたか？」
 &あなた「あっ。あの。」
@@ -50,14 +50,14 @@
 &避難所スタッフ「靴はビニール袋などの袋に入れて、ご自身で管理していただく形になります。」
 
 &!charaimg_sprite="polygon"="anata"
-!charaimg_pos="polygon"="-1.8,-1,0"
-!charaimg_size="polygon"="3.5,5.54,1"
+!charaimg_pos="polygon"="-1.8,0,0"
+!charaimg_size="polygon"="7,7,1"
 
 &あなた「そうなんですね！」
 
 &!charaimg_sprite="polygon"="komariman"
-!charaimg_pos="polygon"="-1.8,-1,0"
-!charaimg_size="polygon"="3.5,5.54,1"
+!charaimg_pos="polygon"="-1.8,0,0"
+!charaimg_size="polygon"="7,7,1"
 
 &あなた「でも、靴を入れられる袋を持っていなくて……。」
 
@@ -68,13 +68,13 @@
 &避難所スタッフ「では、こちらのビニール袋をお使いください。」
 
 &!charaimg_sprite="polygon"="pose_gutsposeman_egao"
-!charaimg_pos="polygon"="-1.62,-0.7,0"
-!charaimg_size="polygon"="2.6,4.44,1"
+!charaimg_pos="polygon"="-1.62,-0.2,0"
+!charaimg_size="polygon"="7,7,1"
 
 &あなた「ありがとうございます！」
 
 &!charaimg_sprite="polygon"="pose_gutsposeman"
-!charaimg_pos="polygon"="-1.62,-0.7,0"
-!charaimg_size="polygon"="2.6,4.44,1"
+!charaimg_pos="polygon"="-1.62,-0.4,0"
+!charaimg_size="polygon"="7,7,1"
 
 &あなた「(今度からきちんと靴を入れられるビニール袋を防災バックに入れておこう！！)」

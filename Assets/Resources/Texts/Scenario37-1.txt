@@ -10,30 +10,31 @@
 &あなた「この学校って、避難所になっている間も授業があるのかな？」
 
 &!charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
-!charaimg_pos="polygon2"="1.2,-0.5,0"
-!charaimg_size="polygon2"="4.3,6.3,1"
+!charaimg_pos="polygon2"="1.4,0,0"
+!charaimg_size="polygon2"="7,7,1"
 
 &!charaimg_sprite="polygon"="anata"
-!charaimg_pos="polygon"="-1.6,-1.2,0"
-!charaimg_size="polygon"="5.5,5.54,1"
+!charaimg_pos="polygon"="-1.5,-0.4,0"
+!charaimg_size="polygon"="7,7,1"
 
 &ひな「それはね……」
 &ひな「避難者がいる場合でも、学校の授業が再開することもあるらしいよ。」
 
 
 &!charaimg_sprite="polygon"="ue_bikkuriman"
-!charaimg_pos="polygon"="-1,0,0"
-!charaimg_size="polygon"="3.2,5.2,1"
+!charaimg_pos="polygon"="-1,0.8,0"
+!charaimg_size="polygon"="4.5,4.5,1"
 &あなた「え！？そうなんだ！」
 
 &ひな「阪神・淡路大震災では、 新学期を迎えた後も、」
 &ひな「数百人の避難者が生活いるなかで学校教育がなされたケースも珍しくないらしいよ。」
 
 &!charaimg_sprite="polygon"="kanashikuna_man"
-!charaimg_pos="polygon"="-1.38,-0.62,0"
+!charaimg_pos="polygon"="-1.5,-0.4,0"
 !charaimg_size="polygon"="7,7,1"
 &あなた「知らなかった……大変だな。」
 
-&!charaimg_sprite="polygon2"="pose_gutspose_woman"
+&!charaimg_sprite="polygon2"="pose_gutspose_woman_re"
+!charaimg_pos="polygon2"="1.4,0,0"
 &ひな「先生方への負担も大きいし、一刻も早くこの生活が終わるといいね。」
 &あなた「そうだね……。」

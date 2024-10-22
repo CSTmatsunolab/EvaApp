@@ -11,11 +11,11 @@
 
 &!charaimg_size="polygon1"="0,0,1"
 !charaimg_sprite="polygon2"="ue"
-!charaimg_pos="polygon2"="1.2,-0.5,0"
-!charaimg_size="polygon2"="4.3,6.3,1"
+!charaimg_pos="polygon2"="1.2,0.8,0"
+!charaimg_size="polygon2"="6,6,1"
 !charaimg_sprite="polygon3"="business_woman2_4_think"
-!charaimg_pos="polygon3"="-1.8,1,0"
-!charaimg_size="polygon3"="3.8,5.8,1"
+!charaimg_pos="polygon3"="-1.8,0,0"
+!charaimg_size="polygon3"="7,7,1"
 
 &出張で来た人「うーん…」
 &あなた「（荷物を抱えた人がいる…避難しに来たのかな？）」
@@ -27,14 +27,14 @@
 !charaimg_size="polygon2"="0,0,1"
 !charaimg_size="polygon3"="0,0,1"
 !charaimg_sprite="polygon4"="job_staff_jumper_man"
-!charaimg_pos="polygon4"="1.2,-0.5,0"
-!charaimg_size="polygon4"="4.3,6.3,1"
+!charaimg_pos="polygon4"="1.2,0,0"
+!charaimg_size="polygon4"="7,7,1"
 
 &避難所スタッフ「避難所は生活が困難になった方を受け入れる施設です。」
 &避難所スタッフ「外出先や勤務地でも、どこでも利用して大丈夫ですよ。」
 
 &!charaimg_sprite="polygon"="business_woman1_4_laugh"
-!charaimg_pos="polygon"="-1.2,0.2,0"
-!charaimg_size="polygon"="3.8,5.8,1"
+!charaimg_pos="polygon"="-1.5,0.5,0"
+!charaimg_size="polygon"="7,7,1"
 
 &出張で来た人「よかった！ありがとうございます！」

@@ -4,12 +4,12 @@
 !background_sprite="bg_gakkou"
 
 &!charaimg_sprite="polygon2"="atsugi"
-!charaimg_pos="polygon2"="1.4,-0.5,0"
-!charaimg_size="polygon2"="4.3,6.3,1"
+!charaimg_pos="polygon2"="1.4,0,0"
+!charaimg_size="polygon2"="7,7,1"
 &厚木さん「車中泊か……」
 
 &!charaimg_sprite="polygon"="anata"
-!charaimg_pos="polygon"="-1.37,-0.92,0"
+!charaimg_pos="polygon"="-1.37,0,0"
 !charaimg_size="polygon"="7,7,1"
 &あなた「どうしたんですか？」
 
@@ -28,14 +28,15 @@
 &「スタッフに確認した……」
 
 &!charaimg_sprite="polygon"="kiritto_man2"
-!charaimg_pos="polygon"="-1.37,-0.92,0"
+!charaimg_pos="polygon"="-1.37,0,0"
 !charaimg_size="polygon"="7,7,1"
 
 &!charaimg_sprite="polygon2"="atsugi"
-!charaimg_pos="polygon2"="1.2,-0.5,0"
-!charaimg_size="polygon2"="4.3,6.3,1"
+!charaimg_pos="polygon2"="1.2,0,0"
+!charaimg_size="polygon2"="7,7,1"
 &あなた「ペットは指定の区域であれば一緒に入って大丈夫だそうですよ！」
 &厚木さん「そうか……！！本当にありがとう！」
 
 &!charaimg_sprite="polygon"="pose_gutsposeman"
+!charaimg_pos="polygon"="-1.37,-0.3,0"
 &あなた「いえいえ！よかったですね！」

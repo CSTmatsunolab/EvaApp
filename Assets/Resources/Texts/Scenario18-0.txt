@@ -1,7 +1,7 @@
 !background_sprite="taiikukan"
 &!charaimg_sprite="polygon"="nomalman"
 !charaimg_pos="polygon"="0,-0.4,0"
-!charaimg_size="polygon"="4.2,6.2,1"
+!charaimg_size="polygon"="7,7,1"
 
 !foreground_color="0,0,0"
 !foreground_anim="fadein,0,2,%0,0,0,0%%"
@@ -10,22 +10,23 @@
 
 &避難所スタッフ「配給ですよー」
 &あなた「行かねば」
-&!charaimg_anim="polygon"="ac,0,1,EaseInOut%%4.2,6.2,1%10,-0.4,0"
+&!charaimg_anim="polygon"="ac,0,1,EaseInOut%%7,7,1%10,-0.4,0"
 !wait="2"
 &!charaimg_sprite="polygon3"="青空"
 !charaimg_pos="polygon3"="0,0,0"
 !charaimg_size="polygon3"="15.2,22,1"
-&!charaimg_anim="polygon"="ax,0,1,EaseInOut%%4.2,6.2,1%-2,-0.8,0"
+&!charaimg_anim="polygon"="ax,0,1,EaseInOut%%7,7,1%-1.5,-0.8,0"
 &「3時間後」
 &!wait="2"
+
 &!charaimg_delete="polygon3"=""
 &!charaimg_sprite="polygon"="onigirinomalman"
-!charaimg_pos="polygon"="-1,-0.4,0"
-!charaimg_size="polygon"="3.2,4.2,1"
+!charaimg_pos="polygon"="-1.5,0,0"
+!charaimg_size="polygon"="7,7,1"
 &!charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
-!charaimg_pos="polygon2"="10,0.7,0"
-!charaimg_size="polygon2"="3.2,4.2,1"
-!charaimg_anim="polygon2"="ad,0,1,EaseInOut%%4.2,6.2,1%1.6,-0.4,0"
+!charaimg_pos="polygon2"="10,0.1,0"
+!charaimg_size="polygon2"="7,7,1"
+!charaimg_anim="polygon2"="ad,0,1,EaseInOut%%7,7,1%1.5,0,0"
 &!wait="1"
 &ひな「それ、配給でもらったおにぎり？」
 &あなた「そうだよ。さっきはお菓子食べたかったから取っといたんだ。」
@@ -34,10 +35,12 @@
 &!charaimg_sprite="polygon"="onigirikomattaman"
 &あなた「そうか」
 &!charaimg_sprite="polygon"="onigiriegaoman"
+!charaimg_pos="polygon"="-1.5,0.1,0"
 &あなた「いただきまーす！」
 &ひな「おにぎりみたいな手作りの配給は」
 &ひな「貰ったらなるべく早めに食べた方がいいよ」
 &!charaimg_sprite="polygon"="onigirinomalman"
+!charaimg_pos="polygon"="-1.5,0,0"
 &あなた「えっ」
 &!charaimg_sprite="polygon5"="himoti"
 !charaimg_pos="polygon5"="0,5,0"

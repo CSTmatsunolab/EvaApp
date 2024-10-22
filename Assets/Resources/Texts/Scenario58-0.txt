@@ -4,12 +4,12 @@
 !background_sprite="bg_gakkou"
 
 !charaimg_sprite="polygon"="pose_gutsposeman"
-!charaimg_pos="polygon"="0,0,0"
-!charaimg_size="polygon"="4.5,6.5,1"
+!charaimg_pos="polygon"="0,-0.5,0"
+!charaimg_size="polygon"="7,7,1"
 &あなた「少し避難所を綺麗にしよう！」
 
-&!charaimg_sprite="polygon"="pose_gutspose_woman"
-!charaimg_pos="polygon"="0,0,0"
-!charaimg_size="polygon"="4.5,6.5,1"
+&!charaimg_sprite="polygon"="pose_gutspose_woman_re"
+!charaimg_pos="polygon"="0,0.2,0"
+!charaimg_size="polygon"="7,7,1"
 
 &あなた「この手袋があれば安全に作業ができるね！」

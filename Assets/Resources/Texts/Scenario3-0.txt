@@ -3,17 +3,17 @@
 !wait="2"
 !background_sprite="taiikukan"
 !charaimg_sprite="polygon"="komatta_man2"
-!charaimg_pos="polygon"="-1.5,0.2,0"
-!charaimg_size="polygon"="3.8,5.8,1"
+!charaimg_pos="polygon"="-1.5,-0.3,0"
+!charaimg_size="polygon"="7,7,1"
 !charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
 !charaimg_pos="polygon2"="1.2,0,0"
-!charaimg_size="polygon2"="4.3,6.3,1"
+!charaimg_size="polygon2"="7,7,1"
 !charaimg_sprite="polygon3"="tuna"
 !charaimg_pos="polygon3"="0,20,0"
 !charaimg_size="polygon3"="4.3,2.9,1"
 
 &あなた「いつまで停電が続くんだろう…。電気がないと夜は真っ暗だね……。」
-&ひな「ほんと真っ暗だね…。ロウソクの灯りだけが頼りだよ。」
+&ひな「ほんと真っ暗だね…。ロウソクの灯りだけが頼りだよ！」
 &あなた「もう今使っているロウソクで最後なんだ…。今のロウソクを使い終わってしまったらどうしよう。」
 &ひな「ロウソク以外にも灯りとしてツナの缶詰が使えるよ。」
 &あなた「ツナの缶詰？」
@@ -27,7 +27,7 @@
 &ひな「それで、開けた穴にティッシュを刺せばツナの缶詰ランプの完成！」
 
 &!charaimg_active="polygon3"="true"
-!charaimg_anim="polygon3"="Slin,0,1,EaseInOut%%4.3,2.9,1%0,1,0"
+!charaimg_anim="polygon3"="Slin,0,1,EaseInOut%%4.3,2.9,1%0,1.8,0"
 
 &あなた「結構簡単だね！火をつけてもいい？」
 &ひな「いいよ。」

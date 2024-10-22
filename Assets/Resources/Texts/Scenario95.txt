@@ -5,18 +5,19 @@
 !background_sprite="taiikukan"
 
 !charaimg_sprite="polygon4"="necchusyou_face_boy5"
-!charaimg_pos="polygon4"="-0.2,0.2,0"
-!charaimg_size="polygon4"="5,5,1"
+!charaimg_pos="polygon4"="0,0.5,0"
+!charaimg_size="polygon4"="6,6,1"
 
 &あなた「なんだか最近元気が出ないな……」
 &あなた「全然この状況に慣れなくて落ち着かないし……」
 &あなた「食事や運動をおろそかにしたのも悪かったのかな……」
 
 &!charaimg_sprite="polygon4"="sick_kaoiro_man"
-!charaimg_size="polygon4"="5.4,5,1"
+!charaimg_size="polygon4"="7,7,1"
+!charaimg_pos="polygon4"="0,0,0"
 &あなた「う……くらくらする……」
 
-&!charaimg_pos="polygon4"="-1.2,0.2,0"
+&!charaimg_pos="polygon4"="-1.5,-0.1,0"
 !charaimg_sprite="polygon3"="job_staff_jumper_man"
 !charaimg_pos="polygon3"="1.2,-0.5,0"
 !charaimg_size="polygon3"="7,7,1"
@@ -71,8 +72,8 @@
 
 !background_sprite="white"
 !charaimg_sprite="polygon4"="sick_kaoiro_man"
-!charaimg_pos="polygon4"="-1.2,0.2,0"
-!charaimg_size="polygon4"="5.4,5,1"
+!charaimg_pos="polygon4"="-1.2,0,0"
+!charaimg_size="polygon4"="7,7,1"
 
 &あなた「はっ……！」
 
