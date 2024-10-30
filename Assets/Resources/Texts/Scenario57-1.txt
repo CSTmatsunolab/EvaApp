@@ -10,7 +10,7 @@
 &あなた「手元に、ガーゼと絆創膏と消毒液があるけど、まずはガラスを取り除かなきゃ、、、」
 
 &!charaimg_sprite="polygon"="komatta_man3"
-!charaimg_pos="polygon"="-1.3,0.2,0"
+!charaimg_pos="polygon"="-1.3,0,0"
 !charaimg_size="polygon"="7,7,1"
 
 !charaimg_sprite="polygon1"="pose_touch_hand_man_woman"
@@ -20,7 +20,6 @@
 &ひな「ピンセットは細かい作業や傷口へのアクセスが必要な場合に使われる。」
 &ひな「ガラスの破片や異物を取り除く、包帯やガーゼを正確に処理するなどの応急処置に活用できるね。」
 &ひな「ピンセットは細かい操作が可能なため、傷口への触れ方をコントロールするのに適しているよ。」
-
 
 &!charaimg_sprite="polygon1"="kegatiryou"
 !charaimg_pos="polygon1"="0,0,0"

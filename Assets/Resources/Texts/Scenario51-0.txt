@@ -4,7 +4,7 @@
 !background_sprite="taiikukan"
 
 &!charaimg_sprite="polygon"="komatta_man3"
-!charaimg_pos="polygon"="0,0,0"
+!charaimg_pos="polygon"="0,-0.5,0"
 !charaimg_size="polygon"="7,7,1"
 &あなた「非常食の缶詰って、色んな種類があるな〜」
 &あなた「もしものときのために、もっと色々注意して買えばよかった。」
@@ -14,26 +14,25 @@
 &あなた「なにより…… 今回、缶詰は持ってきたのに缶切りを忘れてしまったんだよな……」
 &あなた「次買うときは、缶切りを用意しないと！」
 &!charaimg_sprite="polygon"="pose_gutsposeman"
-!charaimg_pos="polygon"="0,-0.5,0"
+!charaimg_pos="polygon"="0,-1.1,0"
 !charaimg_size="polygon"="7,7,1"
 &あなた「そして、手で開けられる缶詰も探してみよう！」
 
 &!charaimg_sprite="polygon"="ue_questionman"
-!charaimg_pos="polygon"="-1,0.6,0"
+!charaimg_pos="polygon"="-1,0.7,0"
 !charaimg_size="polygon"="4.5,4.5,1"
 &あなた「そういえばひなさんは、缶詰のどこを重視して買ってる？」
 
-
 &!charaimg_sprite="polygon2"="hina_egao_re"
-!charaimg_pos="polygon2"="1.5,-1.5,0"
-!charaimg_size="polygon2"="7,7,1"
+!charaimg_pos="polygon2"="1.5,-1.1,0"
+!charaimg_size="polygon2"="6.5,6.5,1"
 &ひな「とにかく味、量、安さかな！」
 
 &!charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
-!charaimg_pos="polygon2"="1.5,-0.5,0"
 !charaimg_size="polygon2"="7,7,1"
+!charaimg_pos="polygon2"="1.5,-0.2,0"
 &!charaimg_sprite="polygon"="odorokiman"
-!charaimg_pos="polygon"="-1.37,0.4,0"
+!charaimg_pos="polygon"="-1.37,0.6,0"
 !charaimg_size="polygon"="3.8,3.8,1"
 &あなた「意外だ……」
 
@@ -41,18 +40,19 @@
 &ひな「ローリングストックって知ってる？」
 
 &!charaimg_sprite="polygon"="necchusyou_face_boy2"
+!charaimg_pos="polygon"="-1.37,0.5,0"
 &あなた「え？ し、知らない……」
 &あなた「でも、荷物が重くならないかな？」
 
 &ひな「たしかにそうだね。でも、好きな食べ物とかおいしいものは癒しになるよ。」
 &!charaimg_sprite="polygon2"="pose_gutspose_woman_re"
 !charaimg_pos="polygon2"="1.5,-0.4,0"
-!charaimg_size="polygon2"="7,7,1"
+!charaimg_size="polygon2"="7.5,7.5,1"
 &ひな「これを持っていけるよう日々鍛えているんだ！」
 
 &!charaimg_sprite="polygon"="odorokiman"
-!charaimg_pos="polygon"="-1.37,0.4,0"
-!charaimg_size="polygon"="3.8,3.8,1"
+!charaimg_pos="polygon"="-1.37,0.3,0"
+!charaimg_size="polygon"="4,4,1"
 &あなた「意外すぎる……！！」
 
 &「※ローリングストックとは… 食材を日常的に使いながら、買い足すことで備蓄する方法。」

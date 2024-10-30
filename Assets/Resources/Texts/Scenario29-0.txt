@@ -43,13 +43,13 @@
 &ひな「あら。そうなの…。」
 
 &!charaimg_sprite="polygon2"="pose_gutspose_woman_re"
-!charaimg_pos="polygon2"="1.47,-0.4,0"
+!charaimg_pos="polygon2"="1.47,-0.1,0"
 !charaimg_size="polygon2"="7,7,1"
 
 &ひな「そんなあなたに朗報よ！」
 
 &!charaimg_sprite="polygon"="ue_questionman"
-!charaimg_pos="polygon"="-1,0.7,0"
+!charaimg_pos="polygon"="-1,0.9,0"
 !charaimg_size="polygon"="4.5,4.5,1"
 
 &あなた「？？？」
@@ -74,7 +74,7 @@
 &あなた「この寒空の下で焚き火をしても全然嬉しくない！！」
 
 &!charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
-!charaimg_pos="polygon2"="1.56,-0.3,0"
+!charaimg_pos="polygon2"="1.56,-0.2,0"
 !charaimg_size="polygon2"="7,7,1"
 
 &ひな「そんなことないわ。」
@@ -88,7 +88,7 @@
 &ひな「だからきっと、そのメンタルの部分と寒さも焚き火で少しは楽になるわよ。」
 
 &!charaimg_sprite="polygon"="komatta_man3"
-!charaimg_pos="polygon"="-1.5,-0.3,0"
+!charaimg_pos="polygon"="-1.5,-0.4,0"
 !charaimg_size="polygon"="7,7,1"
 
 &あなた「……。そうかな…。」
@@ -96,7 +96,7 @@
 &あなた「うーん…。でも……。」
 
 &!charaimg_sprite="polygon2"="pose_gutspose_woman_re"
-!charaimg_pos="polygon2"="1.47,0,0"
+!charaimg_pos="polygon2"="1.47,-0.1,0"
 !charaimg_size="polygon2"="7,7,1"
 
 &ひな「いいから！行くよ！！」

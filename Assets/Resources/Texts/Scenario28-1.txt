@@ -3,13 +3,13 @@
 !wait="2"
 !background_sprite="taiikukan"
 !charaimg_sprite="polygon"="komatta_man2"
-!charaimg_pos="polygon"="-1.5,0.2,0"
+!charaimg_pos="polygon"="-1.5,-0.7,0"
 !charaimg_size="polygon"="7,7,1"
 
 &あなた「お腹すいたな……」
 
 &!charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
-!charaimg_pos="polygon2"="1.5,0.5,0"
+!charaimg_pos="polygon2"="1.5,-0.4,0"
 !charaimg_size="polygon2"="7,7,1"
 &ひな「あれ、その非常食って消費期限切れてない？」
 &あなた「そうだけど、せっかく持ってきたからもったいなくて……」
@@ -24,10 +24,10 @@
 !charaimg_size="polygon"="3.8,3.8,1"
 &あなた「そうか……教えてくれてありがとう！」
 &!charaimg_sprite="polygon2"="pose_gutspose_woman_re"
-!charaimg_pos="polygon2"="1.5,0.3,0"
+!charaimg_pos="polygon2"="1.5,-0.5,0"
 &ひな「いえいえ！」
 &!charaimg_sprite="polygon"="smartphone_blank_man"
-!charaimg_pos="polygon"="-1.5,0.7,0"
+!charaimg_pos="polygon"="-1.5,0.2,0"
 !charaimg_size="polygon"="3.8,3.8,1"
 &あなた「あ、でも水の場合はまた別に注意が必要みたいだね」
 &ひな「そうなの？」

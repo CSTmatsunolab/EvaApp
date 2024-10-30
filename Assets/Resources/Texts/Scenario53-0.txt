@@ -3,7 +3,7 @@
 !background_sprite="taiikukan"
 
 &!charaimg_sprite="polygon"="pose_gutsposeman"
-!charaimg_pos="polygon"="0,-0.3,0"
+!charaimg_pos="polygon"="0,-0.5,0"
 !charaimg_size="polygon"="7,7,1"
 &あなた「手元に、新聞紙とラップがあるよ。」
 &あなた「新聞紙にラップをかけてお皿代わりにすればいいね！」

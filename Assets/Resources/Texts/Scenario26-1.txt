@@ -29,7 +29,7 @@
 &ひなのお婆ちゃん「………。」
 
 &!charaimg_sprite="polygon"="hinasobo"
-!charaimg_pos="polygon"="1,-0.3,0"
+!charaimg_pos="polygon"="1,-0.2,0"
 !charaimg_size="polygon"="7,7,1"
 
 &ひなのお婆ちゃん「！！。あら、こんにちは。」
@@ -41,7 +41,7 @@
 &あなた「何かありましたか？」
 
 &!charaimg_sprite="polygon"="hina_sobo1"
-!charaimg_pos="polygon"="1,-0.3,0"
+!charaimg_pos="polygon"="1,-0.2,0"
 !charaimg_size="polygon"="7,7,1"
 
 &ひなのお婆ちゃん「ああ。飲んでいた薬を飲み終わってしまったのよ。」

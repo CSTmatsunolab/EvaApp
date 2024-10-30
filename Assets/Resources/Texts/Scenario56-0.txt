@@ -44,13 +44,13 @@
 &ひな「身分証は持ってる？」
 
 &!charaimg_sprite="polygon"="ue_questionman"
-!charaimg_pos="polygon"="-0.8,0.7,0"
+!charaimg_pos="polygon"="-0.8,0.9,0"
 !charaimg_size="polygon"="4.5,4.5,1"
 
 &あなた「持ってるけど、なんで？」
 
 &!charaimg_sprite="polygon2"="hina_egao_re"
-!charaimg_pos="polygon2"="1.2,-1.5,0"
+!charaimg_pos="polygon2"="1.2,-1.3,0"
 !charaimg_size="polygon2"="7,7,1"
 
 &ひな「災害時は特別措置として」

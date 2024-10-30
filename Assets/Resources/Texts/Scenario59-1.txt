@@ -38,10 +38,10 @@
 &ひな「ガムテープに自分の名前を書いて貼っておくといいよ。貼って剥せるから他にもメモとして使うと便利だよ。」
 
 &!charaimg_sprite="polygon"="face_smile_man4"
-!charaimg_pos="polygon"="-1.3,0.7,0"
+!charaimg_pos="polygon"="-1.3,0.6,0"
 !charaimg_size="polygon"="3.8,3.8,1"
 &!charaimg_sprite="polygon2"="hina_egao_re"
-!charaimg_pos="polygon2"="1.5,-2,0"
+!charaimg_pos="polygon2"="1.5,-1.6,0"
 !charaimg_size="polygon2"="7.5,7.5,1"
 
 &あなた「ありがとう！やってみるよ」

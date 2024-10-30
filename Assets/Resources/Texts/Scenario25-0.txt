@@ -18,7 +18,7 @@
 &ひな「それが、次に支援物資が来るのが1週間後になるかもしれないって…。」
 
 &!charaimg_sprite="polygon2"="kanashikuna_man"
-!charaimg_pos="polygon2"="-1.6,-0.3,0"
+!charaimg_pos="polygon2"="-1.6,-0.4,0"
 !charaimg_size="polygon2"="7,7,1"
 
 &あなた「えっ！そんな！！」

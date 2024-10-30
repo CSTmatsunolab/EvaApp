@@ -10,7 +10,7 @@
 &!charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
 !charaimg_pos="polygon2"="10,-0.8,0"
 !charaimg_size="polygon2"="7,7,1"
-!charaimg_anim="polygon2"="ad,0,1,EaseInOut%%7,7,1%1.6,-0.8,0"
+!charaimg_anim="polygon2"="ad,0,1,EaseInOut%%7,7,1%1.6,-0.5,0"
 
 &ひな「お尻が濡れているね。」
 

@@ -26,7 +26,7 @@
 !charaimg_sprite="polygon3"="bikkuri"
 !charaimg_pos="polygon"="10,0.2,0"
 !charaimg_active="polygon3"="true"
-!charaimg_anim="polygon3"="Sin,0,1,EaseInOut%%7,7,1%-1.5,0,0"
+!charaimg_anim="polygon3"="Sin,0,1,EaseInOut%%7,7,1%-1.5,-0.8,0"
 !wait="1"
 &あなた「わっ！トイレめちゃくちゃ混んでるじゃん！！」
 &あなた「さっき済ましておけばよかった…」
@@ -36,7 +36,7 @@
 &あなた「仕方ないから並ぶか」
 
 &!charaimg_sprite="polygon4"="job_staff_jumper_man"
-!charaimg_pos="polygon4"="1.5,-0.8,0"
+!charaimg_pos="polygon4"="1.5,-1.2,0"
 !charaimg_size="polygon4"="7,7,1"
 &避難所スタッフ「そのとおりです！」
 &あなた「あ、スタッフのお兄さん」

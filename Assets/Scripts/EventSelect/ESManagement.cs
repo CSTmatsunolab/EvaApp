@@ -89,9 +89,10 @@ public class ESManagement : MonoBehaviour
         if(flag == 0)
         {
 
-            a = Random.Range(3,41);//3~40
-            //a = 56;
-            //a = Random.Range(21,23);//指定範囲の動作確認用
+            a = Random.Range(3,41);//3~40 //テストプレイ時はここで発生イベントを選択
+
+            // a = 40;
+            // a = Random.Range(35,39);//指定範囲の動作確認用
             Debug.Log(a);
 
             kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
@@ -102,9 +103,10 @@ public class ESManagement : MonoBehaviour
             {
                 if(kaburiCheck == 1)
                 {
-                    a = Random.Range(3,41);//3~40
-                    //a = Random.Range(21,23);//指定範囲の動作確認用
-                    //a = 50;
+                    a = Random.Range(3,41);//3~40   //テストプレイ時はここで発生イベントを選択
+
+                    // a = 40;
+                    // a = Random.Range(35,39);//指定範囲の動作確認用
                     kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
                     Debug.Log("a1 = " + a);
                 }
@@ -113,12 +115,17 @@ public class ESManagement : MonoBehaviour
         }
         else if(flag == 1){
             b = Random.Range(0,6);
+
             //a = Random.Range(3,41);//3~29
             if(b < 5) {
-                a = Random.Range(50,60);
-                //a=52;
+                a = Random.Range(50,60);    //テストプレイ時はここで発生イベントを選択
+
+                // a=58;
             } else{
-                a = Random.Range(3,41);
+                a = Random.Range(3,41);     //テストプレイ時はここで発生イベントを選択
+
+                // a = 40;
+                // a = Random.Range(35,39);
             }
 
             kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
@@ -128,7 +135,9 @@ public class ESManagement : MonoBehaviour
             {
                 if(kaburiCheck == 1)
                 {
-                    a = Random.Range(50,60);
+                    a = Random.Range(50,60);    //テストプレイ時はここで発生イベントを選択
+
+                    // a = 58;
                     kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
                     Debug.Log("a1 = " + a);
                 }
@@ -139,15 +148,18 @@ public class ESManagement : MonoBehaviour
             {
                 if(kaburiCheck == 1)
                 {
-                    a = Random.Range(3,41);//3~40
+                    a = Random.Range(3,41);//3~40   //テストプレイ時はここで発生イベントを選択
+
+                    // a = 40;
+                    // a = Random.Range(35,39);
                     kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
                     Debug.Log("a1 = " + a);
                 }
             }
         }
         else if(flag == 4){
-            a=59;
-            //a = Random.Range(50,60);
+            // a=58;
+            a = Random.Range(50,60);
             Pdata.GetComponent<Player_Data>().PlayerData[1][8] = a.ToString();
             //Debug.Log(Pdata.GetComponent<Player_Data>().PlayerData[1][1]);
             // kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
@@ -439,7 +451,7 @@ public class ESManagement : MonoBehaviour
     IEnumerator Seikai(){//正解の時のアニメーション
         Maru.gameObject.SetActive(true);//MaruをActiveにする
         Color c = Maru.color;
-        c.a = 1.3f;
+        c.a = 0.9f;
         Maru.color = c; // 画像の不透明度を1にする
         yield return new WaitForSeconds(0.3f);
         while (true)
@@ -462,7 +474,7 @@ public class ESManagement : MonoBehaviour
     IEnumerator Huseikai(){//不正解の時のアニメーション
         Batsu.gameObject.SetActive(true);//BatsuをActiveにする
         Color c = Batsu.color;
-        c.a = 1.3f;
+        c.a = 0.9f;
         Batsu.color = c; // 画像の不透明度を1にする
         yield return new WaitForSeconds(0.3f);
         while (true)

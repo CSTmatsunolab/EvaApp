@@ -5,7 +5,7 @@
 
 &!charaimg_sprite="polygon2"="hinasobo"
 !charaimg_pos="polygon2"="1.2,-0.5,0"
-!charaimg_size="polygon2"="4.3,6.3,1"
+!charaimg_size="polygon2"="7,7,1"
 &ひなのお婆ちゃん「1200ml……」
 
 &!charaimg_sprite="polygon"="ue_questionman"
@@ -15,7 +15,7 @@
 
 &!charaimg_sprite="polygon2"="pose_gutspose_woman_re"
 !charaimg_size="polygon2"="7.5,7.5,1"
-!charaimg_pos="polygon2"="1.2,-0.8,0"
+!charaimg_pos="polygon2"="1.4,-0.8,0"
 &ひな「1200ml、１日に必要な飲水の量だよ！」
 
 &!charaimg_sprite="polygon"="odorokiman"
@@ -29,7 +29,7 @@
 &あなた「1200ml？ なんでだろう？」
 
 &!charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
-!charaimg_pos="polygon2"="1.2,-0.5,0"
+!charaimg_pos="polygon2"="1.3,-0.5,0"
 !charaimg_size="polygon2"="7,7,1"
 &ひな「体重50kgの成人は一日2500mlほどの水分を出すらしくて、」
 &ひな「そのうち食事等で得ているのは1300ml、」
@@ -42,7 +42,7 @@
 
 &!charaimg_sprite="polygon2"="pose_gutspose_woman_re"
 !charaimg_size="polygon2"="7.5,7.5,1"
-!charaimg_pos="polygon2"="1.2,-0.8,0"
+!charaimg_pos="polygon2"="1.4,-0.8,0"
 &ひな「避難所では普段と違う環境だから忘れちゃうこともあるかもしれないけど、」
 &ひな「一日1200mlはとれるよう意識したいよね。」
 
@@ -51,17 +51,17 @@
 !charaimg_size="polygon2"="7,7,1"
 
 &!charaimg_sprite="polygon"="nomalman"
-!charaimg_pos="polygon"="-1.4,-0.7,0"
-!charaimg_size="polygon"="7.5,7.5,1"
+!charaimg_pos="polygon"="-1.4,-0.9,0"
+!charaimg_size="polygon"="7,7,1"
 &ひなのお婆ちゃん「飲みすぎても体調不良の原因になったりするからね、気をつけて。」
 
 &!charaimg_sprite="polygon"="waraman"
-!charaimg_pos="polygon"="-1.37,-1.5,0"
+!charaimg_pos="polygon"="-1.5,-1.5,0"
 &あなた「そうなんですね。参考になります！」
 
 &あなた「ひなのおばあちゃんも物知りだなあ。」
 
 &!charaimg_sprite="polygon2"="pose_gutspose_woman_re"
 !charaimg_size="polygon2"="7.5,7.5,1"
-!charaimg_pos="polygon2"="1.2,-0.8,0"
+!charaimg_pos="polygon2"="1.5,-0.8,0"
 &ひな「でしょ！」

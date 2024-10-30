@@ -1,6 +1,6 @@
 !background_sprite="taiikukan"
 &!charaimg_sprite="polygon"="komatta_man3"
-&!charaimg_pos="polygon"="-1.5,-1,0"
+&!charaimg_pos="polygon"="-1.5,-0.2,0"
 !charaimg_size="polygon"="7,7,1"
 
 !foreground_color="0,0,0"
@@ -8,9 +8,9 @@
 !wait="2"
 
 !charaimg_sprite="polygon2"="pose_touch_hand_man_woman"
-!charaimg_pos="polygon2"="10,-0.8,0"
-!charaimg_size="polygon2"="8,8,1"
-!charaimg_anim="polygon2"="ad,0,1,EaseInOut%%7,7,1%1.2,-0.8,0"
+!charaimg_pos="polygon2"="10,0.1,0"
+!charaimg_size="polygon2"="7,7,1"
+!charaimg_anim="polygon2"="ad,0,1,EaseInOut%%7,7,1%1.6,0.1,0"
 &!wait="1"
 &ひな「困った顔してどうしたの？」
 &!charaimg_sprite="polygon5"="kusakutu"
