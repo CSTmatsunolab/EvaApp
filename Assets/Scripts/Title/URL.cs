@@ -6,6 +6,6 @@ public class URL : MonoBehaviour
 {
    public void onClick()
     {
-        Application.OpenURL("https://www.matsulab.org/#/");//""の中には開きたいWebページのURLを入力します
+        Application.OpenURL("https://www.matsulab.org/#/products/hinannjyoQ/privacypolicy");//""の中には開きたいWebページのURLを入力します
     }
 }
