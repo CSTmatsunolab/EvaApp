@@ -137,7 +137,7 @@ public class QuizManagement : MonoBehaviour
     }
 
     void Shuffle(){
-        int x = 37;//イベントの数−3
+        int x = 34;//イベントの数−3
         int[] b = new int[x];
         for(int i=0;i<x;i++){
             b[i]=i+3;
