@@ -91,7 +91,7 @@ public class ESManagement : MonoBehaviour
 
             a = Random.Range(3,38);//3~40 //テストプレイ時はここで発生イベントを選択
 
-            a = 12;
+            //a = 12;
             // a = Random.Range(35,39);//指定範囲の動作確認用
             Debug.Log(a);
 
