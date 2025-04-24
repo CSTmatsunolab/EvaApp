@@ -27,7 +27,7 @@ public class URLOpener : MonoBehaviour
     // ボタンからこのメソッドを呼び出す
     public void OnButtonClick()
     {
-        string url = "https://www.matsulab.org/#/products/hinannjyoq/privacypolicy";
+        string url = "https://www.matsulab.org/privacypolicy/hinannjoQ";
         OpenURL(url);
     }
 }
