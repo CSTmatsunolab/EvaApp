@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- プライバシー追跡ドメイン（該当なし） -->
+    <key>NSPrivacyTrackingDomains</key>
+    <array>
+        <!-- 追跡ドメインなし -->
+    </array>
+    
+    <!-- 収集データタイプ（該当なし） -->
+    <key>NSPrivacyCollectedDataTypes</key>
+    <array>
+        <!-- 個人情報を一切収集しないため空配列 -->
+    </array>
+    
+    <!-- 必須理由API使用状況 -->
+    <key>NSPrivacyAccessedAPITypes</key>
+    <array>
+        <!-- ファイルタイムスタンプAPI（Unity標準で使用される可能性） -->
+        <dict>
+            <key>NSPrivacyAccessedAPIType</key>
+            <string>NSPrivacyAccessedAPICategoryFileTimestamp</string>
+            <key>NSPrivacyAccessedAPITypeReasons</key>
+            <array>
+                <!-- アプリが作成したファイルへのアクセス -->
+                <string>C617.1</string>
+            </array>
+        </dict>
+        
+        <!-- システムブート時間API（Unity標準で使用される可能性） -->
+        <dict>
+            <key>NSPrivacyAccessedAPIType</key>
+            <string>NSPrivacyAccessedAPICategorySystemBootTime</string>
+            <key>NSPrivacyAccessedAPITypeReasons</key>
+            <array>
+                <!-- 絶対タイムスタンプの計算 -->
+                <string>35F9.1</string>
+            </array>
+        </dict>
+        
+        <!-- ディスク容量API（Unity標準で使用される可能性） -->
+        <dict>
+            <key>NSPrivacyAccessedAPIType</key>
+            <string>NSPrivacyAccessedAPICategoryDiskSpace</string>
+            <key>NSPrivacyAccessedAPITypeReasons</key>
+            <array>
+                <!-- アプリの正常な動作確認 -->
+                <string>E174.1</string>
+            </array>
+        </dict>
+        
+        <!-- ユーザーデフォルトAPI（設定保存で使用される可能性） -->
+        <dict>
+            <key>NSPrivacyAccessedAPIType</key>
+            <string>NSPrivacyAccessedAPICategoryUserDefaults</string>
+            <key>NSPrivacyAccessedAPITypeReasons</key>
+            <array>
+                <!-- アプリグループ内での情報読み書き -->
+                <string>CA92.1</string>
+            </array>
+        </dict>
+    </array>
+    
+    <!-- プライバシー追跡使用状況（追跡なし） -->
+    <key>NSPrivacyTracking</key>
+    <false/>
+</dict>
+</plist>
