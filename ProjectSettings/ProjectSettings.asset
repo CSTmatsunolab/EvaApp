@@ -166,7 +166,7 @@ PlayerSettings:
   androidMinAspectRatio: 1
   applicationIdentifier:
     Android: com.matsulab.Q
-    iPhone: com.matsulab.HinanjoQ
+    iPhone: com.Yutaka.climbCloud
   buildNumber:
     Standalone: 0
     VisionOS: 0
