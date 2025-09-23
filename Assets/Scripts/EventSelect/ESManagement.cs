@@ -46,6 +46,7 @@ public class ESManagement : MonoBehaviour
     [SerializeField] private AudioClip FuseikaiSE;//不正解のSE
 
     static List<string[]> checksData = new List<string[]>();
+    private static readonly HashSet<int> HiddenEvents = new HashSet<int> { 3 };
 
     // Start is called before the first frame update
     void Start(){
@@ -97,6 +98,10 @@ public class ESManagement : MonoBehaviour
 
             kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
             Debug.Log("kaburiCheck = " + kaburiCheck);
+            if (HiddenEvents.Contains(a))
+            {
+                kaburiCheck = 1;
+            }
 
             for(int i = 0;i < 20;i++) //もし解放済みのイベントだった場合、再抽選 最大5回
                                     //実験にあたってなるべく被らせたくないので15回に
@@ -109,6 +114,10 @@ public class ESManagement : MonoBehaviour
                     // a = Random.Range(35,39);//指定範囲の動作確認用
                     kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
                     Debug.Log("a1 = " + a);
+                    if (HiddenEvents.Contains(a))
+                    {
+                        kaburiCheck = 1;
+                    }
                 }
             }
 
@@ -130,6 +139,10 @@ public class ESManagement : MonoBehaviour
 
             kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
             Debug.Log("kaburiCheck = " + kaburiCheck);
+            if (HiddenEvents.Contains(a))
+            {
+                kaburiCheck = 1;
+            }
             for(int i = 0;i < 3;i++) //もし解放済みのイベントだった場合、再抽選 最大5回
                                         //今回は15回
             {
@@ -154,6 +167,10 @@ public class ESManagement : MonoBehaviour
                     // a = Random.Range(35,39);
                     kaburiCheck = int.Parse(Rdata.GetComponent<Result_Data>().ResultData[a][1]);
                     Debug.Log("a1 = " + a);
+                    if (HiddenEvents.Contains(a))
+                    {
+                        kaburiCheck = 1;
+                    }
                 }
             }
         }
@@ -177,6 +194,11 @@ public class ESManagement : MonoBehaviour
         }
         else if(flag == 3){
             a = 100;//配給用のイベント
+        }
+        if (HiddenEvents.Contains(a))
+        {
+            Debug.Log($"Event {a} is hidden. Rerolling.");
+            return rand();
         }
         return a;
     }
